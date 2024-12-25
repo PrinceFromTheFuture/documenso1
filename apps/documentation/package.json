@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3002",
+    "dev": "next dev -p 3052",
     "build": "next build",
-    "start": "next start -p 3002",
+    "start": "next start -p 3052",
     "lint:fix": "next lint --fix",
     "clean": "rimraf .next && rimraf node_modules",
     "copy:pdfjs": "node ../../scripts/copy-pdfjs.cjs"
@@ -17,6 +17,7 @@
     "@documenso/trpc": "*",
     "@documenso/ui": "*",
     "next": "14.2.6",
+    "next-auth": "^4.24.11",
     "next-plausible": "^3.12.0",
     "nextra": "^2.13.4",
     "nextra-theme-docs": "^2.13.4",
