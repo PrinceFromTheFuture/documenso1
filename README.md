@@ -2,7 +2,7 @@
 
 <p align="center" style="margin-top: 20px">
   <p align="center">
-  The Open Source DocuSign Alternative.
+  Open Source DocuSign Alternative.
   <br>
     <a href="https://documenso.com"><strong>Learn more »</strong></a>
     <br />
