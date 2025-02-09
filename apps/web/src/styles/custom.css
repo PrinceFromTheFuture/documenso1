@@ -8,7 +8,10 @@ header.supports-backdrop-blur\:bg-background\/60.bg-background\/95.sticky.top-0.
     margin-top: 10px;
     margin-bottom: 10px;
 }
- 
+body,html{overflow-x:hidden}
+button {
+  touch-action: manipulation;  /* Prevents gestures like double-tap zoom or drag */
+}
 body {
   DIRECTION: RTL;
 }th {
