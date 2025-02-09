@@ -260,13 +260,12 @@ export const TextField = ({ field, recipient, onSignField, onUnsignField }: Text
         </p>
       )}
 
-      {field.inserted && (
-        <p className="text-muted-foreground dark:text-background/80 flex items-center justify-center gap-x-1 text-[clamp(0.425rem,25cqw,0.825rem)] duration-200">
-          {field.customText.length < 20
-            ? field.customText
-            : field.customText.substring(0, 15) + '...'}
-        </p>
-      )}
+{field.inserted && field.customText && (
+  <p className="whitespace-pre-line">
+    {field.customText}
+  </p>
+)}
+
 
       <Dialog open={showCustomTextModal} onOpenChange={setShowCustomTextModal}>
         <DialogContent>

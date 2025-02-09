@@ -76,14 +76,14 @@ export const onEarlyAdoptersCheckout = async ({ session }: OnEarlyAdoptersChecko
     ).then(async (res) => res.arrayBuffer());
 
     const { id: documentDataId } = await putPdfFile({
-      name: 'Documenso Supporter Pledge.pdf',
+      name: 'Tofes-Mekovan Supporter Pledge.pdf',
       type: 'application/pdf',
       arrayBuffer: async () => Promise.resolve(documentBuffer),
     });
 
     const document = await prisma.document.create({
       data: {
-        title: 'Documenso Supporter Pledge.pdf',
+        title: 'Tofes-Mekovan Supporter Pledge.pdf',
         status: DocumentStatus.COMPLETED,
         userId: newUser.id,
         documentDataId,

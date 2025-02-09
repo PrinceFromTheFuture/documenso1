@@ -1,6 +1,6 @@
 ---
 title: API Reference
-description: Reference documentation for the Documenso public API.
+description: Reference documentation for the Tofes-Mekovan public API.
 ---
 
 import { Callout, Steps } from 'nextra/components';
@@ -11,7 +11,7 @@ The Swagger UI for the API is available at [/api/v1/openapi](https://app.documen
 
 ## Upload a Document
 
-Uploading a document to your Documenso account requires a two-step process.
+Uploading a document to your Tofes-Mekovan account requires a two-step process.
 
 <Steps>
 
@@ -67,10 +67,10 @@ First, you need to make a `POST` request to the `/api/v1/documents` endpoint, wh
   - `signingOrder` - The signing order for the document. This can be either `SEQUENTIAL` or `PARALLEL`.
 - `authOptions` - This object contains authentication options for the document. It has the following fields:
   - `globalAccessAuth` - The authentication level required to access the document. This can be either `ACCOUNT` or `null`.
-    - If the document is set to `ACCOUNT`, all recipients must authenticate with their Documenso account to access it.
-    - The document can be accessed without a Documenso account if it's set to `null`.
+    - If the document is set to `ACCOUNT`, all recipients must authenticate with their Tofes-Mekovan account to access it.
+    - The document can be accessed without a Tofes-Mekovan account if it's set to `null`.
   - `globalActionAuth` - The authentication level required to perform actions on the document. This can be `ACCOUNT`, `PASSKEY`, `TWO_FACTOR_AUTH`, or `null`.
-    - If the document is set to `ACCOUNT`, all recipients must authenticate with their Documenso account to perform actions on the document.
+    - If the document is set to `ACCOUNT`, all recipients must authenticate with their Tofes-Mekovan account to perform actions on the document.
     - If it's set to `PASSKEY`, all recipients must have the passkey active to perform actions on the document.
     - If it's set to `TWO_FACTOR_AUTH`, all recipients must have the two-factor authentication active to perform actions on the document.
     - If it's set to `null`, all the recipients can perform actions on the document without any authentication.
@@ -119,7 +119,7 @@ Here's an example of the JSON payload for uploading a document:
 
 A successful API call to the `/api/v1/documents` endpoint returns a JSON response containing the upload URL, document ID, and recipient information.
 
-The upload URL is a pre-signed S3 URL that you can use to upload the document to the Documenso (or your) S3 bucket. You need to make a `PUT` request to this URL to upload the document.
+The upload URL is a pre-signed S3 URL that you can use to upload the document to the Tofes-Mekovan (or your) S3 bucket. You need to make a `PUT` request to this URL to upload the document.
 
 ```json
 {
@@ -159,7 +159,7 @@ curl --location --request PUT 'https://<url>/<bucket-name>/<id>/my-document.pdf?
 --form '=@"/Users/my-user/Documents/documenso.pdf"'
 ```
 
-Once the document is successfully uploaded, you can access it in your Documenso account dashboard. The screenshot below shows the document that was uploaded via the API.
+Once the document is successfully uploaded, you can access it in your Tofes-Mekovan account dashboard. The screenshot below shows the document that was uploaded via the API.
 
 ![Uploaded Document](/api-reference/document-uploaded-to-documenso-via-api.webp)
 
@@ -167,7 +167,7 @@ Once the document is successfully uploaded, you can access it in your Documenso 
 
 ## Generate Document From Template
 
-Documenso allows you to generate documents from templates. This is useful when you have a standard document format you want to reuse.
+Tofes-Mekovan allows you to generate documents from templates. This is useful when you have a standard document format you want to reuse.
 
 The API endpoint for generating a document from a template is `/api/v1/templates/{templateId}/generate-document`, and it takes a JSON payload with the following fields:
 
@@ -209,7 +209,7 @@ The JSON payload is identical to the payload for uploading a document, so you ca
 
 ### Grab the Template ID
 
-The first step is to retrieve the template ID from the Documenso dashboard. You can find the template ID in the URL by navigating to the template details page.
+The first step is to retrieve the template ID from the Tofes-Mekovan dashboard. You can find the template ID in the URL by navigating to the template details page.
 
 ![Template ID](/api-reference/documenso-template-id.webp)
 
@@ -318,7 +318,7 @@ A successful response will contain the document ID and recipient(s) information.
 }
 ```
 
-You can now access the document in your Documenso account dashboard. The screenshot below shows the document that was generated from the template.
+You can now access the document in your Tofes-Mekovan account dashboard. The screenshot below shows the document that was generated from the template.
 
 ![Generated Document](/api-reference/document-generated-from-template.webp)
 
@@ -507,7 +507,7 @@ Now you can make a `POST` request to the `/api/v1/documents/{documentId}/fields`
 
 A successful request will return a JSON response with the newly added fields. The image below illustrates the fields added to the document via the API.
 
-![A screenshot of the document in the Documenso editor](/api-reference/fields-added-via-api.webp)
+![A screenshot of the document in the Tofes-Mekovan editor](/api-reference/fields-added-via-api.webp)
 
 </Steps>
 

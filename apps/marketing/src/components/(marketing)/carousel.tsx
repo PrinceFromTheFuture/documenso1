@@ -291,7 +291,7 @@ export const Carousel = () => {
         >
           <span className="text-background max-w-[60ch] text-2xl font-semibold">Book a Demo</span>
           <span className="text-background max-w-[60ch] text-center text-sm">
-            Want to learn more about Documenso and how it works? Book a demo today! Our founders
+            Want to learn more about Tofes-Mekovan and how it works? Book a demo today! Our founders
             will walk you through the application and answer any questions you may have regarding
             usage, integration, and more.
           </span>

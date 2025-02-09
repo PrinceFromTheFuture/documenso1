@@ -108,7 +108,7 @@ export const ShareConnectPaidWidgetBento = ({
                 <Trans>React Widget (Soon).</Trans>
               </strong>
               <Trans>
-                Easily embed Documenso into your product. Simply copy and paste our react widget
+                Easily embed Tofes-Mekovan into your product. Simply copy and paste our react widget
                 into your application.
               </Trans>
             </p>

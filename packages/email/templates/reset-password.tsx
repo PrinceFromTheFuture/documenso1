@@ -37,7 +37,7 @@ export const ResetPasswordTemplate = ({
               ) : (
                 <Img
                   src={getAssetUrl('/static/logo.png')}
-                  alt="Documenso Logo"
+                  alt="Tofes-Mekovan Logo"
                   className="mb-4 h-6"
                 />
               )}

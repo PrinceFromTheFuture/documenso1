@@ -1,542 +1,544 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: documenso-app\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-07-24 13:01+1000\n"
+"PO-Revision-Date: 2024-12-19 20:59+0200\n"
+"Last-Translator: \n"
+"Language-Team: Hebrew\n"
+"Language: he_IL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: @lingui/cli\n"
-"Language: pl\n"
-"Project-Id-Version: documenso-app\n"
-"Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2024-11-20 11:56\n"
-"Last-Translator: \n"
-"Language-Team: Polish\n"
-"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n==2 ? 1 : n>10 && n%10==0 ? 2 : 3);\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Crowdin-Project: documenso-app\n"
 "X-Crowdin-Project-ID: 694691\n"
-"X-Crowdin-Language: pl\n"
+"X-Crowdin-Language: de\n"
 "X-Crowdin-File: common.po\n"
 "X-Crowdin-File-ID: 4\n"
 
 #: packages/email/template-components/template-document-super-delete.tsx:27
 msgid "\"{documentName}\" has been deleted by an admin."
-msgstr "\"{documentName}\" został usunięty przez administratora."
+msgstr "\"{documentName}\" נמחק על ידי מנהל מערכת."
 
 #: packages/email/template-components/template-document-pending.tsx:37
 msgid "“{documentName}” has been signed"
-msgstr "„{documentName}” został podpisany"
+msgstr "\"{documentName}\" נחתם"
 
 #: packages/email/template-components/template-document-completed.tsx:41
 msgid "“{documentName}” was signed by all signers"
-msgstr "„{documentName}” został podpisany przez wszystkich sygnatariuszy"
+msgstr "\"{documentName}\" נחתם על ידי כל החותמים"
 
-#: packages/lib/server-only/document/resend-document.tsx:109
 #~ msgid "{0}"
 #~ msgstr "{0}"
 
-#: packages/email/template-components/template-document-invite.tsx:80
 #~ msgid "{0} Document"
 #~ msgstr "{0} Document"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:137
 msgid "{0} has invited you to {recipientActionVerb} the document \"{1}\"."
-msgstr "{0} zaprosił cię do {recipientActionVerb} dokument „{1}”."
+msgstr "{0} הזמין אותך {recipientActionVerb} למסמך \"{1}\"."
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:130
 msgid "{0} invited you to {recipientActionVerb} a document"
-msgstr "{0} zaprosił Cię do {recipientActionVerb} dokument"
+msgstr "{0} הזמין אותך {recipientActionVerb} למסמך"
 
 #: packages/email/templates/team-join.tsx:61
-msgid "{0} joined the team {teamName} on Documenso"
-msgstr "{0} dołączył do zespołu {teamName} na Documenso"
+msgid "{0} joined the team {teamName} on Tofes-Mekovan"
+msgstr "{0} הצטרף לצוות {teamName} ב-Tofes-Mekovan"
 
 #: packages/email/templates/team-leave.tsx:61
-msgid "{0} left the team {teamName} on Documenso"
-msgstr "{0} opuścił zespół {teamName} na Documenso"
+msgid "{0} left the team {teamName} on Tofes-Mekovan"
+msgstr "{0} עזב את הצוות {teamName} ב-Tofes-Mekovan"
 
 #: packages/ui/primitives/data-table-pagination.tsx:30
 msgid "{0} of {1} row(s) selected."
-msgstr "{0} z {1} wybranych wierszy."
+msgstr "נבחרו {0} מתוך {1} שורות."
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:136
 #: packages/lib/server-only/document/resend-document.tsx:137
-msgid "{0} on behalf of {1} has invited you to {recipientActionVerb} the document \"{2}\"."
-msgstr "{0} w imieniu {1} zaprosił Cię do {recipientActionVerb} dokument „{2}”."
+msgid "{0} on behalf of \"{1}\" has invited you to {recipientActionVerb} the document \"{2}\"."
+msgstr "{0} בשם \"{1}\" הזמין אותך {recipientActionVerb} למסמך \"{2}\"."
 
-#: packages/email/template-components/template-document-invite.tsx:51
+#~ msgid "{0} on behalf of {1} has invited you to {recipientActionVerb} the document \"{2}\"."
+#~ msgstr "{0} hat dich im Namen von {1} eingeladen, das Dokument \"{2}\" {recipientActionVerb}."
+
 #~ msgid "{0}<0/>\"{documentName}\""
 #~ msgstr "{0}<0/>\"{documentName}\""
 
-#: packages/email/templates/document-invite.tsx:94
+#: packages/email/templates/document-invite.tsx:95
 msgid "{inviterName} <0>({inviterEmail})</0>"
 msgstr "{inviterName} <0>({inviterEmail})</0>"
 
 #: packages/email/templates/document-cancel.tsx:21
 msgid "{inviterName} has cancelled the document {documentName}, you don't need to sign it anymore."
-msgstr "{inviterName} anulował dokument {documentName}, nie musisz go już podpisywać."
+msgstr "{inviterName} ביטל את המסמך {documentName}, אינך צריך לחתום עליו יותר."
 
 #: packages/email/template-components/template-document-cancel.tsx:24
 msgid "{inviterName} has cancelled the document<0/>\"{documentName}\""
-msgstr "{inviterName} anulował dokument<0/>\"{documentName}\""
+msgstr "{inviterName} ביטל את המסמך<0/>\"{documentName}\""
 
 #: packages/email/template-components/template-document-invite.tsx:75
 msgid "{inviterName} has invited you to {0}<0/>\"{documentName}\""
-msgstr "{inviterName} zaprosił Cię do {0}<0/>\"{documentName}\""
+msgstr "{inviterName} הזמין אותך ל-{0}<0/>\"{documentName}\""
 
 #: packages/email/templates/document-invite.tsx:41
 msgid "{inviterName} has invited you to {action} {documentName}"
-msgstr "{inviterName} zaprosił Cię do {action} {documentName}"
+msgstr "{inviterName} הזמין אותך ל-{action} {documentName}"
 
-#: packages/email/templates/document-invite.tsx:106
+#: packages/email/templates/document-invite.tsx:108
 msgid "{inviterName} has invited you to {action} the document \"{documentName}\"."
-msgstr "{inviterName} zaprosił cię do {action} dokument „{documentName}”."
+msgstr "{inviterName} הזמין אותך {action} למסמך \"{documentName}\"."
 
 #: packages/email/templates/recipient-removed-from-document.tsx:20
 msgid "{inviterName} has removed you from the document {documentName}."
-msgstr "{inviterName} usunął Cię z dokumentu {documentName}."
+msgstr "{inviterName} הסיר אותך מהמסמך {documentName}."
 
 #: packages/email/templates/recipient-removed-from-document.tsx:49
 msgid "{inviterName} has removed you from the document<0/>\"{documentName}\""
-msgstr "{inviterName} usunął cię z dokumentu<0/>„{documentName}”"
+msgstr "{inviterName} הסיר אותך מהמסמך<0/>\"{documentName}\""
 
 #: packages/email/template-components/template-document-invite.tsx:63
-msgid "{inviterName} on behalf of {teamName} has invited you to {0}"
-msgstr "{inviterName} w imieniu {teamName} zaprosił cię do {0}"
+msgid "{inviterName} on behalf of \"{teamName}\" has invited you to {0}"
+msgstr "{inviterName} מטעם \"{teamName}\" הזמין אותך ל-{0}"
 
-#: packages/email/template-components/template-document-invite.tsx:49
+#: packages/email/templates/document-invite.tsx:45
+msgid "{inviterName} on behalf of \"{teamName}\" has invited you to {action} {documentName}"
+msgstr "{inviterName} מטעם \"{teamName}\" הזמין אותך ל-{action} {documentName}"
+
+#~ msgid "{inviterName} on behalf of {teamName} has invited you to {0}"
+#~ msgstr "{inviterName} im Namen von {teamName} hat Sie eingeladen, {0}"
+
 #~ msgid "{inviterName} on behalf of {teamName} has invited you to {0}<0/>\"{documentName}\""
 #~ msgstr "{inviterName} on behalf of {teamName} has invited you to {0}<0/>\"{documentName}\""
 
-#: packages/email/templates/document-invite.tsx:45
-msgid "{inviterName} on behalf of {teamName} has invited you to {action} {documentName}"
-msgstr "{inviterName} w imieniu {teamName} zaprosił Cię do {action} {documentName}"
+#~ msgid "{inviterName} on behalf of {teamName} has invited you to {action} {documentName}"
+#~ msgstr "{inviterName} hat dich im Namen von {teamName} eingeladen, {action} {documentName}"
 
 #: packages/email/templates/team-join.tsx:67
 msgid "{memberEmail} joined the following team"
-msgstr "{memberEmail} dołączył do następującego zespołu"
+msgstr "{memberEmail} הצטרף לצוות הבא"
 
 #: packages/email/templates/team-leave.tsx:67
 msgid "{memberEmail} left the following team"
-msgstr "{memberEmail} opuścił następujący zespół"
+msgstr "{memberEmail} עזב את הצוות הבא"
 
 #: packages/lib/utils/document-audit-logs.ts:263
 msgid "{prefix} added a field"
-msgstr "{prefix} dodał pole"
+msgstr "{prefix} הוסיף שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:275
 msgid "{prefix} added a recipient"
-msgstr "{prefix} dodał odbiorcę"
+msgstr "{prefix} הוסיף נמען"
 
 #: packages/lib/utils/document-audit-logs.ts:287
 msgid "{prefix} created the document"
-msgstr "{prefix} utworzył dokument"
+msgstr "{prefix} יצר את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:291
 msgid "{prefix} deleted the document"
-msgstr "{prefix} usunął dokument"
+msgstr "{prefix} מחק את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:335
 msgid "{prefix} moved the document to team"
-msgstr "{prefix} przeniósł dokument do zespołu"
+msgstr "{prefix} העביר את המסמך לצוות"
 
 #: packages/lib/utils/document-audit-logs.ts:319
 msgid "{prefix} opened the document"
-msgstr "{prefix} otworzył dokument"
+msgstr "{prefix} פתח את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:267
 msgid "{prefix} removed a field"
-msgstr "{prefix} usunął pole"
+msgstr "{prefix} הסיר שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:279
 msgid "{prefix} removed a recipient"
-msgstr "{prefix} usunął odbiorcę"
+msgstr "{prefix} הסיר נמען"
 
 #: packages/lib/utils/document-audit-logs.ts:365
 msgid "{prefix} resent an email to {0}"
-msgstr "{prefix} ponownie wysłał e-mail do {0}"
+msgstr "{prefix} שלח שוב דוא\"ל אל {0}"
 
 #: packages/lib/utils/document-audit-logs.ts:366
 msgid "{prefix} sent an email to {0}"
-msgstr "{prefix} wysłał e-mail do {0}"
+msgstr "{prefix} שלח אימייל אל {0}"
 
 #: packages/lib/utils/document-audit-logs.ts:331
 msgid "{prefix} sent the document"
-msgstr "{prefix} wysłał dokument"
+msgstr "{prefix} שלח את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:295
 msgid "{prefix} signed a field"
-msgstr "{prefix} podpisał pole"
+msgstr "{prefix} חתם על שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:299
 msgid "{prefix} unsigned a field"
-msgstr "{prefix} niepodpisane pole"
+msgstr "{prefix} ביטל את החתימה על שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:271
 msgid "{prefix} updated a field"
-msgstr "{prefix} zaktualizowane pole"
+msgstr "{prefix} עדכן שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:283
 msgid "{prefix} updated a recipient"
-msgstr "{prefix} zaktualizowany odbiorca"
+msgstr "{prefix} עדכן נמען"
 
 #: packages/lib/utils/document-audit-logs.ts:315
 msgid "{prefix} updated the document"
-msgstr "{prefix} zaktualizowany dokument"
+msgstr "{prefix} עדכן את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:307
 msgid "{prefix} updated the document access auth requirements"
-msgstr "{prefix} zaktualizowane wymagania dotyczące autoryzacji dostępu do dokumentu"
+msgstr "{prefix} עדכן את דרישות אישור הגישה למסמכים"
 
 #: packages/lib/utils/document-audit-logs.ts:327
 msgid "{prefix} updated the document external ID"
-msgstr "{prefix} zaktualizowane ID zewnętrzne dokumentu"
+msgstr "{prefix} עדכן את המזהה החיצוני של המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:311
 msgid "{prefix} updated the document signing auth requirements"
-msgstr "{prefix} zaktualizowane wymagania dotyczące autoryzacji podpisu dokumentu"
+msgstr "{prefix} עדכן את דרישות האישור לחתימה על המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:323
 msgid "{prefix} updated the document title"
-msgstr "{prefix} zaktualizowany tytuł dokumentu"
+msgstr "{prefix} עדכן את כותרת המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:303
 msgid "{prefix} updated the document visibility"
-msgstr "{prefix} zaktualizowana widoczność dokumentu"
+msgstr "{prefix} עדכן את נראות המסמך"
 
 #: packages/email/templates/document-created-from-direct-template.tsx:61
 msgid "{recipientName} {action} a document by using one of your direct links"
-msgstr "{recipientName} {action} dokument, korzystając z jednego z Twoich bezpośrednich linków"
+msgstr "{recipientName} {action} מסמך באמצעות אחד מהקישורים הישירים שלך"
 
 #: packages/email/templates/document-rejected.tsx:27
 msgid "{recipientName} has rejected the document '{documentName}'"
-msgstr "{recipientName} odrzucił dokument '{documentName}'"
+msgstr "{recipientName} דחה את המסמך '{documentName}'"
 
 #: packages/email/template-components/template-document-rejected.tsx:25
 msgid "{signerName} has rejected the document \"{documentName}\"."
-msgstr "{signerName} odrzucił dokument \"{documentName}\"."
+msgstr "{signerName} דחה את המסמך \"{documentName}\"."
 
 #: packages/email/template-components/template-document-invite.tsx:68
 msgid "{teamName} has invited you to {0}"
-msgstr "{teamName} zaprosił cię do {0}"
+msgstr "{teamName} הזמין אותך ל-{0}"
 
 #: packages/email/templates/document-invite.tsx:46
 msgid "{teamName} has invited you to {action} {documentName}"
-msgstr "{teamName} zaprosił cię do {action} {documentName}"
+msgstr "{teamName} הזמין אותך ל-{action} {documentName}"
 
 #: packages/email/templates/team-transfer-request.tsx:55
 msgid "{teamName} ownership transfer request"
-msgstr "Prośba o przeniesienie własności zespołu {teamName}"
+msgstr "{teamName} בקשה להעברת בעלות"
 
 #: packages/lib/utils/document-audit-logs.ts:343
 msgid "{userName} approved the document"
-msgstr "{userName} zatwierdził dokument"
+msgstr "{userName} אישר את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:344
 msgid "{userName} CC'd the document"
-msgstr "{userName} dodał CC do dokumentu"
+msgstr "{userName} עצר את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:345
 msgid "{userName} completed their task"
-msgstr "{userName} zakończył swoje zadanie"
+msgstr "{userName} השלימו את המשימה שלו"
 
 #: packages/lib/utils/document-audit-logs.ts:355
 msgid "{userName} rejected the document"
-msgstr "{userName} odrzucił dokument"
+msgstr "{userName} דחה את המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:341
 msgid "{userName} signed the document"
-msgstr "{userName} podpisał dokument"
+msgstr "{userName} חתם על המסמך"
 
 #: packages/lib/utils/document-audit-logs.ts:342
 msgid "{userName} viewed the document"
-msgstr "{userName} wyświetlił dokument"
+msgstr "{userName} צפה במסמך"
 
 #: packages/ui/primitives/data-table-pagination.tsx:41
 msgid "{visibleRows, plural, one {Showing # result.} other {Showing # results.}}"
-msgstr "{visibleRows, plural, one {Wyświetlanie # wyniku.} other {Wyświetlanie # wyników.}}"
+msgstr "{visibleRows, plural, one {Showing # result.} other {Showing # results.}}"
 
-#: packages/email/templates/document-invite.tsx:100
 #~ msgid "`${inviterName} has invited you to ${action} the document \"${documentName}\".`"
 #~ msgstr "`${inviterName} has invited you to ${action} the document \"${documentName}\".`"
 
 #: packages/email/templates/team-transfer-request.tsx:59
 msgid "<0>{senderName}</0> has requested that you take ownership of the following team"
-msgstr "<0>{senderName}</0> poprosił, abyś przejął własność następującego zespołu"
+msgstr "<0>{senderName}</0> ביקש ממך לקחת בעלות על הצוות הבא"
 
 #: packages/email/templates/confirm-team-email.tsx:75
-msgid "<0>{teamName}</0> has requested to use your email address for their team on Documenso."
-msgstr "<0>{teamName}</0> poprosił o używanie twojego adresu e-mail dla swojego zespołu w Documenso."
+msgid "<0>{teamName}</0> has requested to use your email address for their team on Tofes-Mekovan."
+msgstr "<0>{teamName}</0> ביקש להשתמש בכתובת האימייל שלך עבור הצוות שלהם ב-Tofes-Mekovan."
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:241
 msgid "<0>Email</0> - The recipient will be emailed the document to sign, approve, etc."
-msgstr "<0>E-mail</0> - Odbiorca otrzyma e-mail z dokumentem do podpisania, zatwierdzenia itp."
+msgstr "<0>אימייל</0> - הנמען יישלח בדוא\"ל את המסמך לחתום, לאשר וכו'."
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:53
 msgid "<0>Inherit authentication method</0> - Use the global action signing authentication method configured in the \"General Settings\" step"
-msgstr "<0>Przechwyć metodę uwierzytelniania</0> - Użyj globalnej metody uwierzytelniania podpisywania akcji skonfigurowanej w kroku \"Ustawienia ogólne\""
+msgstr "<0>ירשו את שיטת האימות</0> - השתמש בשיטת האימות הגלובלית של חתימת פעולה שהוגדרה בשלב \"הגדרות כלליות\"."
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:247
 msgid "<0>Links</0> - We will generate links which you can send to the recipients manually."
-msgstr "<0>Linki</0> - Wygenerujemy linki, które możesz wysłać do odbiorców ręcznie."
+msgstr "<0>קישורים</0> - אנו ניצור קישורים אותם תוכל לשלוח לנמענים באופן ידני."
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx:95
 msgid "<0>No restrictions</0> - No authentication required"
-msgstr "<0>Brak ograniczeń</0> - Uwierzytelnianie nie jest wymagane"
+msgstr "<0>אין הגבלות</0> - אין צורך באימות"
 
 #: packages/ui/components/document/document-global-auth-access-select.tsx:77
 msgid "<0>No restrictions</0> - The document can be accessed directly by the URL sent to the recipient"
-msgstr "<0>Brak ograniczeń</0> - Dokument można bezpośrednio otworzyć za pomocą URL przesłanego do odbiorcy"
+msgstr "<0>אין הגבלות</0> - ניתן לגשת ישירות למסמך באמצעות כתובת האתר שנשלחה לנמען"
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:75
 msgid "<0>None</0> - No authentication required"
-msgstr "<0>Brak</0> - Uwierzytelnianie nie jest wymagane"
+msgstr "<0>אין</0> - אין צורך באימות"
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:254
 msgid "<0>Note</0> - If you use Links in combination with direct templates, you will need to manually send the links to the remaining recipients."
-msgstr "<0>Uwaga</0> - Jeśli używasz linków w połączeniu z bezpośrednimi szablonami, musisz ręcznie wysłać linki do pozostałych odbiorców."
+msgstr "<0>הערה</0> - אם אתה משתמש בקישורים בשילוב עם תבניות ישירות, תצטרך לשלוח ידנית את הקישורים לנמענים הנותרים."
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx:89
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:69
 msgid "<0>Require 2FA</0> - The recipient must have an account and 2FA enabled via their settings"
-msgstr "<0>Wymagana 2FA</0> - Odbiorca musi mieć konto i włączoną 2FA w swoich ustawieniach"
+msgstr "<0>דרוש 2FA</0> - על הנמען להיות בעל חשבון ו-2FA מופעלים דרך ההגדרות שלו"
 
 #: packages/ui/components/document/document-global-auth-access-select.tsx:72
 msgid "<0>Require account</0> - The recipient must be signed in to view the document"
-msgstr "<0>Wymagana konto</0> - Odbiorca musi być zalogowany, aby wyświetlić dokument"
+msgstr "<0>דרוש חשבון</0> - על הנמען להיות מחובר כדי לצפות במסמך"
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx:83
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:63
 msgid "<0>Require passkey</0> - The recipient must have an account and passkey configured via their settings"
-msgstr "<0>Wymagana passkey</0> - Odbiorca musi mieć konto i skonfigurowaną passkey w swoich ustawieniach"
+msgstr "<0>דרוש מפתח סיסמה</0> - על הנמען להיות בעל חשבון ומפתח סיסמה המוגדרים באמצעות ההגדרות שלו"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:122
 msgid "A document was created by your direct template that requires you to {recipientActionVerb} it."
-msgstr "Dokument został utworzony przez Twój bezpośredni szablon, który wymaga, abyś go {recipientActionVerb}."
+msgstr "מסמך נוצר על ידי התבנית הישירה שלך שמחייב אותך {recipientActionVerb} אותו."
 
 #: packages/lib/utils/document-audit-logs.ts:262
 msgid "A field was added"
-msgstr "Dodano pole"
+msgstr "נוסף שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:266
 msgid "A field was removed"
-msgstr "Usunięto pole"
+msgstr "הוסר שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:270
 msgid "A field was updated"
-msgstr "Zaktualizowano pole"
+msgstr "שדה עודכן"
 
 #: packages/lib/jobs/definitions/emails/send-team-member-joined-email.ts:107
 msgid "A new member has joined your team"
-msgstr "Nowy członek dołączył do Twojego zespołu"
+msgstr "חבר חדש הצטרף לצוות שלך"
 
 #: packages/lib/utils/document-audit-logs.ts:274
 msgid "A recipient was added"
-msgstr "Dodano odbiorcę"
+msgstr "נמען נוסף"
 
 #: packages/lib/utils/document-audit-logs.ts:278
 msgid "A recipient was removed"
-msgstr "Usunięto odbiorcę"
+msgstr "נמען הוסר"
 
 #: packages/lib/utils/document-audit-logs.ts:282
 msgid "A recipient was updated"
-msgstr "Zaktualizowano odbiorcę"
+msgstr "נמען עודכן"
 
-#: packages/lib/server-only/team/create-team-email-verification.ts:156
-msgid "A request to use your email has been initiated by {0} on Documenso"
-msgstr "Zgłoszenie potrzeby użycia twojego e-maila zostało inicjowane przez {0} na Documenso"
+#: packages/lib/server-only/team/create-team-email-verification.ts:159
+msgid "A request to use your email has been initiated by {0} on Tofes-Mekovan"
+msgstr "בקשה להשתמש בדוא\"ל שלך יזמה על ידי {0} ב-Tofes-Mekovan"
 
-#: packages/lib/server-only/team/create-team-email-verification.ts:142
-#~ msgid "A request to use your email has been initiated by {teamName} on Documenso"
-#~ msgstr "A request to use your email has been initiated by {teamName} on Documenso"
+#~ msgid "A request to use your email has been initiated by {teamName} on Tofes-Mekovan"
+#~ msgstr "A request to use your email has been initiated by {teamName} on Tofes-Mekovan"
 
 #: packages/email/templates/team-join.tsx:31
-msgid "A team member has joined a team on Documenso"
-msgstr "Członek zespołu dołączył do zespołu na Documenso"
+msgid "A team member has joined a team on Tofes-Mekovan"
+msgstr "חבר צוות הצטרף לצוות ב-Tofes-Mekovan"
 
 #: packages/lib/jobs/definitions/emails/send-team-member-left-email.ts:96
 msgid "A team member has left {0}"
-msgstr "Członek zespołu opuścił {0}"
+msgstr "חבר צוות עזב את {0}"
 
 #: packages/email/templates/team-leave.tsx:31
-msgid "A team member has left a team on Documenso"
-msgstr "Członek zespołu opuścił zespół na Documenso"
+msgid "A team member has left a team on Tofes-Mekovan"
+msgstr "חבר צוות עזב צוות ב-Tofes-Mekovan"
 
 #: packages/email/templates/team-delete.tsx:29
 #: packages/email/templates/team-delete.tsx:33
 msgid "A team you were a part of has been deleted"
-msgstr "Zespół, którego częścią byłeś, został usunięty"
+msgstr "צוות שהיית חלק ממנו נמחק"
 
 #: packages/email/templates/confirm-team-email.tsx:118
 #: packages/email/templates/team-invite.tsx:94
 #: packages/email/templates/team-transfer-request.tsx:81
 msgid "Accept"
-msgstr "Akceptuj"
+msgstr "קבל"
 
 #: packages/email/templates/team-invite.tsx:42
-msgid "Accept invitation to join a team on Documenso"
-msgstr "Akceptuj zaproszenie do dołączenia do zespołu na Documenso"
+msgid "Accept invitation to join a team on Tofes-Mekovan"
+msgstr "קבל הזמנה להצטרף לצוות ב-Tofes-Mekovan"
 
 #: packages/email/templates/confirm-team-email.tsx:41
-msgid "Accept team email request for {teamName} on Documenso"
-msgstr "Akceptuj prośbę o email zespołowy dla {teamName} na Documenso"
+msgid "Accept team email request for {teamName} on Tofes-Mekovan"
+msgstr "קבל את בקשת הדוא\"ל של הצוות עבור {teamName} ב-Tofes-Mekovan"
 
 #: packages/email/templates/team-transfer-request.tsx:29
-msgid "Accept team transfer request on Documenso"
-msgstr "Akceptuj prośbę o przeniesienie zespołu na Documenso"
+msgid "Accept team transfer request on Tofes-Mekovan"
+msgstr "קבל בקשת העברת צוות ב-Tofes-Mekovan"
 
 #: packages/ui/primitives/document-dropzone.tsx:69
 msgid "Add a document"
-msgstr "Dodaj dokument"
+msgstr "הוסף מסמך"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:378
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:468
 msgid "Add a URL to redirect the user to once the document is signed"
-msgstr "Dodaj URL, aby przekierować użytkownika po podpisaniu dokumentu"
+msgstr "הוסף כתובת אתר להפניה מחדש של המשתמש לאחר החתימה על המסמך"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:290
 msgid "Add an external ID to the document. This can be used to identify the document in external systems."
-msgstr "Dodaj zewnętrzny ID do dokumentu. Może być używany do identyfikacji dokumentu w zewnętrznych systemach."
+msgstr "הוסף מזהה חיצוני למסמך. זה יכול לשמש לזיהוי המסמך במערכות חיצוניות."
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:385
 msgid "Add an external ID to the template. This can be used to identify in external systems."
-msgstr "Dodaj zewnętrzny ID do szablonu. Może być używany do identyfikacji w systemach zewnętrznych."
+msgstr "הוסף מזהה חיצוני לתבנית. זה יכול לשמש לזיהוי במערכות חיצוניות."
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx:187
 msgid "Add another option"
-msgstr "Dodaj kolejną opcję"
+msgstr "הוסף אפשרות נוספת"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:232
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/radio-field.tsx:167
 msgid "Add another value"
-msgstr "Dodaj kolejną wartość"
+msgstr "הוסף ערך נוסף"
 
 #: packages/ui/primitives/document-flow/add-signers.tsx:691
 msgid "Add myself"
-msgstr "Dodaj siebie"
+msgstr "להוסיף את עצמי"
 
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:645
 msgid "Add Myself"
-msgstr "Dodaj siebie"
+msgstr "הוסף את עצמי"
 
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:631
 msgid "Add Placeholder Recipient"
-msgstr "Dodaj odbiorcę zastępczego"
+msgstr "הוסף נמען מציין מיקום"
 
 #: packages/ui/primitives/document-flow/add-signers.tsx:680
 msgid "Add Signer"
-msgstr "Dodaj sygnatariusza"
+msgstr "הוסף חותם"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:73
 msgid "Add text"
-msgstr "Dodaj tekst"
+msgstr "הוספת טקסט"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:78
 msgid "Add text to the field"
-msgstr "Dodaj tekst do pola"
+msgstr "הוסף טקסט לשדה"
 
 #: packages/lib/constants/teams.ts:10
 msgid "Admin"
-msgstr "Administrator"
+msgstr "מנהל"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:272
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:367
 msgid "Advanced Options"
-msgstr "Opcje zaawansowane"
+msgstr "אפשרויות מתקדמות"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:576
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:409
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:414
 msgid "Advanced settings"
-msgstr "Ustawienia zaawansowane"
+msgstr "הגדרות מתקדמות"
 
 #: packages/lib/constants/template.ts:21
 msgid "After submission, a document will be automatically generated and added to your documents page. You will also receive a notification via email."
-msgstr "Po przesłaniu dokumentu zostanie automatycznie wygenerowany i dodany do Twojej strony dokumentów. Otrzymasz również powiadomienie pocztą elektroniczną."
+msgstr "לאחר ההגשה, מסמך ייווצר באופן אוטומטי ויתווסף לדף המסמכים שלך. כמו כן, תקבל הודעה באימייל."
 
 #: packages/email/template-components/template-document-cancel.tsx:31
 msgid "All signatures have been voided."
-msgstr "Wszystkie podpisy zostały unieważnione."
+msgstr "כל החתימות בוטלו."
 
 #: packages/email/templates/confirm-team-email.tsx:98
 msgid "Allow document recipients to reply directly to this email address"
-msgstr "Zezwól odbiorcom dokumentów na bezpośrednią odpowiedź na ten adres e-mail"
+msgstr "אפשר לנמעני מסמכים להשיב ישירות לכתובת דוא\"ל זו"
 
 #: packages/email/templates/document-super-delete.tsx:22
 msgid "An admin has deleted your document \"{documentName}\"."
-msgstr "Administrator usunął Twój dokument \"{documentName}\"."
+msgstr "מנהל מערכת מחק את המסמך שלך \"{documentName}\"."
 
 #: packages/ui/primitives/pdf-viewer.tsx:167
 msgid "An error occurred while loading the document."
-msgstr "Wystąpił błąd podczas ładowania dokumentu."
+msgstr "אירעה שגיאה בעת טעינת המסמך."
 
 #: packages/lib/constants/recipient-roles.ts:8
 msgid "Approve"
-msgstr "Zatwierdź"
+msgstr "אשר"
 
 #: packages/email/template-components/template-document-invite.tsx:106
 msgid "Approve Document"
-msgstr "Zatwierdź dokument"
+msgstr "אישור מסמך"
 
-#: packages/lib/constants/recipient-roles.ts:68
 #~ msgid "APPROVE_REQUEST"
 #~ msgstr "APPROVE_REQUEST"
 
 #: packages/lib/constants/recipient-roles.ts:9
 msgid "Approved"
-msgstr "Zatwierdzono"
+msgstr "אושר"
 
 #: packages/lib/constants/recipient-roles.ts:11
 msgid "Approver"
-msgstr "Zatwierdzający"
+msgstr "מאשר"
 
 #: packages/lib/constants/recipient-roles.ts:12
 msgid "Approvers"
-msgstr "Zatwierdzający"
+msgstr "מאשרים"
 
 #: packages/lib/constants/recipient-roles.ts:10
 msgid "Approving"
-msgstr "Zatwierdzanie"
+msgstr "מאשר"
 
 #: packages/email/template-components/template-confirmation-email.tsx:25
 msgid "Before you get started, please confirm your email address by clicking the button below:"
-msgstr "Zanim zaczniesz, proszę potwierdź swój adres e-mail, klikając przycisk poniżej:"
+msgstr "לפני שתתחיל, אנא אשר את כתובת הדוא\"ל שלך על ידי לחיצה על הכפתור למטה:"
 
-#: packages/ui/primitives/signature-pad/signature-pad.tsx:377
+#: packages/ui/primitives/signature-pad/signature-pad.tsx:494
 msgid "Black"
-msgstr "Czarny"
+msgstr "שָׁחוֹר"
 
-#: packages/ui/primitives/signature-pad/signature-pad.tsx:391
+#: packages/ui/primitives/signature-pad/signature-pad.tsx:508
 msgid "Blue"
-msgstr "Niebieski"
+msgstr "כחול"
 
 #: packages/email/templates/team-invite.tsx:84
 msgid "by <0>{senderName}</0>"
-msgstr "przez <0>{senderName}</0>"
+msgstr "מאת <0>{senderName}</0>"
 
 #: packages/email/templates/confirm-team-email.tsx:87
 msgid "By accepting this request, you will be granting <0>{teamName}</0> access to:"
-msgstr "Akceptując tę prośbę, przyznasz <0>{teamName}</0> dostęp do:"
+msgstr "על ידי קבלת בקשה זו, אתה תעניק את <0>{teamName}</0> גישה אל:"
 
 #: packages/email/templates/team-transfer-request.tsx:70
 msgid "By accepting this request, you will take responsibility for any billing items associated with this team."
-msgstr "Akceptując tę prośbę, przejmiesz odpowiedzialność za wszelkie pozycje dotyczące rozliczeń związane z tym zespołem."
+msgstr "על ידי קבלת בקשה זו, תקבל אחריות על כל פריטי החיוב המשויכים לצוות זה."
 
 #: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:356
 #: packages/ui/primitives/document-flow/send-document-action-dialog.tsx:58
 msgid "Cancel"
-msgstr "Anuluj"
+msgstr "ביטול"
 
 #: packages/ui/primitives/document-flow/add-signers.tsx:193
 msgid "Cannot remove signer"
-msgstr "Nie można usunąć sygnatariusza"
+msgstr "לא ניתן להסיר את החותם"
 
 #: packages/lib/constants/recipient-roles.ts:18
 msgid "Cc"
-msgstr "Cc"
+msgstr "העתק"
 
 #: packages/lib/constants/recipient-roles.ts:15
 #: packages/lib/constants/recipient-roles.ts:17
 msgid "CC"
-msgstr "CC"
+msgstr "העתק"
 
 #: packages/lib/constants/recipient-roles.ts:16
 msgid "CC'd"
@@ -544,262 +546,261 @@ msgstr "CC'd"
 
 #: packages/lib/constants/recipient-roles.ts:19
 msgid "Ccers"
-msgstr "Kserokopie"
+msgstr "Ccers"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:86
 msgid "Character Limit"
-msgstr "Limit znaków"
+msgstr "מגבלת תווים"
 
 #: packages/ui/primitives/document-flow/types.ts:58
 msgid "Checkbox"
-msgstr "Checkbox"
+msgstr "תיבת סימון"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:197
 msgid "Checkbox values"
-msgstr "Wartości checkboxa"
+msgstr "ערכי תיבת סימון"
 
 #: packages/ui/primitives/data-table.tsx:156
 msgid "Clear filters"
-msgstr "Wyczyść filtry"
+msgstr "ניקוי מסננים"
 
-#: packages/ui/primitives/signature-pad/signature-pad.tsx:411
+#: packages/ui/primitives/signature-pad/signature-pad.tsx:528
 msgid "Clear Signature"
-msgstr "Wyczyść podpis"
+msgstr "ניקוי חתימה"
 
 #: packages/ui/primitives/document-flow/add-signature.tsx:394
 msgid "Click to insert field"
-msgstr "Kliknij, aby wstawić pole"
+msgstr "לחץ כדי להוסיף שדה"
 
 #: packages/ui/primitives/document-flow/missing-signature-field-dialog.tsx:44
 msgid "Close"
-msgstr "Zamknij"
+msgstr "סגור"
 
 #: packages/email/template-components/template-document-completed.tsx:35
 #: packages/email/template-components/template-document-self-signed.tsx:36
 #: packages/lib/constants/document.ts:10
 msgid "Completed"
-msgstr "Zakończone"
+msgstr "הושלם"
 
 #: packages/email/templates/document-completed.tsx:23
 #: packages/email/templates/document-self-signed.tsx:19
 msgid "Completed Document"
-msgstr "Dokument zakończony"
+msgstr "מסמך הושלם"
 
 #: packages/lib/constants/template.ts:12
 msgid "Configure Direct Recipient"
-msgstr "Skonfiguruj bezpośredniego odbiorcę"
+msgstr "הגדר נמען ישיר"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:577
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:410
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:415
 msgid "Configure the {0} field"
-msgstr "Skonfiguruj pole {0}"
+msgstr "הגדר את השדה {0}"
 
 #: packages/email/template-components/template-confirmation-email.tsx:35
 msgid "Confirm email"
-msgstr "Potwierdź e-mail"
+msgstr "אשר את האימייל"
 
 #: packages/ui/primitives/document-flow/document-flow-root.tsx:141
 msgid "Continue"
-msgstr "Kontynuuj"
+msgstr "המשך"
 
-#: packages/email/template-components/template-document-invite.tsx:72
 #~ msgid "Continue by {0} the document."
 #~ msgstr "Continue by {0} the document."
 
 #: packages/email/template-components/template-document-invite.tsx:86
 msgid "Continue by approving the document."
-msgstr "Kontynuuj, zatwierdzając dokument."
+msgstr "המשך באישור המסמך."
 
 #: packages/email/template-components/template-document-completed.tsx:45
 msgid "Continue by downloading the document."
-msgstr "Kontynuuj, pobierając dokument."
+msgstr "המשך בהורדת המסמך."
 
 #: packages/email/template-components/template-document-invite.tsx:84
 msgid "Continue by signing the document."
-msgstr "Kontynuuj, podpisując dokument."
+msgstr "המשך בחתימה על המסמך."
 
 #: packages/email/template-components/template-document-invite.tsx:85
 msgid "Continue by viewing the document."
-msgstr "Kontynuuj, wyświetlając dokument."
+msgstr "המשך על ידי צפייה במסמך."
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:254
 msgid "Copied"
-msgstr "Skopiowane"
+msgstr "הועתק"
 
 #: packages/ui/components/document/document-share-button.tsx:46
 #: packages/ui/primitives/document-flow/add-subject.tsx:241
 msgid "Copied to clipboard"
-msgstr "Skopiowano do schowka"
+msgstr "הועתק ללוח"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:249
 msgid "Copy"
-msgstr "Kopiuj"
+msgstr "העתק"
 
 #: packages/ui/components/document/document-share-button.tsx:194
 msgid "Copy Link"
-msgstr "Skopiuj link"
+msgstr "העתיקי קישור"
 
 #: packages/email/template-components/template-document-self-signed.tsx:46
 msgid "Create a <0>free account</0> to access your signed documents at any time."
-msgstr "Utwórz <0>darmowe konto</0>, aby uzyskać dostęp do podpisanych dokumentów w dowolnym momencie."
+msgstr "צור חשבון <0>חינם</0> לגשת למסמכים החתומים שלך בכל עת."
 
 #: packages/email/template-components/template-document-self-signed.tsx:68
 msgid "Create account"
-msgstr "Utwórz konto"
+msgstr "צור חשבון"
 
 #: packages/ui/primitives/document-flow/add-signature.tsx:360
 msgid "Custom Text"
-msgstr "Tekst niestandardowy"
+msgstr "טקסט מותאם אישית"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:934
 #: packages/ui/primitives/document-flow/types.ts:53
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:697
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:729
 msgid "Date"
-msgstr "Data"
+msgstr "תאריך"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:313
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:408
 msgid "Date Format"
-msgstr "Format daty"
+msgstr "פורמט תאריך"
 
 #: packages/email/templates/team-invite.tsx:100
 msgid "Decline"
-msgstr "Odmów"
+msgstr "דחה"
 
 #: packages/email/templates/reset-password.tsx:71
 msgid "Didn't request a password change? We are here to help you secure your account, just <0>contact us.</0>"
-msgstr "Nie prosiłeś o zmianę hasła? Jesteśmy tutaj, aby pomóc Ci zabezpieczyć swoje konto, po prostu <0>skontaktuj się z nami.</0>"
+msgstr "לא ביקשת שינוי סיסמה? אנחנו כאן כדי לעזור לך לאבטח את חשבונך, פשוט <0>צור איתנו קשר.</0>"
 
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:578
 msgid "Direct link receiver"
-msgstr "Odbiorca linku bezpośredniego"
+msgstr "מקלט קישור ישיר"
 
 #: packages/lib/jobs/definitions/emails/send-rejection-emails.ts:149
 msgid "Document \"{0}\" - Rejected by {1}"
-msgstr "Dokument \"{0}\" - Odrzucony przez {1}"
+msgstr "מסמך \"{0}\" - נדחה על ידי {1}"
 
 #: packages/lib/jobs/definitions/emails/send-rejection-emails.ts:109
 msgid "Document \"{0}\" - Rejection Confirmed"
-msgstr "Dokument \"{0}\" - Odrzucenie potwierdzone"
+msgstr "מסמך \"{0}\" - הדחייה אושרה"
 
 #: packages/ui/components/document/document-global-auth-access-select.tsx:62
 #: packages/ui/primitives/document-flow/add-settings.tsx:216
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:202
 msgid "Document access"
-msgstr "Dostęp do dokumentu"
+msgstr "גישה למסמכים"
 
 #: packages/lib/utils/document-audit-logs.ts:306
 msgid "Document access auth updated"
-msgstr "Zaktualizowano autoryzację dostępu do dokumentu"
+msgstr "אישור הגישה למסמכים עודכן"
 
 #: packages/lib/server-only/document/delete-document.ts:246
 #: packages/lib/server-only/document/super-delete-document.ts:98
 msgid "Document Cancelled"
-msgstr "Dokument anulowany"
+msgstr "המסמך בוטל"
 
 #: packages/lib/utils/document-audit-logs.ts:369
 #: packages/lib/utils/document-audit-logs.ts:370
 msgid "Document completed"
-msgstr "Dokument ukończony"
+msgstr "המסמך הושלם"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:168
 msgid "Document completed email"
-msgstr "E-mail ukończonego dokumentu"
+msgstr "הושלם מסמך באימייל"
 
 #: packages/lib/utils/document-audit-logs.ts:286
 msgid "Document created"
-msgstr "Dokument utworzony"
+msgstr "המסמך נוצר"
 
 #: packages/email/templates/document-created-from-direct-template.tsx:32
-#: packages/lib/server-only/template/create-document-from-direct-template.ts:567
+#: packages/lib/server-only/template/create-document-from-direct-template.ts:574
 msgid "Document created from direct template"
-msgstr "Dokument utworzony z bezpośredniego szablonu"
+msgstr "מסמך נוצר מתבנית ישירה"
 
 #: packages/lib/constants/template.ts:20
 msgid "Document Creation"
-msgstr "Tworzenie dokumentu"
+msgstr "יצירת מסמכים"
 
 #: packages/lib/utils/document-audit-logs.ts:290
 msgid "Document deleted"
-msgstr "Dokument usunięty"
+msgstr "המסמך נמחק"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:207
 msgid "Document deleted email"
-msgstr "E-mail usuniętego dokumentu"
+msgstr "דואר אלקטרוני שנמחק"
 
 #: packages/lib/server-only/document/send-delete-email.ts:82
 msgid "Document Deleted!"
-msgstr "Dokument usunięty!"
+msgstr "המסמך נמחק!"
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:219
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:228
 msgid "Document Distribution Method"
-msgstr "Metoda dystrybucji dokumentu"
+msgstr "שיטת הפצת מסמכים"
 
 #: packages/lib/utils/document-audit-logs.ts:326
 msgid "Document external ID updated"
-msgstr "Zaktualizowane ID zewnętrzne dokumentu"
+msgstr "מסמך מזהה חיצוני עודכן"
 
 #: packages/lib/utils/document-audit-logs.ts:334
 msgid "Document moved to team"
-msgstr "Dokument przeniesiony do zespołu"
+msgstr "המסמך הועבר לצוות"
 
 #: packages/lib/utils/document-audit-logs.ts:318
 msgid "Document opened"
-msgstr "Dokument otwarty"
+msgstr "המסמך נפתח"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:128
 msgid "Document pending email"
-msgstr "E-mail oczekującego dokumentu"
+msgstr "מסמך בהמתנה לאימייל"
 
 #: packages/email/template-components/template-document-rejected.tsx:21
 msgid "Document Rejected"
-msgstr "Dokument odrzucone"
+msgstr "המסמך נדחה"
 
 #~ msgid "Document Rejection Confirmed"
 #~ msgstr "Document Rejection Confirmed"
 
 #: packages/lib/utils/document-audit-logs.ts:330
 msgid "Document sent"
-msgstr "Dokument wysłany"
+msgstr "המסמך נשלח"
 
 #: packages/lib/utils/document-audit-logs.ts:310
 msgid "Document signing auth updated"
-msgstr "Zaktualizowano autoryzację podpisu dokumentu"
+msgstr "אישור חתימת מסמכים עודכן"
 
 #: packages/lib/utils/document-audit-logs.ts:322
 msgid "Document title updated"
-msgstr "Zaktualizowano tytuł dokumentu"
+msgstr "כותרת המסמך עודכנה"
 
 #: packages/lib/utils/document-audit-logs.ts:314
 msgid "Document updated"
-msgstr "Zaktualizowano dokument"
+msgstr "המסמך עודכן"
 
 #: packages/lib/utils/document-audit-logs.ts:302
 msgid "Document visibility updated"
-msgstr "Zaktualizowano widoczność dokumentu"
+msgstr "נראות המסמך עודכנה"
 
 #: packages/email/template-components/template-document-completed.tsx:57
 #: packages/ui/components/document/document-download-button.tsx:68
 msgid "Download"
-msgstr "Pobierz"
+msgstr "הורדה"
 
 #: packages/lib/constants/document.ts:13
 msgid "Draft"
-msgstr "Robocza wersja"
+msgstr "טיוטה"
 
 #: packages/ui/primitives/document-dropzone.tsx:162
 msgid "Drag & drop your PDF here."
-msgstr "Przeciągnij i upuść swój PDF tutaj."
+msgstr "גרור ושחרר את ה-PDF שלך כאן."
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:1065
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:827
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:860
 msgid "Dropdown"
-msgstr "Lista rozwijana"
+msgstr "רשימה נפתחת"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx:158
 msgid "Dropdown options"
-msgstr "Opcje rozwijane"
+msgstr "אפשרויות תפריט נפתח"
 
 #: packages/lib/constants/document.ts:28
 #: packages/ui/primitives/document-flow/add-fields.tsx:882
@@ -807,66 +808,67 @@ msgstr "Opcje rozwijane"
 #: packages/ui/primitives/document-flow/add-signers.tsx:512
 #: packages/ui/primitives/document-flow/add-signers.tsx:519
 #: packages/ui/primitives/document-flow/types.ts:54
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:645
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:677
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:471
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:478
 msgid "Email"
-msgstr "Email"
+msgstr "אימייל"
 
 #: packages/ui/primitives/document-flow/add-signature.types.ts:7
 msgid "Email is required"
-msgstr "Email jest wymagany"
+msgstr "דוא\"ל (חובה)"
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:307
 msgid "Email Options"
-msgstr "Opcje e-mail"
+msgstr "אפשרויות אימייל"
 
 #: packages/lib/utils/document-audit-logs.ts:363
 msgid "Email resent"
-msgstr "E-mail wysłany ponownie"
+msgstr "האימייל נשלח שוב"
 
 #: packages/lib/utils/document-audit-logs.ts:363
 msgid "Email sent"
-msgstr "E-mail wysłany"
+msgstr "האימייל נשלח"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:1130
 msgid "Empty field"
-msgstr "Puste pole"
+msgstr "שדה ריק"
 
 #: packages/lib/constants/template.ts:8
 msgid "Enable Direct Link Signing"
-msgstr "Włącz podpisywanie linku bezpośredniego"
+msgstr "אפשר חתימה ישירה על קישור"
 
 #: packages/ui/primitives/document-flow/add-signers.tsx:401
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:370
 msgid "Enable signing order"
-msgstr "Włącz kolejność podpisów"
+msgstr "אפשר הזמנת חתימה"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:802
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:597
 msgid "Enable Typed Signatures"
-msgstr "Włącz podpisy typu pisanego"
+msgstr "אפשר חתימות מוקלדות"
 
 #: packages/ui/primitives/document-password-dialog.tsx:84
 msgid "Enter password"
-msgstr "Wprowadź hasło"
+msgstr "הכנס סיסמה"
 
 #: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:257
 #: packages/ui/primitives/pdf-viewer.tsx:166
 msgid "Error"
-msgstr "Błąd"
+msgstr "שגיאה"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:283
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:378
 msgid "External ID"
-msgstr "Zewnętrzny ID"
+msgstr "תעודה מזהה חיצונית"
 
 #: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:258
 msgid "Failed to save settings."
-msgstr "Nie udało się zapisać ustawień."
+msgstr "שמירת ההגדרות נכשלה."
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:93
 msgid "Field character limit"
-msgstr "Limit znaków pola"
+msgstr "מגבלת תווים בשדה"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/date-field.tsx:62
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/email-field.tsx:44
@@ -875,27 +877,27 @@ msgstr "Limit znaków pola"
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:130
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:107
 msgid "Field font size"
-msgstr "Rozmiar czcionki pola"
+msgstr "גודל גופן שדה"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:110
 msgid "Field format"
-msgstr "Format pola"
+msgstr "תבנית שדה"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:53
 msgid "Field label"
-msgstr "Etykieta pola"
+msgstr "שם שדה"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:65
 msgid "Field placeholder"
-msgstr "Zastępczy tekst pola"
+msgstr "מציין מיקום של שדה"
 
 #: packages/lib/utils/document-audit-logs.ts:294
 msgid "Field signed"
-msgstr "Pole podpisane"
+msgstr "שדה חתום"
 
 #: packages/lib/utils/document-audit-logs.ts:298
 msgid "Field unsigned"
-msgstr "Pole niepodpisane"
+msgstr "שדה לא חתום"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/date-field.tsx:56
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/email-field.tsx:38
@@ -904,284 +906,283 @@ msgstr "Pole niepodpisane"
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:124
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:101
 msgid "Font Size"
-msgstr "Rozmiar czcionki"
+msgstr "גודל פונט"
 
 #: packages/lib/server-only/auth/send-forgot-password.ts:61
 msgid "Forgot Password?"
-msgstr "Zapomniałeś hasła?"
+msgstr "שכחת סיסמא?"
 
 #: packages/email/template-components/template-forgot-password.tsx:21
 msgid "Forgot your password?"
-msgstr "Zapomniałeś swoje hasło?"
+msgstr "שכחת סיסמה?"
 
 #: packages/ui/primitives/document-flow/types.ts:50
 msgid "Free Signature"
-msgstr "Podpis wolny"
+msgstr "חתימה חינם"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:89
 msgid "Generate Links"
-msgstr "Generuj linki"
+msgstr "צור קישורים"
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx:64
 msgid "Global recipient action authentication"
-msgstr "Globalne uwierzytelnianie akcji odbiorcy"
+msgstr "אימות פעולה גלובלי של נמען"
 
 #: packages/ui/primitives/document-flow/document-flow-root.tsx:142
 msgid "Go Back"
-msgstr "Wróć"
+msgstr "חזרה"
 
-#: packages/ui/primitives/signature-pad/signature-pad.tsx:398
+#: packages/ui/primitives/signature-pad/signature-pad.tsx:515
 msgid "Green"
-msgstr "Zielony"
+msgstr "ירוק"
 
 #~ msgid "Hello {recipientName},"
 #~ msgstr "Hello {recipientName},"
 
 #: packages/email/templates/reset-password.tsx:56
 msgid "Hi, {userName} <0>({userEmail})</0>"
-msgstr "Cześć, {userName} <0>({userEmail})</0>"
+msgstr "שלום, {userName} <0>({userEmail})</0>"
 
 #: packages/lib/constants/recipient-roles.ts:44
 msgid "I am a signer of this document"
-msgstr "Jestem sygnatariuszem tego dokumentu"
+msgstr "אני חתום על המסמך הזה"
 
 #: packages/lib/constants/recipient-roles.ts:47
 msgid "I am a viewer of this document"
-msgstr "Jestem widzem tego dokumentu"
+msgstr "אני צופה במסמך הזה"
 
 #: packages/lib/constants/recipient-roles.ts:45
 msgid "I am an approver of this document"
-msgstr "Jestem zatwierdzającym tego dokumentu"
+msgstr "אני מאשר את המסמך הזה"
 
 #: packages/lib/constants/recipient-roles.ts:46
 msgid "I am required to receive a copy of this document"
-msgstr "Muszę otrzymać kopię tego dokumentu"
+msgstr "אני נדרש לקבל עותק של מסמך זה"
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:29
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:87
 msgid "Inherit authentication method"
-msgstr "Przechwyć metodę uwierzytelniania"
+msgstr "ירש את שיטת האימות"
 
 #: packages/ui/primitives/document-flow/types.ts:51
 msgid "Initials"
-msgstr "Inicjały"
+msgstr "ראשי תיבות"
 
 #: packages/ui/primitives/document-flow/add-signers.types.ts:17
 msgid "Invalid email"
-msgstr "Nieprawidłowy email"
+msgstr "דוא\"ל לא חוקי"
 
 #: packages/ui/primitives/document-flow/add-signature.types.ts:8
 msgid "Invalid email address"
-msgstr "Nieprawidłowy adres email"
+msgstr "כתובת אימייל לא תקינה"
 
 #: packages/email/templates/team-invite.tsx:72
-msgid "Join {teamName} on Documenso"
-msgstr "Dołącz do {teamName} na Documenso"
+msgid "Join {teamName} on Tofes-Mekovan"
+msgstr "הצטרף ל-{teamName} ב-Tofes-Mekovan"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:67
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:72
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:48
 msgid "Label"
-msgstr "Etykieta"
+msgstr "תווית"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:176
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:162
 msgid "Language"
-msgstr "Język"
+msgstr "שפה"
 
 #: packages/email/templates/confirm-team-email.tsx:124
 #: packages/email/templates/team-transfer-request.tsx:87
 msgid "Link expires in 1 hour."
-msgstr "Link wygasa za 1 godzinę."
+msgstr "הקישור יפוג בעוד שעה."
 
 #: packages/ui/primitives/lazy-pdf-viewer.tsx:15
 #: packages/ui/primitives/pdf-viewer.tsx:44
 msgid "Loading document..."
-msgstr "Ładowanie dokumentu..."
+msgstr "טוען מסמך..."
 
 #: packages/lib/constants/teams.ts:11
 msgid "Manager"
-msgstr "Menedżer"
+msgstr "מנהל"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:188
 msgid "Max"
-msgstr "Max"
+msgstr "מקסימום"
 
 #: packages/lib/constants/teams.ts:12
 msgid "Member"
-msgstr "Członek"
+msgstr "משתמש"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:160
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:338
 msgid "Message <0>(Optional)</0>"
-msgstr "Wiadomość <0>(Opcjonalnie)</0>"
+msgstr "הודעה <0>(אופציונלי)</0>"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:176
 msgid "Min"
-msgstr "Min"
+msgstr "מינימום"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:908
 #: packages/ui/primitives/document-flow/add-signature.tsx:298
 #: packages/ui/primitives/document-flow/add-signers.tsx:550
 #: packages/ui/primitives/document-flow/add-signers.tsx:556
 #: packages/ui/primitives/document-flow/types.ts:55
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:671
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:703
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:506
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:512
 msgid "Name"
-msgstr "Nazwa"
+msgstr "שם"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:52
 msgid "Needs to approve"
-msgstr "Wymaga zatwierdzenia"
+msgstr "צריך לאשר"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:31
 msgid "Needs to sign"
-msgstr "Wymaga podpisania"
+msgstr "צריך לחתום"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:73
 msgid "Needs to view"
-msgstr "Wymaga obejrzenia"
+msgstr "צריך לראות"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:693
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:511
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:516
 msgid "No recipient matching this description was found."
-msgstr "Nie znaleziono odbiorcy pasującego do tego opisu."
+msgstr "לא נמצא נמען התואם לתיאור זה."
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:215
 msgid "No recipients"
-msgstr "Brak odbiorców"
+msgstr "אין נמענים"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:708
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:526
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:531
 msgid "No recipients with this role"
-msgstr "Brak odbiorców z tą rolą"
+msgstr "אין נמענים עם תפקיד זה"
 
 #: packages/ui/components/document/document-global-auth-access-select.tsx:30
 #: packages/ui/components/document/document-global-auth-access-select.tsx:43
 #: packages/ui/components/document/document-global-auth-action-select.tsx:31
 #: packages/ui/components/document/document-global-auth-action-select.tsx:46
 msgid "No restrictions"
-msgstr "Brak ograniczeń"
+msgstr "ללא הגבלות"
 
 #: packages/ui/primitives/data-table.tsx:148
 msgid "No results found"
-msgstr "Nie znaleziono wyników"
+msgstr "לא נמצאו תוצאות"
 
 #: packages/ui/primitives/document-flow/missing-signature-field-dialog.tsx:30
 msgid "No signature field found"
-msgstr "Nie znaleziono pola podpisu"
+msgstr "לא נמצא שדה חתימה"
 
 #: packages/ui/primitives/combobox.tsx:60
 #: packages/ui/primitives/multi-select-combobox.tsx:153
 msgid "No value found."
-msgstr "Nie znaleziono wartości."
+msgstr "לא נמצא ערך."
 
 #: packages/lib/constants/document.ts:32
 msgid "None"
-msgstr "Brak"
+msgstr "ללא"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:986
 #: packages/ui/primitives/document-flow/types.ts:56
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:749
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:781
 msgid "Number"
-msgstr "Numer"
+msgstr "מספר"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:103
 msgid "Number format"
-msgstr "Format liczby"
+msgstr "פורמט מספר"
 
 #: packages/lib/constants/template.ts:9
 msgid "Once enabled, you can select any active recipient to be a direct link signing recipient, or create a new one. This recipient type cannot be edited or deleted."
-msgstr "Po włączeniu możesz wybrać dowolnego aktywnego odbiorcę na sygnatariusza bezpośredniego lub utworzyć nowego. Tego typu odbiorca nie może być edytowany ani usunięty."
+msgstr "לאחר ההפעלה, תוכל לבחור כל נמען פעיל להיות נמען חתימה ישירה על קישור, או ליצור נמען חדש. לא ניתן לערוך או למחוק את סוג הנמען הזה."
 
 #: packages/lib/constants/template.ts:17
 msgid "Once your template is set up, share the link anywhere you want. The person who opens the link will be able to enter their information in the direct link recipient field and complete any other fields assigned to them."
-msgstr "Po skonfigurowaniu szablonu udostępnij link wszędzie, gdzie chcesz. Osoba, która otworzy link, będzie mogła wprowadzić swoje dane w polu odbiorcy linku bezpośredniego i wypełnić wszelkie inne przypisane jej pola."
+msgstr "לאחר הגדרת התבנית שלך, שתף את הקישור בכל מקום שתרצה. מי שפותח את הקישור יוכל להזין את פרטיו בשדה נמען הקישור הישיר ולמלא כל שדות אחרים שיוקצו לו."
 
 #: packages/ui/primitives/data-table-pagination.tsx:77
 msgid "Page {0} of {1}"
-msgstr "Strona {0} z {1}"
+msgstr "עמוד {0} מתוך {1}"
 
 #: packages/ui/primitives/pdf-viewer.tsx:259
 msgid "Page {0} of {numPages}"
-msgstr "Strona {0} z {numPages}"
+msgstr "עמוד {0} מתוך {numPages}"
 
 #: packages/ui/primitives/document-password-dialog.tsx:62
 msgid "Password Required"
-msgstr "Wymagane hasło"
+msgstr "סיסמה נדרשת"
 
 #: packages/email/templates/forgot-password.tsx:19
 msgid "Password Reset Requested"
-msgstr "Żądanie resetowania hasła"
+msgstr "נדרש איפוס סיסמה"
 
 #: packages/email/templates/reset-password.tsx:20
 msgid "Password Reset Successful"
-msgstr "Resetowanie hasła zakończone sukcesem"
+msgstr "איפוס הסיסמה הצליח"
 
 #: packages/email/template-components/template-reset-password.tsx:22
 msgid "Password updated!"
-msgstr "Hasło zaktualizowane!"
+msgstr "הסיסמה עודכנה!"
 
 #: packages/lib/constants/document.ts:16
 msgid "Pending"
-msgstr "Oczekujące"
+msgstr "בהמתנה"
 
 #: packages/email/templates/document-pending.tsx:19
 msgid "Pending Document"
-msgstr "Dokument oczekujący"
+msgstr "מסמך בהמתנה"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:156
 msgid "Pick a number"
-msgstr "Wybierz numer"
+msgstr "בחר מספר"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:79
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:84
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:60
 msgid "Placeholder"
-msgstr "Zastępczy tekst"
+msgstr "ממלא מקום"
 
 #: packages/email/template-components/template-document-invite.tsx:56
 msgid "Please {0} your document<0/>\"{documentName}\""
-msgstr "Proszę {0} Twój dokument<0/>\"{documentName}\""
+msgstr "אנא {0} את המסמך שלך<0/>\"{documentName}\""
 
 #: packages/email/templates/document-invite.tsx:50
 msgid "Please {action} your document {documentName}"
-msgstr "Proszę {action} Twój dokument {documentName}"
+msgstr "נא {action} את המסמך שלך {documentName}"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:111
 msgid "Please {recipientActionVerb} this document"
-msgstr "Proszę {recipientActionVerb} ten dokument"
+msgstr "אנא {recipientActionVerb} מסמך זה"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:125
 msgid "Please {recipientActionVerb} this document created by your direct template"
-msgstr "Proszę {recipientActionVerb} ten dokument utworzony przez Twój bezpośredni szablon"
+msgstr "אנא {recipientActionVerb} מסמך זה נוצר על ידי התבנית הישירה שלך"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:117
 msgid "Please {recipientActionVerb} your document"
-msgstr "Proszę {recipientActionVerb} Twój dokument"
+msgstr "אנא {recipientActionVerb} את המסמך שלך"
 
 #: packages/lib/server-only/auth/send-confirmation-email.ts:67
 msgid "Please confirm your email"
-msgstr "Proszę potwierdzić swój email"
+msgstr "נא לוודא את האימייל שלך"
 
 #: packages/email/templates/confirm-email.tsx:17
 msgid "Please confirm your email address"
-msgstr "Proszę potwierdzić swój adres email"
+msgstr "אנא אשר את כתובת הדוא\"ל שלך"
 
 #: packages/ui/primitives/pdf-viewer.tsx:223
 #: packages/ui/primitives/pdf-viewer.tsx:238
 msgid "Please try again or contact our support."
-msgstr "Spróbuj ponownie lub skontaktuj się z naszym wsparciem."
+msgstr "אנא נסה שוב או צור קשר עם התמיכה שלנו."
 
 #: packages/ui/primitives/document-flow/types.ts:57
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:775
 msgid "Radio"
-msgstr "Radio"
+msgstr "רדיו"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/radio-field.tsx:133
 msgid "Radio values"
-msgstr "Wartości radiowe"
+msgstr "ערכי רדיו"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:186
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx:147
@@ -1189,75 +1190,75 @@ msgstr "Wartości radiowe"
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/radio-field.tsx:122
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:133
 msgid "Read only"
-msgstr "Tylko do odczytu"
+msgstr "לקריאה בלבד"
 
 #: packages/email/template-components/template-document-rejected.tsx:32
 msgid "Reason for rejection: {rejectionReason}"
-msgstr "Powód odrzucenia: {rejectionReason}"
+msgstr "סיבת הדחייה: {rejectionReason}"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:95
 msgid "Receives copy"
-msgstr "Otrzymuje kopię"
+msgstr "מקבל עותק"
 
 #: packages/lib/utils/document-audit-logs.ts:338
 #: packages/lib/utils/document-audit-logs.ts:353
 msgid "Recipient"
-msgstr "Odbiorca"
+msgstr "נמען"
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:39
 #: packages/ui/primitives/document-flow/add-settings.tsx:257
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:291
 msgid "Recipient action authentication"
-msgstr "Uwierzytelnianie akcji odbiorcy"
+msgstr "אימות פעולת הנמען"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:89
 msgid "Recipient removed email"
-msgstr "E-mail usuniętego odbiorcy"
+msgstr "הנמען הוסר אימייל"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:50
 msgid "Recipient signing request email"
-msgstr "E-mail z prośbą o podpisanie przez odbiorcę"
+msgstr "דוא\"ל בקשת חתימת נמען"
 
-#: packages/ui/primitives/signature-pad/signature-pad.tsx:384
+#: packages/ui/primitives/signature-pad/signature-pad.tsx:501
 msgid "Red"
-msgstr "Czerwony"
+msgstr "אדום"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:371
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:461
 msgid "Redirect URL"
-msgstr "Adres URL przekierowania"
+msgstr "הפנייה לכתובת אינטרנט"
 
 #: packages/email/template-components/template-document-invite.tsx:96
 msgid "Reject Document"
-msgstr "Odrzuć dokument"
+msgstr "דחה מסמך"
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx:22
 msgid "Rejection Confirmed"
-msgstr "Odmowa potwierdzona"
+msgstr "הדחייה אושרה"
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx:34
 msgid "Rejection reason: {reason}"
-msgstr "Powód odrzucenia: {reason}"
+msgstr "סיבת דחייה: {reason}"
 
 #: packages/lib/server-only/document/resend-document.tsx:192
 msgid "Reminder: {0}"
-msgstr "Przypomnienie: {0}"
+msgstr "תזכורת: {0}"
 
 #: packages/lib/server-only/document/resend-document.tsx:132
 msgid "Reminder: {0} invited you to {recipientActionVerb} a document"
-msgstr "Przypomnienie: {0} zaprosił Cię do {recipientActionVerb} dokument"
+msgstr "תזכורת: {0} הזמין אותך {recipientActionVerb} למסמך"
 
 #: packages/lib/server-only/document/resend-document.tsx:121
 msgid "Reminder: Please {recipientActionVerb} this document"
-msgstr "Przypomnienie: Proszę {recipientActionVerb} ten dokument"
+msgstr "תזכורת: אנא {recipientActionVerb} מסמך זה"
 
 #: packages/lib/server-only/document/resend-document.tsx:127
 msgid "Reminder: Please {recipientActionVerb} your document"
-msgstr "Przypomnienie: Proszę {recipientActionVerb} Twój dokument"
+msgstr "תזכורת: אנא {recipientActionVerb} את המסמך שלך"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:1117
 msgid "Remove"
-msgstr "Usuń"
+msgstr "הסר"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:176
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx:137
@@ -1265,553 +1266,554 @@ msgstr "Usuń"
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/radio-field.tsx:112
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/text-field.tsx:123
 msgid "Required field"
-msgstr "Wymagane pole"
+msgstr "שדה חובה"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:84
 msgid "Resend"
-msgstr "Wyślij ponownie"
+msgstr "שליחה מחדש"
 
 #: packages/email/template-components/template-forgot-password.tsx:33
 msgid "Reset Password"
-msgstr "Zresetuj hasło"
+msgstr "איפוס סיסמה"
 
 #: packages/ui/components/document/document-share-button.tsx:147
 msgid "Rest assured, your document is strictly confidential and will never be shared. Only your signing experience will be highlighted. Share your personalized signing card to showcase your signature!"
-msgstr "Możesz być spokojny, Twój dokument jest ściśle poufny i nigdy nie zostanie udostępniony. Tylko Twoje doświadczenie podpisywania będzie wyróżnione. Podziel się swoją spersonalizowaną kartą podpisu, aby zaprezentować swój podpis!"
+msgstr "היה סמוך ובטוח, המסמך שלך חסוי לחלוטין ולעולם לא ישותף. רק חוויית החתימה שלך תודגש. שתף את כרטיס החתימה המותאם אישית שלך כדי להציג את החתימה שלך!"
 
 #: packages/ui/primitives/data-table-pagination.tsx:55
 msgid "Rows per page"
-msgstr "Wiersze na stronę"
+msgstr "שורות לכל עמוד"
 
 #: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:355
 msgid "Save"
-msgstr "Zapisz"
+msgstr "שמור"
 
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:861
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:893
 msgid "Save Template"
-msgstr "Zapisz szablon"
+msgstr "שמור תבנית"
 
 #: packages/ui/components/common/language-switcher-dialog.tsx:34
 msgid "Search languages..."
-msgstr "Szukaj języków..."
+msgstr "חפש שפות..."
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx:115
 #: packages/ui/primitives/document-flow/types.ts:59
 msgid "Select"
-msgstr "Wybierz"
+msgstr "בחר"
 
 #: packages/ui/primitives/combobox.tsx:38
 msgid "Select an option"
-msgstr "Wybierz opcję"
+msgstr "בחר אפשרות"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:139
 msgid "Select at least"
-msgstr "Wybierz co najmniej"
+msgstr "בחר לפחות"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/dropdown-field.tsx:105
 msgid "Select default option"
-msgstr "Wybierz domyślną opcję"
+msgstr "בחר באפשרות ברירת מחדל"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:82
 #: packages/ui/primitives/document-flow/add-subject.tsx:85
 #: packages/ui/primitives/document-flow/send-document-action-dialog.tsx:34
 #: packages/ui/primitives/document-flow/send-document-action-dialog.tsx:64
 msgid "Send"
-msgstr "Wyślij"
+msgstr "שלח"
 
 #: packages/ui/primitives/document-flow/send-document-action-dialog.tsx:41
 msgid "Send Document"
-msgstr "Wyślij dokument"
+msgstr "שלח מסמך"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:158
 msgid "Send document completed email"
-msgstr "Wyślij e-mail ukończonego dokumentu"
+msgstr "שלח דוא\"ל שהושלם מסמך"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:197
 msgid "Send document deleted email"
-msgstr "Wyślij e-mail usuniętego dokumentu"
+msgstr "שלח מסמך שנמחק"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:118
 msgid "Send document pending email"
-msgstr "Wyślij e-mail oczekującego dokumentu"
+msgstr "שלח מסמך בהמתנה לאימייל"
 
 #: packages/email/templates/confirm-team-email.tsx:101
 msgid "Send documents on behalf of the team using the email address"
-msgstr "Wyślij dokumenty w imieniu zespołu, używając adresu e-mail"
+msgstr "שלח מסמכים מטעם הצוות באמצעות כתובת הדוא\"ל"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:79
 msgid "Send recipient removed email"
-msgstr "Wyślij e-mail usuniętego odbiorcy"
+msgstr "שלח למייל שהוסר לנמען"
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:40
 msgid "Send recipient signing request email"
-msgstr "Wyślij e-mail z prośbą o podpisanie przez odbiorcę"
+msgstr "שלח דוא\"ל לבקשת חתימה של הנמען"
 
 #: packages/ui/components/document/document-share-button.tsx:135
 msgid "Share Signature Card"
-msgstr "Udostępnij kartę podpisu"
+msgstr "שתף כרטיס חתימה"
 
 #: packages/lib/constants/template.ts:16
 msgid "Share the Link"
-msgstr "Udostępnij link"
+msgstr "שתף את הקישור"
 
 #: packages/ui/components/document/document-share-button.tsx:143
 msgid "Share your signing experience!"
-msgstr "Podziel się swoim doświadczeniem podpisywania!"
+msgstr "שתף את חווית החתימה שלך!"
 
 #: packages/ui/primitives/document-flow/add-signers.tsx:709
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:663
 msgid "Show advanced settings"
-msgstr "Pokaż ustawienia zaawansowane"
+msgstr "הצג הגדרות מתקדמות"
 
 #: packages/lib/constants/recipient-roles.ts:22
 msgid "Sign"
-msgstr "Podpisz"
+msgstr "חתום"
 
 #: packages/email/template-components/template-document-invite.tsx:104
 msgid "Sign Document"
-msgstr "Podpisz dokument"
+msgstr "חתום על מסמך"
 
 #: packages/email/template-components/template-reset-password.tsx:34
 msgid "Sign In"
-msgstr "Zaloguj się"
+msgstr "התחבר"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:830
 #: packages/ui/primitives/document-flow/add-signature.tsx:323
 #: packages/ui/primitives/document-flow/field-icon.tsx:52
 #: packages/ui/primitives/document-flow/types.ts:49
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:593
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:625
 msgid "Signature"
-msgstr "Podpis"
+msgstr "חתימה"
 
 #: packages/lib/constants/recipient-roles.ts:23
 msgid "Signed"
-msgstr "Podpisany"
+msgstr "חתום"
 
 #: packages/lib/constants/recipient-roles.ts:25
 msgid "Signer"
-msgstr "Sygnatariusz"
+msgstr "חוֹתֵם"
 
 #: packages/lib/constants/recipient-roles.ts:26
 msgid "Signers"
-msgstr "Podpisujący"
+msgstr "חותמים"
 
 #: packages/ui/primitives/document-flow/add-signers.types.ts:36
 msgid "Signers must have unique emails"
-msgstr "Podpisujący muszą mieć unikalne emaile"
+msgstr "החותמים חייבים להיות בעלי אימיילים ייחודיים"
 
 #: packages/lib/constants/recipient-roles.ts:24
 msgid "Signing"
-msgstr "Podpisywanie"
+msgstr "הַחתָמָה"
 
 #: packages/lib/server-only/document/send-completed-email.ts:114
 #: packages/lib/server-only/document/send-completed-email.ts:194
 msgid "Signing Complete!"
-msgstr "Podpisywanie zakończone!"
+msgstr "החתימה הושלמה!"
 
-#: packages/lib/constants/recipient-roles.ts:66
 #~ msgid "SIGNING_REQUEST"
 #~ msgstr "SIGNING_REQUEST"
 
 #: packages/ui/primitives/document-flow/missing-signature-field-dialog.tsx:34
 msgid "Some signers have not been assigned a signature field. Please assign at least 1 signature field to each signer before proceeding."
-msgstr "Niektórzy sygnatariusze nie zostali przypisani do pola podpisu. Przypisz co najmniej 1 pole podpisu do każdego sygnatariusza przed kontynuowaniem."
+msgstr "לחלק מהחותמים לא הוקצה שדה חתימה. אנא הקצה לפחות שדה חתימה אחד לכל חותם לפני שתמשיך."
 
 #: packages/ui/components/document/document-share-button.tsx:51
 msgid "Something went wrong"
-msgstr "Coś poszło nie tak"
+msgstr "משהו השתבש"
 
 #: packages/ui/primitives/pdf-viewer.tsx:220
 #: packages/ui/primitives/pdf-viewer.tsx:235
 msgid "Something went wrong while loading the document."
-msgstr "Coś poszło nie tak podczas ładowania dokumentu."
+msgstr "משהו השתבש בעת טעינת המסמך."
 
 #: packages/ui/primitives/data-table.tsx:136
 msgid "Something went wrong."
-msgstr "Coś poszło nie tak."
+msgstr "משהו השתבש."
 
 #: packages/ui/primitives/document-flow/document-flow-root.tsx:107
 msgid "Step <0>{step} of {maxStep}</0>"
-msgstr "Krok <0>{step} z {maxStep}</0>"
+msgstr "שלב <0>{step} מתוך {maxStep}</0>"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:143
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:318
 msgid "Subject <0>(Optional)</0>"
-msgstr "Temat <0>(Opcjonalnie)</0>"
+msgstr "נושא <0>(אופציונלי)</0>"
 
 #: packages/ui/primitives/document-password-dialog.tsx:97
 msgid "Submit"
-msgstr "Prześlij"
+msgstr "שלח"
 
 #: packages/lib/server-only/team/delete-team.ts:124
-msgid "Team \"{0}\" has been deleted on Documenso"
-msgstr "Zespół \"{0}\" został usunięty z Documenso"
+msgid "Team \"{0}\" has been deleted on Tofes-Mekovan"
+msgstr "צוות \"{0}\" נמחק ב-Tofes-Mekovan"
 
 #: packages/lib/server-only/team/delete-team-email.ts:104
 msgid "Team email has been revoked for {0}"
-msgstr "Email zespołowy został anulowany dla {0}"
+msgstr "דוא\"ל הצוות בוטל עבור {0}"
 
 #: packages/email/templates/team-email-removed.tsx:59
 msgid "Team email removed"
-msgstr "Email zespołowy usunięty"
+msgstr "האימייל של הצוות הוסר"
 
 #: packages/email/templates/team-email-removed.tsx:29
-msgid "Team email removed for {teamName} on Documenso"
-msgstr "Email zespołowy usunięty dla {teamName} na Documenso"
+msgid "Team email removed for {teamName} on Tofes-Mekovan"
+msgstr "דוא\"ל צוות הוסר עבור {teamName} ב-Tofes-Mekovan"
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:145
 msgid "Template title"
-msgstr "Tytuł szablonu"
+msgstr "כותרת התבנית"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:960
 #: packages/ui/primitives/document-flow/types.ts:52
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:723
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:755
 msgid "Text"
-msgstr "Tekst"
+msgstr "טקסט"
 
 #: packages/email/template-components/template-forgot-password.tsx:25
 msgid "That's okay, it happens! Click the button below to reset your password."
-msgstr "To w porządku, zdarza się! Kliknij przycisk poniżej, aby zresetować hasło."
+msgstr "זה בסדר, זה קורה! לחץ על הכפתור למטה כדי לאפס את הסיסמה שלך."
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:44
 msgid "The authentication required for recipients to sign fields"
-msgstr "Uwierzytelnianie wymagane dla odbiorców do podpisania pól"
+msgstr "האימות הנדרש עבור הנמענים לחתום על שדות"
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx:68
 msgid "The authentication required for recipients to sign the signature field."
-msgstr "Uwierzytelnianie wymagane dla odbiorców do podpisania pola podpisu."
+msgstr "האימות הנדרש עבור הנמענים לחתום על שדה החתימה."
 
 #: packages/ui/components/document/document-global-auth-access-select.tsx:67
 msgid "The authentication required for recipients to view the document."
-msgstr "Uwierzytelnianie wymagane dla odbiorców do wyświetlenia dokumentu."
+msgstr "האימות הנדרש כדי שהנמענים יוכלו לצפות במסמך."
 
 #~ msgid "The document owner has been notified of this rejection. No further action is required from you at this time."
 #~ msgstr "The document owner has been notified of this rejection. No further action is required from you at this time."
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx:39
 msgid "The document owner has been notified of this rejection. No further action is required from you at this time. The document owner may contact you with any questions regarding this rejection."
-msgstr "Właściciel dokumentu został poinformowany o tym odrzuceniu. W tej chwili nie są wymagane żadne dalsze działania z Twojej strony. Właściciel dokumentu może się z Tobą skontaktować z pytaniami dotyczącymi tego odrzucenia."
+msgstr "בעל המסמך קיבל הודעה על דחייה זו. אין צורך בפעולה נוספת מצידך בשלב זה. בעל המסמך רשאי לפנות אליך בכל שאלה בנוגע לדחייה זו."
 
 #: packages/ui/components/document/document-send-email-message-helper.tsx:31
 msgid "The document's name"
-msgstr "Nazwa dokumentu"
+msgstr "שם המסמך"
 
 #: packages/email/templates/team-delete.tsx:37
 msgid "The following team has been deleted by its owner. You will no longer be able to access this team and its documents"
-msgstr "Następujący zespół został usunięty przez jego właściciela. Nie będziesz mógł już uzyskać dostępu do tego zespołu i jego dokumentów"
+msgstr "הצוות הבא נמחק על ידי בעליו. לא תוכל יותר לגשת לצוות הזה ולמסמכים שלו"
 
 #: packages/email/templates/team-delete.tsx:36
 msgid "The following team has been deleted by you"
-msgstr "Następujący zespół został usunięty przez Ciebie"
+msgstr "הצוות הבא נמחק על ידך"
 
 #: packages/ui/primitives/document-password-dialog.tsx:52
 msgid "The password you have entered is incorrect. Please try again."
-msgstr "Wprowadzone hasło jest niepoprawne. Proszę spróbować ponownie."
+msgstr "הסיסמה שהזנת שגויה. אנא נסה שוב."
 
 #: packages/email/template-components/template-document-super-delete.tsx:38
 msgid "The reason provided for deletion is the following:"
-msgstr "Podana przyczyna usunięcia jest następująca:"
+msgstr "הסיבה שסופקה למחיקה היא כדלקמן:"
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:103
 msgid "The recipient is not required to take any action and receives a copy of the document after it is completed."
-msgstr "Odbiorca nie jest zobowiązany do podjęcia żadnych działań i otrzymuje kopię dokumentu po jego zakończeniu."
+msgstr "הנמען אינו נדרש לבצע כל פעולה ומקבל עותק של המסמך לאחר השלמתו."
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:60
 msgid "The recipient is required to approve the document for it to be completed."
-msgstr "Odbiorca musi zatwierdzić dokument, aby mógł być zakończony."
+msgstr "הנמען נדרש לאשר את המסמך לצורך מילויו."
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:39
 msgid "The recipient is required to sign the document for it to be completed."
-msgstr "Odbiorca musi podpisać dokument, aby mógł być zakończony."
+msgstr "הנמען נדרש לחתום על המסמך לצורך מילויו."
 
 #: packages/ui/components/recipient/recipient-role-select.tsx:81
 msgid "The recipient is required to view the document for it to be completed."
-msgstr "Odbiorca musi wyświetlić dokument, aby mógł być zakończony."
+msgstr "הנמען נדרש להציג את המסמך כדי להשלים אותו."
 
 #: packages/ui/components/document/document-share-button.tsx:52
 msgid "The sharing link could not be created at this time. Please try again."
-msgstr "Nie udało się utworzyć linku udostępnienia w tym czasie. Proszę spróbować ponownie."
+msgstr "לא ניתן ליצור את קישור השיתוף בשלב זה. אנא נסה שוב."
 
 #: packages/ui/components/document/document-share-button.tsx:47
 msgid "The sharing link has been copied to your clipboard."
-msgstr "Link do udostępniania został skopiowany do schowka."
+msgstr "קישור השיתוף הועתק ללוח שלך."
 
 #: packages/ui/components/document/document-send-email-message-helper.tsx:25
 msgid "The signer's email"
-msgstr "Email sygnatariusza"
+msgstr "האימייל של החותם"
 
 #: packages/ui/components/document/document-send-email-message-helper.tsx:19
 msgid "The signer's name"
-msgstr "Imię sygnatariusza"
+msgstr "שם החותם"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:243
 msgid "The signing link has been copied to your clipboard."
-msgstr "Link do podpisu został skopiowany do schowka."
+msgstr "קישור החתימה הועתק ללוח שלך."
 
 #: packages/email/templates/team-email-removed.tsx:63
 msgid "The team email <0>{teamEmail}</0> has been removed from the following team"
-msgstr "Email zespołowy <0>{teamEmail}</0> został usunięty z następującego zespołu"
+msgstr "דוא\"ל הצוות <0>{teamEmail}</0> הוסר מהצוות הבא"
 
 #: packages/ui/components/document/document-global-auth-action-select.tsx:72
 msgid "This can be overriden by setting the authentication requirements directly on each recipient in the next step."
-msgstr "To można nadpisać, ustawiając wymagania dotyczące uwierzytelniania bezpośrednio na każdym odbiorcy w następnym kroku."
+msgstr "ניתן לעקוף זאת על ידי הגדרת דרישות האימות ישירות על כל נמען בשלב הבא."
 
 #: packages/email/template-components/template-document-super-delete.tsx:31
 msgid "This document can not be recovered, if you would like to dispute the reason for future documents please contact support."
-msgstr "Dokument ten nie może być odzyskany. Jeśli chcesz zakwestionować przyczynę przyszłych dokumentów, skontaktuj się z administracją."
+msgstr "לא ניתן לשחזר מסמך זה, אם תרצה לערער על הסיבה למסמכים עתידיים אנא צור קשר עם התמיכה."
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:764
 msgid "This document has already been sent to this recipient. You can no longer edit this recipient."
-msgstr "Ten dokument został już wysłany do tego odbiorcy. Nie można już edytować tego odbiorcy."
+msgstr "מסמך זה כבר נשלח לנמען זה. אינך יכול עוד לערוך את הנמען הזה."
 
 #: packages/ui/primitives/document-password-dialog.tsx:66
 msgid "This document is password protected. Please enter the password to view the document."
-msgstr "Ten dokument jest zabezpieczony hasłem. Proszę wprowadzić hasło, aby wyświetlić dokument."
+msgstr "מסמך זה מוגן בסיסמה. נא להזין את הסיסמה כדי לצפות במסמך."
 
 #: packages/email/template-components/template-footer.tsx:17
-msgid "This document was sent using <0>Documenso.</0>"
-msgstr "Ten dokument został wysłany za pomocą <0>Documenso.</0>"
+msgid "This document was sent using <0>Tofes-Mekovan.</0>"
+msgstr "מסמך זה נשלח באמצעות <0>Tofes-Mekovan.</0>"
 
 #~ msgid "This email confirms that you have rejected the document \"{documentName}\" sent by {documentOwnerName}."
 #~ msgstr "This email confirms that you have rejected the document \"{documentName}\" sent by {documentOwnerName}."
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx:26
 msgid "This email confirms that you have rejected the document <0>\"{documentName}\"</0> sent by {documentOwnerName}."
-msgstr "Ten email potwierdza, że odrzuciłeś dokument <0>\"{documentName}\"</0> wysłany przez {documentOwnerName}."
+msgstr "דוא\"ל זה מאשר שדחית את המסמך <0>\"{documentName}\"</0> נשלח על ידי {documentOwnerName}."
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:94
 msgid "This email is sent to the recipient if they are removed from a pending document."
-msgstr "Ten e-mail jest wysyłany do odbiorcy, jeśli zostanie usunięty z oczekującego dokumentu."
+msgstr "דוא\"ל זה נשלח לנמען אם הוא מוסר ממסמך ממתין."
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:55
 msgid "This email is sent to the recipient requesting them to sign the document."
-msgstr "Ten e-mail jest wysyłany do odbiorcy, prosząc go o podpisanie dokumentu."
+msgstr "מייל זה נשלח לנמען בבקשה לחתום על המסמך."
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:133
 msgid "This email will be sent to the recipient who has just signed the document, if there are still other recipients who have not signed yet."
-msgstr "Ten e-mail zostanie wysłany do odbiorcy, który właśnie podpisał dokument, jeśli są jeszcze inni odbiorcy, którzy nie podpisali."
+msgstr "האימייל הזה יישלח לנמען שזה עתה חתם על המסמך, אם יש עדיין נמענים אחרים שעדיין לא חתמו."
 
 #: packages/ui/primitives/template-flow/add-template-placeholder-recipients.tsx:581
 msgid "This field cannot be modified or deleted. When you share this template's direct link or add it to your public profile, anyone who accesses it can input their name and email, and fill in the fields assigned to them."
-msgstr "To pole nie może być modyfikowane ani usuwane. Po udostępnieniu bezpośredniego linku do tego szablonu lub dodaniu go do swojego publicznego profilu, każdy, kto się w nim dostanie, może wpisać swoje imię i email oraz wypełnić przypisane mu pola."
+msgstr "לא ניתן לשנות או למחוק שדה זה. כאשר אתה משתף את הקישור הישיר של תבנית זו או מוסיף אותה לפרופיל הציבורי שלך, כל מי שניגש אליה יכול להזין את שמו ואת האימייל שלו, ולמלא את השדות שהוקצו לו."
 
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:233
 msgid "This is how the document will reach the recipients once the document is ready for signing."
-msgstr "W ten sposób dokument dotrze do odbiorców, gdy tylko dokument będzie gotowy do podpisania."
+msgstr "כך המסמך יגיע אל הנמענים ברגע שהמסמך יהיה מוכן לחתימה."
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:1097
 msgid "This recipient can no longer be modified as they have signed a field, or completed the document."
-msgstr "Ten odbiorca nie może być już modyfikowany, ponieważ podpisał pole lub ukończył dokument."
+msgstr "לא ניתן עוד לשנות את הנמען הזה מכיוון שהוא חתם על שדה או השלים את המסמך."
 
 #: packages/ui/primitives/document-flow/add-signers.tsx:194
 msgid "This signer has already signed the document."
-msgstr "Ten sygnatariusz już podpisał dokument."
+msgstr "החותם הזה כבר חתם על המסמך."
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:212
 msgid "This will be sent to all recipients if a pending document has been deleted."
-msgstr "To zostanie wysłane do wszystkich odbiorców, jeśli oczekujący dokument został usunięty."
+msgstr "זה יישלח לכל הנמענים אם מסמך ממתין נמחק."
 
 #: packages/ui/components/document/document-email-checkboxes.tsx:173
 msgid "This will be sent to all recipients once the document has been fully completed."
-msgstr "To zostanie wysłane do wszystkich odbiorców, gdy dokument będzie całkowicie ukończony."
+msgstr "זה יישלח לכל הנמענים לאחר השלמת המסמך במלואו."
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:48
 msgid "This will override any global settings."
-msgstr "To zastąpi wszystkie globalne ustawienia."
+msgstr "זה יעקוף את כל ההגדרות הגלובליות."
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:347
 #: packages/ui/primitives/template-flow/add-template-settings.tsx:438
 msgid "Time Zone"
-msgstr "Strefa czasowa"
+msgstr "אזור זמן"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:155
 msgid "Title"
-msgstr "Tytuł"
+msgstr "כותרת"
 
 #: packages/ui/primitives/document-flow/add-fields.tsx:1080
-#: packages/ui/primitives/template-flow/add-template-fields.tsx:841
+#: packages/ui/primitives/template-flow/add-template-fields.tsx:873
 msgid "To proceed further, please set at least one value for the {0} field."
-msgstr "Aby kontynuować, ustaw przynajmniej jedną wartość dla pola {0}."
+msgstr "כדי להמשיך הלאה, הגדר לפחות ערך אחד עבור השדה {0}."
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:86
 msgid "Update"
-msgstr "Zaktualizuj"
+msgstr "עדכון"
 
 #: packages/lib/constants/template.ts:13
 msgid "Update the role and add fields as required for the direct recipient. The individual who uses the direct link will sign the document as the direct recipient."
-msgstr "Zaktualizuj rolę i dodaj pola, jeśli to konieczne dla bezpośredniego odbiorcy. Osoba, która korzysta z bezpośredniego linku, podpisze dokument jako bezpośredni odbiorca."
+msgstr "עדכן את התפקיד והוסף שדות כנדרש עבור הנמען הישיר. האדם המשתמש בקישור הישיר יחתום על המסמך כנמען הישיר."
 
 #: packages/ui/primitives/document-dropzone.tsx:168
 msgid "Upgrade"
-msgstr "Ulepsz"
+msgstr "עדכון"
+
+#: packages/ui/primitives/signature-pad/signature-pad.tsx:479
+msgid "Upload Signature"
+msgstr "העלה חתימה"
 
 #: packages/ui/primitives/document-dropzone.tsx:70
 msgid "Upload Template Document"
-msgstr "Prześlij dokument szablonu"
+msgstr "העלה מסמך תבנית"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/checkbox-field.tsx:132
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:167
 msgid "Validation"
-msgstr "Walidacja"
+msgstr "אימות"
 
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:91
 #: packages/ui/primitives/document-flow/field-items-advanced-settings/number-field.tsx:96
 msgid "Value"
-msgstr "Wartość"
+msgstr "ערך"
 
 #: packages/email/templates/confirm-team-email.tsx:71
 msgid "Verify your team email address"
-msgstr "Zweryfikuj swój adres e-mail zespołu"
+msgstr "אמת את כתובת הדוא\"ל של הצוות שלך"
 
 #: packages/lib/constants/recipient-roles.ts:29
 msgid "View"
-msgstr "Widok"
+msgstr "הצג"
 
 #: packages/email/templates/confirm-team-email.tsx:95
 msgid "View all documents sent to and from this email address"
-msgstr "Wyświetl wszystkie dokumenty wysłane do i z tego adresu e-mail"
+msgstr "הצג את כל המסמכים שנשלחו לכתובת דוא\"ל זו וממנה"
 
 #: packages/email/templates/document-created-from-direct-template.tsx:75
 msgid "View document"
-msgstr "Zobacz dokument"
+msgstr "צפה במסמך"
 
 #: packages/email/template-components/template-document-invite.tsx:105
 #: packages/email/template-components/template-document-rejected.tsx:44
 #: packages/ui/primitives/document-flow/add-subject.tsx:90
 #: packages/ui/primitives/document-flow/add-subject.tsx:91
 msgid "View Document"
-msgstr "Wyświetl dokument"
+msgstr "הצגת המסמך"
 
 #: packages/email/template-components/template-document-self-signed.tsx:79
 msgid "View plans"
-msgstr "Zobacz plany"
+msgstr "צפה בתוכניות"
 
-#: packages/lib/constants/recipient-roles.ts:67
 #~ msgid "VIEW_REQUEST"
 #~ msgstr "VIEW_REQUEST"
 
 #: packages/lib/constants/recipient-roles.ts:30
 msgid "Viewed"
-msgstr "Wyświetlono"
+msgstr "נצפו"
 
 #: packages/lib/constants/recipient-roles.ts:32
 msgid "Viewer"
-msgstr "Użytkownik widoku"
+msgstr "צוֹפֶה"
 
 #: packages/lib/constants/recipient-roles.ts:33
 msgid "Viewers"
-msgstr "Widokowcy"
+msgstr "צופים"
 
 #: packages/lib/constants/recipient-roles.ts:31
 msgid "Viewing"
-msgstr "Wyświetlanie"
+msgstr "צפייה"
 
 #: packages/email/template-components/template-document-pending.tsx:31
 msgid "Waiting for others"
-msgstr "Czekam na innych"
+msgstr "מחכה לאחרים"
 
 #: packages/lib/server-only/document/send-pending-email.ts:96
 msgid "Waiting for others to complete signing."
-msgstr "Czekam na innych, aby zakończyć podpisywanie."
+msgstr "מחכה שאחרים ישלימו את החתימה."
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:205
 msgid "We will generate signing links for with you, which you can send to the recipients through your method of choice."
-msgstr "Wygenerujemy linki do podpisu dla Ciebie, które możesz wysłać do odbiorców w wybrany przez siebie sposób."
+msgstr "אנו ניצור עבורכם קישורי חתימה, אותם תוכלו לשלוח לנמענים באמצעות השיטה שתבחרו."
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:201
 msgid "We won't send anything to notify recipients."
-msgstr "Nie wyślemy nic, aby powiadomić odbiorców."
+msgstr "לא נשלח דבר כדי להודיע לנמענים."
 
 #: packages/email/template-components/template-document-pending.tsx:41
 msgid "We're still waiting for other signers to sign this document.<0/>We'll notify you as soon as it's ready."
-msgstr "Wciąż czekamy na innych sygnatariuszy, aby podpisać ten dokument.<0/>Powiadomimy Cię, gdy będzie gotowy."
+msgstr "אנחנו עדיין ממתינים לחותמים אחרים כדי לחתום על המסמך הזה.<0/>נודיע לך ברגע שהוא יהיה מוכן."
 
 #: packages/email/templates/reset-password.tsx:65
 msgid "We've changed your password as you asked. You can now sign in with your new password."
-msgstr "Zmieniłem hasło, jak prosiłeś. Teraz możesz zalogować się za pomocą nowego hasła."
+msgstr "שינינו את הסיסמה שלך כפי שביקשת. כעת תוכל להיכנס עם הסיסמה החדשה שלך."
 
 #: packages/email/template-components/template-confirmation-email.tsx:21
-msgid "Welcome to Documenso!"
-msgstr "Witamy w Documenso!"
+msgid "Welcome to Tofes-Mekovan!"
+msgstr "ברוכים הבאים ל-Tofes-Mekovan!"
 
 #: packages/lib/utils/document-audit-logs.ts:258
 msgid "You"
-msgstr "Ty"
+msgstr "את/ה"
 
 #: packages/ui/primitives/document-flow/send-document-action-dialog.tsx:44
 msgid "You are about to send this document to the recipients. Are you sure you want to continue?"
-msgstr "Zaraz wyślesz ten dokument do odbiorców. Czy na pewno chcesz kontynuować?"
+msgstr "אתה עומד לשלוח מסמך זה לנמענים. האם אתה בטוח שאתה רוצה להמשיך?"
 
 #: packages/email/template-components/template-confirmation-email.tsx:38
 msgid "You can also copy and paste this link into your browser: {confirmationLink} (link expires in 1 hour)"
-msgstr "Możesz także skopiować i wkleić ten link do przeglądarki: {confirmationLink} (link wygasa za 1 godzinę)"
+msgstr "אתה יכול גם להעתיק ולהדביק את הקישור הזה בדפדפן שלך: {confirmationLink} (תוקף הקישור יפוג בעוד שעה)"
 
 #: packages/email/templates/confirm-team-email.tsx:106
-msgid "You can revoke access at any time in your team settings on Documenso <0>here.</0>"
-msgstr "Możesz w każdej chwili cofnąć dostęp w ustawieniach zespołu na Documenso <0>tutaj.</0>"
+msgid "You can revoke access at any time in your team settings on Tofes-Mekovan <0>here.</0>"
+msgstr "אתה יכול לבטל את הגישה בכל עת בהגדרות הצוות שלך ב-Tofes-Mekovan <0>כאן.</0>"
 
 #: packages/ui/components/document/document-send-email-message-helper.tsx:11
 msgid "You can use the following variables in your message:"
-msgstr "Możesz użyć następujących zmiennych w swojej wiadomości:"
+msgstr "אתה יכול להשתמש במשתנים הבאים בהודעה שלך:"
 
 #: packages/email/template-components/template-document-rejected.tsx:37
 msgid "You can view the document and its status by clicking the button below."
-msgstr "Możesz zobaczyć dokument i jego status, klikając przycisk poniżej."
+msgstr "תוכל לצפות במסמך ובסטטוס שלו על ידי לחיצה על הכפתור למטה."
 
 #: packages/ui/primitives/document-dropzone.tsx:43
 msgid "You cannot upload documents at this time."
-msgstr "Nie możesz przesyłać dokumentów w tej chwili."
+msgstr "אינך יכול להעלות מסמכים בשלב זה."
 
 #: packages/email/template-components/template-document-cancel.tsx:35
 msgid "You don't need to sign it anymore."
-msgstr "Nie musisz go już podpisywać."
+msgstr "אתה לא צריך לחתום על זה יותר."
 
 #: packages/lib/server-only/team/create-team-member-invites.ts:186
-msgid "You have been invited to join {0} on Documenso"
-msgstr "Zostałeś zaproszony do dołączenia do {0} na Documenso"
+msgid "You have been invited to join {0} on Tofes-Mekovan"
+msgstr "הוזמנת להצטרף ל-{0} ב-Tofes-Mekovan"
 
 #: packages/email/templates/team-invite.tsx:76
 msgid "You have been invited to join the following team"
-msgstr "Zostałeś zaproszony do dołączenia do następującego zespołu"
+msgstr "הוזמנת להצטרף לצוות הבא"
 
-#: packages/lib/server-only/recipient/set-recipients-for-document.ts:329
+#: packages/lib/server-only/recipient/set-recipients-for-document.ts:327
 msgid "You have been removed from a document"
-msgstr "Zostałeś usunięty z dokumentu"
+msgstr "הוסרת ממסמך"
 
 #: packages/lib/server-only/team/request-team-ownership-transfer.ts:114
-msgid "You have been requested to take ownership of team {0} on Documenso"
-msgstr "Poproszono Cię o przejęcie własności zespołu {0} na Documenso"
+msgid "You have been requested to take ownership of team {0} on Tofes-Mekovan"
+msgstr "התבקשת לקחת בעלות על צוות {0} ב-Tofes-Mekovan"
 
 #: packages/lib/jobs/definitions/emails/send-signing-email.ts:115
 #: packages/lib/server-only/document/resend-document.tsx:125
 msgid "You have initiated the document {0} that requires you to {recipientActionVerb} it."
-msgstr "Rozpocząłeś dokument {0}, który wymaga, abyś go {recipientActionVerb}."
+msgstr "יזמת את המסמך {0} שדורש ממך {recipientActionVerb} אותו."
 
 #: packages/ui/primitives/document-dropzone.tsx:69
 msgid "You have reached your document limit."
-msgstr "Osiągnąłeś limit dokumentów."
+msgstr "הגעת למגבלת המסמכים שלך."
 
 #: packages/email/templates/document-rejection-confirmed.tsx:27
 msgid "You have rejected the document '{documentName}'"
-msgstr "Odrzuciłeś dokument '{documentName}'"
+msgstr "דחית את המסמך '{documentName}'"
 
 #~ msgid "You have rejected the document \"{documentName}\""
 #~ msgstr "You have rejected the document \"{documentName}\""
 
 #: packages/email/template-components/template-document-self-signed.tsx:42
 msgid "You have signed “{documentName}”"
-msgstr "Podpisałeś „{documentName}”"
+msgstr "חתמת על \"{documentName}\""
 
 #: packages/email/template-components/template-document-super-delete.tsx:23
 msgid "Your document has been deleted by an admin!"
-msgstr "Twój dokument został usunięty przez administratora!"
+msgstr "המסמך שלך נמחק על ידי מנהל!"
 
 #: packages/email/template-components/template-reset-password.tsx:26
 msgid "Your password has been updated."
-msgstr "Twoje hasło zostało zaktualizowane."
+msgstr "הסיסמה שלך עודכנה."
 
 #: packages/email/templates/team-delete.tsx:28
 #: packages/email/templates/team-delete.tsx:32
 msgid "Your team has been deleted"
-msgstr "Twój zespół został usunięty"
-
+msgstr "הצוות שלך נמחק"

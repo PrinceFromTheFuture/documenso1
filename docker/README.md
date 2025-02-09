@@ -1,6 +1,6 @@
-# Docker Setup for Documenso
+# Docker Setup for Tofes-Mekovan
 
-The following guide will walk you through setting up Documenso using Docker. You can choose between a production setup using Docker Compose or a standalone container.
+The following guide will walk you through setting up Tofes-Mekovan using Docker. You can choose between a production setup using Docker Compose or a standalone container.
 
 ## Prerequisites
 
@@ -11,9 +11,9 @@ Before you begin, ensure that you have the following installed:
 
 ## Option 1: Production Docker Compose Setup
 
-This setup includes a PostgreSQL database and the Documenso application. You will need to provide your own SMTP details via environment variables.
+This setup includes a PostgreSQL database and the Tofes-Mekovan application. You will need to provide your own SMTP details via environment variables.
 
-1. Download the Docker Compose file from the Documenso repository: [compose.yml](https://raw.githubusercontent.com/documenso/documenso/release/docker/production/compose.yml)
+1. Download the Docker Compose file from the Tofes-Mekovan repository: [compose.yml](https://raw.githubusercontent.com/documenso/documenso/release/docker/production/compose.yml)
 2. Navigate to the directory containing the `compose.yml` file.
 3. Create a `.env` file in the same directory and add your SMTP details as well as a few extra environment variables, following the example below:
 
@@ -44,15 +44,15 @@ volumes:
 docker-compose --env-file ./.env up -d
 ```
 
-This will start the PostgreSQL database and the Documenso application containers.
+This will start the PostgreSQL database and the Tofes-Mekovan application containers.
 
-5. Access the Documenso application by visiting `http://localhost:3000` in your web browser.
+5. Access the Tofes-Mekovan application by visiting `http://localhost:3000` in your web browser.
 
 ## Option 2: Standalone Docker Container
 
-If you prefer to host the Documenso application on your container provider of choice, you can use the pre-built Docker image from DockerHub or GitHub's Package Registry. Note that you will need to provide your own database and SMTP host.
+If you prefer to host the Tofes-Mekovan application on your container provider of choice, you can use the pre-built Docker image from DockerHub or GitHub's Package Registry. Note that you will need to provide your own database and SMTP host.
 
-1. Pull the Documenso Docker image:
+1. Pull the Tofes-Mekovan Docker image:
 
 ```
 docker pull documenso/documenso
@@ -86,21 +86,21 @@ docker run -d \
 
 Replace the placeholders with your actual database and SMTP details.
 
-1. Access the Documenso application by visiting the URL you provided in the `NEXT_PUBLIC_WEBAPP_URL` environment variable in your web browser.
+1. Access the Tofes-Mekovan application by visiting the URL you provided in the `NEXT_PUBLIC_WEBAPP_URL` environment variable in your web browser.
 
 ## Success
 
-You have now successfully set up Documenso using Docker. You can start organizing and managing your documents efficiently. If you encounter any issues or have further questions, please refer to the official Documenso documentation or seek assistance from the community.
+You have now successfully set up Tofes-Mekovan using Docker. You can start organizing and managing your documents efficiently. If you encounter any issues or have further questions, please refer to the official Tofes-Mekovan documentation or seek assistance from the community.
 
 ## Advanced Configuration
 
-The environment variables listed above are a subset of those that are available for configuring Documenso. For a complete list of environment variables and their descriptions, refer to the table below:
+The environment variables listed above are a subset of those that are available for configuring Tofes-Mekovan. For a complete list of environment variables and their descriptions, refer to the table below:
 
 Here's a markdown table documenting all the provided environment variables:
 
 | Variable                                     | Description                                                                                         |
 | -------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `PORT`                                       | The port to run the Documenso application on, defaults to `3000`.                                   |
+| `PORT`                                       | The port to run the Tofes-Mekovan application on, defaults to `3000`.                                   |
 | `NEXTAUTH_URL`                               | The URL for the NextAuth.js authentication service.                                                 |
 | `NEXTAUTH_SECRET`                            | The secret key used by NextAuth.js for encryption and signing.                                      |
 | `NEXT_PRIVATE_ENCRYPTION_KEY`                | The primary encryption key for symmetric encryption and decryption (at least 32 characters).        |

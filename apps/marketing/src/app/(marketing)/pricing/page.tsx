@@ -91,10 +91,10 @@ export default async function PricingPage() {
 
             <AccordionContent className="text-muted-foreground max-w-prose text-sm leading-relaxed">
               <Trans>
-                You can self-host Documenso for free or use our ready-to-use hosted version. The
+                You can self-host Tofes-Mekovan for free or use our ready-to-use hosted version. The
                 hosted version comes with additional support, painless scalability and more. Early
                 adopters will get access to all features we build this year, for no additional cost!
-                Forever! Yes, that includes multiple users per account later. If you want Documenso
+                Forever! Yes, that includes multiple users per account later. If you want Tofes-Mekovan
                 for your enterprise, we are happy to talk about your needs.
               </Trans>
             </AccordionContent>
@@ -160,12 +160,12 @@ export default async function PricingPage() {
 
           <AccordionItem value="can-i-use-documenso-commercially">
             <AccordionTrigger className="text-left text-lg font-semibold">
-              <Trans>Can I use Documenso commercially?</Trans>
+              <Trans>Can I use Tofes-Mekovan commercially?</Trans>
             </AccordionTrigger>
 
             <AccordionContent className="text-muted-foreground max-w-prose text-sm leading-relaxed">
               <Trans>
-                Yes! Documenso is offered under the GNU AGPL V3 open source license. This means you
+                Yes! Tofes-Mekovan is offered under the GNU AGPL V3 open source license. This means you
                 can use it for free and even modify it to fit your needs, as long as you publish
                 your changes under the same license.
               </Trans>
@@ -174,12 +174,12 @@ export default async function PricingPage() {
 
           <AccordionItem value="why-prefer-documenso">
             <AccordionTrigger className="text-left text-lg font-semibold">
-              <Trans>Why should I prefer Documenso over DocuSign or some other signing tool?</Trans>
+              <Trans>Why should I prefer Tofes-Mekovan over DocuSign or some other signing tool?</Trans>
             </AccordionTrigger>
 
             <AccordionContent className="text-muted-foreground max-w-prose text-sm leading-relaxed">
               <Trans>
-                Documenso is a community effort to create an open and vibrant ecosystem around a
+                Tofes-Mekovan is a community effort to create an open and vibrant ecosystem around a
                 tool, everybody is free to use and adapt. By being truly open we want to create
                 trusted infrastructure for the future of the internet.
               </Trans>
@@ -198,9 +198,9 @@ export default async function PricingPage() {
                   className="text-documenso-700 font-bold"
                   target="_blank"
                   rel="noreferrer"
-                  href="mailto:support@documenso.com"
+                  href="mailto:support@tofes-mekovan.co.il"
                 >
-                  support@documenso.com
+                  support@tofes-mekovan.co.il
                 </Link>{' '}
                 or{' '}
                 <a

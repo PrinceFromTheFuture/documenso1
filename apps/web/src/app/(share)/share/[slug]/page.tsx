@@ -10,11 +10,11 @@ type SharePageProps = {
 
 export function generateMetadata({ params: { slug } }: SharePageProps) {
   return {
-    title: 'Documenso - Share',
-    description: 'I just signed a document in style with Documenso!',
+    title: 'Tofes-Mekovan - Share',
+    description: 'I just signed a document in style with Tofes-Mekovan!',
     openGraph: {
-      title: 'Documenso - Join the open source signing revolution',
-      description: 'I just signed with Documenso!',
+      title: 'Tofes-Mekovan - Join the open source signing revolution',
+      description: 'I just signed with Tofes-Mekovan!',
       type: 'website',
       images: [`/share/${slug}/opengraph`],
     },
@@ -22,7 +22,7 @@ export function generateMetadata({ params: { slug } }: SharePageProps) {
       site: '@documenso',
       card: 'summary_large_image',
       images: [`/share/${slug}/opengraph`],
-      description: 'I just signed with Documenso!',
+      description: 'I just signed with Tofes-Mekovan!',
     },
   } satisfies Metadata;
 }

@@ -31,7 +31,7 @@ const FOOTER_LINKS = [
   { href: '/pricing', text: msg`Pricing` },
   { href: '/singleplayer', text: 'Singleplayer' },
   { href: 'https://docs.documenso.com', text: msg`Documentation`, target: '_blank' },
-  { href: 'mailto:support@documenso.com', text: msg`Support`, target: '_blank' },
+  { href: 'mailto:support@tofes-mekovan.co.il', text: msg`Support`, target: '_blank' },
   { href: '/blog', text: msg`Blog` },
   { href: '/changelog', text: msg`Changelog` },
   { href: '/open', text: msg`Open Startup` },
@@ -55,7 +55,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
           <Link href="/">
             <Image
               src={LogoImage}
-              alt="Documenso Logo"
+              alt="Tofes-Mekovan Logo"
               className="dark:invert"
               width={170}
               height={0}
@@ -95,7 +95,7 @@ export const Footer = ({ className, ...props }: FooterProps) => {
       </div>
       <div className="mx-auto mt-4 flex w-full max-w-screen-xl flex-wrap items-center justify-between gap-4 px-8 md:mt-12 lg:mt-24">
         <p className="text-muted-foreground text-sm">
-          © {new Date().getFullYear()} Documenso, Inc. All rights reserved.
+          © {new Date().getFullYear()} Tofes-Mekovan, Inc. All rights reserved.
         </p>
 
         <div className="flex flex-row-reverse items-center sm:flex-row">

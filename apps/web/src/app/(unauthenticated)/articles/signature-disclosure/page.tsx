@@ -5,7 +5,7 @@ import { Trans } from '@lingui/macro';
 import { setupI18nSSR } from '@documenso/lib/client-only/providers/i18n.server';
 import { Button } from '@documenso/ui/primitives/button';
 
-const SUPPORT_EMAIL = 'support@documenso.com';
+const SUPPORT_EMAIL = 'support@tofes-mekovan.co.il';
 
 export default async function SignatureDisclosure() {
   await setupI18nSSR();
@@ -22,7 +22,7 @@ export default async function SignatureDisclosure() {
         </h2>
         <p>
           <Trans>
-            Thank you for using Documenso to perform your electronic document signing. The purpose
+            Thank you for using Tofes-Mekovan to perform your electronic document signing. The purpose
             of this disclosure is to inform you about the process, legality, and your rights
             regarding the use of electronic signatures on our platform. By opting to use an
             electronic signature, you are agreeing to the terms and conditions outlined below.
@@ -140,7 +140,7 @@ export default async function SignatureDisclosure() {
         </h2>
         <p>
           <Trans>
-            By proceeding to use the electronic signature service provided by Documenso, you affirm
+            By proceeding to use the electronic signature service provided by Tofes-Mekovan, you affirm
             that you have read and understood this disclosure. You agree to all terms and conditions
             related to the use of electronic signatures and electronic transactions as outlined
             herein.

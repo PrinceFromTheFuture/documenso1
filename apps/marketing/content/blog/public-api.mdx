@@ -1,5 +1,5 @@
 ---
-title: 'Building the Documenso Public API - The Why and How'
+title: 'Building the Tofes-Mekovan Public API - The Why and How'
 description: 'This article talks about the need for the public API and the process of building it. It also discusses the requirements we had to meet and the constraints we had to work within.'
 authorName: 'Catalin'
 authorImage: '/blog/blog-author-catalin.webp'
@@ -10,13 +10,13 @@ tags:
   - API
 ---
 
-This article covers the process of building the public API for Documenso. It starts by explaining why the API was needed for a digital document signing company in the first place. Then, it'll dive into the steps we took to build it. Lastly, it'll present the requirements we had to meet and the constraints we had to work within.
+This article covers the process of building the public API for Tofes-Mekovan. It starts by explaining why the API was needed for a digital document signing company in the first place. Then, it'll dive into the steps we took to build it. Lastly, it'll present the requirements we had to meet and the constraints we had to work within.
 
 ## Why the public API
 
-We decided to build the public API to open a new way of interacting with Documenso. While the web app does the job well, there are use cases where it's not enough. In those cases, the users might want to interact with the platform programmatically. Usually, that's for integrating Documenso with other applications.
+We decided to build the public API to open a new way of interacting with Tofes-Mekovan. While the web app does the job well, there are use cases where it's not enough. In those cases, the users might want to interact with the platform programmatically. Usually, that's for integrating Tofes-Mekovan with other applications.
 
-With the new public API that's now possible. You can integrate Documenso's functionalities within other applications to automate tasks, create custom solutions, and build custom workflows, to name just a few.
+With the new public API that's now possible. You can integrate Tofes-Mekovan's functionalities within other applications to automate tasks, create custom solutions, and build custom workflows, to name just a few.
 
 The API provides 12 endpoints at the time of writing this article:
 
@@ -35,9 +35,9 @@ The API provides 12 endpoints at the time of writing this article:
 
 > Check out the [API documentation](https://app.documenso.com/api/v1/openapi).
 
-Moreover, it also enables us to enhance the platform by bringing other integrations to Documenso, such as Zapier.
+Moreover, it also enables us to enhance the platform by bringing other integrations to Tofes-Mekovan, such as Zapier.
 
-In conclusion, the new public API extends Documenso's capabilities, provides more flexibility for users, and opens up a broader world of possibilities.
+In conclusion, the new public API extends Tofes-Mekovan's capabilities, provides more flexibility for users, and opens up a broader world of possibilities.
 
 ## Picking the right approach & tech
 
@@ -52,7 +52,7 @@ That would mean creating a new codebase and building the API from scratch. Havin
 
 - lower latency responses
 - supporting larger field uploads
-- separation between the apps (Documenso and the API)
+- separation between the apps (Tofes-Mekovan and the API)
 - customizability and flexibility
 - easier testing and debugging
 
@@ -222,7 +222,7 @@ That's how the other endpoints work as well. The code differs, but the principle
 For the documentation, we decided to use Swagger UI, which automatically generates the documentation from the OpenAPI specification.
 
 The OpenAPI specification describes an API containing the available endpoints and their HTTP request methods, authentication methods, and so on. Its purpose is to help both machines and humans understand the API without having to look at the code.
-The Documenso OpenAPI specification is live [here](https://documenso.com/api/v1/openapi.json).
+The Tofes-Mekovan OpenAPI specification is live [here](https://documenso.com/api/v1/openapi.json).
 
 Thankfully, `ts-rest` makes it seamless to generate the OpenAPI specification.
 
@@ -235,9 +235,9 @@ export const OpenAPIV1 = generateOpenApi(
   ApiContractV1,
   {
     info: {
-      title: 'Documenso API',
+      title: 'Tofes-Mekovan API',
       version: '1.0.0',
-      description: 'The Documenso API for retrieving, creating, updating and deleting documents.',
+      description: 'The Tofes-Mekovan API for retrieving, creating, updating and deleting documents.',
     },
   },
   {
@@ -281,7 +281,7 @@ export default function OpenApiDocsPage() {
 
 You can access and play around with the documentation at [documenso.com/api/v1/openapi](https://documenso.com/api/v1/openapi). You should see a page like the one shown in the screenshot below.
 
-![The documentation for the Documenso API](docs.webp)
+![The documentation for the Tofes-Mekovan API](docs.webp)
 
 > This article shows how to [generate Swagger documentation for a Next.js API](https://catalins.tech/generate-swagger-documentation-next-js-api/).
 

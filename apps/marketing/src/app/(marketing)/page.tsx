@@ -14,7 +14,7 @@ import { ShareConnectPaidWidgetBento } from '~/components/(marketing)/share-conn
 export const revalidate = 600;
 export const metadata: Metadata = {
   title: {
-    absolute: 'Documenso - The Open Source DocuSign Alternative',
+    absolute: 'Tofes-Mekovan - The Open Source DocuSign Alternative',
   },
 };
 

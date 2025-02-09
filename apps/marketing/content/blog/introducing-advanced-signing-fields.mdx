@@ -1,6 +1,6 @@
 ---
 title: 'Enhancing Document Signing: Introducing 5 New Advanced Fields'
-description: "Explore Documenso's new advanced signing fields, including improved text fields, numbers, radio buttons, checkboxes, and dropdowns. Learn about the development challenges we overcame and how these additions provide greater flexibility for document signing."
+description: "Explore Tofes-Mekovan's new advanced signing fields, including improved text fields, numbers, radio buttons, checkboxes, and dropdowns. Learn about the development challenges we overcame and how these additions provide greater flexibility for document signing."
 authorName: 'Catalin Pit'
 authorImage: '/blog/blog-author-catalin.webp'
 authorRole: 'I like to code and write'
@@ -10,7 +10,7 @@ tags:
   - Development
 ---
 
-Until recently, Documenso provided a set of 5 fields for document signing: signature, email, name, date, and a text field for additional information. While these fields covered the basic requirements for document signing, we recognized the need for more flexibility and variety.
+Until recently, Tofes-Mekovan provided a set of 5 fields for document signing: signature, email, name, date, and a text field for additional information. While these fields covered the basic requirements for document signing, we recognized the need for more flexibility and variety.
 
 As a result, we've decided to introduce several additional fields, such as:
 
@@ -20,7 +20,7 @@ As a result, we've decided to introduce several additional fields, such as:
 - Checkbox field
 - Dropdown/Select field
 
-These new fields bring more flexibility and variety to Documenso. As the document owner, they allow you to gather more specific or extra information from the signers.
+These new fields bring more flexibility and variety to Tofes-Mekovan. As the document owner, they allow you to gather more specific or extra information from the signers.
 
 ## New Fields Introduction
 
@@ -32,20 +32,20 @@ While the text field was previously available, it could not be configured. It wa
 
 The image illustrates the old text field in the document editor.
 
-![Old text signing field in the Documenso document editor](/blog/advanced-fields/old-text-field.jpeg)
+![Old text signing field in the Tofes-Mekovan document editor](/blog/advanced-fields/old-text-field.jpeg)
 
 The revamped text field now offers a range of configuration options, allowing you to:
 
 - Add a label, placeholder, default text, and character limit
 - Set the field as required or read-only
 
-![The advanced settings tab for the text field in the Documenso document editor](/blog/advanced-fields/text-field-advanced-settings.webp)
+![The advanced settings tab for the text field in the Tofes-Mekovan document editor](/blog/advanced-fields/text-field-advanced-settings.webp)
 
 On the signing side, the field remained mostly the same visually. The only thing that changed is the functionality, which needs to take into consideration the validation rules. For example, if the field is required, the signer must enter a value to sign it. Or, if the field has a character limit, the value entered by the signer shouldn't exceed the limit.
 
 The image below illustrates four different text fields with various configurations.
 
-![The text signing field on the Documenso signing page](/blog/advanced-fields/text-field-signing.webp)
+![The text signing field on the Tofes-Mekovan signing page](/blog/advanced-fields/text-field-signing.webp)
 
 The first text field has no default value ("Add text") or configuration. You can sign the field by entering any text.
 
@@ -88,7 +88,7 @@ The only exception is the fourth, read-only field, which cannot be unsigned or m
 
 We also introduced a new "Number" field for inserting and signing documents with numeric values. This field helps collect quantities, measurements, and other data best represented as numbers.
 
-![The advanced settings tab for the number field on the Documenso document editor page](/blog/advanced-fields/number-field-advanced-settings.webp)
+![The advanced settings tab for the number field on the Tofes-Mekovan document editor page](/blog/advanced-fields/number-field-advanced-settings.webp)
 
 The "Number" field offers a range of configuration options, which allows you to:
 
@@ -107,11 +107,11 @@ Before sending the document for signing, you must add at least one radio option,
 
 When it comes to field configuration, you can mark the field as _required_ or _read-only_.
 
-![The advanced settings tab for the radio field in the Documenso document editor](/blog/advanced-fields/radio-field-advanced-settings.webp)
+![The advanced settings tab for the radio field in the Tofes-Mekovan document editor](/blog/advanced-fields/radio-field-advanced-settings.webp)
 
 The image below shows what the signer sees after the document is sent for signing.
 
-![The radio signing field on the Documenso signing page](/blog/advanced-fields/radio-field-sign-page.webp)
+![The radio signing field on the Tofes-Mekovan signing page](/blog/advanced-fields/radio-field-sign-page.webp)
 
 Note: The image is modified to display both the unsigned and signed states of the field.
 
@@ -134,11 +134,11 @@ When setting up a "Dropdown/Select" field, you can:
 - Mark the field as _required_ or _read-only_
 - Pick a default option from the list of choices
 
-![The advanced settings tab for the select field in the Documenso document editor](/blog/advanced-fields/select-field-advanced-settings.webp)
+![The advanced settings tab for the select field in the Tofes-Mekovan document editor](/blog/advanced-fields/select-field-advanced-settings.webp)
 
 On the signing page, the "Dropdown/Select" field appears as shown below:
 
-![The select field on the Documenso document signing page](/blog/advanced-fields/select-field-sign-page.webp)
+![The select field on the Tofes-Mekovan document signing page](/blog/advanced-fields/select-field-sign-page.webp)
 
 Here's how the "Dropdown/Select" field works:
 
@@ -159,11 +159,11 @@ Like other fields, you can mark the "Checkbox" as _required_ or _read-only_. In 
 - Select at most X _(a number from 1 to 10)_
 - Select exactly X _(a number from 1 to 10)_
 
-![The advanced settings tab for the checkbox field in the Documenso document editor](/blog/advanced-fields/checkbox-field-advanced-settings.webp)
+![The advanced settings tab for the checkbox field in the Tofes-Mekovan document editor](/blog/advanced-fields/checkbox-field-advanced-settings.webp)
 
 When a signer receives the document, they will see the "Checkbox" field as shown below:
 
-![The checkbox field on the Documenso document signing page](/blog/advanced-fields/checkbox-sign-page.webp)
+![The checkbox field on the Tofes-Mekovan document signing page](/blog/advanced-fields/checkbox-sign-page.webp)
 
 The image illustrates both field states - signed and un-signed. In this example, the 'Checkbox' field has two options checked by default, so it auto-signs.
 
@@ -274,7 +274,7 @@ The next challenge was finding the best way to store the advanced field settings
 
 Currently, the app only saves the fields and associated settings to the database when the user moves to the next step.
 
-![Documenso advanced field signing](/blog/advanced-fields/documenso-advanced-fields-signing.webp)
+![Tofes-Mekovan advanced field signing](/blog/advanced-fields/documenso-advanced-fields-signing.webp)
 
 The fields are stored locally until the user proceeds to the next step. This means all fields and their settings are lost when the user:
 
@@ -289,7 +289,7 @@ In the future, we plan to improve this flow and save the fields on blur, preserv
 
 Our temporary solution is to store the advanced settings in local storage, as the fields are only available locally. If the fields were saved in the database, we could store the advanced settings alongside them.
 
-![Documenso field advanced settings](/blog/advanced-fields/documenso-field-advanced-settings.webp)
+![Tofes-Mekovan field advanced settings](/blog/advanced-fields/documenso-field-advanced-settings.webp)
 
 Since the fields are not saved in the database, we must persist the data until the user moves to the next step, at which point the data is saved to the database. Storing the data in local storage allows users to open, close, and configure various fields in the advanced settings tab without losing information.
 
@@ -309,7 +309,7 @@ In these cases, the fields are wiped from the document. A future improvement to 
 
 Implementing the Radio and Checkbox fields was challenging from both logical and design perspectives. Both fields can contain empty and non-empty values, and the Checkbox field allows users to select multiple empty/non-empty values.
 
-![The radio and checkbox signing fields on the Documenso document signing page](/blog/advanced-fields/radio-and-checkbox-fields.webp)
+![The radio and checkbox signing fields on the Tofes-Mekovan document signing page](/blog/advanced-fields/radio-and-checkbox-fields.webp)
 
 The image above shows the Radio and Checkbox fields in the document editor. The Radio field on the left-hand side has 4 options, 1 of which is checked. The Checkbox field on the right-hand side has 4 options, 2 of which are checked.
 
@@ -478,11 +478,11 @@ In the first image, the "Signature" field on the right is in the active state (b
 
 The first image illustrates the "Signature" field in the active state, triggered when the user clicks on it.
 
-![Screenshot illustrating the active state for a field on the Documenso document editor page](/blog/advanced-fields/field-active-state.webp)
+![Screenshot illustrating the active state for a field on the Tofes-Mekovan document editor page](/blog/advanced-fields/field-active-state.webp)
 
 The second image shows the "Signature" field in the normal state.
 
-![Screenshot illustrating the fields for a signer on the Documenso document editor page](/blog/advanced-fields/recipient-colours.webp)
+![Screenshot illustrating the fields for a signer on the Tofes-Mekovan document editor page](/blog/advanced-fields/recipient-colours.webp)
 
 The document editor consists of various components (fields, recipients, etc.), meaning the same colours and code are reused across multiple components.
 
@@ -529,7 +529,7 @@ The code above shows a naive solution using a `combinedStyles` object containing
 
 Components would use custom hooks to apply appropriate styles based on the selected recipient. For example, recipient 1 would use `green-500` styles, turning all related elements green.
 
-![Screenshot illustrating the recipient colour on the Documenso document editor page](/blog/advanced-fields/recipient-colour-example.webp)
+![Screenshot illustrating the recipient colour on the Tofes-Mekovan document editor page](/blog/advanced-fields/recipient-colour-example.webp)
 
 The problem with this approach is that we can't import the `combinedStyles` object into other components because TailwindCSS will remove the unused classes. That means we had to copy and paste the same object into multiple files. As a result, it pollutes the codebase with duplicated code, which makes it harder to maintain and scale the code. As the application grows, the `combinedStyles` object will become larger and more complex. Moreover, it's not very flexible, as it doesn't allow for easy customization of the colours.
 
@@ -578,7 +578,7 @@ export const getSignerColorStyles = (index: number) => {
 };
 ```
 
-> The file was truncated for readability. You can see the complete code in the [signer-colors.ts](https://github.com/documenso/documenso/blob/main/packages/ui/lib/signer-colors.ts) file from the Documenso repository.
+> The file was truncated for readability. You can see the complete code in the [signer-colors.ts](https://github.com/documenso/documenso/blob/main/packages/ui/lib/signer-colors.ts) file from the Tofes-Mekovan repository.
 
 The `SIGNER_COLOR_STYLES` object contains the styles for each colour, such as the background, border, and hover colours. Based on the signer's index, the `useSignerColors` hook gets the styles for a specific colour. The `getSignerColorStyles` function is a helper function that returns the styles for a particular signer.
 
@@ -596,4 +596,4 @@ We also opted for CSS variables to define colours, allowing more flexibility and
 
 ## The End
 
-We're happy to see the new advanced fields released because they offer our users more flexibility, variety, and customization options. Implementing the new fields came with its challenges, but we overcame them and learned from them. We're excited to continue enhancing Documenso and providing our users with the best document signing experience.
+We're happy to see the new advanced fields released because they offer our users more flexibility, variety, and customization options. Implementing the new fields came with its challenges, but we overcame them and learned from them. We're excited to continue enhancing Tofes-Mekovan and providing our users with the best document signing experience.

@@ -11,7 +11,11 @@ import type { Field } from '@documenso/prisma/client';
 
 import { cn } from '../../lib/utils';
 import { Card, CardContent } from '../../primitives/card';
-
+// Utility function to detect if text contains Hebrew
+const containsHebrew = (text: string) => {
+  const hebrewPattern = /[\u0590-\u05FF]/;
+  return hebrewPattern.test(text);
+};
 export type FieldRootContainerProps = {
   field: Field;
   children: React.ReactNode;
@@ -77,13 +81,18 @@ export function FieldContainerPortal({
   const coords = useFieldPageCoords(field);
 
   const isCheckboxOrRadioField = field.type === 'CHECKBOX' || field.type === 'RADIO';
-  const isFieldSigned = field.inserted;
+  
+  // Check if the field contains Hebrew text
+  const isRTL = useMemo(() => {
+    if (field.type === 'TEXT' && field.customText) {
+      return containsHebrew(field.customText);
+    }
+    return false;
+  }, [field.type, field.customText]);
 
   const style = {
     top: `${coords.y}px`,
     left: `${coords.x}px`,
-    // height: `${coords.height}px`,
-    // width: `${coords.width}px`,
     ...(!isCheckboxOrRadioField && {
       height: `${coords.height}px`,
       width: `${coords.width}px`,
@@ -91,7 +100,11 @@ export function FieldContainerPortal({
   };
 
   return createPortal(
-    <div className={cn('absolute', className)} style={style}>
+    <div 
+      className={cn('absolute', className)} 
+      style={style}
+      dir={isRTL ? 'rtl' : 'ltr'}
+    >
       {children}
     </div>,
     document.body,
@@ -130,12 +143,21 @@ export function FieldRootContainer({ field, children, cardClassName }: FieldCont
     () => parsedField?.type === 'checkbox' || parsedField?.type === 'radio',
     [parsedField],
   );
-
+  const isReadOnlyTextField = useMemo(
+    () => field.type === 'TEXT' && parsedField?.readOnly === true,
+    [field.type, parsedField]
+  );
   const cardClassNames = useMemo(
     () => getCardClassNames(field, parsedField, isValidating, isCheckboxOrRadio, cardClassName),
     [field, parsedField, isValidating, isCheckboxOrRadio, cardClassName],
   );
-
+  if (isReadOnlyTextField) {
+    return (
+      <FieldContainerPortal field={field}>
+        {children}
+      </FieldContainerPortal>
+    );
+  }
   return (
     <FieldContainerPortal field={field}>
       <Card

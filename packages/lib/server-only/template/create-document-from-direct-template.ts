@@ -568,7 +568,7 @@ export const createDocumentFromDirectTemplate = async ({
         },
       ],
       from: {
-        name: process.env.NEXT_PRIVATE_SMTP_FROM_NAME || 'Documenso',
+        name: process.env.NEXT_PRIVATE_SMTP_FROM_NAME || 'Tofes-Mekovan',
         address: process.env.NEXT_PRIVATE_SMTP_FROM_ADDRESS || 'noreply@documenso.com',
       },
       subject: i18n._(msg`Document created from direct template`),

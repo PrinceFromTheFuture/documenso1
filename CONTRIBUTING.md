@@ -1,6 +1,6 @@
-# Contributing to Documenso
+# Contributing to Tofes-Mekovan
 
-If you plan to contribute to Documenso, please take a moment to feel awesome ✨ People like you are what open source is about ♥. Any contributions, no matter how big or small, are highly appreciated.
+If you plan to contribute to Tofes-Mekovan, please take a moment to feel awesome ✨ People like you are what open source is about ♥. Any contributions, no matter how big or small, are highly appreciated.
 
 ## Before getting started
 

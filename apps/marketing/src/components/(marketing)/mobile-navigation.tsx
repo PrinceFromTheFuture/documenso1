@@ -44,7 +44,7 @@ export const MENU_NAVIGATION_LINKS = [
     text: msg`Status`,
   },
   {
-    href: 'mailto:support@documenso.com',
+    href: 'mailto:support@tofes-mekovan.co.il',
     text: msg`Support`,
     target: '_blank',
   },
@@ -77,7 +77,7 @@ export const MobileNavigation = ({ isMenuOpen, onMenuOpenChange }: MobileNavigat
         <Link href="/" className="z-10" onClick={handleMenuItemClick}>
           <Image
             src={LogoImage}
-            alt="Documenso Logo"
+            alt="Tofes-Mekovan Logo"
             className="dark:invert"
             width={170}
             height={25}

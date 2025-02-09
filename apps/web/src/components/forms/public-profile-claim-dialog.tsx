@@ -131,7 +131,7 @@ export const ClaimPublicProfileDialogForm = ({
               </DialogTitle>
 
               <DialogDescription className="text-center">
-                Reserve your Documenso public profile username
+                Reserve your Tofes-Mekovan public profile username
               </DialogDescription>
             </DialogHeader>
 

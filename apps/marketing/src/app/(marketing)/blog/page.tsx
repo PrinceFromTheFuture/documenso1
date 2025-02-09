@@ -28,7 +28,7 @@ export default async function BlogPage() {
 
         <p className="text-muted-foreground mx-auto mt-4 max-w-xl text-center text-lg leading-normal">
           <Trans>
-            Get the latest news from Documenso, including product updates, team announcements and
+            Get the latest news from Tofes-Mekovan, including product updates, team announcements and
             more!
           </Trans>
         </p>

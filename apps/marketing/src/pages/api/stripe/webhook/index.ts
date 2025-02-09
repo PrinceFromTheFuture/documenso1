@@ -106,7 +106,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const document = await prisma.document.create({
         data: {
           source: DocumentSource.DOCUMENT,
-          title: 'Documenso Supporter Pledge.pdf',
+          title: 'Tofes-Mekovan Supporter Pledge.pdf',
           status: DocumentStatus.COMPLETED,
           userId: user.id,
           documentDataId,
