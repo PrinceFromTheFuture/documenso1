@@ -112,8 +112,9 @@ export const documentRouter = router({
 
         const { remaining } = await getServerLimits({ email: ctx.user.email, teamId });
 
-        if (remaining.documents <= 0) {
-          throw new TRPCError({
+       // if (remaining.documents <= 0) {
+        if (0) {
+            throw new TRPCError({
             code: 'BAD_REQUEST',
             message:
               'You have reached your document limit for this month. Please upgrade your plan.',

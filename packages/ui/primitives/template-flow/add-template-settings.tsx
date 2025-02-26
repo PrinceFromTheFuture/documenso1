@@ -68,7 +68,11 @@ export type AddTemplateSettingsFormProps = {
   template: TemplateWithData;
   onSubmit: (_data: TAddTemplateSettingsFormSchema) => void;
 };
-
+const form = useForm({
+  defaultValues: {
+    meta: { language: "en" },
+  },
+});
 export const AddTemplateSettingsFormPartial = ({
   documentFlow,
   recipients,

@@ -87,21 +87,23 @@ export const SignUpFormV2 = ({
 }: SignUpFormV2Props) => {
   const { _ } = useLingui();
   const { toast } = useToast();
-
   const analytics = useAnalytics();
   const router = useRouter();
   const searchParams = useSearchParams();
-
   const [step, setStep] = useState<SignUpStep>('BASIC_DETAILS');
 
   const utmSrc = searchParams?.get('utm_source') ?? null;
-
   const baseUrl = new URL(NEXT_PUBLIC_WEBAPP_URL() ?? 'http://localhost:3000');
 
+  // Get query params only once
+  const queryParams = new URLSearchParams(window.location.search);
+  const nameFromUrl = queryParams.get('n') || '';
+  const emailFromUrl = queryParams.get('e') || initialEmail || '';
+
   const form = useForm<TSignUpFormV2Schema>({
-    values: {
-      name: '',
-      email: initialEmail ?? '',
+    defaultValues: {
+      name: nameFromUrl,
+      email: emailFromUrl,
       password: '',
       signature: '',
       url: '',
@@ -111,7 +113,6 @@ export const SignUpFormV2 = ({
   });
 
   const isSubmitting = form.formState.isSubmitting;
-
   const name = form.watch('name');
   const url = form.watch('url');
 
@@ -120,9 +121,7 @@ export const SignUpFormV2 = ({
   const onFormSubmit = async ({ name, email, password, signature, url }: TSignUpFormV2Schema) => {
     try {
       await signup({ name, email, password, signature, url });
-
       router.push(`/unverified-account`);
-
       toast({
         title: _(msg`Registration Successful`),
         description: _(
@@ -130,7 +129,6 @@ export const SignUpFormV2 = ({
         ),
         duration: 5000,
       });
-
       analytics.capture('App: User Sign Up', {
         email,
         timestamp: new Date().toISOString(),
@@ -138,7 +136,6 @@ export const SignUpFormV2 = ({
       });
     } catch (err) {
       const error = AppError.parseError(err);
-
       if (error.code === AppErrorCode.PROFILE_URL_TAKEN) {
         form.setError('url', {
           type: 'manual',
@@ -169,7 +166,6 @@ export const SignUpFormV2 = ({
 
   const onNextClick = async () => {
     const valid = await form.trigger(['name', 'email', 'password', 'signature']);
-
     if (valid) {
       setStep('CLAIM_USERNAME');
     }
@@ -205,11 +201,8 @@ export const SignUpFormV2 = ({
 
   useEffect(() => {
     const hash = window.location.hash.slice(1);
-
     const params = new URLSearchParams(hash);
-
     const email = params.get('email');
-
     if (email) {
       form.setValue('email', email);
     }
@@ -281,7 +274,7 @@ export const SignUpFormV2 = ({
 
             <p className="text-muted-foreground mt-2 text-xs md:text-sm">
               <Trans>
-                You will get notified & be able to set up your documenso public profile when we
+                You will get notified &amp; be able to set up your documenso public profile when we
                 launch the feature.
               </Trans>
             </p>
@@ -328,7 +321,12 @@ export const SignUpFormV2 = ({
                         <Trans>Email Address</Trans>
                       </FormLabel>
                       <FormControl>
-                        <Input type="email" {...field} />
+                        <Input
+                          type="email"
+                          readOnly
+                          {...field}
+                          className="bg-gray-200 cursor-not-allowed"
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -343,11 +341,9 @@ export const SignUpFormV2 = ({
                       <FormLabel>
                         <Trans>Password</Trans>
                       </FormLabel>
-
                       <FormControl>
                         <PasswordInput {...field} />
                       </FormControl>
-
                       <FormMessage />
                     </FormItem>
                   )}
@@ -369,54 +365,47 @@ export const SignUpFormV2 = ({
                           onChange={(v) => onChange(v ?? '')}
                         />
                       </FormControl>
-
                       <FormMessage />
                     </FormItem>
                   )}
                 />
 
                 {(isGoogleSSOEnabled || isOIDCSSOEnabled) && (
-                  <>
-                    <div className="relative flex items-center justify-center gap-x-4 py-2 text-xs uppercase">
-                      <div className="bg-border h-px flex-1" />
-                      <span className="text-muted-foreground bg-transparent">
-                        <Trans>Or</Trans>
-                      </span>
-                      <div className="bg-border h-px flex-1" />
-                    </div>
-                  </>
+                  <div className="relative flex items-center justify-center gap-x-4 py-2 text-xs uppercase">
+                    <div className="bg-border h-px flex-1" />
+                    <span className="text-muted-foreground bg-transparent">
+                      <Trans>Or</Trans>
+                    </span>
+                    <div className="bg-border h-px flex-1" />
+                  </div>
                 )}
 
                 {isGoogleSSOEnabled && (
-                  <>
-                    <Button
-                      type="button"
-                      size="lg"
-                      variant={'outline'}
-                      className="bg-background text-muted-foreground border"
-                      disabled={isSubmitting}
-                      onClick={onSignUpWithGoogleClick}
-                    >
-                      <FcGoogle className="mr-2 h-5 w-5" />
-                      <Trans>Sign Up with Google</Trans>
-                    </Button>
-                  </>
+                  <Button
+                    type="button"
+                    size="lg"
+                    variant="outline"
+                    className="bg-background text-muted-foreground border"
+                    disabled={isSubmitting}
+                    onClick={onSignUpWithGoogleClick}
+                  >
+                    <FcGoogle className="mr-2 h-5 w-5" />
+                    <Trans>Sign Up with Google</Trans>
+                  </Button>
                 )}
 
                 {isOIDCSSOEnabled && (
-                  <>
-                    <Button
-                      type="button"
-                      size="lg"
-                      variant={'outline'}
-                      className="bg-background text-muted-foreground border"
-                      disabled={isSubmitting}
-                      onClick={onSignUpWithOIDCClick}
-                    >
-                      <FaIdCardClip className="mr-2 h-5 w-5" />
-                      <Trans>Sign Up with OIDC</Trans>
-                    </Button>
-                  </>
+                  <Button
+                    type="button"
+                    size="lg"
+                    variant="outline"
+                    className="bg-background text-muted-foreground border"
+                    disabled={isSubmitting}
+                    onClick={onSignUpWithOIDCClick}
+                  >
+                    <FaIdCardClip className="mr-2 h-5 w-5" />
+                    <Trans>Sign Up with OIDC</Trans>
+                  </Button>
                 )}
 
                 <p className="text-muted-foreground mt-4 text-sm">
@@ -449,13 +438,10 @@ export const SignUpFormV2 = ({
                       <FormLabel>
                         <Trans>Public profile username</Trans>
                       </FormLabel>
-
                       <FormControl>
                         <Input type="text" className="mb-2 mt-2 lowercase" {...field} />
                       </FormControl>
-
                       <FormMessage />
-
                       <div className="bg-muted/50 border-border text-muted-foreground mt-2 inline-block max-w-[16rem] truncate rounded-md border px-2 py-1 text-sm lowercase">
                         {baseUrl.host}/u/{field.value || '<username>'}
                       </div>
@@ -474,7 +460,6 @@ export const SignUpFormV2 = ({
                   1/2
                 </p>
               )}
-
               {step === 'CLAIM_USERNAME' && (
                 <p className="text-muted-foreground text-sm">
                   <span className="font-medium">
@@ -483,49 +468,41 @@ export const SignUpFormV2 = ({
                   2/2
                 </p>
               )}
-
               <div className="bg-foreground/40 relative mt-4 h-1.5 rounded-full">
                 <motion.div
                   layout="size"
                   layoutId="document-flow-container-step"
                   className="bg-documenso absolute inset-y-0 left-0 rounded-full"
-                  style={{
-                    width: step === 'BASIC_DETAILS' ? '50%' : '100%',
-                  }}
+                  style={{ width: step === 'BASIC_DETAILS' ? '50%' : '100%' }}
                 />
               </div>
             </div>
 
             <div className="flex items-center gap-x-4">
-              {/* Go back button, disabled if step is basic details */}
               <Button
                 type="button"
                 size="lg"
                 variant="secondary"
                 className="flex-1"
-                disabled={step === 'BASIC_DETAILS' || form.formState.isSubmitting}
+                disabled={step === 'BASIC_DETAILS' || isSubmitting}
                 onClick={() => setStep('BASIC_DETAILS')}
               >
                 <Trans>Back</Trans>
               </Button>
-
-              {/* Continue button */}
               {step === 'BASIC_DETAILS' && (
                 <Button
                   type="button"
                   size="lg"
                   className="flex-1 disabled:cursor-not-allowed"
-                  loading={form.formState.isSubmitting}
+                  loading={isSubmitting}
                   onClick={onNextClick}
                 >
                   <Trans>Next</Trans>
                 </Button>
               )}
-
-              {/* Sign up button */}
               {step === 'CLAIM_USERNAME' && (
                 <Button
-                  loading={form.formState.isSubmitting}
+                  loading={isSubmitting}
                   disabled={!form.formState.isValid}
                   type="submit"
                   size="lg"

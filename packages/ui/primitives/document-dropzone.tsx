@@ -164,7 +164,7 @@ export const DocumentDropzone = ({
 
           {disabled && IS_BILLING_ENABLED() && (
             <Button className="hover:bg-warning/80 bg-warning mt-4 w-32" asChild>
-              <Link href="/settings/billing">
+              <Link href="https://tofes-mekovan.co.il/">
                 <Trans>Upgrade</Trans>
               </Link>
             </Button>

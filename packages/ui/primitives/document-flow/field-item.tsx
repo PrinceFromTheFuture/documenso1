@@ -271,6 +271,7 @@ export const FieldItem = ({
                 className="dark:text-muted-foreground/50 dark:hover:text-muted-foreground dark:hover:bg-foreground/10 rounded-sm p-1.5 text-gray-400 transition-colors hover:bg-white/10 hover:text-gray-100"
                 onClick={onAdvancedSettings}
                 onTouchEnd={onAdvancedSettings}
+                onTouchStart={onAdvancedSettings}
               >
                 <Settings2 className="h-3 w-3" />
               </button>
@@ -280,6 +281,7 @@ export const FieldItem = ({
               className="dark:text-muted-foreground/50 dark:hover:text-muted-foreground dark:hover:bg-foreground/10 rounded-sm p-1.5 text-gray-400 transition-colors hover:bg-white/10 hover:text-gray-100"
               onClick={onDuplicate}
               onTouchEnd={onDuplicate}
+              onTouchStart={onDuplicate}
             >
               <CopyPlus className="h-3 w-3" />
             </button>
@@ -288,6 +290,7 @@ export const FieldItem = ({
               className="dark:text-muted-foreground/50 dark:hover:text-muted-foreground dark:hover:bg-foreground/10 rounded-sm p-1.5 text-gray-400 transition-colors hover:bg-white/10 hover:text-gray-100"
               onClick={onRemove}
               onTouchEnd={onRemove}
+              onTouchStart={onRemove}
             >
               <Trash className="h-3 w-3" />
             </button>
