@@ -104,20 +104,7 @@ export const DesktopNav = ({ className, ...props }: DesktopNavProps) => {
         </Button>
       </Link>
 
-      {isBillingEnabled && (
-        <Link href="/settings/billing">
-          <Button
-            variant="ghost"
-            className={cn(
-              'w-full justify-start',
-              pathname?.startsWith('/settings/billing') && 'bg-secondary',
-            )}
-          >
-            <CreditCard className="mr-2 h-5 w-5" />
-            <Trans>Billing</Trans>
-          </Button>
-        </Link>
-      )}
+      {}
     </div>
   );
 };
