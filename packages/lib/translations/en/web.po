@@ -440,7 +440,7 @@ msgstr "All Time"
 msgid "Allows authenticating using biometrics, password managers, hardware keys, etc."
 msgstr "Allows authenticating using biometrics, password managers, hardware keys, etc."
 
-#: apps/web/src/components/forms/v2/signup.tsx:412
+#: apps/web/src/components/forms/v2/signup.tsx:407
 msgid "Already have an account? <0>Sign in instead</0>"
 msgstr "Already have an account? <0>Sign in instead</0>"
 
@@ -741,7 +741,7 @@ msgstr "Awaiting email confirmation"
 
 #: apps/web/src/app/(recipient)/d/[token]/sign-direct-template.tsx:369
 #: apps/web/src/components/(dashboard)/settings/layout/activity-back.tsx:20
-#: apps/web/src/components/forms/v2/signup.tsx:490
+#: apps/web/src/components/forms/v2/signup.tsx:485
 msgid "Back"
 msgstr "Back"
 
@@ -766,13 +766,12 @@ msgstr "Backup codes"
 msgid "Banner Updated"
 msgstr "Banner Updated"
 
-#: apps/web/src/components/forms/v2/signup.tsx:458
+#: apps/web/src/components/forms/v2/signup.tsx:453
 msgid "Basic details"
 msgstr "Basic details"
 
 #: apps/web/src/app/(dashboard)/settings/billing/page.tsx:74
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/billing/page.tsx:61
-#: apps/web/src/components/(dashboard)/settings/layout/desktop-nav.tsx:117
 #: apps/web/src/components/(dashboard)/settings/layout/mobile-nav.tsx:120
 #: apps/web/src/components/(teams)/settings/layout/desktop-nav.tsx:123
 #: apps/web/src/components/(teams)/settings/layout/mobile-nav.tsx:132
@@ -882,6 +881,10 @@ msgstr "Charts"
 msgid "Checkout"
 msgstr "Checkout"
 
+#: apps/web/src/components/forms/v2/signup.tsx:274
+msgid "Choose a unique link to the system for yourself"
+msgstr "Choose a unique link to the system for yourself"
+
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:271
 msgid "Choose an existing recipient from below to continue"
 msgstr "Choose an existing recipient from below to continue"
@@ -902,7 +905,7 @@ msgstr "Choose..."
 msgid "Claim account"
 msgstr "Claim account"
 
-#: apps/web/src/components/forms/v2/signup.tsx:466
+#: apps/web/src/components/forms/v2/signup.tsx:461
 msgid "Claim username"
 msgstr "Claim username"
 
@@ -910,7 +913,7 @@ msgstr "Claim username"
 msgid "Claim your profile later"
 msgstr "Claim your profile later"
 
-#: apps/web/src/components/forms/v2/signup.tsx:272
+#: apps/web/src/components/forms/v2/signup.tsx:270
 msgid "Claim your username now"
 msgstr "Claim your username now"
 
@@ -957,7 +960,7 @@ msgstr "Close"
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:60
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:446
 #: apps/web/src/app/embed/sign/[[...url]]/client.tsx:325
-#: apps/web/src/components/forms/v2/signup.tsx:511
+#: apps/web/src/components/forms/v2/signup.tsx:506
 msgid "Complete"
 msgstr "Complete"
 
@@ -1115,7 +1118,7 @@ msgstr "Copy token"
 msgid "Create"
 msgstr "Create"
 
-#: apps/web/src/components/forms/v2/signup.tsx:257
+#: apps/web/src/components/forms/v2/signup.tsx:255
 msgid "Create a new account"
 msgstr "Create a new account"
 
@@ -1196,7 +1199,7 @@ msgstr "Create Webhook"
 msgid "Create your account and start using state-of-the-art document signing."
 msgstr "Create your account and start using state-of-the-art document signing."
 
-#: apps/web/src/components/forms/v2/signup.tsx:261
+#: apps/web/src/components/forms/v2/signup.tsx:259
 msgid "Create your account and start using state-of-the-art document signing. Open and beautiful signing is within your grasp."
 msgstr "Create your account and start using state-of-the-art document signing. Open and beautiful signing is within your grasp."
 
@@ -1614,7 +1617,7 @@ msgstr "Document will be permanently deleted"
 #: apps/web/src/components/(dashboard)/common/command-menu.tsx:205
 #: apps/web/src/components/(dashboard)/layout/desktop-nav.tsx:18
 #: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:35
-#: apps/web/src/components/ui/user-profile-timur.tsx:60
+#: apps/web/src/components/ui/user-profile-timur.tsx:65
 msgid "Documents"
 msgstr "Documents"
 
@@ -1742,7 +1745,7 @@ msgstr "Email"
 msgid "Email address"
 msgstr "Email address"
 
-#: apps/web/src/components/forms/v2/signup.tsx:321
+#: apps/web/src/components/forms/v2/signup.tsx:316
 msgid "Email Address"
 msgstr "Email Address"
 
@@ -1936,7 +1939,7 @@ msgstr "Forgot your password?"
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:378
 #: apps/web/src/app/embed/sign/[[...url]]/client.tsx:258
 #: apps/web/src/components/forms/profile.tsx:110
-#: apps/web/src/components/forms/v2/signup.tsx:305
+#: apps/web/src/components/forms/v2/signup.tsx:300
 msgid "Full Name"
 msgstr "Full Name"
 
@@ -2017,7 +2020,7 @@ msgstr "Here you can set preferences and defaults for your team."
 msgid "Here's how it works:"
 msgstr "Here's how it works:"
 
-#: apps/web/src/components/ui/user-profile-timur.tsx:49
+#: apps/web/src/components/ui/user-profile-timur.tsx:54
 msgid "Hey I’m Timur"
 msgstr "Hey I’m Timur"
 
@@ -2462,7 +2465,7 @@ msgstr "New Template"
 
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:437
 #: apps/web/src/app/embed/sign/[[...url]]/client.tsx:316
-#: apps/web/src/components/forms/v2/signup.tsx:500
+#: apps/web/src/components/forms/v2/signup.tsx:495
 msgid "Next"
 msgstr "Next"
 
@@ -2603,7 +2606,7 @@ msgstr "Opened"
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:337
 #: apps/web/src/components/forms/signup.tsx:243
 #: apps/web/src/components/forms/signup.tsx:267
-#: apps/web/src/components/forms/v2/signup.tsx:377
+#: apps/web/src/components/forms/v2/signup.tsx:372
 msgid "Or"
 msgstr "Or"
 
@@ -2673,7 +2676,7 @@ msgstr "Passkeys are not supported on this browser"
 #: apps/web/src/components/forms/reset-password.tsx:110
 #: apps/web/src/components/forms/signin.tsx:356
 #: apps/web/src/components/forms/signup.tsx:196
-#: apps/web/src/components/forms/v2/signup.tsx:342
+#: apps/web/src/components/forms/v2/signup.tsx:337
 msgid "Password"
 msgstr "Password"
 
@@ -2733,8 +2736,8 @@ msgid "Pick a password"
 msgstr "Pick a password"
 
 #: apps/web/src/components/ui/user-profile-timur.tsx:53
-msgid "Pick any of the following agreements below and start signing to get started"
-msgstr "Pick any of the following agreements below and start signing to get started"
+#~ msgid "Pick any of the following agreements below and start signing to get started"
+#~ msgstr "Pick any of the following agreements below and start signing to get started"
 
 #: apps/web/src/components/(teams)/dialogs/invite-team-member-dialog.tsx:212
 msgid "Please check the CSV file and make sure it is according to our format"
@@ -2888,7 +2891,7 @@ msgstr "Public Profile"
 msgid "Public profile URL"
 msgstr "Public profile URL"
 
-#: apps/web/src/components/forms/v2/signup.tsx:439
+#: apps/web/src/components/forms/v2/signup.tsx:434
 msgid "Public profile username"
 msgstr "Public profile username"
 
@@ -3268,7 +3271,7 @@ msgstr "Show templates in your team public profile for your audience to sign and
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:141
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:313
 #: apps/web/src/components/ui/user-profile-skeleton.tsx:75
-#: apps/web/src/components/ui/user-profile-timur.tsx:81
+#: apps/web/src/components/ui/user-profile-timur.tsx:86
 msgid "Sign"
 msgstr "Sign"
 
@@ -3294,7 +3297,7 @@ msgid "Sign field"
 msgstr "Sign field"
 
 #: apps/web/src/components/forms/signup.tsx:212
-#: apps/web/src/components/forms/v2/signup.tsx:358
+#: apps/web/src/components/forms/v2/signup.tsx:353
 msgid "Sign Here"
 msgstr "Sign Here"
 
@@ -3327,12 +3330,12 @@ msgid "Sign Up"
 msgstr "Sign Up"
 
 #: apps/web/src/components/forms/signup.tsx:257
-#: apps/web/src/components/forms/v2/signup.tsx:393
+#: apps/web/src/components/forms/v2/signup.tsx:388
 msgid "Sign Up with Google"
 msgstr "Sign Up with Google"
 
 #: apps/web/src/components/forms/signup.tsx:281
-#: apps/web/src/components/forms/v2/signup.tsx:407
+#: apps/web/src/components/forms/v2/signup.tsx:402
 msgid "Sign Up with OIDC"
 msgstr "Sign Up with OIDC"
 
@@ -4021,6 +4024,10 @@ msgstr "Time zone"
 msgid "Time Zone"
 msgstr "Time Zone"
 
+#: apps/web/src/components/ui/user-profile-timur.tsx:48
+msgid "Timur Ercan"
+msgstr "Timur Ercan"
+
 #: apps/web/src/app/(dashboard)/admin/documents/document-results.tsx:67
 #: apps/web/src/app/(dashboard)/documents/data-table.tsx:60
 #: apps/web/src/app/(dashboard)/templates/[id]/template-page-view-documents-table.tsx:115
@@ -4422,8 +4429,8 @@ msgid "User ID"
 msgstr "User ID"
 
 #: apps/web/src/components/forms/v2/signup.tsx:227
-msgid "User profiles are here!"
-msgstr "User profiles are here!"
+#~ msgid "User profiles are here!"
+#~ msgstr "User profiles are here!"
 
 #: apps/web/src/components/(dashboard)/layout/menu-switcher.tsx:269
 msgid "User settings"
@@ -5055,9 +5062,9 @@ msgstr "You need to be logged in to view this page."
 msgid "You need to setup 2FA to mark this document as viewed."
 msgstr "You need to setup 2FA to mark this document as viewed."
 
-#: apps/web/src/components/forms/v2/signup.tsx:276
-msgid "You will get notified & be able to set up your documenso public profile when we launch the feature."
-msgstr "You will get notified & be able to set up your documenso public profile when we launch the feature."
+#: apps/web/src/components/ui/user-profile-timur.tsx:58
+msgid "You too can have a profile like mine right here and now upon completing registration. Online signature with a click of a button - simple, fast and secure."
+msgstr ""
 
 #: apps/web/src/components/forms/2fa/enable-authenticator-app-dialog.tsx:96
 msgid "You will now be required to enter a code from your authenticator app when signing in."

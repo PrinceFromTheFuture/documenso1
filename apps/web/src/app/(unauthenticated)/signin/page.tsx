@@ -44,7 +44,7 @@ export default async function SignInPage() {
           <p className="text-muted-foreground mt-6 text-center text-sm">
             <Trans>
               Don't have an account?{' '}
-              <Link href="/signup" className="text-documenso-700 duration-200 hover:opacity-70">
+              <Link href="https://tofes-mekovan.co.il/?add-to-cart=2676" className="text-documenso-700 duration-200 hover:opacity-70">
                 Sign up
               </Link>
             </Trans>

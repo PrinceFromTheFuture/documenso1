@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import LogoImage from '@documenso/assets/logo.png';
 
 import { Trans } from '@lingui/macro';
 import { File } from 'lucide-react';
@@ -26,10 +27,14 @@ export const UserProfileTimur = ({ className, rows = 2 }: UserProfileTimurProps)
         className,
       )}
     >
-      <div className="border-border bg-background text-muted-foreground inline-block max-w-full truncate rounded-md border px-2.5 py-1.5 text-sm">
-        {baseUrl.host}/u/timur
-      </div>
-
+           <Image
+            src={LogoImage}
+            alt="Tofes-Mekovan Logo"
+            className="dark:invert"
+            width={170}
+            height={25}
+          />
+ <br></br>
       <div className="mt-4">
         <Image
           src={timurImage}
@@ -40,7 +45,7 @@ export const UserProfileTimur = ({ className, rows = 2 }: UserProfileTimurProps)
 
       <div className="mt-6">
         <div className="flex items-center justify-center gap-x-2">
-          <h2 className="text-2xl font-semibold">Timur Ercan</h2>
+          <h2 className="text-2xl font-semibold"><Trans>Timur Ercan</Trans></h2>
 
           <VerifiedIcon className="text-primary h-8 w-8" />
         </div>
@@ -50,7 +55,7 @@ export const UserProfileTimur = ({ className, rows = 2 }: UserProfileTimurProps)
         </p>
 
         <p className="text-muted-foreground mt-1 max-w-[40ch] text-center text-sm">
-          <Trans>Pick any of the following agreements below and start signing to get started</Trans>
+          <Trans>You too can have a profile like mine right here and now upon completing registration. Online signature with a click of a button - simple, fast and secure.</Trans>
         </p>
       </div>
 

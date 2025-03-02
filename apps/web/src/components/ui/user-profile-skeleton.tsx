@@ -16,7 +16,7 @@ export type UserProfileSkeletonProps = {
 };
 
 export const UserProfileSkeleton = ({ className, user, rows = 2 }: UserProfileSkeletonProps) => {
-  const baseUrl = new URL(NEXT_PUBLIC_WEBAPP_URL() ?? 'http://localhost:3000');
+  const baseUrl = new URL(NEXT_PUBLIC_WEBAPP_URL() ?? 'https://dev2.tofes-mekovan.co.il');
 
   return (
     <div
@@ -26,7 +26,7 @@ export const UserProfileSkeleton = ({ className, user, rows = 2 }: UserProfileSk
       )}
     >
       <div className="border-border bg-background text-muted-foreground inline-block max-w-full truncate rounded-md border px-2.5 py-1.5 text-sm lowercase">
-        {baseUrl.host}/u/{user.url}
+        https://{baseUrl.host}/u/{user.url}
       </div>
 
       <div className="mt-4">

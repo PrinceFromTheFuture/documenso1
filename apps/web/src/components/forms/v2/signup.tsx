@@ -223,9 +223,7 @@ export const SignUpFormV2 = ({
         <div className="bg-background/50 absolute -inset-8 -z-[1] backdrop-blur-[2px]" />
 
         <div className="relative flex h-full w-full flex-col items-center justify-evenly">
-          <div className="bg-background rounded-2xl border px-4 py-1 text-sm font-medium">
-            <Trans>User profiles are here!</Trans>
-          </div>
+       
 
           <AnimatePresence>
             {step === 'BASIC_DETAILS' ? (
@@ -273,10 +271,7 @@ export const SignUpFormV2 = ({
             </h1>
 
             <p className="text-muted-foreground mt-2 text-xs md:text-sm">
-              <Trans>
-                You will get notified &amp; be able to set up your documenso public profile when we
-                launch the feature.
-              </Trans>
+              <Trans>Choose a unique link to the system for yourself</Trans>
             </p>
           </div>
         )}
@@ -443,7 +438,7 @@ export const SignUpFormV2 = ({
                       </FormControl>
                       <FormMessage />
                       <div className="bg-muted/50 border-border text-muted-foreground mt-2 inline-block max-w-[16rem] truncate rounded-md border px-2 py-1 text-sm lowercase">
-                        {baseUrl.host}/u/{field.value || '<username>'}
+                        https://sign.tofes-mekovan.co.il/u/{field.value || '<username>'}
                       </div>
                     </FormItem>
                   )}

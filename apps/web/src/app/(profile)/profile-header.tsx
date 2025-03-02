@@ -73,7 +73,7 @@ export const ProfileHeader = ({ user, teams = [] }: ProfileHeaderProps) => {
           </p>
 
           <Button asChild variant="secondary">
-            <Link href="/signup">
+            <Link href="https://tofes-mekovan.co.il/?add-to-cart=2676">
               <div className="hidden flex-row items-center sm:flex">
                 <PlusIcon className="mr-1 h-5 w-5" />
                 <Trans>Create now</Trans>
