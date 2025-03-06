@@ -49,11 +49,6 @@ export const UpcomingProfileClaimTeaser = ({ user }: UpcomingProfileClaimTeaserP
   }, [onOpenChange, user.url]);
 
   return (
-    <ClaimPublicProfileDialogForm
-      open={open}
-      onOpenChange={onOpenChange}
-      onClaimed={() => setClaimed(true)}
-      user={user}
-    />
+    " "
   );
 };

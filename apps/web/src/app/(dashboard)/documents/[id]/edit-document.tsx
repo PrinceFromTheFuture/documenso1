@@ -177,11 +177,11 @@ export const EditDocumentForm = ({
       description: msg`Add all relevant fields for each recipient.`,
       stepIndex: 3,
     },
-    subject: {
-      title: msg`Distribute Document`,
-      description: msg`Choose how the document will reach recipients`,
-      stepIndex: 4,
-    },
+    subject:{
+      title: msg``,
+      description: msg``,
+
+    }
   };
 
   const [step, setStep] = useState<EditDocumentStep>(() => {

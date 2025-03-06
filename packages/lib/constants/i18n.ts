@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
-export const SUPPORTED_LANGUAGE_CODES = ['en','he'  ] as const;
+export const SUPPORTED_LANGUAGE_CODES = [ 'he' ,'en' ] as const;
 
-export const ZSupportedLanguageCodeSchema = z.enum(SUPPORTED_LANGUAGE_CODES).catch('en');
+export const ZSupportedLanguageCodeSchema = z.enum(SUPPORTED_LANGUAGE_CODES).catch('he');
 
 export type SupportedLanguageCodes = (typeof SUPPORTED_LANGUAGE_CODES)[number];
 
@@ -30,12 +30,12 @@ type SupportedLanguage = {
 };
 
 export const SUPPORTED_LANGUAGES: Record<string, SupportedLanguage> = {
-    en: {
+     he: {
     full: 'עברית',
-    short: 'en',
-  },  he: {
-    full: 'English',
     short: 'he',
+  },en: {
+    full: 'English',
+    short: 'en',
   },
 } satisfies Record<SupportedLanguageCodes, SupportedLanguage>;
 

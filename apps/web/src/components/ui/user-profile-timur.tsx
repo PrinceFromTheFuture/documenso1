@@ -50,11 +50,11 @@ export const UserProfileTimur = ({ className, rows = 2 }: UserProfileTimurProps)
           <VerifiedIcon className="text-primary h-8 w-8" />
         </div>
 
-        <p className="text-muted-foreground mt-4 max-w-[40ch] text-center text-sm">
+        <p className="text-muted-foreground mt-4 max-w-[40ch] text-center text-[18px]">
           <Trans>Hey I’m Timur</Trans>
         </p>
 
-        <p className="text-muted-foreground mt-1 max-w-[40ch] text-center text-sm">
+        <p className="text-muted-foreground mt-1 max-w-[40ch] text-center text-[16px]" >
           <Trans>You too can have a profile like mine right here and now upon completing registration. Online signature with a click of a button - simple, fast and secure.</Trans>
         </p>
       </div>

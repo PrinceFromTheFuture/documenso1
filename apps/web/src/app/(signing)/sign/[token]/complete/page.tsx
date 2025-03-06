@@ -213,10 +213,13 @@ export default async function CompletedSigningPage({
                 <Trans>
                   Create your account and start using state-of-the-art document signing.
                 </Trans>
+ 
+                <Link href="https://tofes-mekovan.co.il/?add-to-cart=2676" className="text-documenso-700 hover:text-documenso-600 mt-2">
+              <br></br><Trans>Sign Up Now!</Trans>
+            </Link>
               </p>
 
-              <ClaimAccount defaultName={recipientName} defaultEmail={recipient.email} />
-            </div>
+             </div>
           )}
 
           {isLoggedIn && (

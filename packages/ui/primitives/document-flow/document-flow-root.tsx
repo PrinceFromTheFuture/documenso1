@@ -52,8 +52,7 @@ export const DocumentFlowFormContainerHeader = ({
 
       <p className="text-muted-foreground mt-2 text-sm">{_(description)}</p>
 
-      <hr className="border-border mb-8 mt-4" />
-    </>
+     </>
   );
 };
 

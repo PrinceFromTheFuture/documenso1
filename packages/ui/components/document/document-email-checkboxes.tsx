@@ -22,7 +22,7 @@ export const DocumentEmailCheckboxes = ({
 }: DocumentEmailCheckboxesProps) => {
   return (
     <div className={cn('space-y-3', className)}>
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center hidden-class">
         <Checkbox
           id={DocumentEmailEvents.RecipientSigningRequest}
           className="h-5 w-5"
@@ -61,7 +61,7 @@ export const DocumentEmailCheckboxes = ({
         </label>
       </div>
 
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center hidden-class">
         <Checkbox
           id={DocumentEmailEvents.RecipientRemoved}
           className="h-5 w-5"
@@ -100,7 +100,7 @@ export const DocumentEmailCheckboxes = ({
         </label>
       </div>
 
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center hidden-class">
         <Checkbox
           id={DocumentEmailEvents.DocumentPending}
           className="h-5 w-5"
@@ -179,7 +179,7 @@ export const DocumentEmailCheckboxes = ({
         </label>
       </div>
 
-      <div className="flex flex-row items-center">
+      <div className="flex flex-row items-center hidden-class">
         <Checkbox
           id={DocumentEmailEvents.DocumentDeleted}
           className="h-5 w-5"
