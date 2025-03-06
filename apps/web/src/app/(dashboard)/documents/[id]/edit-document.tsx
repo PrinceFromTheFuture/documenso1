@@ -178,8 +178,6 @@ export const EditDocumentForm = ({
       stepIndex: 3,
     },
     subject: {
-      title: msg`Distribute Document`,
-      description: msg`Choose how the document will reach recipients`,
       stepIndex: 4,
     },
   };

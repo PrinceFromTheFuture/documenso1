@@ -44,7 +44,7 @@ export async function insertTextInPDF(
     x: centeredXPosition,
     y: invertedYPosition,
     size: textSize,
-    color: rgb(0, 0, 0),
+    color: rgb(255, 0, 0),
     font,
   });
 

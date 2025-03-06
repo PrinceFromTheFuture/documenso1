@@ -606,7 +606,7 @@ msgstr "Configure the {0} field"
 msgid "Confirm email"
 msgstr "Confirm email"
 
-#: packages/ui/primitives/document-flow/document-flow-root.tsx:141
+#: packages/ui/primitives/document-flow/document-flow-root.tsx:140
 msgid "Continue"
 msgstr "Continue"
 
@@ -935,7 +935,7 @@ msgstr "Generate Links"
 msgid "Global recipient action authentication"
 msgstr "Global recipient action authentication"
 
-#: packages/ui/primitives/document-flow/document-flow-root.tsx:142
+#: packages/ui/primitives/document-flow/document-flow-root.tsx:141
 msgid "Go Back"
 msgstr "Go Back"
 
@@ -1438,7 +1438,7 @@ msgstr "Something went wrong while loading the document."
 msgid "Something went wrong."
 msgstr "Something went wrong."
 
-#: packages/ui/primitives/document-flow/document-flow-root.tsx:107
+#: packages/ui/primitives/document-flow/document-flow-root.tsx:106
 msgid "Step <0>{step} of {maxStep}</0>"
 msgstr "Step <0>{step} of {maxStep}</0>"
 

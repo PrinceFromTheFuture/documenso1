@@ -2,6 +2,9 @@
   height: auto;
   margin-top: 46px;
 }
+.hidden-class{
+  display:none;
+}
 header.supports-backdrop-blur\:bg-background\/60.bg-background\/95.sticky.top-0.z-\[60\].flex.h-16.w-full.items-center.border-b.backdrop-blur.duration-200.border-b-border
   .topLogo {
     height: 37px;

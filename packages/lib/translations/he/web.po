@@ -478,12 +478,12 @@ msgstr "אירעה שגיאה"
 msgid "An error occurred while adding fields."
 msgstr "אירעה שגיאה בעת הוספת שדות."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:269
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:267
 #: apps/web/src/app/(dashboard)/templates/[id]/edit/edit-template.tsx:218
 msgid "An error occurred while adding signers."
 msgstr "אירעה שגיאה בעת הוספת החותמים."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:304
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:302
 msgid "An error occurred while adding the fields."
 msgstr "אירעה שגיאה בעת הוספת השדות."
 
@@ -549,7 +549,7 @@ msgstr "אירעה שגיאה בעת הסרת החתימה."
 msgid "An error occurred while removing the text."
 msgstr "אירעה שגיאה בעת הסרת הטקסט."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:350
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:348
 msgid "An error occurred while sending the document."
 msgstr "אירעה שגיאה בעת שליחת המסמך."
 
@@ -574,7 +574,7 @@ msgstr "אירעה שגיאה בעת החתימה על המסמך."
 msgid "An error occurred while trying to create a checkout session."
 msgstr "אירעה שגיאה בעת ניסיון ליצור הפעלת קופה."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:235
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:233
 #: apps/web/src/app/(dashboard)/templates/[id]/edit/edit-template.tsx:187
 msgid "An error occurred while updating the document settings."
 msgstr "אירעה שגיאה בעת עדכון הגדרות המסמך."
@@ -887,8 +887,8 @@ msgid "Choose Direct Link Recipient"
 msgstr "בחר נמען קישור ישיר"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:182
-msgid "Choose how the document will reach recipients"
-msgstr "בחר כיצד המסמך יגיע לנמענים"
+#~ msgid "Choose how the document will reach recipients"
+#~ msgstr "בחר כיצד המסמך יגיע לנמענים"
 
 #: apps/web/src/components/forms/token.tsx:200
 msgid "Choose..."
@@ -1441,8 +1441,8 @@ msgid "Display your name and email in documents"
 msgstr "הצג את שמך ואת הדוא\"ל שלך במסמכים"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:181
-msgid "Distribute Document"
-msgstr "הפצת מסמך"
+#~ msgid "Distribute Document"
+#~ msgstr "הפצת מסמך"
 
 #: apps/web/src/app/(dashboard)/templates/delete-template-dialog.tsx:63
 msgid "Do you want to delete this template?"
@@ -1553,7 +1553,7 @@ msgstr "המסמך נדחה"
 msgid "Document resealed"
 msgstr "המסמך נסגר מחדש"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:327
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:325
 msgid "Document sent"
 msgstr "המסמך נשלח"
 
@@ -1812,10 +1812,10 @@ msgstr "הזן את הטקסט שלך כאן"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/admin-actions.tsx:41
 #: apps/web/src/app/(dashboard)/admin/users/[id]/page.tsx:78
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:234
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:268
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:303
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:349
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:232
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:266
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:301
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:347
 #: apps/web/src/app/(dashboard)/documents/move-document-dialog.tsx:57
 #: apps/web/src/app/(dashboard)/documents/upload-document.tsx:106
 #: apps/web/src/app/(dashboard)/documents/upload-document.tsx:112
@@ -1950,7 +1950,7 @@ msgstr "חזרה"
 msgid "Go back home"
 msgstr "לחזור הביתה"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:224
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:227
 #: apps/web/src/app/(signing)/sign/[token]/no-longer-available.tsx:57
 msgid "Go Back Home"
 msgstr "חזור הביתה"
@@ -2219,7 +2219,7 @@ msgstr "רוצה שיהיה לך פרופיל ציבורי משלך עם הסכ�
 msgid "Link template"
 msgstr "תבנית קישור"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:338
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:336
 msgid "Links Generated"
 msgstr "נוצרו קישורים"
 
@@ -3298,6 +3298,10 @@ msgstr "הרשם עכשיו"
 msgid "Sign Up"
 msgstr "הרשמה"
 
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:218
+msgid "Sign Up Now!"
+msgstr "הרשם עכשיו!"
+
 #: apps/web/src/components/forms/signup.tsx:257
 #: apps/web/src/components/forms/v2/signup.tsx:388
 msgid "Sign Up with Google"
@@ -3360,7 +3364,7 @@ msgstr "נכנס..."
 msgid "Signing Links"
 msgstr "חתימה על קישורים"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:339
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:337
 msgid "Signing links have been generated for this document."
 msgstr "נוצרו קישורי חתימה עבור מסמך זה."
 
@@ -5078,7 +5082,7 @@ msgstr "המסמך שלך נוצר מהתבנית בהצלחה."
 msgid "Your document has been re-sent successfully."
 msgstr "המסמך שלך נשלח מחדש בהצלחה."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:328
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:326
 msgid "Your document has been sent successfully."
 msgstr "המסמך שלך נשלח בהצלחה."
 

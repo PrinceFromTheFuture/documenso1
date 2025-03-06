@@ -600,7 +600,7 @@ msgstr "הגדר את השדה {0}"
 msgid "Confirm email"
 msgstr "אשר את האימייל"
 
-#: packages/ui/primitives/document-flow/document-flow-root.tsx:141
+#: packages/ui/primitives/document-flow/document-flow-root.tsx:140
 msgid "Continue"
 msgstr "המשך"
 
@@ -928,7 +928,7 @@ msgstr "צור קישורים"
 msgid "Global recipient action authentication"
 msgstr "אימות פעולה גלובלי של נמען"
 
-#: packages/ui/primitives/document-flow/document-flow-root.tsx:142
+#: packages/ui/primitives/document-flow/document-flow-root.tsx:141
 msgid "Go Back"
 msgstr "חזרה"
 
@@ -1430,7 +1430,7 @@ msgstr "משהו השתבש בעת טעינת המסמך."
 msgid "Something went wrong."
 msgstr "משהו השתבש."
 
-#: packages/ui/primitives/document-flow/document-flow-root.tsx:107
+#: packages/ui/primitives/document-flow/document-flow-root.tsx:106
 msgid "Step <0>{step} of {maxStep}</0>"
 msgstr "שלב <0>{step} מתוך {maxStep}</0>"
 
