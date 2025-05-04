@@ -435,7 +435,7 @@ msgstr "כל הזמן"
 msgid "Allows authenticating using biometrics, password managers, hardware keys, etc."
 msgstr "מאפשר אימות באמצעות ביומטריה, מנהלי סיסמאות, מפתחות חומרה וכו'."
 
-#: apps/web/src/components/forms/v2/signup.tsx:407
+#: apps/web/src/components/forms/v2/signup.tsx:412
 msgid "Already have an account? <0>Sign in instead</0>"
 msgstr "יש לך כבר חשבון? <0>היכנס במקום זאת</0>"
 
@@ -470,7 +470,7 @@ msgstr "דוא\"ל המבקש את העברת הצוות הזה נשלח."
 #: apps/web/src/components/forms/reset-password.tsx:81
 #: apps/web/src/components/forms/signup.tsx:107
 #: apps/web/src/components/forms/token.tsx:137
-#: apps/web/src/components/forms/v2/signup.tsx:151
+#: apps/web/src/components/forms/v2/signup.tsx:156
 msgid "An error occurred"
 msgstr "אירעה שגיאה"
 
@@ -478,12 +478,12 @@ msgstr "אירעה שגיאה"
 msgid "An error occurred while adding fields."
 msgstr "אירעה שגיאה בעת הוספת שדות."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:267
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:269
 #: apps/web/src/app/(dashboard)/templates/[id]/edit/edit-template.tsx:218
 msgid "An error occurred while adding signers."
 msgstr "אירעה שגיאה בעת הוספת החותמים."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:302
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:304
 msgid "An error occurred while adding the fields."
 msgstr "אירעה שגיאה בעת הוספת השדות."
 
@@ -549,7 +549,7 @@ msgstr "אירעה שגיאה בעת הסרת החתימה."
 msgid "An error occurred while removing the text."
 msgstr "אירעה שגיאה בעת הסרת הטקסט."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:348
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:350
 msgid "An error occurred while sending the document."
 msgstr "אירעה שגיאה בעת שליחת המסמך."
 
@@ -574,7 +574,7 @@ msgstr "אירעה שגיאה בעת החתימה על המסמך."
 msgid "An error occurred while trying to create a checkout session."
 msgstr "אירעה שגיאה בעת ניסיון ליצור הפעלת קופה."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:233
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:235
 #: apps/web/src/app/(dashboard)/templates/[id]/edit/edit-template.tsx:187
 msgid "An error occurred while updating the document settings."
 msgstr "אירעה שגיאה בעת עדכון הגדרות המסמך."
@@ -629,9 +629,9 @@ msgstr "אירעה שגיאה בעת העלאת המסמך שלך."
 #: apps/web/src/components/forms/signup.tsx:128
 #: apps/web/src/components/forms/signup.tsx:142
 #: apps/web/src/components/forms/token.tsx:143
-#: apps/web/src/components/forms/v2/signup.tsx:157
-#: apps/web/src/components/forms/v2/signup.tsx:179
-#: apps/web/src/components/forms/v2/signup.tsx:193
+#: apps/web/src/components/forms/v2/signup.tsx:162
+#: apps/web/src/components/forms/v2/signup.tsx:184
+#: apps/web/src/components/forms/v2/signup.tsx:198
 #: apps/web/src/components/templates/manage-public-template-dialog.tsx:141
 #: apps/web/src/components/templates/manage-public-template-dialog.tsx:178
 msgid "An unknown error occurred"
@@ -735,7 +735,7 @@ msgstr "ממתין לאישור בדוא\"ל"
 
 #: apps/web/src/app/(recipient)/d/[token]/sign-direct-template.tsx:369
 #: apps/web/src/components/(dashboard)/settings/layout/activity-back.tsx:20
-#: apps/web/src/components/forms/v2/signup.tsx:485
+#: apps/web/src/components/forms/v2/signup.tsx:490
 msgid "Back"
 msgstr "חזור"
 
@@ -760,7 +760,7 @@ msgstr "קודי גיבוי"
 msgid "Banner Updated"
 msgstr "באנר עודכן"
 
-#: apps/web/src/components/forms/v2/signup.tsx:453
+#: apps/web/src/components/forms/v2/signup.tsx:458
 msgid "Basic details"
 msgstr "פרטים בסיסיים"
 
@@ -831,7 +831,7 @@ msgstr "על ידי שימוש בתכונת החתימה האלקטרונית, �
 #: apps/web/src/app/(signing)/sign/[token]/document-action-auth-passkey.tsx:164
 #: apps/web/src/app/(signing)/sign/[token]/document-action-auth-passkey.tsx:189
 #: apps/web/src/app/(signing)/sign/[token]/form.tsx:151
-#: apps/web/src/app/(signing)/sign/[token]/form.tsx:220
+#: apps/web/src/app/(signing)/sign/[token]/form.tsx:194
 #: apps/web/src/app/(signing)/sign/[token]/name-field.tsx:215
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:328
 #: apps/web/src/app/(signing)/sign/[token]/reject-document-dialog.tsx:153
@@ -874,7 +874,7 @@ msgstr "גרף"
 msgid "Checkout"
 msgstr "לתשלום"
 
-#: apps/web/src/components/forms/v2/signup.tsx:274
+#: apps/web/src/components/forms/v2/signup.tsx:279
 msgid "Choose a unique link to the system for yourself"
 msgstr "בחר לינק ייחודי למערכת בשבילך"
 
@@ -887,8 +887,8 @@ msgid "Choose Direct Link Recipient"
 msgstr "בחר נמען קישור ישיר"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:182
-#~ msgid "Choose how the document will reach recipients"
-#~ msgstr "בחר כיצד המסמך יגיע לנמענים"
+msgid "Choose how the document will reach recipients"
+msgstr "בחר כיצד המסמך יגיע לנמענים"
 
 #: apps/web/src/components/forms/token.tsx:200
 msgid "Choose..."
@@ -898,7 +898,7 @@ msgstr "בחירה..."
 msgid "Claim account"
 msgstr "בחר חשבון"
 
-#: apps/web/src/components/forms/v2/signup.tsx:461
+#: apps/web/src/components/forms/v2/signup.tsx:466
 msgid "Claim username"
 msgstr "בחר את שם המשתמש"
 
@@ -906,7 +906,7 @@ msgstr "בחר את שם המשתמש"
 msgid "Claim your profile later"
 msgstr "בחר את הפרופיל שלך מאוחר יותר"
 
-#: apps/web/src/components/forms/v2/signup.tsx:270
+#: apps/web/src/components/forms/v2/signup.tsx:275
 msgid "Claim your username now"
 msgstr "בחר לינק ייחודי למערכת בשבילך"
 
@@ -953,7 +953,7 @@ msgstr "סגור"
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:60
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:446
 #: apps/web/src/app/embed/sign/[[...url]]/client.tsx:325
-#: apps/web/src/components/forms/v2/signup.tsx:506
+#: apps/web/src/components/forms/v2/signup.tsx:511
 msgid "Complete"
 msgstr "הושלם"
 
@@ -1111,7 +1111,7 @@ msgstr "העתק אסימון"
 msgid "Create"
 msgstr "צור"
 
-#: apps/web/src/components/forms/v2/signup.tsx:255
+#: apps/web/src/components/forms/v2/signup.tsx:260
 msgid "Create a new account"
 msgstr "צור חשבון חדש"
 
@@ -1192,7 +1192,7 @@ msgstr "צור Webhook"
 msgid "Create your account and start using state-of-the-art document signing."
 msgstr "צור את החשבון שלך והתחל להשתמש בחתימת מסמכים חדישה."
 
-#: apps/web/src/components/forms/v2/signup.tsx:259
+#: apps/web/src/components/forms/v2/signup.tsx:264
 msgid "Create your account and start using state-of-the-art document signing. Open and beautiful signing is within your grasp."
 msgstr "צור את החשבון שלך והתחל להשתמש בחתימת מסמכים חדישה. חתימה פתוחה ויפה היא בהישג ידך."
 
@@ -1441,8 +1441,8 @@ msgid "Display your name and email in documents"
 msgstr "הצג את שמך ואת הדוא\"ל שלך במסמכים"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:181
-#~ msgid "Distribute Document"
-#~ msgstr "הפצת מסמך"
+msgid "Distribute Document"
+msgstr "הפצת מסמך"
 
 #: apps/web/src/app/(dashboard)/templates/delete-template-dialog.tsx:63
 msgid "Do you want to delete this template?"
@@ -1553,7 +1553,7 @@ msgstr "המסמך נדחה"
 msgid "Document resealed"
 msgstr "המסמך נסגר מחדש"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:325
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:327
 msgid "Document sent"
 msgstr "המסמך נשלח"
 
@@ -1603,7 +1603,7 @@ msgstr "המסמך יימחק לצמיתות"
 #: apps/web/src/app/not-found.tsx:21
 #: apps/web/src/components/(dashboard)/common/command-menu.tsx:205
 #: apps/web/src/components/(dashboard)/layout/desktop-nav.tsx:18
-#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:35
+#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:34
 #: apps/web/src/components/ui/user-profile-timur.tsx:65
 msgid "Documents"
 msgstr "מסמכים"
@@ -1724,7 +1724,7 @@ msgstr "אימייל"
 msgid "Email address"
 msgstr "כתובת אימייל"
 
-#: apps/web/src/components/forms/v2/signup.tsx:316
+#: apps/web/src/components/forms/v2/signup.tsx:321
 msgid "Email Address"
 msgstr "כתובת אימייל"
 
@@ -1812,10 +1812,10 @@ msgstr "הזן את הטקסט שלך כאן"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/admin-actions.tsx:41
 #: apps/web/src/app/(dashboard)/admin/users/[id]/page.tsx:78
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:232
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:266
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:301
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:347
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:234
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:268
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:303
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:349
 #: apps/web/src/app/(dashboard)/documents/move-document-dialog.tsx:57
 #: apps/web/src/app/(dashboard)/documents/upload-document.tsx:106
 #: apps/web/src/app/(dashboard)/documents/upload-document.tsx:112
@@ -1912,12 +1912,11 @@ msgid "Forgot your password?"
 msgstr "שכחת סיסמה?"
 
 #: apps/web/src/app/(recipient)/d/[token]/sign-direct-template.tsx:326
-#: apps/web/src/app/(signing)/sign/[token]/form.tsx:178
 #: apps/web/src/app/(signing)/sign/[token]/name-field.tsx:193
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:378
 #: apps/web/src/app/embed/sign/[[...url]]/client.tsx:258
 #: apps/web/src/components/forms/profile.tsx:110
-#: apps/web/src/components/forms/v2/signup.tsx:300
+#: apps/web/src/components/forms/v2/signup.tsx:305
 msgid "Full Name"
 msgstr "שם מלא"
 
@@ -1963,15 +1962,15 @@ msgstr "לך לבעלים"
 msgid "Go to your <0>public profile settings</0> to add documents."
 msgstr "עבור אל <0>הגדרות הפרופיל הציבורי שלך</0> כדי להוסיף מסמכים."
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:107
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:106
 msgid "has invited you to approve this document"
 msgstr "הזמין אותך לאשר מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:98
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:97
 msgid "has invited you to sign this document"
 msgstr "הזמין אותך לחתום על מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:89
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:88
 msgid "has invited you to view this document"
 msgstr "הזמין אותך לצפות במסמך זה"
 
@@ -2219,7 +2218,7 @@ msgstr "רוצה שיהיה לך פרופיל ציבורי משלך עם הסכ�
 msgid "Link template"
 msgstr "תבנית קישור"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:336
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:338
 msgid "Links Generated"
 msgstr "נוצרו קישורים"
 
@@ -2439,7 +2438,7 @@ msgstr "תבנית חדשה"
 
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:437
 #: apps/web/src/app/embed/sign/[[...url]]/client.tsx:316
-#: apps/web/src/components/forms/v2/signup.tsx:495
+#: apps/web/src/components/forms/v2/signup.tsx:500
 msgid "Next"
 msgstr "הבא"
 
@@ -2515,15 +2514,15 @@ msgstr "אין שינויים לשמירה"
 msgid "Number"
 msgstr "מספר"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:103
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:102
 msgid "on behalf of \"{0}\" has invited you to approve this document"
 msgstr "מטעם \"{0}\" הזמין אותך לאשר מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:94
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:93
 msgid "on behalf of \"{0}\" has invited you to sign this document"
 msgstr "מטעם \"{0}\" הזמין אותך לחתום על מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:85
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:84
 msgid "on behalf of \"{0}\" has invited you to view this document"
 msgstr "מטעם \"{0}\" הזמין אותך לצפות במסמך זה"
 
@@ -2580,7 +2579,7 @@ msgstr "פתוח"
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:337
 #: apps/web/src/components/forms/signup.tsx:243
 #: apps/web/src/components/forms/signup.tsx:267
-#: apps/web/src/components/forms/v2/signup.tsx:372
+#: apps/web/src/components/forms/v2/signup.tsx:377
 msgid "Or"
 msgstr "או"
 
@@ -2650,7 +2649,7 @@ msgstr "מפתחות סיסמה אינם נתמכים בדפדפן זה"
 #: apps/web/src/components/forms/reset-password.tsx:110
 #: apps/web/src/components/forms/signin.tsx:356
 #: apps/web/src/components/forms/signup.tsx:196
-#: apps/web/src/components/forms/v2/signup.tsx:337
+#: apps/web/src/components/forms/v2/signup.tsx:342
 msgid "Password"
 msgstr "סיסמה"
 
@@ -2860,7 +2859,7 @@ msgstr "פרופיל ציבורי"
 msgid "Public profile URL"
 msgstr "כתובת אתר של פרופיל ציבורי"
 
-#: apps/web/src/components/forms/v2/signup.tsx:434
+#: apps/web/src/components/forms/v2/signup.tsx:439
 msgid "Public profile username"
 msgstr "לינק ייחודי למערכת עם שם משתמש באנגלית ללא רווחים"
 
@@ -2940,7 +2939,7 @@ msgstr "קודי שחזור"
 
 #: apps/web/src/app/(signing)/sign/[token]/complete/claim-account.tsx:78
 #: apps/web/src/components/forms/signup.tsx:93
-#: apps/web/src/components/forms/v2/signup.tsx:126
+#: apps/web/src/components/forms/v2/signup.tsx:131
 msgid "Registration Successful"
 msgstr "ההרשמה הצליחה"
 
@@ -3196,7 +3195,7 @@ msgstr "הגדר סיסמה"
 #: apps/web/src/app/(dashboard)/settings/layout.tsx:20
 #: apps/web/src/components/(dashboard)/common/command-menu.tsx:65
 #: apps/web/src/components/(dashboard)/common/command-menu.tsx:211
-#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:47
+#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:46
 msgid "Settings"
 msgstr "הגדרות"
 
@@ -3266,7 +3265,7 @@ msgid "Sign field"
 msgstr "שדה שלט"
 
 #: apps/web/src/components/forms/signup.tsx:212
-#: apps/web/src/components/forms/v2/signup.tsx:353
+#: apps/web/src/components/forms/v2/signup.tsx:358
 msgid "Sign Here"
 msgstr "חתום כאן"
 
@@ -3281,7 +3280,7 @@ msgid "Sign in to your account"
 msgstr "התחברות לחשבון"
 
 #: apps/web/src/components/(dashboard)/layout/menu-switcher.tsx:297
-#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:84
+#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:102
 msgid "Sign Out"
 msgstr "התנתק"
 
@@ -3303,19 +3302,18 @@ msgid "Sign Up Now!"
 msgstr "הרשם עכשיו!"
 
 #: apps/web/src/components/forms/signup.tsx:257
-#: apps/web/src/components/forms/v2/signup.tsx:388
+#: apps/web/src/components/forms/v2/signup.tsx:393
 msgid "Sign Up with Google"
 msgstr "הירשם עם גוגל"
 
 #: apps/web/src/components/forms/signup.tsx:281
-#: apps/web/src/components/forms/v2/signup.tsx:402
+#: apps/web/src/components/forms/v2/signup.tsx:407
 msgid "Sign Up with OIDC"
 msgstr "הירשם עם OIDC"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/recipient-item.tsx:88
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:177
 #: apps/web/src/app/(recipient)/d/[token]/sign-direct-template.tsx:338
-#: apps/web/src/app/(signing)/sign/[token]/form.tsx:192
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:247
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:282
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:408
@@ -3364,7 +3362,7 @@ msgstr "נכנס..."
 msgid "Signing Links"
 msgstr "חתימה על קישורים"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:337
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:339
 msgid "Signing links have been generated for this document."
 msgstr "נוצרו קישורי חתימה עבור מסמך זה."
 
@@ -3655,7 +3653,7 @@ msgstr "כתובת האתר של הצוות"
 
 #: apps/web/src/app/(dashboard)/settings/teams/page.tsx:25
 #: apps/web/src/components/(dashboard)/layout/menu-switcher.tsx:162
-#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:43
+#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:42
 #: apps/web/src/components/(dashboard)/settings/layout/desktop-nav.tsx:64
 #: apps/web/src/components/(dashboard)/settings/layout/mobile-nav.tsx:67
 msgid "Teams"
@@ -3707,7 +3705,7 @@ msgstr "התבנית נשמרה"
 #: apps/web/src/app/(dashboard)/templates/templates-page-view.tsx:55
 #: apps/web/src/components/(dashboard)/common/command-menu.tsx:208
 #: apps/web/src/components/(dashboard)/layout/desktop-nav.tsx:22
-#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:39
+#: apps/web/src/components/(dashboard)/layout/mobile-navigation.tsx:38
 msgid "Templates"
 msgstr "תבניות"
 
@@ -3975,7 +3973,7 @@ msgstr "אסימון זה אינו חוקי או שפג תוקפו. אנא צו�
 msgid "This URL is already in use."
 msgstr "כתובת האתר הזו כבר בשימוש."
 
-#: apps/web/src/components/forms/v2/signup.tsx:142
+#: apps/web/src/components/forms/v2/signup.tsx:147
 msgid "This username has already been taken"
 msgstr "שם המשתמש הזה כבר נלקח"
 
@@ -4631,14 +4629,14 @@ msgstr "נתקלנו בשגיאה לא ידועה בעת ניסיון להיכנ
 
 #: apps/web/src/app/(signing)/sign/[token]/complete/claim-account.tsx:100
 #: apps/web/src/components/forms/signup.tsx:115
-#: apps/web/src/components/forms/v2/signup.tsx:159
+#: apps/web/src/components/forms/v2/signup.tsx:164
 msgid "We encountered an unknown error while attempting to sign you up. Please try again later."
 msgstr "נתקלנו בשגיאה לא ידועה בעת שניסינו לרשום אותך. אנא נסה שוב מאוחר יותר."
 
 #: apps/web/src/components/forms/signup.tsx:130
 #: apps/web/src/components/forms/signup.tsx:144
-#: apps/web/src/components/forms/v2/signup.tsx:181
-#: apps/web/src/components/forms/v2/signup.tsx:195
+#: apps/web/src/components/forms/v2/signup.tsx:186
+#: apps/web/src/components/forms/v2/signup.tsx:200
 msgid "We encountered an unknown error while attempting to sign you Up. Please try again later."
 msgstr "נתקלנו בשגיאה לא ידועה במהלך הניסיון לרשום אותך. אנא נסה שוב מאוחר יותר."
 
@@ -4976,7 +4974,7 @@ msgstr "עזבת בהצלחה את הצוות הזה."
 
 #: apps/web/src/app/(signing)/sign/[token]/complete/claim-account.tsx:80
 #: apps/web/src/components/forms/signup.tsx:95
-#: apps/web/src/components/forms/v2/signup.tsx:128
+#: apps/web/src/components/forms/v2/signup.tsx:133
 msgid "You have successfully registered. Please verify your account by clicking on the link you received in the email."
 msgstr "נרשמת בהצלחה. אנא אמת את חשבונך על ידי לחיצה על הקישור שקיבלת בדוא\"ל."
 
@@ -5082,7 +5080,7 @@ msgstr "המסמך שלך נוצר מהתבנית בהצלחה."
 msgid "Your document has been re-sent successfully."
 msgstr "המסמך שלך נשלח מחדש בהצלחה."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:326
+#: apps/web/src/app/(dashboard)/documents/[id]/edit-document.tsx:328
 msgid "Your document has been sent successfully."
 msgstr "המסמך שלך נשלח בהצלחה."
 

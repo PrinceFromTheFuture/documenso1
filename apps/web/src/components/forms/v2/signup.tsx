@@ -91,22 +91,27 @@ export const SignUpFormV2 = ({
   const router = useRouter();
   const searchParams = useSearchParams();
   const [step, setStep] = useState<SignUpStep>('BASIC_DETAILS');
-
+  const generateUsernameFromName = (name: string) => {
+    const sanitized = name.trim().toLowerCase().replace(/\s+/g, '');
+    const isEnglish = /^[a-z-]+$/.test(sanitized);
+    if (isEnglish && sanitized.length > 0) return sanitized;
+    return Math.random().toString(36).substring(2, 12); // random 10-letter fallback
+  };
   const utmSrc = searchParams?.get('utm_source') ?? null;
   const baseUrl = new URL(NEXT_PUBLIC_WEBAPP_URL() ?? 'http://localhost:3000');
 
   // Get query params only once
   const queryParams = new URLSearchParams(window.location.search);
-  const nameFromUrl = queryParams.get('n') || '';
   const emailFromUrl = queryParams.get('e') || initialEmail || '';
-
+  const nameFromUrl = queryParams.get('n') || '';
+  const generatedUsername = nameFromUrl ? generateUsernameFromName(nameFromUrl) : '';
   const form = useForm<TSignUpFormV2Schema>({
     defaultValues: {
       name: nameFromUrl,
       email: emailFromUrl,
       password: '',
       signature: '',
-      url: '',
+      url: generatedUsername,
     },
     mode: 'onBlur',
     resolver: zodResolver(ZSignUpFormV2Schema),

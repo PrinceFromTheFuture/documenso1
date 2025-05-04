@@ -26,29 +26,36 @@ const fontCaveat = Caveat({ subsets: ['latin'], variable: '--font-signature' });
 export function generateMetadata() {
   return {
     title: {
-      template: '%s - Tofes-Mekovan',
-      default: 'Tofes-Mekovan',
+      template: '%s - טופס מקוון',
+      default: 'TM - טופס מקוון',
     },
     description:
-      'Join Tofes-Mekovan, the open signing infrastructure, and get a 10x better signing experience. Pricing starts at $30/mo. forever! Sign in now and enjoy a faster, smarter, and more beautiful document signing process. Integrates with your favorite tools, customizable, and expandable. Support our mission and become a part of our open-source community.',
+      'מערכת שליחת טפסים להחתמה דיגיטלית המובילה בישראל. גם אתם רוצים לשלוח טופס לחתימה בקלות , חייגו ל- 052-5518255 המרת כל טופס word ו - PDF לטופס מקוון , שליחת מסמכים וטפסים מקוונים לחתימה דיגיטלית באון ליין.',
     keywords:
-      'Tofes-Mekovan, open source, DocuSign alternative, document signing, open signing infrastructure, open-source community, fast signing, beautiful signing, smart templates',
-    authors: { name: 'Tofes-Mekovan, Inc.' },
+      'ט,T,ADOBEטופס,מקוון,קומ,form,DOCU, iforms,v DOC,COMSIGN,PDF,חתימה,דיגיטלי,TM,SIGN,word,2SIGN,חתימה ירוקה,טופס דיגיטלי, Online,טופס מקוון,מסמך,file,document',
+    authors: { name: 'TM - Tofes Mekovan' },
     robots: 'index, follow',
-    metadataBase: new URL(NEXT_PUBLIC_MARKETING_URL() ?? 'http://localhost:3000'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'http://localhost:3000'),
     openGraph: {
-      title: 'Tofes-Mekovan - The Open Source DocuSign Alternative',
+      title: 'טופס מקוון',
       description:
-        'Join Tofes-Mekovan, the open signing infrastructure, and get a 10x better signing experience. Pricing starts at $30/mo. forever! Sign in now and enjoy a faster, smarter, and more beautiful document signing process. Integrates with your favorite tools, customizable, and expandable. Support our mission and become a part of our open-source community.',
+        'מערכת שליחת טפסים להחתמה דיגיטלית המובילה בישראל. גם אתם רוצים לשלוח טופס לחתימה בקלות , חייגו ל- 052-5518255 המרת כל טופס word ו - PDF לטופס מקוון , שליחת מסמכים וטפסים מקוונים לחתימה דיגיטלית באון ליין.',
       type: 'website',
-      images: ['/opengraph-image.jpg'],
+      url: process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'http://localhost:3000',
+      images: [
+        {
+          url: 'https://dev2.tofes-mekovan.co.il/static/logo_icon3.jpg',
+          width: 1200,
+          height: 630,
+          alt: 'TM - Tofes Mekovan Logo',
+        },
+      ],
     },
     twitter: {
-      site: '@documenso',
+      site: '@tofes-mekovan',
       card: 'summary_large_image',
-      images: ['/opengraph-image.jpg'],
       description:
-        'Join Tofes-Mekovan, the open signing infrastructure, and get a 10x better signing experience. Pricing starts at $30/mo. forever! Sign in now and enjoy a faster, smarter, and more beautiful document signing process. Integrates with your favorite tools, customizable, and expandable. Support our mission and become a part of our open-source community.',
+        'מערכת שליחת טפסים להחתמה דיגיטלית המובילה בישראל. גם אתם רוצים לשלוח טופס לחתימה בקלות , חייגו ל- 052-5518255 המרת כל טופס word ו - PDF לטופס מקוון , שליחת מסמכים וטפסים מקוונים לחתימה דיגיטלית באון ליין.',
     },
   };
 }

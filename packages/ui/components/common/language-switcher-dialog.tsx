@@ -47,7 +47,9 @@ export const LanguageSwitcherDialog = ({ open, setOpen }: LanguageSwitcherDialog
                   i18n.locale === language.short ? 'opacity-100' : 'opacity-0',
                 )}
               />
-              {SUPPORTED_LANGUAGES[language.short].full}
+              {Object.hasOwn(SUPPORTED_LANGUAGES, language.short)
+  ? SUPPORTED_LANGUAGES[language.short as keyof typeof SUPPORTED_LANGUAGES].full
+  : language.short}
             </CommandItem>
           ))}
         </CommandGroup>

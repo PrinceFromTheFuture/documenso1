@@ -480,7 +480,7 @@ msgstr "An error occurred while loading the document."
 msgid "Approve"
 msgstr "Approve"
 
-#: packages/email/template-components/template-document-invite.tsx:106
+#: packages/email/template-components/template-document-invite.tsx:101
 msgid "Approve Document"
 msgstr "Approve Document"
 
@@ -1236,8 +1236,8 @@ msgid "Redirect URL"
 msgstr "Redirect URL"
 
 #: packages/email/template-components/template-document-invite.tsx:96
-msgid "Reject Document"
-msgstr "Reject Document"
+#~ msgid "Reject Document"
+#~ msgstr "Reject Document"
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx:22
 msgid "Rejection Confirmed"
@@ -1376,7 +1376,7 @@ msgstr "Show advanced settings"
 msgid "Sign"
 msgstr "Sign"
 
-#: packages/email/template-components/template-document-invite.tsx:104
+#: packages/email/template-components/template-document-invite.tsx:99
 msgid "Sign Document"
 msgstr "Sign Document"
 
@@ -1687,7 +1687,7 @@ msgstr "View all documents sent to and from this email address"
 msgid "View document"
 msgstr "View document"
 
-#: packages/email/template-components/template-document-invite.tsx:105
+#: packages/email/template-components/template-document-invite.tsx:100
 #: packages/email/template-components/template-document-rejected.tsx:44
 #: packages/ui/primitives/document-flow/add-subject.tsx:90
 #: packages/ui/primitives/document-flow/add-subject.tsx:91

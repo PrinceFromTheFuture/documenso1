@@ -169,42 +169,16 @@ export const SigningForm = ({
                 <Trans>Please review the document before signing.</Trans>
               </p>
 
-              <hr className="border-border mb-8 mt-4" />
+              <hr className="border-border  mt-4" />
 
-              <div className="-mx-2 flex flex-1 flex-col gap-4 overflow-y-auto px-2">
-                <div className="flex flex-1 flex-col gap-y-4">
-                  <div>
-                    <Label htmlFor="full-name">
-                      <Trans>Full Name</Trans>
-                    </Label>
-
-                    <Input
-                      type="text"
-                      id="full-name"
-                      className="bg-background mt-2"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value.trimStart())}
-                    />
-                  </div>
+              <div className="-mx-2 flex flex-1 flex-col   overflow-y-auto px-2">
+                <div className="flex flex-1 flex-col  ">
+                   
 
                   <div>
-                    <Label htmlFor="Signature">
-                      <Trans>Signature</Trans>
-                    </Label>
+                     
 
-                    <Card className="mt-2" gradient degrees={-120}>
-                      <CardContent className="p-0">
-                        <SignaturePad
-                          className="h-44 w-full"
-                          disabled={isSubmitting}
-                          defaultValue={signature ?? undefined}
-                          onChange={(value) => {
-                            setSignature(value);
-                          }}
-                          allowTypedSignature={document.documentMeta?.typedSignatureEnabled}
-                        />
-                      </CardContent>
-                    </Card>
+                     
                   </div>
                 </div>
 

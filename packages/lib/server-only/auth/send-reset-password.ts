@@ -40,7 +40,7 @@ export const sendResetPassword = async ({ userId }: SendResetPasswordOptions) =>
       name: process.env.NEXT_PRIVATE_SMTP_FROM_NAME || 'Tofes-Mekovan',
       address: process.env.NEXT_PRIVATE_SMTP_FROM_ADDRESS || 'noreply@documenso.com',
     },
-    subject: 'Password Reset Success!',
+    subject: 'Password Reset Successful',
     html,
     text,
   });

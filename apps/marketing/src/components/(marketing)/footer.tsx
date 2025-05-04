@@ -105,7 +105,9 @@ export const Footer = ({ className, ...props }: FooterProps) => {
             onClick={() => setLanguageSwitcherOpen(true)}
           >
             <LuLanguages className="mr-1.5 h-4 w-4" />
-            {SUPPORTED_LANGUAGES[i18n.locale]?.full || i18n.locale}
+            {
+  (SUPPORTED_LANGUAGES as Record<string, { full: string; short: string }>)[i18n.locale]?.full || i18n.locale
+            }
           </Button>
 
           <div className="flex flex-wrap">

@@ -70,7 +70,7 @@ export type AddTemplateSettingsFormProps = {
 };
 const form = useForm({
   defaultValues: {
-    meta: { language: "en" },
+    meta: { language: "he" },
   },
 });
 export const AddTemplateSettingsFormPartial = ({
@@ -103,7 +103,7 @@ export const AddTemplateSettingsFormPartial = ({
         distributionMethod:
           template.templateMeta?.distributionMethod || DocumentDistributionMethod.EMAIL,
         redirectUrl: template.templateMeta?.redirectUrl ?? '',
-        language: template.templateMeta?.language ?? 'en',
+        language: template.templateMeta?.language ?? 'he',
         emailSettings: ZDocumentEmailSettingsSchema.parse(template?.templateMeta?.emailSettings),
       },
     },

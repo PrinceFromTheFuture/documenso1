@@ -32,7 +32,6 @@ import { InitialsField } from './initials-field';
 import { NameField } from './name-field';
 import { NumberField } from './number-field';
 import { RadioField } from './radio-field';
-import { RejectDocumentDialog } from './reject-document-dialog';
 import { SignatureField } from './signature-field';
 import { TextField } from './text-field';
 
@@ -111,7 +110,6 @@ export const SigningPageView = ({
           </span>
         </div>
 
-        <RejectDocumentDialog document={document} token={recipient.token} />
       </div>
 
       <div className="mt-8 grid grid-cols-12 gap-y-8 lg:gap-x-8 lg:gap-y-0">

@@ -20,7 +20,6 @@ export type MobileNavigationProps = {
 
 export const MobileNavigation = ({ isMenuOpen, onMenuOpenChange }: MobileNavigationProps) => {
   const { _ } = useLingui();
-
   const params = useParams();
 
   const handleMenuItemClick = () => {
@@ -49,52 +48,72 @@ export const MobileNavigation = ({ isMenuOpen, onMenuOpenChange }: MobileNavigat
   ];
 
   return (
-    <Sheet open={isMenuOpen} onOpenChange={onMenuOpenChange}>
-      <SheetContent className="flex w-full max-w-[350px] flex-col">
-        <Link href="/" onClick={handleMenuItemClick}>
-          <Image
-            src={LogoImage}
-            alt="Tofes-Mekovan Logo"
-            className="dark:invert"
-            width={170}
-            height={25}
-          />
-        </Link>
+    <>
 
-        <div className="mt-8 flex w-full flex-col items-start gap-y-4">
-          {menuNavigationLinks.map(({ href, text }) => (
-            <Link
-              key={href}
+{/* Center Logo */}
+<div className="absolute left-1/2 transform -translate-x-[calc(50%+10px)]">
+  <Link href="/">
+    <Image
+      src={LogoImage}
+      alt="Tofes-Mekovan Logo"
+      width={120}
+      height={30}
+      className="dark:invert"
+    />
+  </Link>
+</div>
+
+      
+  
+
+      {/* Mobile Side Menu Sheet */}
+      <Sheet open={isMenuOpen} onOpenChange={onMenuOpenChange}>
+        <SheetContent className="flex w-full max-w-[350px] flex-col">
+          <Link href="/" onClick={handleMenuItemClick}>
+            <Image
+              src={LogoImage}
+              alt="Tofes-Mekovan Logo"
+              className="dark:invert"
+              width={170}
+              height={25}
+            />
+          </Link>
+
+          <div className="mt-8 flex w-full flex-col items-start gap-y-4">
+            {menuNavigationLinks.map(({ href, text }) => (
+              <Link
+                key={href}
+                className="text-foreground hover:text-foreground/80 text-2xl font-semibold"
+                href={href}
+                onClick={handleMenuItemClick}
+              >
+                {_(text)}
+              </Link>
+            ))}
+
+            <button
               className="text-foreground hover:text-foreground/80 text-2xl font-semibold"
-              href={href}
-              onClick={() => handleMenuItemClick()}
+              onClick={async () =>
+                signOut({
+                  callbackUrl: '/',
+                })
+              }
             >
-              {_(text)}
-            </Link>
-          ))}
-
-          <button
-            className="text-foreground hover:text-foreground/80 text-2xl font-semibold"
-            onClick={async () =>
-              signOut({
-                callbackUrl: '/',
-              })
-            }
-          >
-            <Trans>Sign Out</Trans>
-          </button>
-        </div>
-
-        <div className="mt-auto flex w-full flex-col space-y-4 self-end">
-          <div className="w-fit">
-            <ThemeSwitcher />
+              <Trans>Sign Out</Trans>
+            </button>
           </div>
 
-          <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Tofes-Mekovan, Inc. <br /> All rights reserved.
-          </p>
-        </div>
-      </SheetContent>
-    </Sheet>
+          <div className="mt-auto flex w-full flex-col space-y-4 self-end">
+            <div className="w-fit">
+              <ThemeSwitcher />
+            </div>
+
+            <p className="text-muted-foreground text-sm">
+              © {new Date().getFullYear()} Tofes-Mekovan, Inc. <br /> All rights reserved.
+            </p>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
   );
 };

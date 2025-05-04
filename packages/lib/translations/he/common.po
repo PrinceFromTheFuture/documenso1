@@ -475,7 +475,7 @@ msgstr "אירעה שגיאה בעת טעינת המסמך."
 msgid "Approve"
 msgstr "אשר"
 
-#: packages/email/template-components/template-document-invite.tsx:106
+#: packages/email/template-components/template-document-invite.tsx:101
 msgid "Approve Document"
 msgstr "אישור מסמך"
 
@@ -1229,8 +1229,8 @@ msgid "Redirect URL"
 msgstr "הפנייה לכתובת אינטרנט"
 
 #: packages/email/template-components/template-document-invite.tsx:96
-msgid "Reject Document"
-msgstr "דחה מסמך"
+#~ msgid "Reject Document"
+#~ msgstr "דחה מסמך"
 
 #: packages/email/template-components/template-document-rejection-confirmed.tsx:22
 msgid "Rejection Confirmed"
@@ -1369,7 +1369,7 @@ msgstr "הצג הגדרות מתקדמות"
 msgid "Sign"
 msgstr "חתום"
 
-#: packages/email/template-components/template-document-invite.tsx:104
+#: packages/email/template-components/template-document-invite.tsx:99
 msgid "Sign Document"
 msgstr "חתום על מסמך"
 
@@ -1679,7 +1679,7 @@ msgstr "הצג את כל המסמכים שנשלחו לכתובת דוא\"ל ז�
 msgid "View document"
 msgstr "צפה במסמך"
 
-#: packages/email/template-components/template-document-invite.tsx:105
+#: packages/email/template-components/template-document-invite.tsx:100
 #: packages/email/template-components/template-document-rejected.tsx:44
 #: packages/ui/primitives/document-flow/add-subject.tsx:90
 #: packages/ui/primitives/document-flow/add-subject.tsx:91

@@ -1,43 +1,37 @@
 import { z } from 'zod';
 
-export const SUPPORTED_LANGUAGE_CODES = [ 'he' ,'en' ] as const;
-
-export const ZSupportedLanguageCodeSchema = z.enum(SUPPORTED_LANGUAGE_CODES).catch('he');
-
+// 1. Define supported languages
+export const SUPPORTED_LANGUAGE_CODES = ['he', 'en'] as const;
 export type SupportedLanguageCodes = (typeof SUPPORTED_LANGUAGE_CODES)[number];
 
-export type I18nLocaleData = {
-  /**
-   * The supported language extracted from the locale.
-   */
-  lang: SupportedLanguageCodes;
+// 2. Zod schema with fallback to Hebrew
+export const ZSupportedLanguageCodeSchema = z.enum(SUPPORTED_LANGUAGE_CODES).catch('he');
 
-  /**
-   * The preferred locales.
-   */
+// 3. i18n locale data type
+export type I18nLocaleData = {
+  lang: SupportedLanguageCodes;
   locales: string[];
 };
 
+// 4. App i18n options
 export const APP_I18N_OPTIONS = {
   supportedLangs: SUPPORTED_LANGUAGE_CODES,
   sourceLang: 'he',
   defaultLocale: 'he-IL',
 } as const;
 
-type SupportedLanguage = {
-  full: string;
-  short: string;
+// 5. Supported languages map
+export const SUPPORTED_LANGUAGES: Record<SupportedLanguageCodes, { full: string; short: string }> = {
+  he: { full: 'עברית', short: 'he' },
+  en: { full: 'English', short: 'en' },
 };
 
-export const SUPPORTED_LANGUAGES: Record<string, SupportedLanguage> = {
-     he: {
-    full: 'עברית',
-    short: 'he',
-  },en: {
-    full: 'English',
-    short: 'en',
-  },
-} satisfies Record<SupportedLanguageCodes, SupportedLanguage>;
-
+// 6. Validator helper
 export const isValidLanguageCode = (code: unknown): code is SupportedLanguageCodes =>
   SUPPORTED_LANGUAGE_CODES.includes(code as SupportedLanguageCodes);
+
+// 7. Example fallback test
+export const fallbackToDefaultLang = (code: unknown): SupportedLanguageCodes => {
+  const parsed = ZSupportedLanguageCodeSchema.safeParse(code);
+  return parsed.success ? parsed.data : 'he';
+};
