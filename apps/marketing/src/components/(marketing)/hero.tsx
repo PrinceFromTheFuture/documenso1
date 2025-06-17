@@ -114,7 +114,7 @@ export const Hero = ({ className, ...props }: HeroProps) => {
           animate="animate"
           className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4"
         >
-          <Link href="https://app.documenso.com/signup?utm_source=marketing-hero">
+          <Link href="https://app.tofes-mekovan.co.il/signup?utm_source=marketing-hero">
             <Button
               type="button"
               variant="outline"

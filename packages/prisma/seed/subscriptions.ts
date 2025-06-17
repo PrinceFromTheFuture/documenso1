@@ -1,6 +1,6 @@
 import { prisma } from '..';
 
-export const seedTestEmail = () => `user-${Date.now()}@test.documenso.com`;
+export const seedTestEmail = () => `user-${Date.now()}@test.tofes-mekovan.co.il`;
 
 type SeedSubscriptionOptions = {
   userId: number;

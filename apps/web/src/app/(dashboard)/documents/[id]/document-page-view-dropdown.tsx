@@ -23,7 +23,6 @@ import { formatDocumentsPath } from '@documenso/lib/utils/teams';
 import { DocumentStatus } from '@documenso/prisma/client';
 import type { Document, Recipient, Team, TeamEmail, User } from '@documenso/prisma/client';
 import { trpc as trpcClient } from '@documenso/trpc/client';
-import { DocumentShareButton } from '@documenso/ui/components/document/document-share-button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -169,18 +168,6 @@ export const DocumentPageViewDropdown = ({ document, team }: DocumentPageViewDro
           team={team}
         />
 
-        <DocumentShareButton
-          documentId={document.id}
-          token={isOwner ? undefined : recipient?.token}
-          trigger={({ loading, disabled }) => (
-            <DropdownMenuItem disabled={disabled || isDraft} onSelect={(e) => e.preventDefault()}>
-              <div className="flex items-center">
-                {loading ? <Loader className="mr-2 h-4 w-4" /> : <Share className="mr-2 h-4 w-4" />}
-                <Trans>Share Signing Card</Trans>
-              </div>
-            </DropdownMenuItem>
-          )}
-        />
       </DropdownMenuContent>
 
       <DeleteDocumentDialog

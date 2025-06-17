@@ -12,6 +12,6 @@ export const Logo = (props: LogoProps) => {
 
 
 function getAssetUrl(path: string): string {
-  const basePath = 'https://dev2.tofes-mekovan.co.il/';
+  const basePath = process.env.NEXT_PUBLIC_WEBAPP_URL + '/';
   return `${basePath}${path}`;
 }

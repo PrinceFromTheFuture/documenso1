@@ -18,7 +18,7 @@ export const Callout = ({ starCount }: CalloutProps) => {
 
   return (
     <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
-      <Link href="https://app.documenso.com/signup?utm_source=marketing-callout">
+      <Link href="https://app.tofes-mekovan.co.il/signup?utm_source=marketing-callout">
         <Button
           type="button"
           variant="outline"

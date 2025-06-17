@@ -502,7 +502,7 @@ msgstr "Tofes-Mekovan הוא מאמץ קהילתי ליצור מערכת אקו�
 
 #: apps/marketing/src/app/(marketing)/open/typefully.tsx:28
 msgid "Tofes-Mekovan on X"
-msgstr "דוקומנסו ב-X"
+msgstr "בטופס מקוון"
 
 #: apps/marketing/src/app/(marketing)/open/total-signed-documents-chart.tsx:30
 #: apps/marketing/src/app/(marketing)/open/total-signed-documents-chart.tsx:55
@@ -588,11 +588,11 @@ msgstr "שנתי"
 
 #: apps/marketing/src/app/(marketing)/pricing/page.tsx:167
 msgid "Yes! Tofes-Mekovan is offered under the GNU AGPL V3 open source license. This means you can use it for free and even modify it to fit your needs, as long as you publish your changes under the same license."
-msgstr "כֵּן! דוקומנסו מוצעת תחת רישיון הקוד הפתוח של GNU AGPL V3. זה אומר שאתה יכול להשתמש בו בחינם ואפילו לשנות אותו כך שיתאים לצרכים שלך, כל עוד אתה מפרסם את השינויים שלך תחת אותו רישיון."
+msgstr "כֵּן! טופס מקוון מוצעת תחת רישיון הקוד הפתוח של GNU AGPL V3. זה אומר שאתה יכול להשתמש בו בחינם ואפילו לשנות אותו כך שיתאים לצרכים שלך, כל עוד אתה מפרסם את השינויים שלך תחת אותו רישיון."
 
 #: apps/marketing/src/app/(marketing)/pricing/page.tsx:93
 msgid "You can self-host Tofes-Mekovan for free or use our ready-to-use hosted version. The hosted version comes with additional support, painless scalability and more. Early adopters will get access to all features we build this year, for no additional cost! Forever! Yes, that includes multiple users per account later. If you want Tofes-Mekovan for your enterprise, we are happy to talk about your needs."
-msgstr "אתה יכול לארח בעצמך את Tofes-Mekovan בחינם או להשתמש בגרסה המתארחת המוכנה לשימוש שלנו. הגרסה המתארחת מגיעה עם תמיכה נוספת, מדרגיות ללא כאב ועוד. מאמצים מוקדמים יקבלו גישה לכל התכונות שאנו בונים השנה, ללא עלות נוספת! לָנֶצַח! כן, זה כולל מספר משתמשים לכל חשבון מאוחר יותר. אם אתה רוצה את דוקומנסו עבור הארגון שלך, נשמח לדבר על הצרכים שלך."
+msgstr "אתה יכול לארח בעצמך את Tofes-Mekovan בחינם או להשתמש בגרסה המתארחת המוכנה לשימוש שלנו. הגרסה המתארחת מגיעה עם תמיכה נוספת, מדרגיות ללא כאב ועוד. מאמצים מוקדמים יקבלו גישה לכל התכונות שאנו בונים השנה, ללא עלות נוספת! לָנֶצַח! כן, זה כולל מספר משתמשים לכל חשבון מאוחר יותר. אם אתה רוצה את טופס מקוון עבור הארגון שלך, נשמח לדבר על הצרכים שלך."
 
 #: apps/marketing/src/components/(marketing)/carousel.tsx:272
 msgid "Your browser does not support the video tag."

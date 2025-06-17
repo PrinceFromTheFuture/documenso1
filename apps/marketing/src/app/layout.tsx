@@ -44,7 +44,7 @@ export function generateMetadata() {
       url: process.env.NEXT_PUBLIC_WEBAPP_URL ?? 'http://localhost:3000',
       images: [
         {
-          url: 'https://dev2.tofes-mekovan.co.il/static/logo_icon3.jpg',
+          url: process.env.NEXT_PUBLIC_WEBAPP_URL + '/static/logo_icon3.jpg',
           width: 1200,
           height: 630,
           alt: 'TM - Tofes Mekovan Logo',

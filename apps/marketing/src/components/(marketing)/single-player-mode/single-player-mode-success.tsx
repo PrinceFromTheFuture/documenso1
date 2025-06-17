@@ -12,7 +12,6 @@ import { DocumentStatus } from '@documenso/prisma/client';
 import type { DocumentWithRecipient } from '@documenso/prisma/types/document-with-recipient';
 import DocumentDialog from '@documenso/ui/components/document/document-dialog';
 import { DocumentDownloadButton } from '@documenso/ui/components/document/document-download-button';
-import { DocumentShareButton } from '@documenso/ui/components/document/document-share-button';
 import { SigningCard3D } from '@documenso/ui/components/signing-card';
 import { cn } from '@documenso/ui/lib/utils';
 import { Button } from '@documenso/ui/primitives/button';
@@ -63,11 +62,6 @@ export const SinglePlayerModeSuccess = ({
       <div className="relative mt-8 w-full">
         <div className={cn('flex flex-col items-center', className)}>
           <div className="grid w-full max-w-sm grid-cols-2 gap-4">
-            <DocumentShareButton
-              documentId={document.id}
-              token={document.Recipient[0].token}
-              className="flex-1 bg-transparent backdrop-blur-sm"
-            />
 
             <DocumentDownloadButton
               className="flex-1 bg-transparent backdrop-blur-sm"

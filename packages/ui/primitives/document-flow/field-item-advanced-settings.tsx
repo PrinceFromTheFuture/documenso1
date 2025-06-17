@@ -140,7 +140,13 @@ const getDefaultState = (fieldType: FieldType): FieldMeta => {
         readOnly: false,
       };
     default:
-      throw new Error(`Unsupported field type: ${fieldType}`);
+      return {
+        type: 'signature',
+        values: [],
+        defaultValue: '',
+        required: true,
+        readOnly: false,
+      };
   }
 };
 

@@ -41,10 +41,10 @@ export function generateMetadata() {
       description:
         'מערכת שליחת טפסים להחתמה דיגיטלית המובילה בישראל. גם אתם רוצים לשלוח טופס לחתימה בקלות , חייגו ל- 052-5518255 המרת כל טופס word ו - PDF לטופס מקוון , שליחת מסמכים וטפסים מקוונים לחתימה דיגיטלית באון ליין.',
       type: 'website',
-      url: NEXT_PUBLIC_WEBAPP_URL(),
+      url: process.env.NEXT_PUBLIC_WEBAPP_URL,
       images: [
         {
-          url: 'https://dev2.tofes-mekovan.co.il/static/logo_icon3.jpg',
+          url: process.env.NEXT_PUBLIC_WEBAPP_URL + '/static/logo_icon3.jpg',
           width: 1200,
           height: 630,
           alt: 'TM - Tofes Mekovan Logo',

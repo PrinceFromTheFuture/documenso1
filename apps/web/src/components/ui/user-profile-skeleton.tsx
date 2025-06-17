@@ -16,7 +16,7 @@ export type UserProfileSkeletonProps = {
 };
 
 export const UserProfileSkeleton = ({ className, user, rows = 2 }: UserProfileSkeletonProps) => {
-  const baseUrl = new URL(NEXT_PUBLIC_WEBAPP_URL() ?? 'https://dev2.tofes-mekovan.co.il');
+  const baseUrl = new URL(NEXT_PUBLIC_WEBAPP_URL() ?? 'https://sign.tofes-mekovan.co.il');
 
   return (
     <div

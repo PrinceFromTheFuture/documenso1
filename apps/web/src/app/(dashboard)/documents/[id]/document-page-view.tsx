@@ -85,10 +85,6 @@ export const DocumentPageView = async ({ params, team }: DocumentPageViewProps) 
       .otherwise(() => false);
   }
 
-  const isDocumentHistoryEnabled = await getServerComponentFlag(
-    'app_document_page_view_history_sheet',
-  );
-
   if (!document || !document.documentData || (team && !canAccessDocument)) {
     redirect(documentRootPath);
   }
@@ -184,7 +180,6 @@ export const DocumentPageView = async ({ params, team }: DocumentPageViewProps) 
           </div>
         </div>
 
-        {isDocumentHistoryEnabled && (
           <div className="self-end">
             <DocumentHistorySheet documentId={document.id} userId={user.id}>
               <Button variant="outline">
@@ -193,7 +188,6 @@ export const DocumentPageView = async ({ params, team }: DocumentPageViewProps) 
               </Button>
             </DocumentHistorySheet>
           </div>
-        )}
       </div>
 
       <div className="mt-6 grid w-full grid-cols-12 gap-8">

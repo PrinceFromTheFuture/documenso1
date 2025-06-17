@@ -86,7 +86,7 @@ msgstr "{0, plural, one {1 matching field} other {# matching fields}}"
 msgid "{0, plural, one {1 Recipient} other {# Recipients}}"
 msgstr "{0, plural, one {1 Recipient} אחר {# Recipients}}"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:238
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:236
 msgid "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}}"
 msgstr "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}}"
 
@@ -228,12 +228,12 @@ msgstr "בקשה להעברת הבעלות על צוות זה נשלחה אל <0
 
 #: apps/web/src/components/(dashboard)/settings/webhooks/create-webhook-dialog.tsx:228
 msgid "A secret that will be sent to your URL so you can verify that the request has been sent by Tofes-Mekovan"
-msgstr "סוד שיישלח לכתובת האתר שלך כדי שתוכל לוודא שהבקשה נשלחה על ידי דוקומנסו"
+msgstr "סוד שיישלח לכתובת האתר שלך כדי שתוכל לוודא שהבקשה נשלחה על ידי טופס מקוון"
 
 #: apps/web/src/app/(dashboard)/settings/webhooks/[id]/page.tsx:196
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/webhooks/[id]/page.tsx:198
 msgid "A secret that will be sent to your URL so you can verify that the request has been sent by Tofes-Mekovan."
-msgstr "סוד שיישלח לכתובת האתר שלך כדי שתוכל לוודא שהבקשה נשלחה על ידי דוקומנסו."
+msgstr "סוד שיישלח לכתובת האתר שלך כדי שתוכל לוודא שהבקשה נשלחה על ידי טופס מקוון."
 
 #: apps/web/src/app/(unauthenticated)/articles/signature-disclosure/page.tsx:64
 msgid "A stable internet connection"
@@ -281,9 +281,9 @@ msgstr "אימות מחדש של החשבון"
 msgid "Acknowledgment"
 msgstr "הוֹדָאָה"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:108
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:107
 #: apps/web/src/app/(dashboard)/documents/[id]/logs/document-logs-data-table.tsx:100
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:123
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:122
 #: apps/web/src/app/(dashboard)/settings/public-profile/public-templates-data-table.tsx:164
 #: apps/web/src/app/(dashboard)/settings/security/activity/user-security-activity-data-table.tsx:118
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/audit-log/data-table.tsx:46
@@ -504,9 +504,9 @@ msgid "An error occurred while disabling direct link signing."
 msgstr "אירעה שגיאה בעת השבתת חתימה ישירה על קישורים."
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:64
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:92
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:91
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:76
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:107
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:106
 msgid "An error occurred while downloading your document."
 msgstr "אירעה שגיאה בעת הורדת המסמך שלך."
 
@@ -665,7 +665,7 @@ msgstr "גרסת האפליקציה"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:89
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:120
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:146
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:145
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:142
 msgid "Approve"
 msgstr "אשר"
@@ -708,7 +708,7 @@ msgstr "האם אתה בטוח?"
 msgid "Attempts sealing the document again, useful for after a code change has occurred to resolve an erroneous document."
 msgstr "ניסיונות לסגור את המסמך שוב, שימושי לאחר שהתרחש שינוי קוד כדי לפתור מסמך שגוי."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:130
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:129
 msgid "Audit Log"
 msgstr "יומן ביקורת"
 
@@ -803,7 +803,7 @@ msgstr "על ידי הפעלת 2FA, תידרש להזין קוד מאפליקצ�
 
 #: apps/web/src/app/(unauthenticated)/articles/signature-disclosure/page.tsx:142
 msgid "By proceeding to use the electronic signature service provided by Tofes-Mekovan, you affirm that you have read and understood this disclosure. You agree to all terms and conditions related to the use of electronic signatures and electronic transactions as outlined herein."
-msgstr "על ידי המשך השימוש בשירות החתימה האלקטרונית המסופק על ידי דוקומנסו, אתה מאשר שקראת והבנת את החשיפה הזו. אתה מסכים לכל התנאים וההגבלות הקשורים לשימוש בחתימות אלקטרוניות ועסקאות אלקטרוניות כמפורט כאן."
+msgstr "על ידי המשך השימוש בשירות החתימה האלקטרונית המסופק על ידי טופס מקוון, אתה מאשר שקראת והבנת את החשיפה הזו. אתה מסכים לכל התנאים וההגבלות הקשורים לשימוש בחתימות אלקטרוניות ועסקאות אלקטרוניות כמפורט כאן."
 
 #: apps/web/src/components/general/signing-disclosure.tsx:14
 msgid "By proceeding with your electronic signature, you acknowledge and consent that it will be used to sign the given document and holds the same legal validity as a handwritten signature. By completing the electronic signing process, you affirm your understanding and acceptance of these conditions."
@@ -1188,7 +1188,7 @@ msgstr "צור webhook"
 msgid "Create Webhook"
 msgstr "צור Webhook"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:213
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:211
 msgid "Create your account and start using state-of-the-art document signing."
 msgstr "צור את החשבון שלך והתחל להשתמש בחתימת מסמכים חדישה."
 
@@ -1274,8 +1274,8 @@ msgstr "ברירת המחדל של נראות מסמך"
 msgid "delete"
 msgstr "מחק"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:144
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:189
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:143
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:188
 #: apps/web/src/app/(dashboard)/documents/delete-document-dialog.tsx:202
 #: apps/web/src/app/(dashboard)/settings/security/passkeys/user-passkeys-data-table-actions.tsx:177
 #: apps/web/src/app/(dashboard)/settings/security/passkeys/user-passkeys-data-table-actions.tsx:211
@@ -1461,7 +1461,7 @@ msgstr "מסמך"
 msgid "Document All"
 msgstr "תיעוד הכל"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:132
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:131
 msgid "Document Approved"
 msgstr "המסמך אושר"
 
@@ -1503,7 +1503,7 @@ msgstr "טיוטת מסמך"
 msgid "Document Duplicated"
 msgstr "מסמך משוכפל"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:192
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:191
 #: apps/web/src/components/document/document-history-sheet.tsx:104
 msgid "Document history"
 msgstr "היסטוריית מסמכים"
@@ -1529,7 +1529,7 @@ msgstr "מדדי מסמכים"
 msgid "Document moved"
 msgstr "המסמך הועבר"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:156
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:155
 msgid "Document no longer available to sign"
 msgstr "המסמך כבר לא זמין לחתימה"
 
@@ -1560,7 +1560,7 @@ msgstr "המסמך נשלח"
 #~ msgid "Document Settings"
 #~ msgstr "Document Settings"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:130
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:129
 msgid "Document Signed"
 msgstr "מסמך חתום"
 
@@ -1584,7 +1584,7 @@ msgstr "העלאת מסמך מושבתת עקב חשבוניות שלא שולמ
 msgid "Document uploaded"
 msgstr "המסמך הועלה"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:131
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:130
 msgid "Document Viewed"
 msgstr "המסמך נצפה"
 
@@ -1626,9 +1626,9 @@ msgid "Don't have an account? <0>Sign up</0>"
 msgstr "אין לך חשבון? <0>הירשם</0>"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:111
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:123
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:122
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:141
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:162
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:161
 #: apps/web/src/components/(teams)/tables/team-billing-invoices-data-table.tsx:110
 #: apps/web/src/components/forms/2fa/enable-authenticator-app-dialog.tsx:185
 #: apps/web/src/components/forms/2fa/view-recovery-codes-dialog.tsx:107
@@ -1660,8 +1660,8 @@ msgstr "מסמכים מנוסחים"
 msgid "Due to an unpaid invoice, your team has been restricted. Please settle the payment to restore full access to your team."
 msgstr "עקב חשבונית שלא שולמה, הצוות שלך הוגבל. נא להסדיר את התשלום כדי להחזיר גישה מלאה לצוות שלך."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:136
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:167
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:135
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:166
 #: apps/web/src/app/(dashboard)/documents/duplicate-document-dialog.tsx:85
 #: apps/web/src/app/(dashboard)/documents/duplicate-document-dialog.tsx:118
 #: apps/web/src/app/(dashboard)/templates/data-table-action-dropdown.tsx:74
@@ -1670,9 +1670,9 @@ msgid "Duplicate"
 msgstr "שכפל"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:104
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:115
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:114
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:102
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:156
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:155
 #: apps/web/src/app/(dashboard)/settings/security/passkeys/user-passkeys-data-table-actions.tsx:111
 #: apps/web/src/app/(dashboard)/settings/webhooks/page.tsx:95
 #: apps/web/src/app/(dashboard)/templates/data-table-action-dropdown.tsx:65
@@ -1860,11 +1860,11 @@ msgstr "שגיאה"
 msgid "Everyone can access and view the document"
 msgstr "כולם יכולים לגשת למסמך ולצפות בו"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:140
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:139
 msgid "Everyone has signed"
 msgstr "כולם חתמו"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:164
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:163
 msgid "Everyone has signed! You will receive an Email copy of the signed document."
 msgstr "כולם חתמו! תקבל עותק בדוא\"ל של המסמך החתום."
 
@@ -1949,7 +1949,7 @@ msgstr "חזרה"
 msgid "Go back home"
 msgstr "לחזור הביתה"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:227
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:225
 #: apps/web/src/app/(signing)/sign/[token]/no-longer-available.tsx:57
 msgid "Go Back Home"
 msgstr "חזור הביתה"
@@ -1998,7 +1998,7 @@ msgstr "כך זה עובד:"
 msgid "Hey I’m Timur"
 msgstr "היי, אני טימור"
 
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:189
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:188
 #: apps/web/src/app/(dashboard)/documents/delete-document-dialog.tsx:202
 #: apps/web/src/app/(dashboard)/settings/public-profile/public-profile-page-view.tsx:155
 msgid "Hide"
@@ -2385,7 +2385,7 @@ msgstr "העבר את המסמך לצוות"
 msgid "Move Template to Team"
 msgstr "העבר תבנית לצוות"
 
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:174
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:173
 #: apps/web/src/app/(dashboard)/templates/data-table-action-dropdown.tsx:85
 msgid "Move to Team"
 msgstr "העבר לצוות"
@@ -2415,7 +2415,7 @@ msgstr "התבניות שלי"
 msgid "Name"
 msgstr "שם"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:209
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:207
 msgid "Need to sign documents?"
 msgstr "צריך לחתום על מסמכים?"
 
@@ -3203,15 +3203,15 @@ msgstr "הגדרות"
 msgid "Setup"
 msgstr "התקנה"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:148
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:193
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:147
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:192
 msgid "Share"
 msgstr "שתף"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:179
 #: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:219
-msgid "Share Signing Card"
-msgstr "שתף כרטיס חתימה"
+#~ msgid "Share Signing Card"
+#~ msgstr "שתף כרטיס חתימה"
 
 #: apps/web/src/app/(dashboard)/settings/public-profile/public-profile-page-view.tsx:163
 msgid "Show"
@@ -3231,7 +3231,7 @@ msgstr "הצג תבניות בפרופיל הציבורי של הצוות שלך
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:83
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:114
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:139
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:138
 #: apps/web/src/app/(profile)/p/[url]/page.tsx:192
 #: apps/web/src/app/(signing)/sign/[token]/auto-sign.tsx:229
 #: apps/web/src/app/(signing)/sign/[token]/document-action-auth-2fa.tsx:182
@@ -3297,7 +3297,7 @@ msgstr "הרשם עכשיו"
 msgid "Sign Up"
 msgstr "הרשמה"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:218
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:216
 msgid "Sign Up Now!"
 msgstr "הרשם עכשיו!"
 
@@ -3330,7 +3330,7 @@ msgstr "מזהה חתימה"
 msgid "Signatures Collected"
 msgstr "חתימות נאספו"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:198
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:196
 msgid "Signatures will appear once the document has been completed"
 msgstr "חתימות יופיעו לאחר השלמת המסמך"
 
@@ -3357,8 +3357,8 @@ msgstr "תעודת חתימה מסופקת על ידי"
 msgid "Signing in..."
 msgstr "נכנס..."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:160
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:203
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:159
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:202
 msgid "Signing Links"
 msgstr "חתימה על קישורים"
 
@@ -3390,11 +3390,11 @@ msgstr "הגדרות האתר"
 
 #: apps/web/src/app/(dashboard)/documents/_action-items/resend-document.tsx:105
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:63
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:91
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-dropdown.tsx:90
 #: apps/web/src/app/(dashboard)/documents/[id]/logs/download-audit-log-button.tsx:65
 #: apps/web/src/app/(dashboard)/documents/[id]/logs/download-certificate-button.tsx:68
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:75
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:106
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:105
 #: apps/web/src/app/(dashboard)/documents/delete-document-dialog.tsx:82
 #: apps/web/src/app/(dashboard)/documents/duplicate-document-dialog.tsx:72
 #: apps/web/src/app/(dashboard)/settings/billing/billing-plans.tsx:62
@@ -3900,7 +3900,7 @@ msgstr "לא ניתן היה לשכפל מסמך זה בשלב זה. אנא נס
 msgid "This document could not be re-sent at this time. Please try again."
 msgstr "לא ניתן לשלוח מחדש את המסמך הזה בשלב זה. אנא נסה שוב."
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:178
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:177
 msgid "This document has been cancelled by the owner and is no longer available for others to sign."
 msgstr "מסמך זה בוטל על ידי הבעלים ואינו זמין עוד לחתימה של אחרים."
 
@@ -3908,11 +3908,11 @@ msgstr "מסמך זה בוטל על ידי הבעלים ואינו זמין עו
 msgid "This document has been cancelled by the owner."
 msgstr "מסמך זה בוטל על ידי הבעלים."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:227
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:225
 msgid "This document has been signed by all recipients"
 msgstr "מסמך זה נחתם על ידי כל הנמענים"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:230
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:228
 msgid "This document is currently a draft and has not been sent"
 msgstr "מסמך זה הוא כרגע טיוטה ולא נשלח"
 
@@ -4047,7 +4047,7 @@ msgstr "כדי לצפות במסמך זה עליך להיות מחובר לחש�
 
 #: apps/web/src/app/(dashboard)/settings/profile/delete-account-dialog.tsx:122
 msgid "Tofes-Mekovan will delete <0>all of your documents</0>, along with all of your completed documents, signatures, and all other resources belonging to your Account."
-msgstr "דוקומנסו תמחק <0>את כל המסמכים שלך</0> , יחד עם כל המסמכים שהושלמו, החתימות וכל שאר המשאבים השייכים לחשבון שלך."
+msgstr "טופס מקוון תמחק <0>את כל המסמכים שלך</0> , יחד עם כל המסמכים שהושלמו, החתימות וכל שאר המשאבים השייכים לחשבון שלך."
 
 #: apps/web/src/app/(dashboard)/settings/public-profile/public-profile-page-view.tsx:178
 msgid "Toggle the switch to hide your profile from the public."
@@ -4444,7 +4444,7 @@ msgstr "היסטורית הגירסאות"
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-button.tsx:95
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:126
 #: apps/web/src/app/(dashboard)/documents/data-table-action-button.tsx:135
-#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:132
+#: apps/web/src/app/(dashboard)/documents/data-table-action-dropdown.tsx:131
 #: apps/web/src/components/(teams)/tables/team-billing-invoices-data-table.tsx:100
 #: apps/web/src/components/forms/2fa/view-recovery-codes-dialog.tsx:168
 msgid "View"
@@ -4512,7 +4512,7 @@ msgstr "נצפו"
 msgid "Waiting"
 msgstr "ממתין"
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:148
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:147
 msgid "Waiting for others to sign"
 msgstr "מחכה שאחרים יחתמו"
 
@@ -4522,7 +4522,7 @@ msgstr "מחכה לתורך"
 
 #: apps/web/src/app/(signing)/sign/[token]/no-longer-available.tsx:61
 msgid "Want to send slick signing links like this one? <0>Check out Tofes-Mekovan.</0>"
-msgstr "רוצה לשלוח קישורי חתימה חלקים כמו זה? <0>בדוק את דוקומנסו.</0>"
+msgstr "רוצה לשלוח קישורי חתימה חלקים כמו זה? <0>בדוק את טופס מקוון.</0>"
 
 #: apps/web/src/app/(profile)/profile-header.tsx:68
 msgid "Want your own public profile?"
@@ -5036,7 +5036,7 @@ msgstr "גם לכם יכול להיות פרופיל כמו שלי מיד כאן
 msgid "You will now be required to enter a code from your authenticator app when signing in."
 msgstr "כעת תידרש להזין קוד מאפליקציית המאמת שלך בעת הכניסה."
 
-#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:171
+#: apps/web/src/app/(signing)/sign/[token]/complete/page.tsx:170
 msgid "You will receive an Email copy of the signed document once everyone has signed."
 msgstr "תקבל עותק של המסמך החתום באימייל לאחר שכולם יחתמו."
 

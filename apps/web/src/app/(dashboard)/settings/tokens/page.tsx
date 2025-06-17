@@ -28,7 +28,7 @@ export default async function ApiTokensPage() {
           Also see our{' '}
           <a
             className="text-primary underline"
-            href={'https://docs.documenso.com/developers/public-api'}
+            href={'https://sign.tofes-mekovan.co.il/t/firstteam/settings/tokens'}
             target="_blank"
           >
             Documentation

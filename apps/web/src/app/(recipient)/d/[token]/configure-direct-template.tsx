@@ -126,7 +126,7 @@ export const ConfigureDirectTemplateFormPartial = ({
                         derivedRecipientAccessAuth !== null ||
                         session?.user.email !== undefined
                       }
-                      placeholder="recipient@documenso.com"
+                      placeholder="recipient@tofes-mekovan.co.il"
                     />
                   </FormControl>
 

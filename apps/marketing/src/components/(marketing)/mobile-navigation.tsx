@@ -1,4 +1,4 @@
-'use client';
+//'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -40,7 +40,7 @@ export const MENU_NAVIGATION_LINKS = [
     text: msg`Open Startup`,
   },
   {
-    href: 'https://status.documenso.com',
+    href: 'https://status.tofes-mekovan.co.il',
     text: msg`Status`,
   },
   {
@@ -53,11 +53,11 @@ export const MENU_NAVIGATION_LINKS = [
     text: msg`Privacy`,
   },
   {
-    href: 'https://app.documenso.com/signup?utm_source=marketing-header',
+    href: 'https://app.tofes-mekovan.co.il/signup?utm_source=marketing-header',
     text: msg`Sign up`,
   },
   {
-    href: 'https://app.documenso.com/signin?utm_source=marketing-header',
+    href: 'https://app.tofes-mekovan.co.il/signin?utm_source=marketing-header',
     text: msg`Sign in`,
   },
 ];

@@ -7,7 +7,7 @@ import { Callout, Steps } from 'nextra/components';
 
 # API Reference
 
-The Swagger UI for the API is available at [/api/v1/openapi](https://app.documenso.com/api/v1/openapi). This page provides detailed information about the API endpoints, request and response formats, and authentication requirements.
+The Swagger UI for the API is available at [/api/v1/openapi](https://app.tofes-mekovan.co.il/api/v1/openapi). This page provides detailed information about the API endpoints, request and response formats, and authentication requirements.
 
 ## Upload a Document
 
@@ -133,7 +133,7 @@ The upload URL is a pre-signed S3 URL that you can use to upload the document to
       "token": "<unique-signer-token>",
       "role": "SIGNER",
       "signingOrder": 1,
-      "signingUrl": "https://app.documenso.com/sign/<unique-signer-token>"
+      "signingUrl": "https://app.tofes-mekovan.co.il/sign/<unique-signer-token>"
     },
     {
       "recipientId": 12,
@@ -142,7 +142,7 @@ The upload URL is a pre-signed S3 URL that you can use to upload the document to
       "token": "<unique-signer-token>",
       "role": "SIGNER",
       "signingOrder": 0,
-      "signingUrl": "https://app.documenso.com/sign/<unique-signer-token>"
+      "signingUrl": "https://app.tofes-mekovan.co.il/sign/<unique-signer-token>"
     }
   ]
 }
@@ -297,7 +297,7 @@ At the minimum, you must provide the `recipients` array in the JSON payload. Her
 }
 ```
 
-Filling the `recipients` array with the corresponding recipient for each template placeholder recipient is recommended. For example, if the template has two placeholders, you should provide at least two recipients in the `recipients` array. Otherwise, the document will be sent to inexistent recipients such as `<recipient.1@documenso.com>`. However, the recipients can always be edited via the API or the web app.
+Filling the `recipients` array with the corresponding recipient for each template placeholder recipient is recommended. For example, if the template has two placeholders, you should provide at least two recipients in the `recipients` array. Otherwise, the document will be sent to inexistent recipients such as `<recipient.1@tofes-mekovan.co.il>`. However, the recipients can always be edited via the API or the web app.
 
 A successful response will contain the document ID and recipient(s) information.
 
@@ -312,7 +312,7 @@ A successful response will contain the document ID and recipient(s) information.
       "token": "<signing-token>",
       "role": "SIGNER",
       "signingOrder": null,
-      "signingUrl": "https://app.documenso.com/sign/<signing-token>"
+      "signingUrl": "https://app.tofes-mekovan.co.il/sign/<signing-token>"
     }
   ]
 }
@@ -420,7 +420,7 @@ An example response would look like this:
       "readStatus": "NOT_OPENED",
       "signingStatus": "NOT_SIGNED",
       "sendStatus": "NOT_SENT",
-      "signingUrl": "https://app.documenso.com/sign/<signing-token>"
+      "signingUrl": "https://app.tofes-mekovan.co.il/sign/<signing-token>"
     }
   ]
 }

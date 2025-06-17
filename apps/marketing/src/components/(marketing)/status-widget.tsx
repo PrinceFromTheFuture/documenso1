@@ -51,7 +51,7 @@ export const StatusWidget = memo(function StatusWidget({ slug }: { slug: string 
   return (
     <a
       className="border-border inline-flex max-w-fit  items-center justify-between gap-2 space-x-2 rounded-md border border-gray-200 px-3 py-1 text-sm"
-      href="https://status.documenso.com"
+      href="https://status.tofes-mekovan.co.il"
       target="_blank"
       rel="noreferrer"
     >

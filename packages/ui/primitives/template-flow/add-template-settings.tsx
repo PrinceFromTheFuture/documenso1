@@ -68,11 +68,8 @@ export type AddTemplateSettingsFormProps = {
   template: TemplateWithData;
   onSubmit: (_data: TAddTemplateSettingsFormSchema) => void;
 };
-const form = useForm({
-  defaultValues: {
-    meta: { language: "he" },
-  },
-});
+
+
 export const AddTemplateSettingsFormPartial = ({
   documentFlow,
   recipients,
@@ -103,7 +100,7 @@ export const AddTemplateSettingsFormPartial = ({
         distributionMethod:
           template.templateMeta?.distributionMethod || DocumentDistributionMethod.EMAIL,
         redirectUrl: template.templateMeta?.redirectUrl ?? '',
-        language: template.templateMeta?.language ?? 'he',
+        language: 'he',
         emailSettings: ZDocumentEmailSettingsSchema.parse(template?.templateMeta?.emailSettings),
       },
     },
