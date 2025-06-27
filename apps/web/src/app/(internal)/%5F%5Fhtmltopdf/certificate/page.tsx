@@ -168,108 +168,6 @@ export default async function SigningCertificate({ searchParams }: SigningCertif
         <h1 className="my-8 text-2xl font-bold">{_(msg`אישור חתימה דיגיטלית`)}</h1>
       </div>
 
-      <Card className="mb-8">
-        <CardContent className="p-6">
-          <div className="grid grid-cols-3 gap-6">
-            <div>
-              <h2 className="text-lg font-semibold mb-4">{_(msg`פרטים`)}</h2>
-              <div className="space-y-2">
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`נשלח`)}:</span>{' '}
-                  <span className="block">
-                    {DateTime.now().setLocale('he').toFormat('dd/MM/yyyy HH:mm')}
-                  </span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`חותם`)}:</span>{' '}
-                  <span className="block">{document.Recipient[0]?.name}</span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`דוא"ל`)}:</span>{' '}
-                  <span className="block">{document.Recipient[0]?.email}</span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`רמת אימות`)}:</span>{' '}
-                  <span className="block">{getAuthenticationLevel(document.Recipient[0]?.id)}</span>
-                </p>
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-lg font-semibold mb-4">{_(msg`חתימה`)}</h2>
-              {document.Recipient[0] && (
-                <div className="border rounded-lg p-4">
-                  {getRecipientSignatureField(document.Recipient[0].id)?.Signature?.signatureImageAsBase64 && (
-                    <img
-                      src={getRecipientSignatureField(document.Recipient[0].id)?.Signature?.signatureImageAsBase64}
-                      alt="חתימה"
-                      className="max-h-16 mx-auto"
-                    />
-                  )}
-                  <p className="text-sm text-center mt-2">
-                    <span className="font-medium">{_(msg`מזהה חתימה`)}:</span>{' '}
-                    <span className="font-mono">
-                      {getRecipientSignatureField(document.Recipient[0].id)?.secondaryId}
-                    </span>
-                  </p>
-                </div>
-              )}
-            </div>
-
-            <div>
-              <h2 className="text-lg font-semibold mb-4">{_(msg`אירועי חותם`)}</h2>
-              <div className="space-y-2">
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`נצפה`)}:</span>{' '}
-                  <span className="block">
-                    {auditLogs[DOCUMENT_AUDIT_LOG_TYPE.DOCUMENT_OPENED][0]
-                      ? DateTime.fromJSDate(
-                          auditLogs[DOCUMENT_AUDIT_LOG_TYPE.DOCUMENT_OPENED][0].createdAt,
-                        ).toFormat('dd/MM/yyyy HH:mm')
-                      : _(msg`לא ידוע`)}
-                  </span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`נחתם`)}:</span>{' '}
-                  <span className="block">
-                    {auditLogs[DOCUMENT_AUDIT_LOG_TYPE.DOCUMENT_RECIPIENT_COMPLETED][0]
-                      ? DateTime.fromJSDate(
-                          auditLogs[DOCUMENT_AUDIT_LOG_TYPE.DOCUMENT_RECIPIENT_COMPLETED][0].createdAt,
-                        ).toFormat('dd/MM/yyyy HH:mm')
-                      : _(msg`לא ידוע`)}
-                  </span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`כתובת IP`)}:</span>{' '}
-                  <span className="block">
-                    {auditLogs[DOCUMENT_AUDIT_LOG_TYPE.DOCUMENT_RECIPIENT_COMPLETED][0]?.ipAddress ??
-                      _(msg`לא ידוע`)}
-                  </span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`מכשיר`)}:</span>{' '}
-                  <span className="block">
-                    {getDevice(
-                      auditLogs[DOCUMENT_AUDIT_LOG_TYPE.DOCUMENT_RECIPIENT_COMPLETED][0]?.userAgent,
-                    )}
-                  </span>
-                </p>
-                <p className="text-sm">
-                  <span className="font-medium">{_(msg`סיבה`)}:</span>{' '}
-                  <span className="block">
-                    {_(
-                      isOwner(document.Recipient[0]?.email)
-                        ? FRIENDLY_SIGNING_REASONS['__OWNER__']
-                        : FRIENDLY_SIGNING_REASONS[document.Recipient[0]?.role],
-                    )}
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
       <Card>
         <CardContent className="p-0">
           <Table overflowHidden>
@@ -417,4 +315,4 @@ export default async function SigningCertificate({ searchParams }: SigningCertif
       </div>
     </div>
   );
-}
+} 

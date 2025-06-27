@@ -56,7 +56,7 @@ msgstr "\"{placeholderEmail}\" בשם \"{0}\" הזמין אותך לחתום ע�
 #~ msgid "({0}) has invited you to view this document"
 #~ msgstr "({0}) hat dich eingeladen, dieses Dokument zu betrachten"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:313
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:319
 msgid "{0, plural, one {(1 character over)} other {(# characters over)}}"
 msgstr "{0, plural, one {(1 character over)} other {(# characters over)}}"
 
@@ -116,7 +116,7 @@ msgstr "{0} נמענים"
 #~ msgid "{0} the document to complete the process."
 #~ msgstr "{0} the document to complete the process."
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:294
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:300
 msgid "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 msgstr "{charactersRemaining, plural, one {1 character left} other {{charactersRemaining} characters lefting}}"
 
@@ -265,8 +265,8 @@ msgid "Accepted team invitation"
 msgstr "התקבלה הזמנת הצוות"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:128
-msgid "Account Authentication"
-msgstr "אימות חשבון"
+#~ msgid "Account Authentication"
+#~ msgstr "אימות חשבון"
 
 #: apps/web/src/app/(dashboard)/admin/users/[id]/delete-user-dialog.tsx:51
 #: apps/web/src/app/(dashboard)/settings/profile/delete-account-dialog.tsx:48
@@ -274,8 +274,8 @@ msgid "Account deleted"
 msgstr "החשבון נמחק"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:119
-msgid "Account Re-Authentication"
-msgstr "אימות מחדש של החשבון"
+#~ msgid "Account Re-Authentication"
+#~ msgstr "אימות מחדש של החשבון"
 
 #: apps/web/src/app/(unauthenticated)/articles/signature-disclosure/page.tsx:139
 msgid "Acknowledgment"
@@ -713,8 +713,8 @@ msgid "Audit Log"
 msgstr "יומן ביקורת"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:198
-msgid "Authentication Level"
-msgstr "רמת אימות"
+#~ msgid "Authentication Level"
+#~ msgstr "רמת אימות"
 
 #: apps/web/src/app/(recipient)/d/[token]/signing-auth-page.tsx:41
 #: apps/web/src/app/(signing)/sign/[token]/signing-auth-page.tsx:52
@@ -837,7 +837,7 @@ msgstr "על ידי שימוש בתכונת החתימה האלקטרונית, �
 #: apps/web/src/app/(signing)/sign/[token]/reject-document-dialog.tsx:153
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:130
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:305
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:335
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:341
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/team-transfer-status.tsx:121
 #: apps/web/src/components/(dashboard)/settings/token/delete-token-dialog.tsx:176
 #: apps/web/src/components/(dashboard)/settings/webhooks/create-webhook-dialog.tsx:242
@@ -1362,11 +1362,10 @@ msgid "Deleting account..."
 msgstr "מוחק חשבון..."
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:178
-msgid "Details"
-msgstr "פרטים"
+#~ msgid "Details"
+#~ msgstr "פרטים"
 
 #: apps/web/src/app/(dashboard)/settings/security/activity/user-security-activity-data-table.tsx:75
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:242
 msgid "Device"
 msgstr "התקן"
 
@@ -1703,8 +1702,6 @@ msgstr "גילוי חתימה אלקטרונית"
 #: apps/web/src/app/(dashboard)/admin/users/data-table-users.tsx:71
 #: apps/web/src/app/(dashboard)/templates/use-template-dialog.tsx:265
 #: apps/web/src/app/(dashboard)/templates/use-template-dialog.tsx:272
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:122
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:129
 #: apps/web/src/app/(recipient)/d/[token]/configure-direct-template.tsx:118
 #: apps/web/src/app/(signing)/sign/[token]/email-field.tsx:126
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:393
@@ -1806,7 +1803,7 @@ msgstr "הזן את כתובת הדוא\"ל שלך כדי לקבל את המסמ
 msgid "Enter your name"
 msgstr "הזן שם מלא"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:280
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:286
 msgid "Enter your text here"
 msgstr "הזן את הטקסט שלך כאן"
 
@@ -2009,8 +2006,8 @@ msgid "Hide additional information"
 msgstr "הסתר מידע נוסף"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:43
-msgid "I am the owner of this document"
-msgstr "אני הבעלים של המסמך הזה"
+#~ msgid "I am the owner of this document"
+#~ msgstr "אני הבעלים של המסמך הזה"
 
 #: apps/web/src/components/(dashboard)/settings/token/delete-token-dialog.tsx:186
 #: apps/web/src/components/(dashboard)/settings/webhooks/delete-webhook-dialog.tsx:173
@@ -2124,7 +2121,6 @@ msgid "Invoice"
 msgstr "חשבונית"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/audit-log/data-table.tsx:47
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:235
 msgid "IP Address"
 msgstr "כתובת IP"
 
@@ -2628,8 +2624,8 @@ msgid "Passkey name"
 msgstr "שם מפתח סיסמה"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:121
-msgid "Passkey Re-Authentication"
-msgstr "אימות מחדש של מפתח סיסמה"
+#~ msgid "Passkey Re-Authentication"
+#~ msgstr "אימות מחדש של מפתח סיסמה"
 
 #: apps/web/src/app/(dashboard)/settings/security/page.tsx:106
 #: apps/web/src/app/(dashboard)/settings/security/passkeys/page.tsx:32
@@ -2880,8 +2876,8 @@ msgid "Ready"
 msgstr "מוכן"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:289
-msgid "Reason"
-msgstr "סיבה"
+#~ msgid "Reason"
+#~ msgstr "סיבה"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:146
 msgid "Reason for rejection:"
@@ -3085,7 +3081,7 @@ msgstr "תפקידים "
 
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:446
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:337
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:344
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:350
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/branding-preferences.tsx:312
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/document-preferences.tsx:305
 msgid "Save"
@@ -3184,7 +3180,6 @@ msgid "Sending..."
 msgstr "שולח…"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:101
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:256
 msgid "Sent"
 msgstr "נשלח"
 
@@ -3312,7 +3307,6 @@ msgid "Sign Up with OIDC"
 msgstr "הירשם עם OIDC"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/recipient-item.tsx:88
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:177
 #: apps/web/src/app/(recipient)/d/[token]/sign-direct-template.tsx:338
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:247
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:282
@@ -3323,8 +3317,8 @@ msgid "Signature"
 msgstr "חתימה"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:228
-msgid "Signature ID"
-msgstr "מזהה חתימה"
+#~ msgid "Signature ID"
+#~ msgstr "מזהה חתימה"
 
 #: apps/web/src/app/(dashboard)/admin/stats/page.tsx:123
 msgid "Signatures Collected"
@@ -3335,22 +3329,21 @@ msgid "Signatures will appear once the document has been completed"
 msgstr "חתימות יופיעו לאחר השלמת המסמך"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:114
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:278
 #: apps/web/src/components/document/document-read-only-fields.tsx:84
 msgid "Signed"
 msgstr "חתום"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:176
-msgid "Signer Events"
-msgstr "אירועי חותם"
+#~ msgid "Signer Events"
+#~ msgstr "אירועי חותם"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:168
-msgid "Signing Certificate"
-msgstr "אישור חתימה דיגיטלית"
+#~ msgid "Signing Certificate"
+#~ msgstr "אישור חתימה דיגיטלית"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:311
-msgid "Signing certificate provided by"
-msgstr "תעודת חתימה מסופקת על ידי"
+#~ msgid "Signing certificate provided by"
+#~ msgstr "תעודת חתימה מסופקת על ידי"
 
 #: apps/web/src/components/forms/signin.tsx:383
 #: apps/web/src/components/forms/signin.tsx:510
@@ -3714,7 +3707,7 @@ msgid "Templates allow you to quickly generate documents with pre-filled recipie
 msgstr "תבניות מאפשרות לך ליצור במהירות מסמכים עם נמענים ושדות מלאים מראש."
 
 #: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:257
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:274
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:280
 msgid "Text"
 msgstr "טקסט"
 
@@ -4151,8 +4144,8 @@ msgid "Two-factor authentication has been disabled for your account. You will no
 msgstr "אימות דו-שלבי הושבת עבור חשבונך. לא תידרש עוד להזין קוד מאפליקציית המאמת שלך בעת הכניסה."
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:120
-msgid "Two-Factor Re-Authentication"
-msgstr "אימות מחדש דו-גורמי"
+#~ msgid "Two-Factor Re-Authentication"
+#~ msgstr "אימות מחדש דו-גורמי"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/recipient-item.tsx:73
 #: apps/web/src/app/(dashboard)/templates/data-table-templates.tsx:67
@@ -4266,8 +4259,8 @@ msgstr "לא הושלם"
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:262
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:273
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:284
-msgid "Unknown"
-msgstr "לא ידוע"
+#~ msgid "Unknown"
+#~ msgstr "לא ידוע"
 
 #: apps/web/src/app/(teams)/t/[teamUrl]/error.tsx:23
 msgid "Unknown error"
@@ -4504,7 +4497,6 @@ msgid "View teams"
 msgstr "צפה בצוותים"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:120
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:267
 msgid "Viewed"
 msgstr "נצפו"
 
@@ -5194,3 +5186,87 @@ msgstr "האסימון שלך נוצר בהצלחה! הקפד להעתיק או�
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/tokens/page.tsx:86
 msgid "Your tokens will be shown here once you create them."
 msgstr "האסימונים שלך יוצגו כאן לאחר שתיצור אותם."
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:120
+msgid "אימות דו-שלבי מחדש"
+msgstr "אימות דו-שלבי מחדש"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:128
+msgid "אימות חשבון"
+msgstr "אימות חשבון"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:119
+msgid "אימות חשבון מחדש"
+msgstr "אימות חשבון מחדש"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:121
+msgid "אימות מפתח מחדש"
+msgstr "אימות מפתח מחדש"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:176
+msgid "אירועי חותם"
+msgstr "אירועי חותם"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:168
+msgid "אישור חתימה דיגיטלית"
+msgstr "אישור חתימה דיגיטלית"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:310
+msgid "אישור חתימה מסופק על ידי"
+msgstr "אישור חתימה מסופק על ידי"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:43
+msgid "אני הבעלים של המסמך הזה"
+msgstr "אני הבעלים של המסמך הזה"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:122
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:129
+msgid "דוא\"ל"
+msgstr "דוא\"ל"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:177
+msgid "חתימה"
+msgstr "חתימה"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:234
+msgid "כתובת IP"
+msgstr "כתובת IP"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:236
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:261
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:272
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:283
+msgid "לא ידוע"
+msgstr "לא ידוע"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:227
+msgid "מזהה חתימה"
+msgstr "מזהה חתימה"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:241
+msgid "מכשיר"
+msgstr "מכשיר"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:277
+msgid "נחתם"
+msgstr "נחתם"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:266
+msgid "נצפה"
+msgstr "נצפה"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:255
+msgid "נשלח"
+msgstr "נשלח"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:288
+msgid "סיבה"
+msgstr "סיבה"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:178
+msgid "פרטים"
+msgstr "פרטים"
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:197
+msgid "רמת אימות"
+msgstr "רמת אימות"

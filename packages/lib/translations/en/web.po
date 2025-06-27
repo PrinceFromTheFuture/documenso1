@@ -57,7 +57,7 @@ msgstr "\"{placeholderEmail}\" on behalf of \"{0}\" has invited you to sign \"ex
 #~ msgid "({0}) has invited you to view this document"
 #~ msgstr "({0}) has invited you to view this document"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:313
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:319
 msgid "{0, plural, one {(1 character over)} other {(# characters over)}}"
 msgstr "{0, plural, one {(1 character over)} other {(# characters over)}}"
 
@@ -119,7 +119,7 @@ msgstr "{0} Recipient(s)"
 #~ msgid "{0} the document to complete the process."
 #~ msgstr "{0} the document to complete the process."
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:294
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:300
 msgid "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 msgstr "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 
@@ -268,8 +268,8 @@ msgid "Accepted team invitation"
 msgstr "Accepted team invitation"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:128
-msgid "Account Authentication"
-msgstr "Account Authentication"
+#~ msgid "Account Authentication"
+#~ msgstr "Account Authentication"
 
 #: apps/web/src/app/(dashboard)/admin/users/[id]/delete-user-dialog.tsx:51
 #: apps/web/src/app/(dashboard)/settings/profile/delete-account-dialog.tsx:48
@@ -277,8 +277,8 @@ msgid "Account deleted"
 msgstr "Account deleted"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:119
-msgid "Account Re-Authentication"
-msgstr "Account Re-Authentication"
+#~ msgid "Account Re-Authentication"
+#~ msgstr "Account Re-Authentication"
 
 #: apps/web/src/app/(unauthenticated)/articles/signature-disclosure/page.tsx:139
 msgid "Acknowledgment"
@@ -719,8 +719,8 @@ msgid "Audit Log"
 msgstr "Audit Log"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:198
-msgid "Authentication Level"
-msgstr "Authentication Level"
+#~ msgid "Authentication Level"
+#~ msgstr "Authentication Level"
 
 #: apps/web/src/app/(recipient)/d/[token]/signing-auth-page.tsx:41
 #: apps/web/src/app/(signing)/sign/[token]/signing-auth-page.tsx:52
@@ -843,7 +843,7 @@ msgstr "By using the electronic signature feature, you are consenting to conduct
 #: apps/web/src/app/(signing)/sign/[token]/reject-document-dialog.tsx:153
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:130
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:305
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:335
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:341
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/team-transfer-status.tsx:121
 #: apps/web/src/components/(dashboard)/settings/token/delete-token-dialog.tsx:176
 #: apps/web/src/components/(dashboard)/settings/webhooks/create-webhook-dialog.tsx:242
@@ -1374,11 +1374,10 @@ msgid "Deleting account..."
 msgstr "Deleting account..."
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:178
-msgid "Details"
-msgstr "Details"
+#~ msgid "Details"
+#~ msgstr "Details"
 
 #: apps/web/src/app/(dashboard)/settings/security/activity/user-security-activity-data-table.tsx:75
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:242
 msgid "Device"
 msgstr "Device"
 
@@ -1724,8 +1723,6 @@ msgstr "Electronic Signature Disclosure"
 #: apps/web/src/app/(dashboard)/admin/users/data-table-users.tsx:71
 #: apps/web/src/app/(dashboard)/templates/use-template-dialog.tsx:265
 #: apps/web/src/app/(dashboard)/templates/use-template-dialog.tsx:272
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:122
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:129
 #: apps/web/src/app/(recipient)/d/[token]/configure-direct-template.tsx:118
 #: apps/web/src/app/(signing)/sign/[token]/email-field.tsx:126
 #: apps/web/src/app/embed/direct/[[...url]]/client.tsx:393
@@ -1827,7 +1824,7 @@ msgstr "Enter your email address to receive the completed document."
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:280
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:286
 msgid "Enter your text here"
 msgstr "Enter your text here"
 
@@ -2034,8 +2031,8 @@ msgid "Hide additional information"
 msgstr "Hide additional information"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:43
-msgid "I am the owner of this document"
-msgstr "I am the owner of this document"
+#~ msgid "I am the owner of this document"
+#~ msgstr "I am the owner of this document"
 
 #: apps/web/src/components/(dashboard)/settings/token/delete-token-dialog.tsx:186
 #: apps/web/src/components/(dashboard)/settings/webhooks/delete-webhook-dialog.tsx:173
@@ -2150,7 +2147,6 @@ msgid "Invoice"
 msgstr "Invoice"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/audit-log/data-table.tsx:47
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:235
 msgid "IP Address"
 msgstr "IP Address"
 
@@ -2654,8 +2650,8 @@ msgid "Passkey name"
 msgstr "Passkey name"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:121
-msgid "Passkey Re-Authentication"
-msgstr "Passkey Re-Authentication"
+#~ msgid "Passkey Re-Authentication"
+#~ msgstr "Passkey Re-Authentication"
 
 #: apps/web/src/app/(dashboard)/settings/security/page.tsx:106
 #: apps/web/src/app/(dashboard)/settings/security/passkeys/page.tsx:32
@@ -2911,8 +2907,8 @@ msgid "Ready"
 msgstr "Ready"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:289
-msgid "Reason"
-msgstr "Reason"
+#~ msgid "Reason"
+#~ msgstr "Reason"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:146
 msgid "Reason for rejection:"
@@ -3116,7 +3112,7 @@ msgstr "Roles"
 
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:446
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:337
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:344
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:350
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/branding-preferences.tsx:312
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/document-preferences.tsx:305
 msgid "Save"
@@ -3215,7 +3211,6 @@ msgid "Sending..."
 msgstr "Sending..."
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:101
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:256
 msgid "Sent"
 msgstr "Sent"
 
@@ -3343,7 +3338,6 @@ msgid "Sign Up with OIDC"
 msgstr "Sign Up with OIDC"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/recipient-item.tsx:88
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:177
 #: apps/web/src/app/(recipient)/d/[token]/sign-direct-template.tsx:338
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:247
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:282
@@ -3354,8 +3348,8 @@ msgid "Signature"
 msgstr "Signature"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:228
-msgid "Signature ID"
-msgstr "Signature ID"
+#~ msgid "Signature ID"
+#~ msgstr "Signature ID"
 
 #: apps/web/src/app/(dashboard)/admin/stats/page.tsx:123
 msgid "Signatures Collected"
@@ -3366,22 +3360,21 @@ msgid "Signatures will appear once the document has been completed"
 msgstr "Signatures will appear once the document has been completed"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:114
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:278
 #: apps/web/src/components/document/document-read-only-fields.tsx:84
 msgid "Signed"
 msgstr "Signed"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:176
-msgid "Signer Events"
-msgstr "Signer Events"
+#~ msgid "Signer Events"
+#~ msgstr "Signer Events"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:168
-msgid "Signing Certificate"
-msgstr "Signing Certificate"
+#~ msgid "Signing Certificate"
+#~ msgstr "Signing Certificate"
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:311
-msgid "Signing certificate provided by"
-msgstr "Signing certificate provided by"
+#~ msgid "Signing certificate provided by"
+#~ msgstr "Signing certificate provided by"
 
 #: apps/web/src/components/forms/signin.tsx:383
 #: apps/web/src/components/forms/signin.tsx:510
@@ -3745,7 +3738,7 @@ msgid "Templates allow you to quickly generate documents with pre-filled recipie
 msgstr "Templates allow you to quickly generate documents with pre-filled recipients and fields."
 
 #: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:257
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:274
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:280
 msgid "Text"
 msgstr "Text"
 
@@ -4183,8 +4176,8 @@ msgid "Two-factor authentication has been disabled for your account. You will no
 msgstr "Two-factor authentication has been disabled for your account. You will no longer be required to enter a code from your authenticator app when signing in."
 
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:120
-msgid "Two-Factor Re-Authentication"
-msgstr "Two-Factor Re-Authentication"
+#~ msgid "Two-Factor Re-Authentication"
+#~ msgstr "Two-Factor Re-Authentication"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/recipient-item.tsx:73
 #: apps/web/src/app/(dashboard)/templates/data-table-templates.tsx:67
@@ -4299,8 +4292,8 @@ msgstr "Uncompleted"
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:262
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:273
 #: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:284
-msgid "Unknown"
-msgstr "Unknown"
+#~ msgid "Unknown"
+#~ msgstr "Unknown"
 
 #: apps/web/src/app/(teams)/t/[teamUrl]/error.tsx:23
 msgid "Unknown error"
@@ -4537,7 +4530,6 @@ msgid "View teams"
 msgstr "View teams"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/document-page-view-recipients.tsx:120
-#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:267
 msgid "Viewed"
 msgstr "Viewed"
 
@@ -5231,3 +5223,87 @@ msgstr "Your token was created successfully! Make sure to copy it because you wo
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/tokens/page.tsx:86
 msgid "Your tokens will be shown here once you create them."
 msgstr "Your tokens will be shown here once you create them."
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:120
+msgid "אימות דו-שלבי מחדש"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:128
+msgid "אימות חשבון"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:119
+msgid "אימות חשבון מחדש"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:121
+msgid "אימות מפתח מחדש"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:176
+msgid "אירועי חותם"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:168
+msgid "אישור חתימה דיגיטלית"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:310
+msgid "אישור חתימה מסופק על ידי"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:43
+msgid "אני הבעלים של המסמך הזה"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:122
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:129
+msgid "דוא\"ל"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:177
+msgid "חתימה"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:234
+msgid "כתובת IP"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:236
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:261
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:272
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:283
+msgid "לא ידוע"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:227
+msgid "מזהה חתימה"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:241
+msgid "מכשיר"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:277
+msgid "נחתם"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:266
+msgid "נצפה"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:255
+msgid "נשלח"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:288
+msgid "סיבה"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:178
+msgid "פרטים"
+msgstr ""
+
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:197
+msgid "רמת אימות"
+msgstr ""

@@ -128,13 +128,11 @@ export const SEAL_DOCUMENT_JOB_DEFINITION = {
     }
 
     const pdfData = await getFile(documentData);
-    const certificateData =
-      (document.team?.teamGlobalSettings?.includeSigningCertificate ?? true)
-        ? await getCertificatePdf({
-            documentId,
-            language: document.documentMeta?.language,
-          }).catch(() => null)
-        : null;
+    // Always include the certificate/history
+    const certificateData = await getCertificatePdf({
+      documentId,
+      language: document.documentMeta?.language,
+    }).catch(() => null);
 
     const newDataId = await io.runTask('decorate-and-sign-pdf', async () => {
       const pdfDoc = await PDFDocument.load(pdfData);

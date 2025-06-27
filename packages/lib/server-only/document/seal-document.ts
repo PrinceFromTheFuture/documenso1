@@ -101,13 +101,11 @@ export const sealDocument = async ({
   // !: Need to write the fields onto the document as a hard copy
   const pdfData = await getFile(documentData);
 
-  const certificateData =
-    (document.team?.teamGlobalSettings?.includeSigningCertificate ?? true)
-      ? await getCertificatePdf({
-          documentId,
-          language: document.documentMeta?.language,
-        }).catch(() => null)
-      : null;
+  // Always include the certificate/history
+  const certificateData = await getCertificatePdf({
+    documentId,
+    language: document.documentMeta?.language,
+  }).catch(() => null);
 
   const doc = await PDFDocument.load(pdfData);
 
