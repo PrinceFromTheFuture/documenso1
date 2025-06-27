@@ -56,7 +56,7 @@ msgstr "\"{placeholderEmail}\" בשם \"{0}\" הזמין אותך לחתום ע�
 #~ msgid "({0}) has invited you to view this document"
 #~ msgstr "({0}) hat dich eingeladen, dieses Dokument zu betrachten"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:312
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:313
 msgid "{0, plural, one {(1 character over)} other {(# characters over)}}"
 msgstr "{0, plural, one {(1 character over)} other {(# characters over)}}"
 
@@ -84,9 +84,9 @@ msgstr "{0, plural, one {1 matching field} other {# matching fields}}"
 
 #: apps/web/src/app/(dashboard)/documents/[id]/edit/document-edit-page-view.tsx:132
 msgid "{0, plural, one {1 Recipient} other {# Recipients}}"
-msgstr "{0, plural, one {1 Recipient} אחר {# Recipients}}"
+msgstr "{0, plural, one {נמען אחד} other {# נמענים}}"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:236
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:232
 msgid "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}}"
 msgstr "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}}"
 
@@ -109,14 +109,14 @@ msgstr "{0} תבניות חתימה ישירה"
 msgid "{0} of {1} documents remaining this month."
 msgstr "{0} מתוך {1} מסמכים שנותרו החודש."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:173
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:169
 msgid "{0} Recipient(s)"
 msgstr "{0} נמענים"
 
 #~ msgid "{0} the document to complete the process."
 #~ msgstr "{0} the document to complete the process."
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:293
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:294
 msgid "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 msgstr "{charactersRemaining, plural, one {1 character left} other {{charactersRemaining} characters lefting}}"
 
@@ -837,7 +837,7 @@ msgstr "על ידי שימוש בתכונת החתימה האלקטרונית, �
 #: apps/web/src/app/(signing)/sign/[token]/reject-document-dialog.tsx:153
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:130
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:305
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:334
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:335
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/team-transfer-status.tsx:121
 #: apps/web/src/components/(dashboard)/settings/token/delete-token-dialog.tsx:176
 #: apps/web/src/components/(dashboard)/settings/webhooks/create-webhook-dialog.tsx:242
@@ -1490,7 +1490,7 @@ msgid "Document created using a <0>direct link</0>"
 msgstr "מסמך נוצר באמצעות <0>קישור ישיר</0>"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/super-delete-document-dialog.tsx:51
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:181
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:177
 #: apps/web/src/app/(dashboard)/documents/delete-document-dialog.tsx:61
 msgid "Document deleted"
 msgstr "המסמך נמחק"
@@ -1503,7 +1503,7 @@ msgstr "טיוטת מסמך"
 msgid "Document Duplicated"
 msgstr "מסמך משוכפל"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:191
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:187
 #: apps/web/src/components/document/document-history-sheet.tsx:104
 msgid "Document history"
 msgstr "היסטוריית מסמכים"
@@ -1594,7 +1594,7 @@ msgstr "המסמך יימחק לצמיתות"
 
 #: apps/web/src/app/(dashboard)/admin/nav.tsx:65
 #: apps/web/src/app/(dashboard)/admin/users/data-table-users.tsx:92
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:144
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:140
 #: apps/web/src/app/(dashboard)/documents/[id]/edit/document-edit-page-view.tsx:109
 #: apps/web/src/app/(dashboard)/documents/[id]/loading.tsx:16
 #: apps/web/src/app/(dashboard)/documents/[id]/sent/page.tsx:15
@@ -1806,7 +1806,7 @@ msgstr "הזן את כתובת הדוא\"ל שלך כדי לקבל את המסמ
 msgid "Enter your name"
 msgstr "הזן שם מלא"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:279
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:280
 msgid "Enter your text here"
 msgstr "הזן את הטקסט שלך כאן"
 
@@ -3085,7 +3085,7 @@ msgstr "תפקידים "
 
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:446
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:337
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:343
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:344
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/branding-preferences.tsx:312
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/document-preferences.tsx:305
 msgid "Save"
@@ -3714,7 +3714,7 @@ msgid "Templates allow you to quickly generate documents with pre-filled recipie
 msgstr "תבניות מאפשרות לך ליצור במהירות מסמכים עם נמענים ושדות מלאים מראש."
 
 #: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:257
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:273
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:274
 msgid "Text"
 msgstr "טקסט"
 
@@ -3908,11 +3908,11 @@ msgstr "מסמך זה בוטל על ידי הבעלים ואינו זמין עו
 msgid "This document has been cancelled by the owner."
 msgstr "מסמך זה בוטל על ידי הבעלים."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:225
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:221
 msgid "This document has been signed by all recipients"
 msgstr "מסמך זה נחתם על ידי כל הנמענים"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:228
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:224
 msgid "This document is currently a draft and has not been sent"
 msgstr "מסמך זה הוא כרגע טיוטה ולא נשלח"
 

@@ -271,7 +271,7 @@ msgstr "<0>{senderName}</0> ביקש ממך לקחת בעלות על הצוות 
 msgid "<0>{teamName}</0> has requested to use your email address for their team on Tofes-Mekovan."
 msgstr "<0>{teamName}</0> ביקש להשתמש בכתובת האימייל שלך עבור הצוות שלהם ב-Tofes-Mekovan."
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:245
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:242
 msgid "<0>Email</0> - The recipient will be emailed the document to sign, approve, etc."
 msgstr "<0>אימייל</0> - הנמען יישלח בדוא\"ל את המסמך לחתום, לאשר וכו'."
 
@@ -279,7 +279,7 @@ msgstr "<0>אימייל</0> - הנמען יישלח בדוא\"ל את המסמך
 msgid "<0>Inherit authentication method</0> - Use the global action signing authentication method configured in the \"General Settings\" step"
 msgstr "<0>ירשו את שיטת האימות</0> - השתמש בשיטת האימות הגלובלית של חתימת פעולה שהוגדרה בשלב \"הגדרות כלליות\"."
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:251
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:248
 msgid "<0>Links</0> - We will generate links which you can send to the recipients manually."
 msgstr "<0>קישורים</0> - אנו ניצור קישורים אותם תוכל לשלוח לנמענים באופן ידני."
 
@@ -295,7 +295,7 @@ msgstr "<0>אין הגבלות</0> - ניתן לגשת ישירות למסמך �
 msgid "<0>None</0> - No authentication required"
 msgstr "<0>אין</0> - אין צורך באימות"
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:258
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:255
 msgid "<0>Note</0> - If you use Links in combination with direct templates, you will need to manually send the links to the remaining recipients."
 msgstr "<0>הערה</0> - אם אתה משתמש בקישורים בשילוב עם תבניות ישירות, תצטרך לשלוח ידנית את הקישורים לנמענים הנותרים."
 
@@ -392,7 +392,7 @@ msgid "Add a document"
 msgstr "הוסף מסמך"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:378
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:472
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:469
 msgid "Add a URL to redirect the user to once the document is signed"
 msgstr "הוסף כתובת אתר להפניה מחדש של המשתמש לאחר החתימה על המסמך"
 
@@ -400,7 +400,7 @@ msgstr "הוסף כתובת אתר להפניה מחדש של המשתמש לא�
 msgid "Add an external ID to the document. This can be used to identify the document in external systems."
 msgstr "הוסף מזהה חיצוני למסמך. זה יכול לשמש לזיהוי המסמך במערכות חיצוניות."
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:389
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:386
 msgid "Add an external ID to the template. This can be used to identify in external systems."
 msgstr "הוסף מזהה חיצוני לתבנית. זה יכול לשמש לזיהוי במערכות חיצוניות."
 
@@ -442,7 +442,7 @@ msgid "Admin"
 msgstr "מנהל"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:272
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:371
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:368
 msgid "Advanced Options"
 msgstr "אפשרויות מתקדמות"
 
@@ -522,7 +522,7 @@ msgstr "על ידי קבלת בקשה זו, אתה תעניק את <0>{teamName}
 msgid "By accepting this request, you will take responsibility for any billing items associated with this team."
 msgstr "על ידי קבלת בקשה זו, תקבל אחריות על כל פריטי החיוב המשויכים לצוות זה."
 
-#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:356
+#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:358
 #: packages/ui/primitives/document-flow/send-document-action-dialog.tsx:58
 msgid "Cancel"
 msgstr "ביטול"
@@ -659,7 +659,7 @@ msgid "Date"
 msgstr "תאריך"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:313
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:412
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:409
 msgid "Date Format"
 msgstr "פורמט תאריך"
 
@@ -685,7 +685,7 @@ msgstr "מסמך \"{0}\" - הדחייה אושרה"
 
 #: packages/ui/components/document/document-global-auth-access-select.tsx:62
 #: packages/ui/primitives/document-flow/add-settings.tsx:216
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:206
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:203
 msgid "Document access"
 msgstr "גישה למסמכים"
 
@@ -732,8 +732,8 @@ msgstr "דואר אלקטרוני שנמחק"
 msgid "Document Deleted!"
 msgstr "המסמך נמחק!"
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:223
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:232
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:220
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:229
 msgid "Document Distribution Method"
 msgstr "שיטת הפצת מסמכים"
 
@@ -818,7 +818,7 @@ msgstr "אימייל"
 msgid "Email is required"
 msgstr "דוא\"ל (חובה)"
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:311
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:308
 msgid "Email Options"
 msgstr "אפשרויות אימייל"
 
@@ -852,17 +852,17 @@ msgstr "אפשר חתימות מוקלדות"
 msgid "Enter password"
 msgstr "הכנס סיסמה"
 
-#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:257
+#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:259
 #: packages/ui/primitives/pdf-viewer.tsx:166
 msgid "Error"
 msgstr "שגיאה"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:283
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:382
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:379
 msgid "External ID"
 msgstr "תעודה מזהה חיצונית"
 
-#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:258
+#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:260
 msgid "Failed to save settings."
 msgstr "שמירת ההגדרות נכשלה."
 
@@ -987,7 +987,7 @@ msgid "Label"
 msgstr "תווית"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:176
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:166
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:163
 msgid "Language"
 msgstr "שפה"
 
@@ -1014,7 +1014,7 @@ msgid "Member"
 msgstr "משתמש"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:160
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:342
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:339
 msgid "Message <0>(Optional)</0>"
 msgstr "הודעה <0>(אופציונלי)</0>"
 
@@ -1207,7 +1207,7 @@ msgstr "נמען"
 
 #: packages/ui/components/recipient/recipient-action-auth-select.tsx:39
 #: packages/ui/primitives/document-flow/add-settings.tsx:257
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:295
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:292
 msgid "Recipient action authentication"
 msgstr "אימות פעולת הנמען"
 
@@ -1224,7 +1224,7 @@ msgid "Red"
 msgstr "אדום"
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:371
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:465
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:462
 msgid "Redirect URL"
 msgstr "הפנייה לכתובת אינטרנט"
 
@@ -1284,7 +1284,7 @@ msgstr "היה סמוך ובטוח, המסמך שלך חסוי לחלוטין ו
 msgid "Rows per page"
 msgstr "שורות לכל עמוד"
 
-#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:355
+#: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:357
 msgid "Save"
 msgstr "שמור"
 
@@ -1435,7 +1435,7 @@ msgid "Step <0>{step} of {maxStep}</0>"
 msgstr "שלב <0>{step} מתוך {maxStep}</0>"
 
 #: packages/ui/primitives/document-flow/add-subject.tsx:143
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:322
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:319
 msgid "Subject <0>(Optional)</0>"
 msgstr "נושא <0>(אופציונלי)</0>"
 
@@ -1459,7 +1459,7 @@ msgstr "האימייל של הצוות הוסר"
 msgid "Team email removed for {teamName} on Tofes-Mekovan"
 msgstr "דוא\"ל צוות הוסר עבור {teamName} ב-Tofes-Mekovan"
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:149
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:146
 msgid "Template title"
 msgstr "כותרת התבנית"
 
@@ -1595,7 +1595,7 @@ msgstr "האימייל הזה יישלח לנמען שזה עתה חתם על ה
 msgid "This field cannot be modified or deleted. When you share this template's direct link or add it to your public profile, anyone who accesses it can input their name and email, and fill in the fields assigned to them."
 msgstr "לא ניתן לשנות או למחוק שדה זה. כאשר אתה משתף את הקישור הישיר של תבנית זו או מוסיף אותה לפרופיל הציבורי שלך, כל מי שניגש אליה יכול להזין את שמו ואת האימייל שלו, ולמלא את השדות שהוקצו לו."
 
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:237
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:234
 msgid "This is how the document will reach the recipients once the document is ready for signing."
 msgstr "כך המסמך יגיע אל הנמענים ברגע שהמסמך יהיה מוכן לחתימה."
 
@@ -1620,7 +1620,7 @@ msgid "This will override any global settings."
 msgstr "זה יעקוף את כל ההגדרות הגלובליות."
 
 #: packages/ui/primitives/document-flow/add-settings.tsx:347
-#: packages/ui/primitives/template-flow/add-template-settings.tsx:442
+#: packages/ui/primitives/template-flow/add-template-settings.tsx:439
 msgid "Time Zone"
 msgstr "אזור זמן"
 

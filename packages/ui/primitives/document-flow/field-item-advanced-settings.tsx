@@ -69,7 +69,7 @@ export type FieldMetaKeys =
   | keyof EmailFieldMeta
   | keyof DateFieldMeta;
 
-const getDefaultState = (fieldType: FieldType): FieldMeta => {
+const getDefaultState = (fieldType: FieldType): FieldMeta | undefined => {
   switch (fieldType) {
     case FieldType.INITIALS:
       return {
@@ -140,13 +140,7 @@ const getDefaultState = (fieldType: FieldType): FieldMeta => {
         readOnly: false,
       };
     default:
-      return {
-        type: 'signature',
-        values: [],
-        defaultValue: '',
-        required: true,
-        readOnly: false,
-      };
+      return undefined;
   }
 };
 
@@ -199,7 +193,9 @@ export const FieldAdvancedSettings = forwardRef<HTMLDivElement, FieldAdvancedSet
 
     const localStorageKey = `field_${field.formId}_${field.type}`;
 
-    const defaultState: FieldMeta = getDefaultState(field.type);
+    const defaultState: FieldMeta | undefined = getDefaultState(field.type);
+
+    if (!defaultState) return null;
 
     const [fieldState, setFieldState] = useState(() => {
       const savedState = localStorage.getItem(localStorageKey);
@@ -207,7 +203,7 @@ export const FieldAdvancedSettings = forwardRef<HTMLDivElement, FieldAdvancedSet
     });
 
     useEffect(() => {
-      if (fieldMeta && typeof fieldMeta === 'object') {
+      if (fieldMeta && typeof fieldMeta === 'object' && defaultState) {
         const parsedFieldMeta = ZFieldMetaSchema.parse(fieldMeta);
 
         setFieldState({

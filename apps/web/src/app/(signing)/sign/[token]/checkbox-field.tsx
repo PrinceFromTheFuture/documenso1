@@ -246,19 +246,48 @@ export const CheckboxField = ({
           <div className="z-50 flex flex-col gap-y-2">
             {values?.map((item: { id: number; value: string; checked: boolean }, index: number) => {
               const itemValue = item.value || `empty-value-${item.id}`;
+              const labelText = item.value.includes('empty-value-') ? '' : item.value;
+              const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
 
               return (
-                <div key={index} className="flex items-center gap-x-1.5">
-                  <Checkbox
-                    className="h-4 w-4"
-                    checkClassName="text-white"
-                    id={`checkbox-${index}`}
-                    checked={checkedValues.includes(itemValue)}
-                    onCheckedChange={() => handleCheckboxChange(item.value, item.id)}
-                  />
-                  <Label htmlFor={`checkbox-${index}`}>
-                    {item.value.includes('empty-value-') ? '' : item.value}
-                  </Label>
+                <div 
+                  key={index} 
+                  className="flex items-center gap-x-1.5"
+                  style={{ direction: isHebrew ? 'ltr' : 'rtl' }}
+                >
+                  {isHebrew ? (
+                    <>
+                      <Label 
+                        htmlFor={`checkbox-${index}`}
+                        style={{ textAlign: 'right', flex: 1, width: '100%', paddingRight: '0.5rem' }}
+                      >
+                        {labelText}
+                      </Label>
+                      <Checkbox
+                        className="h-4 w-4 border border-black"
+                        checkClassName="text-white"
+                        id={`checkbox-${index}`}
+                        checked={checkedValues.includes(itemValue)}
+                        onCheckedChange={() => handleCheckboxChange(item.value, item.id)}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <Label 
+                        htmlFor={`checkbox-${index}`}
+                        style={{ textAlign: 'left', flex: 1, width: '100%' }}
+                      >
+                        {labelText}
+                      </Label>
+                      <Checkbox
+                        className="h-4 w-4 border border-black"
+                        checkClassName="text-white"
+                        id={`checkbox-${index}`}
+                        checked={checkedValues.includes(itemValue)}
+                        onCheckedChange={() => handleCheckboxChange(item.value, item.id)}
+                      />
+                    </>
+                  )}
                 </div>
               );
             })}
@@ -270,22 +299,56 @@ export const CheckboxField = ({
         <div className="flex flex-col gap-y-1">
           {values?.map((item: { id: number; value: string; checked: boolean }, index: number) => {
             const itemValue = item.value || `empty-value-${item.id}`;
+            const labelText = item.value.includes('empty-value-') ? '' : item.value;
+            const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
 
             return (
-              <div key={index} className="flex items-center gap-x-1.5">
-                <Checkbox
-                  className="h-3 w-3"
-                  checkClassName="text-white"
-                  id={`checkbox-${index}`}
-                  checked={field.customText
-                    .split(',')
-                    .some((customValue) => customValue === itemValue)}
-                  disabled={isLoading}
-                  onCheckedChange={() => void handleCheckboxOptionClick(item)}
-                />
-                <Label htmlFor={`checkbox-${index}`} className="text-xs">
-                  {item.value.includes('empty-value-') ? '' : item.value}
-                </Label>
+              <div 
+                key={index} 
+                className="flex items-center gap-x-1.5"
+                style={{ direction: isHebrew ? 'ltr' : 'rtl' }}
+              >
+                {isHebrew ? (
+                  <>
+                    <Label 
+                      htmlFor={`checkbox-${index}`} 
+                      className="text-xs"
+                      style={{ textAlign: 'right', flex: 1, width: '100%', paddingRight: '0.5rem' }}
+                    >
+                      {labelText}
+                    </Label>
+                    <Checkbox
+                      className="h-3 w-3 border border-black"
+                      checkClassName="text-white"
+                      id={`checkbox-${index}`}
+                      checked={field.customText
+                        .split(',')
+                        .some((customValue) => customValue === itemValue)}
+                      disabled={isLoading}
+                      onCheckedChange={() => void handleCheckboxOptionClick(item)}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <Label 
+                      htmlFor={`checkbox-${index}`} 
+                      className="text-xs"
+                      style={{ textAlign: 'left', flex: 1 }}
+                    >
+                      {labelText}
+                    </Label>
+                    <Checkbox
+                      className="h-3 w-3 border border-black"
+                      checkClassName="text-white"
+                      id={`checkbox-${index}`}
+                      checked={field.customText
+                        .split(',')
+                        .some((customValue) => customValue === itemValue)}
+                      disabled={isLoading}
+                      onCheckedChange={() => void handleCheckboxOptionClick(item)}
+                    />
+                  </>
+                )}
               </div>
             );
           })}

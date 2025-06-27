@@ -12,6 +12,11 @@ export type RadioFieldProps = {
   field: Field;
 };
 
+// Function to detect if text contains Hebrew characters
+function isHebrew(text: string): boolean {
+  return /[\u0590-\u05FF]/.test(text);
+}
+
 export const RadioField = ({ field }: RadioFieldProps) => {
   let parsedFieldMeta: TRadioFieldMeta | undefined = undefined;
 
@@ -26,25 +31,64 @@ export const RadioField = ({ field }: RadioFieldProps) => {
   }
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="flex h-full w-full items-start justify-start">
       {!parsedFieldMeta?.values ? (
         <FieldIcon fieldMeta={field.fieldMeta} type={field.type} signerEmail={field.signerEmail} />
       ) : (
-        <RadioGroup className="gap-y-1">
-          {parsedFieldMeta.values?.map((item, index) => (
-            <div key={index} className="flex items-center gap-x-1.5">
-              <RadioGroupItem
-                className="pointer-events-none h-3 w-3"
-                value={item.value}
-                id={`option-${index}`}
-                checked={item.checked}
-              />
-              <Label htmlFor={`option-${index}`} className="text-xs">
-                {item.value}
-              </Label>
-            </div>
-          ))}
-        </RadioGroup>
+        <div className="flex h-full w-full flex-col justify-start">
+          <RadioGroup className="flex h-full w-full flex-col justify-start">
+            {parsedFieldMeta.values?.map((item, index) => {
+              const isRTL = isHebrew(item.value);
+              
+              if (isRTL) {
+                return (
+                  <div
+                    key={index}
+                    className="flex items-center gap-1 w-full"
+                    style={{ direction: 'rtl', justifyContent: 'flex-start', flexDirection: 'row-reverse' }}
+                  >
+                    <Label
+                      htmlFor={`option-${index}`}
+                      className="text-[clamp(0.425rem,25cqw,0.825rem)] flex-1"
+                      style={{ textAlign: 'right', paddingRight: '0.25rem' }}
+                      dir="rtl"
+                    >
+                      {item.value}
+                    </Label>
+                    <RadioGroupItem
+                      className="pointer-events-none h-[clamp(0.425rem,25cqw,0.825rem)] w-[clamp(0.425rem,25cqw,0.825rem)] border border-black flex-shrink-0"
+                      value={item.value}
+                      id={`option-${index}`}
+                      checked={item.checked}
+                    />
+                  </div>
+                );
+              } else {
+                return (
+                  <div
+                    key={index}
+                    className="flex items-center gap-1 w-full"
+                    style={{ direction: 'ltr', justifyContent: 'flex-start' }}
+                  >
+                    <RadioGroupItem
+                      className="pointer-events-none h-[clamp(0.425rem,25cqw,0.825rem)] w-[clamp(0.425rem,25cqw,0.825rem)] border border-black"
+                      value={item.value}
+                      id={`option-${index}`}
+                      checked={item.checked}
+                    />
+                    <Label
+                      htmlFor={`option-${index}`}
+                      className="text-[clamp(0.425rem,25cqw,0.825rem)]"
+                      style={{ width: '100%' }}
+                    >
+                      {item.value}
+                    </Label>
+                  </div>
+                );
+              }
+            })}
+          </RadioGroup>
+        </div>
       )}
     </div>
   );

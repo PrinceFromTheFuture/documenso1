@@ -260,12 +260,19 @@ export const TextField = ({ field, recipient, onSignField, onUnsignField }: Text
         </p>
       )}
 
-{field.inserted && field.customText && (
-  <p className="whitespace-pre-line">
-    {field.customText}
-  </p>
-)}
-
+      {field.inserted && field.customText && (
+        <div style={{ width: '100%', textAlign: 'right' }}>
+          <p 
+            className="whitespace-pre-line" 
+            style={{ 
+              textAlign: 'right', 
+              direction: /[\u0590-\u05FF\u200f\u200e]/.test(field.customText) ? 'ltr' : 'rtl' 
+            }}
+          >
+            {field.customText}
+          </p>
+        </div>
+      )}
 
       <Dialog open={showCustomTextModal} onOpenChange={setShowCustomTextModal}>
         <DialogContent>

@@ -1,7 +1,7 @@
 // https://github.com/Hopding/pdf-lib/issues/20#issuecomment-412852821
 import fontkit from '@pdf-lib/fontkit';
 import type { PDFDocument } from 'pdf-lib';
-import { RotationTypes, degrees, radiansToDegrees } from 'pdf-lib';
+import { RotationTypes, degrees, radiansToDegrees, rgb } from 'pdf-lib';
 import { P, match } from 'ts-pattern';
 
 import {
@@ -24,6 +24,12 @@ import {
   ZRadioFieldMeta,
   ZTextFieldMeta,
 } from '../../types/field-meta';
+
+// Add function to detect Hebrew text
+function isHebrewText(text: string): boolean {
+  const hebrewPattern = /[\u0590-\u05FF\u200f\u200e]/;
+  return hebrewPattern.test(text);
+}
 
 export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignature) => {
   const fontCaveat = await fetch(process.env.FONT_CAVEAT_URI).then(async (res) =>
@@ -137,126 +143,158 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
         } else {
           const signatureText = field.Signature?.typedSignature ?? '';
 
-          const longestLineInTextForWidth = signatureText
-            .split('\n')
-            .sort((a, b) => b.length - a.length)[0];
+          // Handle multi-line signature text with per-line alignment
+          const lines = signatureText.split('\n');
+          const lineHeight = font.heightAtSize(maxFontSize);
+          // Calculate total text block height
+          const totalTextHeight = lines.length * lineHeight;
+          // Start Y so the block is vertically centered
+          let startY = fieldY + (fieldHeight - totalTextHeight) / 2;
+          // Invert Y axis for PDF coordinate system
+          startY = pageHeight - startY - lineHeight;
 
-          let fontSize = maxFontSize;
-          let textWidth = font.widthOfTextAtSize(longestLineInTextForWidth, fontSize);
-          let textHeight = font.heightAtSize(fontSize);
-
-          const scalingFactor = Math.min(fieldWidth / textWidth, fieldHeight / textHeight, 1);
-          fontSize = Math.max(Math.min(fontSize * scalingFactor, maxFontSize), minFontSize);
-
-          textWidth = font.widthOfTextAtSize(longestLineInTextForWidth, fontSize);
-          textHeight = font.heightAtSize(fontSize);
-
-          let textX = fieldX + (fieldWidth - textWidth) / 2;
-          let textY = fieldY + (fieldHeight - textHeight) / 2;
-
-          // Invert the Y axis since PDFs use a bottom-left coordinate system
-          textY = pageHeight - textY - textHeight;
-
-          if (pageRotationInDegrees !== 0) {
-            const adjustedPosition = adjustPositionForRotation(
-              pageWidth,
-              pageHeight,
-              textX,
-              textY,
-              pageRotationInDegrees,
-            );
-
-            textX = adjustedPosition.xPos;
-            textY = adjustedPosition.yPos;
-          }
-
-          page.drawText(signatureText, {
-            x: textX,
-            y: textY,
-            size: fontSize,
+          // DEBUG: Draw a marker to verify this code is running
+          page.drawText('DEBUG-ALIGNMENT', {
+            x: fieldX,
+            y: pageHeight - fieldY - 10, // top-left of the field
+            size: 10,
             font,
-            rotate: degrees(pageRotationInDegrees),
+            color: undefined,
+          });
+
+          lines.forEach((line, i) => {
+            const lineWidth = font.widthOfTextAtSize(line, maxFontSize);
+            const isHebrew = isHebrewText(line);
+            // Align text according to natural direction and reverse Hebrew for RTL simulation
+            const displayText = isHebrew ? line.split('').reverse().join('') : line;
+            const lineX = isHebrew 
+              ? fieldX + fieldWidth - lineWidth  // align right for Hebrew
+              : fieldX;                         // align left for English
+            // Y position for this line
+            let lineY = startY - i * lineHeight;
+            if (pageRotationInDegrees !== 0) {
+              const adjustedPosition = adjustPositionForRotation(
+                pageWidth,
+                pageHeight,
+                lineX,
+                lineY,
+                pageRotationInDegrees,
+              );
+              page.drawText(displayText, {
+                x: adjustedPosition.xPos,
+                y: adjustedPosition.yPos,
+                size: maxFontSize,
+                font,
+                rotate: degrees(pageRotationInDegrees),
+              });
+            } else {
+              page.drawText(displayText, {
+                x: lineX,
+                y: lineY,
+                size: maxFontSize,
+                font,
+                rotate: degrees(pageRotationInDegrees),
+              });
+            }
           });
         }
       },
     )
     .with({ type: FieldType.CHECKBOX }, (field) => {
       const meta = ZCheckboxFieldMeta.safeParse(field.fieldMeta);
-
       if (!meta.success) {
         console.error(meta.error);
-
         throw new Error('Invalid checkbox field meta');
       }
-
       const values = meta.data.values?.map((item) => ({
         ...item,
         value: item.value.length > 0 ? item.value : `empty-value-${item.id}`,
       }));
-
       const selected = field.customText.split(',');
-
+      const boxWidth = 12;
+      const gap = 8;
       for (const [index, item] of (values ?? []).entries()) {
         const offsetY = index * 16;
-
         const checkbox = pdf.getForm().createCheckBox(`checkbox.${field.secondaryId}.${index}`);
-
         if (selected.includes(item.value)) {
           checkbox.check();
         }
-
-        page.drawText(item.value.includes('empty-value-') ? '' : item.value, {
-          x: fieldX + 16,
+        let labelText = item.value.includes('empty-value-') ? '' : item.value;
+        const isHebrew = isHebrewText(labelText);
+        const displayText = isHebrew ? labelText.split('').reverse().join('') : labelText;
+        const labelWidth = font.widthOfTextAtSize(labelText, 12);
+        let boxX, labelX;
+        if (isHebrew) {
+          // Hebrew (RTL) – box right, label left
+          boxX = fieldX + fieldWidth - boxWidth;
+          labelX = boxX - gap - labelWidth;
+        } else {
+          // English (LTR) – box left, label right
+          boxX = fieldX;
+          labelX = boxX + boxWidth + gap;
+        }
+        // Draw label
+        page.drawText(displayText, {
+          x: labelX,
           y: pageHeight - (fieldY + offsetY),
           size: 12,
           font,
           rotate: degrees(pageRotationInDegrees),
         });
-
+        // Draw box
         checkbox.addToPage(page, {
-          x: fieldX,
+          x: boxX,
           y: pageHeight - (fieldY + offsetY),
-          height: 8,
-          width: 8,
+          height: boxWidth,
+          width: boxWidth,
         });
       }
     })
     .with({ type: FieldType.RADIO }, (field) => {
       const meta = ZRadioFieldMeta.safeParse(field.fieldMeta);
-
       if (!meta.success) {
         console.error(meta.error);
-
         throw new Error('Invalid radio field meta');
       }
-
       const values = meta?.data.values?.map((item) => ({
         ...item,
         value: item.value.length > 0 ? item.value : `empty-value-${item.id}`,
       }));
-
       const selected = field.customText.split(',');
-
+      const boxWidth = 12;
+      const gap = 8;
       for (const [index, item] of (values ?? []).entries()) {
         const offsetY = index * 16;
-
         const radio = pdf.getForm().createRadioGroup(`radio.${field.secondaryId}.${index}`);
-
-        page.drawText(item.value.includes('empty-value-') ? '' : item.value, {
-          x: fieldX + 16,
+        let labelText = item.value.includes('empty-value-') ? '' : item.value;
+        const isHebrew = isHebrewText(labelText);
+        const displayText = isHebrew ? labelText.split('').reverse().join('') : labelText;
+        const labelWidth = font.widthOfTextAtSize(labelText, 12);
+        let boxX, labelX;
+        if (isHebrew) {
+          // Hebrew (RTL) – box right, label left
+          boxX = fieldX + fieldWidth - boxWidth;
+          labelX = boxX - gap - labelWidth;
+        } else {
+          // English (LTR) – box left, label right
+          boxX = fieldX;
+          labelX = boxX + boxWidth + gap;
+        }
+        // Draw label
+        page.drawText(displayText, {
+          x: labelX,
           y: pageHeight - (fieldY + offsetY),
           size: 12,
           font,
           rotate: degrees(pageRotationInDegrees),
         });
-
+        // Draw box
         radio.addOptionToPage(item.value, page, {
-          x: fieldX,
+          x: boxX,
           y: pageHeight - (fieldY + offsetY),
-          height: 8,
-          width: 8,
+          height: boxWidth,
+          width: boxWidth,
         });
-
         if (selected.includes(item.value)) {
           radio.select(item.value);
         }
@@ -292,31 +330,45 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
 
       textWidth = font.widthOfTextAtSize(longestLineInTextForWidth, fontSize);
 
-      let textX = fieldX + (fieldWidth - textWidth) / 2;
-      let textY = fieldY + (fieldHeight - textHeight) / 2;
-
-      // Invert the Y axis since PDFs use a bottom-left coordinate system
-      textY = pageHeight - textY - textHeight;
-
-      if (pageRotationInDegrees !== 0) {
-        const adjustedPosition = adjustPositionForRotation(
-          pageWidth,
-          pageHeight,
-          textX,
-          textY,
-          pageRotationInDegrees,
-        );
-
-        textX = adjustedPosition.xPos;
-        textY = adjustedPosition.yPos;
-      }
-
-      page.drawText(field.customText, {
-        x: textX,
-        y: textY,
-        size: fontSize,
-        font,
-        rotate: degrees(pageRotationInDegrees),
+      // For all text fields, align each line: right if Hebrew, left otherwise
+      const lines = field.customText.split('\n');
+      const lineHeight = font.heightAtSize(fontSize);
+      const totalTextHeight = lines.length * lineHeight;
+      let startY = fieldY + (fieldHeight - totalTextHeight) / 2;
+      startY = pageHeight - startY - lineHeight;
+      lines.forEach((line, i) => {
+        const isHebrew = isHebrewText(line);
+        // Reverse Hebrew text for RTL simulation in PDF
+        const displayText = isHebrew ? line.split('').reverse().join('') : line;
+        const lineWidth = font.widthOfTextAtSize(line, fontSize);
+        const lineX = isHebrew
+          ? fieldX + fieldWidth - lineWidth // align right
+          : fieldX;                        // align left
+        let lineY = startY - i * lineHeight;
+        if (pageRotationInDegrees !== 0) {
+          const adjustedPosition = adjustPositionForRotation(
+            pageWidth,
+            pageHeight,
+            lineX,
+            lineY,
+            pageRotationInDegrees,
+          );
+          page.drawText(displayText, {
+            x: adjustedPosition.xPos,
+            y: adjustedPosition.yPos,
+            size: fontSize,
+            font,
+            rotate: degrees(pageRotationInDegrees),
+          });
+        } else {
+          page.drawText(displayText, {
+            x: lineX,
+            y: lineY,
+            size: fontSize,
+            font,
+            rotate: degrees(pageRotationInDegrees),
+          });
+        }
       });
     });
 

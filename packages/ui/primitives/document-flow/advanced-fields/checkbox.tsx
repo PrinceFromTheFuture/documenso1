@@ -12,6 +12,11 @@ export type CheckboxFieldProps = {
   field: Field;
 };
 
+// Function to detect if text contains Hebrew characters
+function isHebrew(text: string): boolean {
+  return /[\u0590-\u05FF]/.test(text);
+}
+
 export const CheckboxField = ({ field }: CheckboxFieldProps) => {
   let parsedFieldMeta: TCheckboxFieldMeta | undefined = undefined;
 
@@ -26,23 +31,60 @@ export const CheckboxField = ({ field }: CheckboxFieldProps) => {
   }
 
   return (
-    <div className="flex flex-col gap-y-1">
+    <div className="flex h-full w-full items-start justify-start" style={{ marginRight: 'auto' }}>
       {!parsedFieldMeta?.values ? (
         <FieldIcon fieldMeta={field.fieldMeta} type={field.type} signerEmail={field.signerEmail} />
       ) : (
-        parsedFieldMeta.values.map((item: { value: string; checked: boolean }, index: number) => (
-          <div key={index} className="flex items-center gap-x-1.5">
-            <Checkbox
-              className="h-3 w-3"
-              checkClassName="text-white"
-              id={`checkbox-${index}`}
-              checked={item.checked}
-            />
-            <Label htmlFor={`checkbox-${index}`} className="text-xs">
-              {item.value}
-            </Label>
-          </div>
-        ))
+        <div className="flex h-full w-full flex-col justify-start items-start">
+          {parsedFieldMeta.values.map((item: { value: string; checked: boolean }, index: number) => {
+            const isRTL = isHebrew(item.value);
+            return (
+              <div 
+                key={index}
+                className="flex items-center w-full justify-start"
+                style={isRTL 
+                  ? { gap: '0.25rem', direction: 'rtl', justifyContent: 'flex-end' }
+                  : { gap: '0.25rem', direction: 'ltr', justifyContent: 'flex-start' }
+                }
+              >
+                {isRTL ? (
+                  <>
+                    <Checkbox
+                      className="h-[clamp(0.425rem,25cqw,0.825rem)] w-[clamp(0.425rem,25cqw,0.825rem)] flex-shrink-0 border border-black"
+                      checkClassName="text-white"
+                      id={`checkbox-${index}`}
+                      checked={item.checked}
+                    />
+                    <Label
+                      htmlFor={`checkbox-${index}`}
+                      className="text-[clamp(0.425rem,25cqw,0.825rem)] flex-1"
+                      style={{ textAlign: 'right', width: '100%', marginLeft: 'auto' }}
+                    >
+                      {item.value}
+                    </Label>
+                  </>
+                ) : (
+                  <>
+                    <Checkbox
+                      className="h-[clamp(0.425rem,25cqw,0.825rem)] w-[clamp(0.425rem,25cqw,0.825rem)] flex-shrink-0 border border-black"
+                      checkClassName="text-white"
+                      id={`checkbox-${index}`}
+                      checked={item.checked}
+                    />
+                    <Label
+                      htmlFor={`checkbox-${index}`}
+                      className="text-[clamp(0.425rem,25cqw,0.825rem)] flex-1"
+                      style={{ textAlign: 'left', width: '100%' }}
+                      dir="ltr"
+                    >
+                      {item.value}
+                    </Label>
+                  </>
+                )}
+              </div>
+            );
+          })}
+        </div>
       )}
     </div>
   );

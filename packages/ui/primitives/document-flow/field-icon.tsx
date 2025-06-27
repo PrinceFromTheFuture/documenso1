@@ -58,11 +58,9 @@ export const FieldIcon = ({
 
     if (fieldMeta && (type === 'TEXT' || type === 'NUMBER')) {
       if (type === 'TEXT' && 'text' in fieldMeta && fieldMeta.text && !fieldMeta.label) {
-        label =
-          fieldMeta.text.length > 10 ? fieldMeta.text.substring(0, 10) + '...' : fieldMeta.text;
+        label = fieldMeta.text;
       } else if (fieldMeta.label) {
-        label =
-          fieldMeta.label.length > 10 ? fieldMeta.label.substring(0, 10) + '...' : fieldMeta.label;
+        label = fieldMeta.label;
       } else {
         label = fieldIcons[type]?.label;
       }
@@ -71,9 +69,9 @@ export const FieldIcon = ({
     }
 
     return (
-      <div className="text-field-card-foreground flex items-center justify-center gap-x-1.5 text-[clamp(0.425rem,25cqw,0.825rem)]">
-        <Icon className="h-[clamp(0.625rem,20cqw,0.925rem)] w-[clamp(0.625rem,20cqw,0.925rem)]" />{' '}
-        {label}
+      <div className="text-field-card-foreground flex items-center justify-center gap-x-1.5 text-[clamp(0.425rem,25cqw,0.825rem)] break-words">
+        <Icon className="h-[clamp(0.625rem,20cqw,0.925rem)] w-[clamp(0.625rem,20cqw,0.925rem)] flex-shrink-0" />{' '}
+        <span className="break-words">{label}</span>
       </div>
     );
   }

@@ -193,18 +193,18 @@ export const FieldItem = ({
         'pointer-events-none cursor-not-allowed opacity-75': disabled,
         'z-10': !active || disabled,
       })}
-      minHeight={fixedSize ? '' : minHeight || 'auto'}
-      minWidth={fixedSize ? '' : minWidth || 'auto'}
+      minHeight={minHeight || 'auto'}
+      minWidth={minWidth || 'auto'}
       default={{
         x: coords.pageX,
         y: coords.pageY,
-        height: fixedSize ? '' : coords.pageHeight,
-        width: fixedSize ? '' : coords.pageWidth,
+        height: coords.pageHeight,
+        width: coords.pageWidth,
       }}
       bounds={`${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${field.pageNumber}"]`}
       onDragStart={() => setActive(true)}
       onResizeStart={() => setActive(true)}
-      enableResizing={!fixedSize}
+      enableResizing={!disabled}
       onResizeStop={(_e, _d, ref) => {
         setActive(false);
         onResize?.(ref);
@@ -266,7 +266,7 @@ export const FieldItem = ({
       {!disabled   && (
         <div className="mt-1 flex justify-center">
           <div className="dark:bg-background group flex items-center justify-evenly gap-x-1 rounded-md border bg-gray-900 p-0.5">
-            {1 && (
+            {field.type !== 'SIGNATURE' && field.type !== 'FREE_SIGNATURE' && (
               <button
                 className="dark:text-muted-foreground/50 dark:hover:text-muted-foreground dark:hover:bg-foreground/10 rounded-sm p-1.5 text-gray-400 transition-colors hover:bg-white/10 hover:text-gray-100"
                 onClick={onAdvancedSettings}

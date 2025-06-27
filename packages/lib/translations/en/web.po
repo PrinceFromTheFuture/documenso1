@@ -57,7 +57,7 @@ msgstr "\"{placeholderEmail}\" on behalf of \"{0}\" has invited you to sign \"ex
 #~ msgid "({0}) has invited you to view this document"
 #~ msgstr "({0}) has invited you to view this document"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:312
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:313
 msgid "{0, plural, one {(1 character over)} other {(# characters over)}}"
 msgstr "{0, plural, one {(1 character over)} other {(# characters over)}}"
 
@@ -87,7 +87,7 @@ msgstr "{0, plural, one {1 matching field} other {# matching fields}}"
 msgid "{0, plural, one {1 Recipient} other {# Recipients}}"
 msgstr "{0, plural, one {1 Recipient} other {# Recipients}}"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:236
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:232
 msgid "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}}"
 msgstr "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}}"
 
@@ -111,7 +111,7 @@ msgstr "{0} direct signing templates"
 msgid "{0} of {1} documents remaining this month."
 msgstr "{0} of {1} documents remaining this month."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:173
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:169
 msgid "{0} Recipient(s)"
 msgstr "{0} Recipient(s)"
 
@@ -119,7 +119,7 @@ msgstr "{0} Recipient(s)"
 #~ msgid "{0} the document to complete the process."
 #~ msgstr "{0} the document to complete the process."
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:293
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:294
 msgid "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 msgstr "{charactersRemaining, plural, one {1 character remaining} other {{charactersRemaining} characters remaining}}"
 
@@ -843,7 +843,7 @@ msgstr "By using the electronic signature feature, you are consenting to conduct
 #: apps/web/src/app/(signing)/sign/[token]/reject-document-dialog.tsx:153
 #: apps/web/src/app/(signing)/sign/[token]/sign-dialog.tsx:130
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:305
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:334
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:335
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/team-transfer-status.tsx:121
 #: apps/web/src/components/(dashboard)/settings/token/delete-token-dialog.tsx:176
 #: apps/web/src/components/(dashboard)/settings/webhooks/create-webhook-dialog.tsx:242
@@ -1502,7 +1502,7 @@ msgid "Document created using a <0>direct link</0>"
 msgstr "Document created using a <0>direct link</0>"
 
 #: apps/web/src/app/(dashboard)/admin/documents/[id]/super-delete-document-dialog.tsx:51
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:181
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:177
 #: apps/web/src/app/(dashboard)/documents/delete-document-dialog.tsx:61
 msgid "Document deleted"
 msgstr "Document deleted"
@@ -1515,7 +1515,7 @@ msgstr "Document draft"
 msgid "Document Duplicated"
 msgstr "Document Duplicated"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:191
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:187
 #: apps/web/src/components/document/document-history-sheet.tsx:104
 msgid "Document history"
 msgstr "Document history"
@@ -1607,7 +1607,7 @@ msgstr "Document will be permanently deleted"
 
 #: apps/web/src/app/(dashboard)/admin/nav.tsx:65
 #: apps/web/src/app/(dashboard)/admin/users/data-table-users.tsx:92
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:144
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:140
 #: apps/web/src/app/(dashboard)/documents/[id]/edit/document-edit-page-view.tsx:109
 #: apps/web/src/app/(dashboard)/documents/[id]/loading.tsx:16
 #: apps/web/src/app/(dashboard)/documents/[id]/sent/page.tsx:15
@@ -1827,7 +1827,7 @@ msgstr "Enter your email address to receive the completed document."
 msgid "Enter your name"
 msgstr "Enter your name"
 
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:279
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:280
 msgid "Enter your text here"
 msgstr "Enter your text here"
 
@@ -3116,7 +3116,7 @@ msgstr "Roles"
 
 #: apps/web/src/app/(dashboard)/templates/template-direct-link-dialog.tsx:446
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:337
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:343
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:344
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/branding-preferences.tsx:312
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/preferences/document-preferences.tsx:305
 msgid "Save"
@@ -3745,7 +3745,7 @@ msgid "Templates allow you to quickly generate documents with pre-filled recipie
 msgstr "Templates allow you to quickly generate documents with pre-filled recipients and fields."
 
 #: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:257
-#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:273
+#: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:274
 msgid "Text"
 msgstr "Text"
 
@@ -3940,11 +3940,11 @@ msgstr "This document has been cancelled by the owner and is no longer available
 msgid "This document has been cancelled by the owner."
 msgstr "This document has been cancelled by the owner."
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:225
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:221
 msgid "This document has been signed by all recipients"
 msgstr "This document has been signed by all recipients"
 
-#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:228
+#: apps/web/src/app/(dashboard)/documents/[id]/document-page-view.tsx:224
 msgid "This document is currently a draft and has not been sent"
 msgstr "This document is currently a draft and has not been sent"
 

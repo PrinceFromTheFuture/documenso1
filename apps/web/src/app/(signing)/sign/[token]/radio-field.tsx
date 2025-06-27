@@ -155,38 +155,99 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
 
       {!field.inserted && (
         <RadioGroup onValueChange={(value) => handleSelectItem(value)} className="z-10">
-          {values?.map((item, index) => (
-            <div key={index} className="flex items-center gap-x-1.5">
-              <RadioGroupItem
-                className="h-4 w-4 shrink-0"
-                value={item.value}
-                id={`option-${index}`}
-                checked={item.checked}
-              />
-
-              <Label htmlFor={`option-${index}`}>
-                {item.value.includes('empty-value-') ? '' : item.value}
-              </Label>
-            </div>
-          ))}
+          {values?.map((item, index) => {
+            const labelText = item.value.includes('empty-value-') ? '' : item.value;
+            const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
+            return (
+              <div
+                key={index}
+                className="flex items-center gap-x-1.5"
+                style={{ direction: isHebrew ? 'ltr' : 'rtl' }}
+              >
+                {isHebrew ? (
+                  <>
+                    <Label 
+                      htmlFor={`option-${index}`}
+                      style={{ textAlign: 'right', flex: 1, width: '100%', paddingRight: '0.5rem' }}
+                    >
+                      {labelText}
+                    </Label>
+                    <RadioGroupItem
+                      className="h-4 w-4 shrink-0 border border-black"
+                      value={item.value}
+                      id={`option-${index}`}
+                      checked={item.checked}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <Label 
+                      htmlFor={`option-${index}`}
+                      style={{ textAlign: 'left', flex: 1, width: '100%' }}
+                    >
+                      {labelText}
+                    </Label>
+                    <RadioGroupItem
+                      className="h-4 w-4 shrink-0 border border-black"
+                      value={item.value}
+                      id={`option-${index}`}
+                      checked={item.checked}
+                    />
+                  </>
+                )}
+              </div>
+            );
+          })}
         </RadioGroup>
       )}
 
       {field.inserted && (
         <RadioGroup className="gap-y-1">
-          {values?.map((item, index) => (
-            <div key={index} className="flex items-center gap-x-1.5">
-              <RadioGroupItem
-                className="h-3 w-3"
-                value={item.value}
-                id={`option-${index}`}
-                checked={item.value === field.customText}
-              />
-              <Label htmlFor={`option-${index}`} className="text-xs">
-                {item.value.includes('empty-value-') ? '' : item.value}
-              </Label>
-            </div>
-          ))}
+          {values?.map((item, index) => {
+            const labelText = item.value.includes('empty-value-') ? '' : item.value;
+            const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
+            return (
+              <div
+                key={index}
+                className="flex items-center gap-x-1.5"
+                style={{ direction: isHebrew ? 'ltr' : 'rtl' }}
+              >
+                {isHebrew ? (
+                  <>
+                    <Label 
+                      htmlFor={`option-${index}`} 
+                      className="text-xs"
+                      style={{ textAlign: 'right', flex: 1, width: '100%', paddingRight: '0.5rem' }}
+                    >
+                      {labelText}
+                    </Label>
+                    <RadioGroupItem
+                      className="h-3 w-3 border border-black"
+                      value={item.value}
+                      id={`option-${index}`}
+                      checked={item.value === field.customText}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <Label 
+                      htmlFor={`option-${index}`} 
+                      className="text-xs"
+                      style={{ textAlign: 'left', flex: 1, width: '100%' }}
+                    >
+                      {labelText}
+                    </Label>
+                    <RadioGroupItem
+                      className="h-3 w-3 border border-black"
+                      value={item.value}
+                      id={`option-${index}`}
+                      checked={item.value === field.customText}
+                    />
+                  </>
+                )}
+              </div>
+            );
+          })}
         </RadioGroup>
       )}
     </SigningFieldContainer>
