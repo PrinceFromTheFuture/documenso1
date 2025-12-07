@@ -14,7 +14,6 @@
     },
     "types": ["@documenso/lib/types/next-auth.d.ts"],
     "strictNullChecks": true,
-    "incremental": false
   },
   "include": [
     "next-env.d.ts",

@@ -69,7 +69,7 @@ export type AddSettingsFormProps = {
   onSubmit: (_data: TAddSettingsFormSchema) => void;
 };
 
-export const AddSettingsFormPartial = async ({
+export const AddSettingsFormPartial = ({
   documentFlow,
   recipients,
   fields,
@@ -273,7 +273,7 @@ export const AddSettingsFormPartial = async ({
                 </AccordionTrigger>
 
                 <AccordionContent className="text-muted-foreground -mx-1 px-1 pt-2 text-sm leading-relaxed">
-                  <div className="flex flex-col space-y-6 ">
+                  <div className="flex flex-col space-y-6">
                     <FormField
                       control={form.control}
                       name="externalId"

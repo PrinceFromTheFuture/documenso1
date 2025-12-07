@@ -11,34 +11,70 @@ header.supports-backdrop-blur\:bg-background\/60.bg-background\/95.sticky.top-0.
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+/* Only fix the right side frame overflow issue */
+@media screen and (max-width: 768px) {
+  body, html {
+    overflow-x: auto;
+  }
+  
+  /* Ensure containers don't overflow */
+  .container, .mx-auto {
+    max-width: 100% !important;
+    padding-left: 0.0rem !important;
+    padding-right: 0.0rem !important;
+  }
+  
+  /* Add 5px padding on left and right */
+  body {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}
+
 body,html{overflow-x:hidden}
  
 body {
   DIRECTION: RTL;
-}th {
+}
+
+/* Override RTL for English content in fields */
+body :has(> .react-draggable[data-field-id]:has([dir="ltr"])) {
+  direction: ltr !important;
+}
+
+th {
   text-align: right !important;
-}.topLogo {
+}
+
+.topLogo {
   height: auto;
   margin-top: 0;
-}header2 {
+}
+
+header2 {
   margin-top: 11px;
   margin-bottom: -38px !important;
-}button {
+}
+
+button {
   direction: ltr;
-}.mr-2 {
+}
+
+.mr-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-}div  {
-  direction: rtl;
-}button, [type='button'], [type='reset'], [type='submit'] {
-  background-image: none;
-  direction: rtl;
-}.ml-1 {
+}
+
+.ml-1 {
   margin-right: 0.25rem;
   margin-left: 0.25rem;
-}p.text-muted-foreground\/60.text-xs {
+}
+
+p.text-muted-foreground\/60.text-xs {
   display: none;
 }
+
 @media screen and (max-width: 1000px) {
   .text-foreground .whitespace-pre-line {
     color: #000;
@@ -49,5 +85,1622 @@ body {
   }
 }
 
+div {
+  direction: rtl;
+}
 
+button, [type='button'], [type='reset'], [type='submit'] {
+  background-image: none;
+  direction: rtl;
+}
+
+/* === CANVAS NATURAL DIRECTION (removed LTR override) === */
+
+/* Field direction control for checkbox and radio only */
+.react-draggable[data-language="hebrew"] {
+  direction: rtl !important;
+}
+
+.react-draggable[data-language="english"] {
+  direction: ltr !important;
+}
+
+/* Ensure English content is left-aligned */
+.react-draggable[data-language="english"] * {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.react-draggable[data-language="english"] [data-testid="field-content"] {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+
+.react-draggable[data-language="english"] [data-testid="field-row"] {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+/* === CHECKBOX AND RADIO FIELD SPECIFIC STYLES === */
+
+/* Force auto width for Rnd fields in document editor */
+.react-draggable[data-field-id] {
+  height: fit-content !important;
+  min-height: fit-content !important;
+  max-width: none !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Hebrew widgets: Make everything RTL for natural rightward expansion */
+.react-draggable[data-field-id][data-language="hebrew"],
+.react-draggable[data-field-id][data-language="hebrew"] *,
+.react-draggable[data-field-id][data-language="hebrew"] > *,
+.react-draggable[data-field-id][data-language="hebrew"] [data-testid="field-content"],
+.react-draggable[data-field-id][data-language="hebrew"] [data-testid="field-row"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* English widgets: align to left and expand rightward */  
+.react-draggable[data-field-id][data-language="english"] {
+  margin: 0 !important;
+  transform-origin: left center !important;
+}
+
+/* Inner field containers in document editor should auto-size */
+.react-draggable[data-field-id] > .relative.flex {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: fit-content !important;
+  min-height: fit-content !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: flex !important;
+  padding: 0 !important; /* No padding - same as other steps */
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+/* Hebrew widget inner containers: RTL behavior */
+.react-draggable[data-field-id][data-language="hebrew"] > .relative.flex {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* English widget inner containers: align content to left */
+.react-draggable[data-field-id][data-language="english"] > .relative.flex {
+  justify-content: flex-start !important;
+  margin: 0 !important;
+}
+
+/* Checkbox and Radio field content should auto-size */
+.react-draggable[data-field-id] [data-testid="field-content"] {
+  width: fit-content !important;
+  height: fit-content !important;
+  min-width: fit-content !important;
+  min-height: fit-content !important;
+  max-width: none !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Individual checkbox/radio rows should not wrap */
+.react-draggable[data-field-id] [data-testid="field-row"] {
+  width: 100% !important;
+  min-width: fit-content !important;
+  max-width: none !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0 !important;
+  overflow: visible !important;
+}
+
+/* Prevent text wrapping in all label elements */
+.react-draggable[data-field-id] label,
+.react-draggable[data-field-id] [data-testid="field-label"] {
+  text-overflow: visible !important;
+  overflow: visible !important;
+  max-width: none !important;
+  width: auto !important;
+  display: inline-block !important;
+}
+
+/* Override for Hebrew checkbox labels - allow truncation */
+.react-draggable[data-field-id] [data-testid="field-row"] label[dir="rtl"] {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+/* === LANGUAGE-SPECIFIC ALIGNMENT === */
+
+/* English (LTR) - field container alignment - FORCE LEFT ALIGNMENT - ONLY for English */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex,
+.react-draggable[data-field-id]:has([style*="direction: ltr"]):not(:has([dir="rtl"])) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 0 !important;
+}
+
+/* Force English content to stick to left edge - ONLY for English */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"],
+.react-draggable[data-field-id]:has([style*="direction: ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"] {
+  margin: 0 !important;
+  align-self: flex-start !important;
+  justify-self: flex-start !important;
+}
+
+/* Hebrew (RTL) - field container alignment - ONLY for Hebrew */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) > .relative.flex,
+.react-draggable[data-field-id]:has([style*="direction: rtl"]):not(:has([dir="ltr"])) > .relative.flex {
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transform-origin: right center !important;
+  padding: 0 !important;
+}
+
+/* Force Hebrew content to stick to right edge - ONLY for Hebrew */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-content"],
+.react-draggable[data-field-id]:has([style*="direction: rtl"]):not(:has([dir="ltr"])) [data-testid="field-content"] {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  align-self: flex-end !important;
+  justify-self: flex-end !important;
+}
+
+/* Maintain Hebrew positioning in all document states */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) {
+  position: relative !important;
+}
+
+/* English field rows - checkbox first, text second */
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) label {
+  order: 2 !important;
+  text-align: left !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) input,
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) button,
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) [role="checkbox"],
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) [role="radio"] {
+  order: 1 !important;
+}
+
+/* Hebrew field rows - checkbox on left, text on right */
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) {
+  justify-content: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) label {
+  order: 2 !important;
+  text-align: right !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) input,
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) button,
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) [role="checkbox"],
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) [role="radio"] {
+  order: 1 !important;
+}
+
+/* Override global div RTL for English fields */
+.react-draggable[data-field-id]:has([dir="ltr"]) div,
+.react-draggable[data-field-id]:has([style*="direction: ltr"]) div {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Ensure flex containers with English content align properly */
+.react-draggable[data-field-id]:has([dir="ltr"]) .flex,
+.react-draggable[data-field-id]:has([style*="direction: ltr"]) .flex {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  direction: ltr !important;
+}
+
+/* === DYNAMIC EXPANSION BEHAVIOR === */
+
+/* Hebrew (RTL) - expand to the left, right border stays fixed - ONLY for Hebrew */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) {
+  transform-origin: right center !important;
+}
+
+/* English (LTR) - expand to the right, left border stays fixed */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) {
+  transform-origin: left center !important;
+}
+
+/* Specific rules for checkbox and radio fields - pixel-perfect positioning */
+.checkbox-field-hebrew,
+.radio-field-hebrew,
+.react-draggable[data-field-id]:has(.checkbox-field-hebrew),
+.react-draggable[data-field-id]:has(.radio-field-hebrew),
+.react-draggable[data-field-id]:has([data-language="hebrew"][data-field-id]) {
+  transform-origin: right center !important;
+}
+
+.checkbox-field-english,
+.radio-field-english,
+.react-draggable[data-field-id]:has(.checkbox-field-english),
+.react-draggable[data-field-id]:has(.radio-field-english),
+.react-draggable[data-field-id]:has([data-language="english"][data-field-id]) {
+  transform-origin: left center !important;
+}
+
+.checkbox-field-mixed,
+.radio-field-mixed,
+.react-draggable[data-field-id]:has(.checkbox-field-mixed),
+.react-draggable[data-field-id]:has(.radio-field-mixed) {
+  transform-origin: left center !important;
+}
+
+/* === TOOLBAR CENTERING === */
+
+/* Center toolbar relative to green border frame in edit mode */
+.react-draggable[data-field-id] .mt-1.flex.justify-center {
+  text-align: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  pointer-events: auto !important;
+  z-index: 100 !important;
+}
+
+.react-draggable[data-field-id] .mt-1.flex.justify-center > div {
+  margin: 0 auto !important;
+  pointer-events: auto !important;
+}
+
+.react-draggable[data-field-id] .mt-1.flex.justify-center button {
+  pointer-events: auto !important;
+}
+
+/* Additional centering for toolbar */
+.react-draggable[data-field-id] > div:last-child {
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  position: absolute !important;
+  bottom: -2.25rem !important;
+  z-index: 100 !important;
+  pointer-events: auto !important;
+}
+
+/* === FINAL OVERRIDES FOR MAXIMUM COMPATIBILITY === */
+
+/* Ensure the items-start class works correctly for both languages */
+.react-draggable[data-field-id] .items-start {
+  align-items: flex-start !important;
+}
+
+/* Clean: English uses .items-end naturally, Hebrew uses .items-start naturally */
+
+/* Force override any inline styles set by JavaScript */
+.react-draggable[data-field-id][style*="width"],
+.react-draggable[data-field-id][style*="height"] {
+  width: fit-content !important;
+  height: fit-content !important;
+}
+
+/* High specificity rule to ensure English text is left-aligned */
+html body .react-draggable[data-field-id] [data-testid="field-row"][style*="direction: ltr"] {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Clean and simple English field alignment - ONLY for English, NOT for Hebrew */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 8px !important;
+}
+
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"] {
+  align-self: flex-start !important;
+  justify-self: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* Ensure English fields expand rightward - ONLY for English, NOT for Hebrew */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) {
+  transform-origin: left center !important;
+}
+
+/* High specificity rule to ensure Hebrew text is right-aligned */
+html body .react-draggable[data-field-id] [data-testid="field-row"][style*="direction: rtl"] {
+  justify-content: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* === SIMPLE LANGUAGE-BASED ALIGNMENT === */
+
+/* Clean: No debug borders needed anymore */
+
+/* OVERRIDE GLOBAL RTL FOR ENGLISH FIELDS */
+html body .react-draggable[data-field-id]:has(.english-field) {
+  direction: ltr !important;
+}
+
+html body .react-draggable[data-field-id]:has(.english-field) * {
+  direction: ltr !important;
+}
+
+/* Force English fields to stick to LEFT edge regardless of global RTL */
+html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 8px 8px 8px 0px !important;
+}
+
+/* Ensure .items-end works correctly for English fields */
+.react-draggable[data-field-id] .english-field.items-end {
+  align-items: flex-end !important;
+}
+
+/* Force English container expansion from LEFT to RIGHT */
+.react-draggable[data-field-id]:has(.english-field) {
+  transform-origin: left center !important;
+  direction: ltr !important;
+  width: fit-content !important;
+  min-width: fit-content !important;
+  max-width: none !important;
+  left: auto !important;
+  right: auto !important;
+}
+
+/* Override any positioning that might interfere */
+.react-draggable[data-field-id]:has(.english-field)[style*="left"],
+.react-draggable[data-field-id]:has(.english-field)[style*="right"] {
+  left: auto !important;
+  right: auto !important;
+}
+
+/* English fields - simple class-based targeting */
+.react-draggable[data-field-id] .english-field > .relative.flex,
+.react-draggable[data-field-id] > .relative.flex:has(.english-field) {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 8px 8px 8px 4px !important;
+}
+
+/* Force English field parent containers with expansion control */
+.react-draggable[data-field-id]:has(.english-field) > .relative.flex,
+.react-draggable[data-field-id]:has([data-language="english"]) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+  text-align: left !important;
+  transform-origin: left center !important;
+  padding-left: 0px !important;
+  padding-right: 8px !important;
+  direction: ltr !important;
+}
+
+/* Force English container to expand rightward */
+.react-draggable[data-field-id]:has(.english-field),
+.react-draggable[data-field-id]:has([data-language="english"]) {
+  transform-origin: left center !important;
+  direction: ltr !important;
+}
+
+/* Fix toolbar centering for all fields */
+.react-draggable[data-field-id] .mt-1.flex.justify-center {
+  position: absolute !important;
+  bottom: -2.25rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  z-index: 50 !important;
+}
+
+.react-draggable[data-field-id] .english-field {
+  align-self: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+.react-draggable[data-field-id] .english-field + div,
+.react-draggable[data-field-id]:has(.english-field) {
+  transform-origin: left center !important;
+}
+
+/* Hebrew fields - simple class-based targeting */
+.react-draggable[data-field-id] .hebrew-field > .relative.flex,
+.react-draggable[data-field-id] > .relative.flex:has(.hebrew-field) {
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transform-origin: right center !important;
+  padding: 8px 4px 8px 8px !important;
+}
+
+.react-draggable[data-field-id] .hebrew-field {
+  align-self: flex-end !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.react-draggable[data-field-id] .hebrew-field + div,
+.react-draggable[data-field-id]:has(.hebrew-field) {
+  transform-origin: right center !important;
+}
+
+/* Force field containers based on data-language attribute */
+.react-draggable[data-field-id] [data-language="english"] {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.react-draggable[data-field-id] [data-language="hebrew"] {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* NUCLEAR OVERRIDE - Force English fields to behave correctly */
+.react-draggable[data-field-id]:has(.english-field) > .relative.flex,
+.react-draggable[data-field-id]:has([data-language="english"]) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-end !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 8px 8px 8px 0px !important;
+}
+
+.react-draggable[data-field-id]:has(.english-field),
+.react-draggable[data-field-id]:has([data-language="english"]) {
+  transform-origin: left center !important;
+  direction: ltr !important;
+}
+
+/* Hebrew fields should behave normally */
+.react-draggable[data-field-id]:has(.hebrew-field) > .relative.flex,
+.react-draggable[data-field-id]:has([data-language="hebrew"]) > .relative.flex {
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transform-origin: right center !important;
+  padding: 8px 0px 8px 8px !important;
+}
+
+.react-draggable[data-field-id]:has(.hebrew-field),
+.react-draggable[data-field-id]:has([data-language="hebrew"]) {
+  transform-origin: right center !important;
+  direction: rtl !important;
+}
+
+/* === FORCE ENGLISH FIELDS TO LEFT ALIGNMENT - WITHOUT TOUCHING HEBREW === */
+
+/* Strong override for English fields only - left alignment and left expansion */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 8px 8px 8px 0px !important;
+}
+
+/* Force English content to left edge */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"] {
+  align-self: flex-start !important;
+  justify-self: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  align-items: flex-start !important;
+}
+
+/* Force English container expansion from left to right */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) {
+  transform-origin: left center !important;
+  direction: ltr !important;
+}
+
+/* Force English field rows to be left-aligned */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-row"] {
+  justify-content: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Ensure English labels are left-aligned */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) label {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Override any global RTL for English fields */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+  direction: ltr !important;
+}
+
+/* NUCLEAR OPTION: Force English fields based on class */
+.react-draggable[data-field-id] .english-field {
+  align-self: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.react-draggable[data-field-id]:has(.english-field) > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+  transform-origin: left center !important;
+  padding: 8px 8px 8px 0px !important;
+}
+
+.react-draggable[data-field-id]:has(.english-field) {
+  transform-origin: left center !important;
+  direction: ltr !important;
+}
+
+/* === PERSISTENT FIELD POSITIONING FOR ALL DOCUMENT STATES === */
+
+/* Prevent position changes during document flow transitions */
+.react-draggable[data-field-id] {
+  position: relative !important;
+}
+
+/* וידוא שהשדות נשארים במיקום הקבוע בדיוק */
+.absolute.z-10,
+.absolute.z-20 {
+  position: absolute !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* מניעת תזוזה של שדות צ'קבוקס */
+.absolute.z-10:has(.checkbox-field-english),
+.absolute.z-10:has(.checkbox-field-hebrew),
+.absolute.z-10:has(.checkbox-field-mixed),
+.absolute.z-20:has(.checkbox-field-english),
+.absolute.z-20:has(.checkbox-field-hebrew),
+.absolute.z-20:has(.checkbox-field-mixed) {
+  position: absolute !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* וידוא שהאלמנטים הפנימיים לא דוחפים את המיקום */
+.checkbox-field-english [data-testid="field-content"],
+.checkbox-field-hebrew [data-testid="field-content"],
+.checkbox-field-mixed [data-testid="field-content"] {
+  position: relative !important;
+  margin: 0 !important;
+}
+
+.checkbox-field-english [data-testid="field-row"],
+.checkbox-field-hebrew [data-testid="field-row"],
+.checkbox-field-mixed [data-testid="field-row"] {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* וידוא שכל השדות נשארים במיקום קבוע */
+.absolute {
+  will-change: auto !important;
+}
+
+/* מניעת shift בגלל תוכן דינמי */
+.field-card-container {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* וידוא שגם ב-Card לא זזים */
+.absolute.z-10 > .field-card-container,
+.absolute.z-20 > .field-card-container,
+.absolute.z-10 > .field-card-container > *,
+.absolute.z-20 > .field-card-container > * {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+/* וידוא ש-CardContent לא משפיע על המיקום */
+.field-card-container > div {
+  margin: 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+}
+
+/* וידוא שה-Card בשלבים האחרים לא גורם לתזוזה */
+.absolute.z-10 > div > .field-card-container,
+.absolute.z-20 > div > .field-card-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Maintain consistent English field positioning across all document states */
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])),
+.react-draggable[data-field-id][data-language="english"] {
+  transform-origin: left center !important;
+  direction: ltr !important;
+}
+
+.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex,
+.react-draggable[data-field-id][data-language="english"] > .relative.flex {
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+/* Maintain consistent Hebrew field positioning across all document states */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])),
+.react-draggable[data-field-id][data-language="hebrew"] {
+  transform-origin: right center !important;
+  direction: rtl !important;
+}
+
+/* Special handling for checkbox fields to prevent movement */
+.react-draggable[data-field-id]:has([role="checkbox"][data-hebrew="false"]) {
+  transform-origin: left center !important;
+  direction: ltr !important;
+}
+
+.react-draggable[data-field-id]:has([role="checkbox"][data-hebrew="true"]) {
+  transform-origin: right center !important;
+  direction: rtl !important;
+}
+
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) > .relative.flex,
+.react-draggable[data-field-id][data-language="hebrew"] > .relative.flex {
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* === CHECKBOX FIELD POSITIONING FIXES === */
+
+/* Ensure checkbox fields maintain position in all document states */
+.react-draggable[data-field-id] [data-testid="field-content"] .flex.flex-col.space-y-2 > div {
+  position: relative !important;
+}
+
+/* English checkbox - checkbox on left, text on right */
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  direction: ltr !important;
+  align-items: center !important;
+  width: 100% !important;
+  position: relative !important;
+  gap: 0.5rem !important;
+  column-gap: 0.5rem !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] input[type="checkbox"] {
+  order: 1 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] label {
+  order: 2 !important;
+  direction: ltr !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Hebrew checkbox - checkbox on left, text on right */
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] {
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+  align-items: center !important;
+  width: 100% !important;
+  position: relative !important;
+  gap: 0.5rem !important;
+  column-gap: 0.5rem !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] input[type="checkbox"] {
+  order: 1 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] label {
+  order: 2 !important;
+  direction: rtl !important;
+  text-align: right !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Prevent position changes during document flow transitions for checkboxes */
+.react-draggable[data-field-id]:has([role="checkbox"]) {
+  position: relative !important;
+}
+
+.react-draggable[data-field-id]:has([role="checkbox"]) > .relative.flex {
+  min-height: fit-content !important;
+}
+
+/* Force checkbox containers to maintain their layout */
+.react-draggable[data-field-id] [data-testid="field-content"]:has(input[type="checkbox"]) {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Override any global RTL/LTR that might affect checkbox positioning */
+.react-draggable[data-field-id] div[data-hebrew="false"] {
+  direction: ltr !important;
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+.react-draggable[data-field-id] div[data-hebrew="true"] {
+  direction: rtl !important;
+  text-align: right !important;
+  justify-content: flex-start !important;
+}
+
+/* Specific checkbox element positioning */
+.react-draggable[data-field-id] div[data-hebrew="false"] [role="checkbox"] {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.react-draggable[data-field-id] div[data-hebrew="true"] [role="checkbox"] {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Fix checkbox alignment and checkmark positioning */
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 16px !important;
+  min-height: 16px !important;
+  width: 16px !important;
+  height: 16px !important;
+  position: relative !important;
+}
+
+/* Fix the checkmark icon positioning */
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] svg {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 12px !important;
+  height: 12px !important;
+}
+
+/* Ensure checkbox container alignment */
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] button[role="checkbox"] {
+  align-self: flex-start !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] button[role="checkbox"] {
+  align-self: flex-start !important;
+}
+
+/* Fix checkmark visibility and positioning in all states */
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="checked"] svg {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="unchecked"] svg {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  display: none !important;
+}
+
+/* Ensure proper checkbox border and background */
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] {
+  border: 1px solid #d1d5db !important;
+  background-color: white !important;
+  border-radius: 2px !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="checked"] {
+  background-color: #3b82f6 !important;
+  border-color: #3b82f6 !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="checked"] svg {
+  color: white !important;
+  fill: white !important;
+  stroke: white !important;
+}
+
+/* === END OF ENGLISH-ONLY FIXES === */
+
+/* === FORCE HEBREW FIELDS TO RIGHT ALIGNMENT === */
+
+/* Strong override for Hebrew fields only - right alignment */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) > .relative.flex {
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transform-origin: right center !important;
+  padding: 8px 0px 8px 8px !important;
+}
+
+/* Ensure Hebrew fields maintain right positioning throughout document flow */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) {
+  transform-origin: right center !important;
+  direction: rtl !important;
+}
+
+/* Force Hebrew content to right edge */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-content"] {
+  align-self: flex-end !important;
+  justify-self: flex-end !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  align-items: flex-end !important;
+  
+  /* Maintain position after signing */
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Force Hebrew field rows to be right-aligned */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-row"] {
+  justify-content: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Ensure Hebrew labels are right-aligned */
+.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) label {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+/* Force Hebrew fields based on class */
+.react-draggable[data-field-id] .hebrew-field {
+  align-self: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+.react-draggable[data-field-id]:has(.hebrew-field) > .relative.flex {
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  text-align: right !important;
+  direction: rtl !important;
+  transform-origin: left center !important;
+  padding: 8px 0px 8px 8px !important;
+}
+
+/* === END OF HEBREW FIXES === */
+
+/* === SPECIFIC RULE FOR CHECKBOX/RADIO WITH GROUP REACT-DRAGGABLE === */
+
+/* If checkbox/radio widget content is in English, force LTR direction for group react-draggable containers */
+.group.react-draggable[data-language="english"],
+.group.react-draggable:has([data-language="english"]),
+.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) {
+  direction: ltr !important;
+}
+
+/* Force LTR direction for all internal divs and elements when content is English */
+.group.react-draggable[data-language="english"] *,
+.group.react-draggable:has([data-language="english"]) *,
+.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+  direction: ltr !important;
+}
+
+/* Exception for Hebrew - allow text wrapping and container stretching */
+.group.react-draggable[data-language="hebrew"] *,
+.group.react-draggable:has([data-language="hebrew"]) *,
+.checkbox-field-hebrew *,
+.checkbox-field-hebrew [data-testid="field-row"] *,
+.checkbox-field-hebrew label {
+  white-space: normal !important;
+}
+
+/* Force LTR direction specifically for internal divs */
+.group.react-draggable[data-language="english"] div,
+.group.react-draggable:has([data-language="english"]) div,
+.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+  direction: ltr !important;
+}
+
+/* Broadest rule for all react-draggable containers */
+.react-draggable[data-language="english"] div,
+.react-draggable:has([data-language="english"]) div,
+.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+  direction: ltr !important;
+}
+
+/* Most comprehensive rule for all group containers */
+.group[data-language="english"] div,
+.group:has([data-language="english"]) div,
+.group:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+  direction: ltr !important;
+}
+
+/* NUCLEAR OPTION: Override all JavaScript changes immediately */
+html body .group[data-language="english"] *,
+html body .group:has([data-language="english"]) *,
+html body .group:has([dir="ltr"]):not(:has([dir="rtl"])) *,
+html body .react-draggable[data-language="english"] *,
+html body .react-draggable:has([data-language="english"]) *,
+html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+  direction: ltr !important;
+  transition: none !important;
+}
+
+/* Override during click events and active states */
+html body .group[data-language="english"]:active *,
+html body .group:has([data-language="english"]):active *,
+html body .group:has([dir="ltr"]):not(:has([dir="rtl"])):active *,
+html body .react-draggable[data-language="english"]:active *,
+html body .react-draggable:has([data-language="english"]):active *,
+html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])):active *,
+html body .group[data-language="english"]:hover *,
+html body .group:has([data-language="english"]):hover *,
+html body .group:has([dir="ltr"]):not(:has([dir="rtl"])):hover *,
+html body .react-draggable[data-language="english"]:hover *,
+html body .react-draggable:has([data-language="english"]):hover *,
+html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])):hover * {
+  direction: ltr !important;
+  transition: none !important;
+}
+
+/* Ultimate override - even during click events on any children */
+html body .group[data-language="english"] *:active,
+html body .group:has([data-language="english"]) *:active,
+html body .group:has([dir="ltr"]):not(:has([dir="rtl"])) *:active,
+html body .react-draggable[data-language="english"] *:active,
+html body .react-draggable:has([data-language="english"]) *:active,
+html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) *:active {
+  direction: ltr !important;
+  transition: none !important;
+}
+
+/* Absolute final override - maximum specificity for click events */
+html body div.group[data-language="english"] div,
+html body div.group:has([data-language="english"]) div,
+html body div.group:has([dir="ltr"]):not(:has([dir="rtl"])) div,
+html body div.react-draggable[data-language="english"] div,
+html body div.react-draggable:has([data-language="english"]) div,
+html body div.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+  direction: ltr !important;
+  transition: none !important;
+}
+
+/* Force during any user interaction */
+html body div.group[data-language="english"]:active div,
+html body div.group:has([data-language="english"]):active div,
+html body div.react-draggable[data-language="english"]:active div,
+html body div.react-draggable:has([data-language="english"]):active div {
+  direction: ltr !important;
+  transition: none !important;
+}
+
+/* CSS Animation technique to force direction continuously */
+@keyframes force-ltr {
+  0%, 50%, 100% { 
+    direction: ltr !important; 
+    text-align: left !important;
+  }
+}
+
+/* Force LTR continuously on English content - removes z-10 references */
+.group[data-language="english"] *,
+.group:has([data-language="english"]) *,
+.group:has([dir="ltr"]):not(:has([dir="rtl"])) *,
+.react-draggable[data-language="english"] *,
+.react-draggable:has([data-language="english"]) *,
+.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+  animation: force-ltr 0.001s infinite !important;
+  direction: ltr !important;
+  transition: none !important;
+}
+
+/* Prevent direction changes during click states */
+.group[data-language="english"]:active *,
+.group:has([data-language="english"]):active *,
+.react-draggable[data-language="english"]:active *,
+.react-draggable:has([data-language="english"]):active *,
+.group[data-language="english"] *:active,
+.group:has([data-language="english"]) *:active,
+.react-draggable[data-language="english"] *:active,
+.react-draggable:has([data-language="english"]) *:active {
+  direction: ltr !important;
+  transition: none !important;
+  animation: force-ltr 0.001s infinite !important;
+}
+
+/* Removed all complex override attempts that interfere with Hebrew */
+
+/* Removed complex selectors to avoid Hebrew interference */
+
+/* Removed ultimate override rules */
+
+/* Override during ALL interaction states */
+html body div[data-language="english"]:active,
+html body div:has([data-language="english"]):active,
+html body div.group[data-language="english"]:active,
+html body div.react-draggable[data-language="english"]:active,
+html body div[data-language="english"]:hover,
+html body div:has([data-language="english"]):hover,
+html body div.group[data-language="english"]:hover,
+html body div.react-draggable[data-language="english"]:hover,
+html body div[data-language="english"]:focus,
+html body div:has([data-language="english"]):focus,
+html body div.group[data-language="english"]:focus,
+html body div.react-draggable[data-language="english"]:focus,
+html body div[data-language="english"]:active div,
+html body div:has([data-language="english"]):active div,
+html body div.group[data-language="english"]:active div,
+html body div.react-draggable[data-language="english"]:active div,
+html body div[data-language="english"]:hover div,
+html body div:has([data-language="english"]):hover div,
+html body div.group[data-language="english"]:hover div,
+html body div.react-draggable[data-language="english"]:hover div {
+  direction: ltr !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+/* CSS Animation to continuously enforce LTR */
+@keyframes enforce-ltr {
+  0%, 100% { 
+    direction: ltr;
+  }
+}
+
+/* ULTRA MINIMAL: Only English labels and spans - nothing else */
+label[data-language="english"],
+span[data-language="english"] {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* === SIMPLE & EFFECTIVE RULES === */
+
+/* HEBREW: Checkbox visually on right, expand visually leftward (CSS flipped due to global RTL) */
+.react-draggable[data-field-id]:has([data-language="hebrew"]) {
+  transform-origin: left center !important;
+}
+
+.react-draggable[data-field-id]:has([data-language="hebrew"]) > .relative.flex {
+  justify-content: flex-start !important;
+  text-align: right !important;
+  direction: rtl !important;
+  padding-left: 0px !important;
+  padding-right: 8px !important;
+}
+
+/* ENGLISH: Checkbox visually on left, expand visually rightward (CSS flipped due to global RTL) */
+.react-draggable[data-field-id]:has([data-language="english"]) {
+  transform-origin: right center !important;
+}
+
+.react-draggable[data-field-id]:has([data-language="english"]) > .relative.flex {
+  justify-content: flex-end !important;
+  text-align: left !important;
+  direction: ltr !important;
+  padding-left: 8px !important;
+  padding-right: 0px !important;
+}
+
+/* Removed aggressive div forcing rules to protect Hebrew */
+
+/* Removed highest priority rules to avoid Hebrew interference */
+
+/* === END SIMPLE RULES === */
+
+/* Removed Hebrew protection rules that may be interfering */
+
+/* תיקון אינטראקטיביות לצ'קבוקס בשלב Settings */
+/* ספציפי רק לשדות שמוצגים בשלב Settings (עם z-10) */
+.absolute.z-10.pointer-events-none.opacity-75:has(.checkbox-field-english),
+.absolute.z-10.pointer-events-none.opacity-75:has(.checkbox-field-hebrew),
+.absolute.z-10.pointer-events-none.opacity-75:has(.checkbox-field-mixed) {
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+/* אפשר אינטראקציה עם האלמנטים הפנימיים של הצ'קבוקס בלבד */
+.checkbox-field-english [role="checkbox"],
+.checkbox-field-english label,
+.checkbox-field-hebrew [role="checkbox"],
+.checkbox-field-hebrew label,
+.checkbox-field-mixed [role="checkbox"],
+.checkbox-field-mixed label {
+  pointer-events: auto !important;
+}
+
+
+
+/* FIX: Allow mixed checkbox to grow to the right but not to the left */
+.checkbox-field-mixed {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+}
+
+.checkbox-field-mixed [data-testid="field-content"] {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+  width: fit-content !important;
+  min-width: 100% !important;
+}
+
+.checkbox-field-mixed [data-testid="field-row"] {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+  width: fit-content !important;
+  min-width: 100% !important;
+  justify-content: flex-start !important;
+  direction: ltr !important;
+  gap: 0.5rem !important;
+}
+
+.checkbox-field-mixed label {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+  direction: ltr !important;
+  width: auto !important;
+  min-width: auto !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.checkbox-field-mixed [role="checkbox"] {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure the container can grow to the right */
+.checkbox-field-mixed .flex.items-start.justify-start {
+  position: relative !important;
+  left: 0 !important;
+  right: auto !important;
+  width: fit-content !important;
+  min-width: 100% !important;
+}
+
+/* Hide default HTML checkboxes to prevent conflicts with Radix UI checkboxes */
+input[type="checkbox"] {
+  display: none !important;
+}
+
+/* מבטיח padding עקבי בכל שדות הצ'קבוקס */
+.relative.flex.bg-white.w-fit.h-fit.min-w-fit.min-h-fit.items-start.rounded-lg.shadow-\[0_0_0_5px_hsl\(var\(--signer-green\)\/10\%\)\,0_0_0_2px_hsl\(var\(--signer-green\)\/60\%\)\,0_0_0_0\.5px_hsl\(var\(--signer-green\)\)\].group\/field-item.p-2.border-none.ring-none.hover\:bg-gradient-to-r.hover\:from-\[hsl\(var\(--signer-green\)\)\]\/10.hover\:to-\[hsl\(var\(--signer-green\)\)\]\/10 {
+  padding: 0.25rem !important;
+}
+
+/* Padding עבור צ'קבוקסים בשלב החתימה */
+.relative.flex.h-fit.min-h-fit.items-start.w-full.justify-end {
+  padding: 0.5re;
+  margin-top: 20px;
+  margin-right: 14px !important;
+}
+.relative.flex.h-fit.min-h-fit.items-start.w-full.justify-start {
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* הגדרת רווח אחיד בין צ'קבוקס לטקסט */
+.react-draggable[data-field-id] [data-testid="field-row"] {
+  gap: 0.5rem !important;
+}
+
+/* יישור הלייבל לאמצע בגובה */
+.react-draggable[data-field-id] [data-testid="field-row"] label {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  line-height: 1 !important;
+  min-height: 16px !important;
+}
+
+/* עבור שדות אנגלית - רווח מטופל על ידי gap */
+.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="false"] label,
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) label {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* עבור שדות עברית - רווח מטופל על ידי gap */
+.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="true"] label,
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) label {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* תיקון קריטי: שינוי align-items: flex-end ל-align-items: center עבור שדות אנגלית */
+.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="false"],
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) {
+  align-items: center !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="true"],
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) {
+  align-items: center !important;
+}
+
+/* תיקון נוסף לטקסט באנגלית - מונע ירידה למטה */
+.react-draggable[data-field-id] label[dir="ltr"],
+.react-draggable[data-field-id] [data-hebrew="false"] label {
+  font-size: 14px !important;
+  line-height: 1 !important;
+  vertical-align: baseline !important;
+  text-align: left !important;
+  position: relative !important;
+  top: 0 !important;
+  transform: translateY(0) !important;
+}
+
+/* וידוא שהטקסט באנגלית לא יורד למטה */
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) {
+  align-items: center !important;
+}
+
+.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) label {
+  align-self: center !important;
+}
+
+/* הגדרת רווח עבור כל קונטיינרים רלוונטיים */
+.group.react-draggable[data-language="english"] [data-testid="field-row"],
+.group.react-draggable:has([data-language="english"]) [data-testid="field-row"],
+.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-row"] {
+  gap: 0.5rem !important;
+}
+
+.group.react-draggable[data-language="hebrew"] [data-testid="field-row"],
+.group.react-draggable:has([data-language="hebrew"]) [data-testid="field-row"],
+.group.react-draggable:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-row"] {
+  gap: 0.5rem !important;
+}
+
+/* וידוא שהצ'קבוקס והלייבל מיושרים יחד לאמצע */
+.react-draggable[data-field-id] [data-testid="field-row"] button[role="checkbox"],
+.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] {
+  align-self: center !important;
+}
+
+/* הסרת margin ו-padding נוספים שעלולים להפריע */
+.react-draggable[data-field-id] [data-testid="field-row"] {
+  padding: 0 !important;
+}
+
+/* וידוא align-items: center בכל מקרה */
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"],
+.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] {
+  align-items: center !important;
+}
+
+/* תיקון ספציפי עבור הקלאסים checkbox-field-english ו-checkbox-field-hebrew */
+.checkbox-field-english [data-testid="field-row"],
+.checkbox-field-hebrew [data-testid="field-row"],
+.checkbox-field-mixed [data-testid="field-row"] {
+  align-items: center !important;
+}
+
+/* Fix: Align all English checkboxes to the left, one below the other */
+.checkbox-field-english [data-testid="field-row"],
+.checkbox-field-english [data-testid="field-row"][data-hebrew="false"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"][data-hebrew="false"] {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  justify-content: flex-start !important;
+  text-indent: 0 !important;
+  left: 0 !important;
+  position: relative !important;
+  width: 100% !important;
+  gap: 0.5rem !important; /* Same as Hebrew - gap-2 = 8px */
+}
+
+.checkbox-field-english [data-testid="field-row"] [role="checkbox"],
+.checkbox-field-english [data-testid="field-row"] input[type="checkbox"],
+.checkbox-field-english [data-testid="field-row"] button[role="checkbox"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] [role="checkbox"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] input[type="checkbox"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] button[role="checkbox"] {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  left: 0 !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ensure spacing between checkbox and text is identical - remove inline margins */
+.checkbox-field-english [data-testid="field-row"] label,
+.checkbox-field-english [data-testid="field-row"][data-hebrew="false"] label,
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.checkbox-field-hebrew [data-testid="field-row"] label,
+.checkbox-field-hebrew [data-testid="field-row"][data-hebrew="true"] label,
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+.checkbox-field-mixed [data-testid="field-row"] label,
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-row"] label {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.checkbox-field-english [data-testid="field-row"] label,
+.checkbox-field-hebrew [data-testid="field-row"] label,
+.checkbox-field-mixed [data-testid="field-row"] label {
+  align-self: center !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* תיקון נוסף עבור הקלאסים הספציפיים */
+.english-field [data-testid="field-row"],
+.hebrew-field [data-testid="field-row"] {
+  align-items: center !important;
+}
+
+.english-field [data-testid="field-row"] label,
+.hebrew-field [data-testid="field-row"] label {
+  align-self: center !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* תיקון נוסף עבור הקונטיינרים הראשיים של השדות */
+.checkbox-field-english,
+.checkbox-field-hebrew,
+.checkbox-field-mixed {
+  align-items: center !important;
+}
+
+.checkbox-field-english [data-testid="field-content"],
+.checkbox-field-hebrew [data-testid="field-content"],
+.checkbox-field-mixed [data-testid="field-content"] {
+  align-items: center !important;
+}
+
+/* Fix: Ensure English checkbox field-content has no left margin/padding */
+.checkbox-field-english [data-testid="field-content"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-content"] {
+  margin: 0 !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  gap: 0.5rem !important; /* Vertical spacing between rows - same as Hebrew (space-y-2 = 8px) */
+}
+
+/* padding עקבי בכל השלבים */
+
+/* Ensure Hebrew field has same vertical spacing */
+.checkbox-field-hebrew [data-testid="field-content"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-content"] {
+  gap: 0.5rem !important; /* Vertical spacing between rows - space-y-2 = 8px */
+}
+
+/* Fix: Ensure the main checkbox-field-english container expands with content */
+.checkbox-field-english,
+.react-draggable[data-field-id] .checkbox-field-english {
+  margin: 0 !important;
+  padding: 0.5rem !important;
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* ללא override - padding זהה בכל השלבים */
+
+/* English field content should expand */
+.checkbox-field-english [data-testid="field-content"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-content"] {
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+}
+
+/* English field rows should expand */
+.checkbox-field-english [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] {
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure Hebrew field expands to the left with content */
+.checkbox-field-hebrew,
+.react-draggable[data-field-id] .checkbox-field-hebrew {
+  margin: 0 !important;
+  padding: 0.5rem !important;
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* ללא override - padding זהה בכל השלבים */
+
+/* Hebrew field content should expand */
+.checkbox-field-hebrew [data-testid="field-content"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-content"] {
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+  align-items: flex-end !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Hebrew field rows should expand */
+.checkbox-field-hebrew [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] {
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+  justify-content: flex-end !important;
+  direction: rtl !important;
+  text-align: right !important;
+  flex-direction: row !important;
+  gap: 0.5rem !important; /* Same spacing as English */
+}
+
+/* Hebrew labels should not be constrained */
+.checkbox-field-hebrew [data-testid="field-row"] label,
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] label {
+  box-sizing: border-box !important;
+  order: 1 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+/* Hebrew field-row should stretch to 100% */
+.checkbox-field-hebrew [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] {
+  width: 100% !important;
+  min-width: 100% !important;
+}
+
+/* Hebrew checkbox should be on the right */
+.checkbox-field-hebrew [data-testid="field-row"] [role="checkbox"],
+.checkbox-field-hebrew [data-testid="field-row"] button[role="checkbox"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] [role="checkbox"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] button[role="checkbox"] {
+  order: 2 !important;
+}
+
+/* Ensure mixed field expands with content */
+.checkbox-field-mixed,
+.react-draggable[data-field-id] .checkbox-field-mixed {
+  margin: 0 !important;
+  padding: 0.5rem !important;
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* ללא override - padding זהה בכל השלבים */
+
+.checkbox-field-mixed [data-testid="field-content"],
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-content"] {
+  gap: 0.5rem !important; /* Vertical spacing between rows - same as English and Hebrew */
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+}
+
+.checkbox-field-mixed [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-row"] {
+  width: fit-content !important; /* Expand to fit content */
+  min-width: fit-content !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure all checkbox and radio rows have same horizontal spacing (gap between box/button and text) */
+.checkbox-field-english [data-testid="field-row"],
+.checkbox-field-hebrew [data-testid="field-row"],
+.checkbox-field-mixed [data-testid="field-row"],
+.radio-field-english [data-testid="field-row"],
+.radio-field-hebrew [data-testid="field-row"],
+.radio-field-mixed [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"],
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-row"],
+.react-draggable[data-field-id] .radio-field-english [data-testid="field-row"],
+.react-draggable[data-field-id] .radio-field-hebrew [data-testid="field-row"],
+.react-draggable[data-field-id] .radio-field-mixed [data-testid="field-row"] {
+  gap: 0.5rem !important; /* Horizontal spacing between checkbox/radio and text - 8px */
+}
+
+/* וידוא שהקונטיינרים הראשיים של השדות משתמשים ב-align-items: center */
+.english-field,
+.hebrew-field {
+  align-items: center !important;
+}
+
+.english-field [data-testid="field-content"],
+.hebrew-field [data-testid="field-content"] {
+  align-items: center !important;
+}
 

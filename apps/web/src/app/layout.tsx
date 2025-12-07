@@ -8,13 +8,14 @@ import { PublicEnvScript } from 'next-runtime-env';
 import { FeatureFlagProvider } from '@documenso/lib/client-only/providers/feature-flag';
 import { I18nClientProvider } from '@documenso/lib/client-only/providers/i18n.client';
 import { setupI18nSSR } from '@documenso/lib/client-only/providers/i18n.server';
-import { IS_APP_WEB_I18N_ENABLED, NEXT_PUBLIC_WEBAPP_URL } from '@documenso/lib/constants/app';
+import { IS_APP_WEB_I18N_ENABLED } from '@documenso/lib/constants/app';
 import { getServerComponentAllFlags } from '@documenso/lib/server-only/feature-flags/get-server-component-feature-flag';
 import { TrpcProvider } from '@documenso/trpc/react';
 import { cn } from '@documenso/ui/lib/utils';
 import { Toaster } from '@documenso/ui/primitives/toaster';
 import { TooltipProvider } from '@documenso/ui/primitives/tooltip';
 
+import { DirectionFixProvider } from '~/providers/direction-fix';
 import { ThemeProvider } from '~/providers/next-theme';
 import { PostHogPageview } from '~/providers/posthog';
 
@@ -102,6 +103,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </ThemeProvider>
 
           <Toaster />
+          <DirectionFixProvider />
         </FeatureFlagProvider>
       </body>
     </html>

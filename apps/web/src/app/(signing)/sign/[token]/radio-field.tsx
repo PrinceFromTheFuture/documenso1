@@ -8,6 +8,7 @@ import { msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Loader } from 'lucide-react';
 
+import { CHECKBOX_RADIO_CLASSES } from '@documenso/lib/constants/field-rendering';
 import { DO_NOT_INVALIDATE_QUERY_ON_MUTATION } from '@documenso/lib/constants/trpc';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import type { TRecipientActionAuth } from '@documenso/lib/types/document-auth';
@@ -154,99 +155,154 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
       )}
 
       {!field.inserted && (
-        <RadioGroup onValueChange={(value) => handleSelectItem(value)} className="z-10">
+        <RadioGroup
+          onValueChange={(value) => handleSelectItem(value)}
+          className={`z-10 ${CHECKBOX_RADIO_CLASSES.verticalGap}`}
+        >
           {values?.map((item, index) => {
             const labelText = item.value.includes('empty-value-') ? '' : item.value;
             const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
-            return (
-              <div
-                key={index}
-                className="flex items-center gap-x-1.5"
-                style={{ direction: isHebrew ? 'ltr' : 'rtl' }}
-              >
-                {isHebrew ? (
-                  <>
-                    <Label 
-                      htmlFor={`option-${index}`}
-                      style={{ textAlign: 'right', flex: 1, width: '100%', paddingRight: '0.5rem' }}
-                    >
-                      {labelText}
-                    </Label>
-                    <RadioGroupItem
-                      className="h-4 w-4 shrink-0 border border-black"
-                      value={item.value}
-                      id={`option-${index}`}
-                      checked={item.checked}
-                    />
-                  </>
-                ) : (
-                  <>
-                    <Label 
-                      htmlFor={`option-${index}`}
-                      style={{ textAlign: 'left', flex: 1, width: '100%' }}
-                    >
-                      {labelText}
-                    </Label>
-                    <RadioGroupItem
-                      className="h-4 w-4 shrink-0 border border-black"
-                      value={item.value}
-                      id={`option-${index}`}
-                      checked={item.checked}
-                    />
-                  </>
-                )}
-              </div>
-            );
+
+            if (isHebrew) {
+              // Hebrew: radio on the right, label on the left, container stretched to the left
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  style={{
+                    flexDirection: 'row',
+                    direction: 'rtl',
+                    justifyContent: 'flex-end',
+                    width: '100%',
+                  }}
+                >
+                  <RadioGroupItem
+                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    value={item.value}
+                    id={`option-${index}`}
+                    checked={item.checked}
+                  />
+                  <Label
+                    htmlFor={`option-${index}`}
+                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    style={{
+                      textAlign: 'right',
+                      flex: 1,
+                    }}
+                    dir="rtl"
+                  >
+                    {labelText}
+                  </Label>
+                </div>
+              );
+            } else {
+              // English: radio first, then label (radio on left)
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  style={{
+                    flexDirection: 'row',
+                    direction: 'ltr',
+                    justifyContent: 'flex-start',
+                    width: '100%',
+                  }}
+                >
+                  <RadioGroupItem
+                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    value={item.value}
+                    id={`option-${index}`}
+                    checked={item.checked}
+                  />
+                  <Label
+                    htmlFor={`option-${index}`}
+                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    style={{
+                      textAlign: 'left',
+                      flex: 1,
+                    }}
+                    dir="ltr"
+                  >
+                    {labelText}
+                  </Label>
+                </div>
+              );
+            }
           })}
         </RadioGroup>
       )}
 
       {field.inserted && (
-        <RadioGroup className="gap-y-1">
+        <RadioGroup className={CHECKBOX_RADIO_CLASSES.verticalGap}>
           {values?.map((item, index) => {
             const labelText = item.value.includes('empty-value-') ? '' : item.value;
             const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
-            return (
-              <div
-                key={index}
-                className="flex items-center gap-x-1.5"
-                style={{ direction: isHebrew ? 'ltr' : 'rtl' }}
-              >
-                {isHebrew ? (
-                  <>
-                    <Label 
-                      htmlFor={`option-${index}`} 
-                      className="text-xs"
-                      style={{ textAlign: 'right', flex: 1, width: '100%', paddingRight: '0.5rem' }}
-                    >
-                      {labelText}
-                    </Label>
-                    <RadioGroupItem
-                      className="h-3 w-3 border border-black"
-                      value={item.value}
-                      id={`option-${index}`}
-                      checked={item.value === field.customText}
-                    />
-                  </>
-                ) : (
-                  <>
-                    <Label 
-                      htmlFor={`option-${index}`} 
-                      className="text-xs"
-                      style={{ textAlign: 'left', flex: 1, width: '100%' }}
-                    >
-                      {labelText}
-                    </Label>
-                    <RadioGroupItem
-                      className="h-3 w-3 border border-black"
-                      value={item.value}
-                      id={`option-${index}`}
-                      checked={item.value === field.customText}
-                    />
-                  </>
-                )}
-              </div>
-            );
+
+            if (isHebrew) {
+              // Hebrew: radio on the right, label on the left, container stretched to the left
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  style={{
+                    flexDirection: 'row',
+                    direction: 'rtl',
+                    justifyContent: 'flex-end',
+                    width: '100%',
+                  }}
+                >
+                  <RadioGroupItem
+                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    value={item.value}
+                    id={`option-${index}`}
+                    checked={item.value === field.customText}
+                  />
+                  <Label
+                    htmlFor={`option-${index}`}
+                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    style={{
+                      textAlign: 'right',
+                      flex: 1,
+                    }}
+                    dir="rtl"
+                  >
+                    {labelText}
+                  </Label>
+                </div>
+              );
+            } else {
+              // English: radio first, then label (radio on left)
+              return (
+                <div
+                  key={index}
+                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  style={{
+                    flexDirection: 'row',
+                    direction: 'ltr',
+                    justifyContent: 'flex-start',
+                    width: '100%',
+                  }}
+                >
+                  <RadioGroupItem
+                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    value={item.value}
+                    id={`option-${index}`}
+                    checked={item.value === field.customText}
+                  />
+                  <Label
+                    htmlFor={`option-${index}`}
+                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    style={{
+                      textAlign: 'left',
+                      flex: 1,
+                    }}
+                    dir="ltr"
+                  >
+                    {labelText}
+                  </Label>
+                </div>
+              );
+            }
           })}
         </RadioGroup>
       )}

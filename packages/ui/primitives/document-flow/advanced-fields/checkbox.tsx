@@ -12,11 +12,6 @@ export type CheckboxFieldProps = {
   field: Field;
 };
 
-// Function to detect if text contains Hebrew characters
-function isHebrew(text: string): boolean {
-  return /[\u0590-\u05FF]/.test(text);
-}
-
 export const CheckboxField = ({ field }: CheckboxFieldProps) => {
   let parsedFieldMeta: TCheckboxFieldMeta | undefined = undefined;
 
@@ -24,65 +19,118 @@ export const CheckboxField = ({ field }: CheckboxFieldProps) => {
     parsedFieldMeta = ZCheckboxFieldMeta.parse(field.fieldMeta);
   }
 
-  if (parsedFieldMeta && (!parsedFieldMeta.values || parsedFieldMeta.values.length === 0)) {
-    return (
-      <FieldIcon fieldMeta={field.fieldMeta} type={field.type} signerEmail={field.signerEmail} />
-    );
-  }
+  const values = parsedFieldMeta?.values || [{ checked: false, value: '' }];
+  const hasValues = values.some((item) => item.value && item.value.trim() !== '');
+  const hasHebrew = values.some((item) => /[\u0590-\u05FF\u200f\u200e]/.test(item.value || ''));
 
   return (
-    <div className="flex h-full w-full items-start justify-start" style={{ marginRight: 'auto' }}>
-      {!parsedFieldMeta?.values ? (
-        <FieldIcon fieldMeta={field.fieldMeta} type={field.type} signerEmail={field.signerEmail} />
-      ) : (
-        <div className="flex h-full w-full flex-col justify-start items-start">
-          {parsedFieldMeta.values.map((item: { value: string; checked: boolean }, index: number) => {
-            const isRTL = isHebrew(item.value);
-            return (
-              <div 
-                key={index}
-                className="flex items-center w-full justify-start"
-                style={isRTL 
-                  ? { gap: '0.25rem', direction: 'rtl', justifyContent: 'flex-end' }
-                  : { gap: '0.25rem', direction: 'ltr', justifyContent: 'flex-start' }
-                }
-              >
-                {isRTL ? (
-                  <>
-                    <Checkbox
-                      className="h-[clamp(0.425rem,25cqw,0.825rem)] w-[clamp(0.425rem,25cqw,0.825rem)] flex-shrink-0 border border-black"
-                      checkClassName="text-white"
-                      id={`checkbox-${index}`}
-                      checked={item.checked}
-                    />
-                    <Label
-                      htmlFor={`checkbox-${index}`}
-                      className="text-[clamp(0.425rem,25cqw,0.825rem)] flex-1"
-                      style={{ textAlign: 'right', width: '100%', marginLeft: 'auto' }}
-                    >
-                      {item.value}
-                    </Label>
-                  </>
-                ) : (
-                  <>
-                    <Checkbox
-                      className="h-[clamp(0.425rem,25cqw,0.825rem)] w-[clamp(0.425rem,25cqw,0.825rem)] flex-shrink-0 border border-black"
-                      checkClassName="text-white"
-                      id={`checkbox-${index}`}
-                      checked={item.checked}
-                    />
-                    <Label
-                      htmlFor={`checkbox-${index}`}
-                      className="text-[clamp(0.425rem,25cqw,0.825rem)] flex-1"
-                      style={{ textAlign: 'left', width: '100%' }}
-                      dir="ltr"
-                    >
-                      {item.value}
-                    </Label>
-                  </>
-                )}
-              </div>
-            );
+    <div
+      className="checkbox-field-container"
+      data-field-id={field.nativeId}
+      style={{
+        padding: '0.5rem',
+        margin: '0',
+        width: '100%',
+        height: 'fit-content',
+        direction: hasHebrew ? 'rtl' : 'ltr',
+        minWidth: 'max-content',
+      }}
+    >
+      {!hasValues && (
+        <FieldIcon fieldMeta={parsedFieldMeta} type={field.type} signerEmail={field.signerEmail} />
+      )}
+
+      {hasValues && (
+        <div
+          data-testid="field-content"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            width: '100%',
+            minWidth: 'max-content',
+            alignItems: hasHebrew ? 'flex-end' : 'flex-start',
+          }}
+        >
+          {values.map((item, index) => {
+            const itemKey = `${field.nativeId}-checkbox-${index}`;
+            const itemHasHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(item.value || '');
+
+            if (itemHasHebrew) {
+              // Hebrew: checkbox on the right, label on the left
+              return (
+                <div
+                  key={itemKey}
+                  data-testid="field-row"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    flexDirection: 'row',
+                    direction: 'rtl',
+                    minWidth: 'max-content',
+                    maxWidth: '100%',
+                  }}
+                >
+                  <Checkbox
+                    id={itemKey}
+                    className="border-muted-foreground/40 h-4 w-4 flex-shrink-0 shrink-0 rounded-sm"
+                    checkClassName="fill-muted-foreground/40"
+                    checked={item.checked}
+                    disabled
+                  />
+                  <Label
+                    htmlFor={itemKey}
+                    className="text-muted-foreground"
+                    style={{
+                      textAlign: 'right',
+                      whiteSpace: 'nowrap',
+                      overflow: 'visible',
+                    }}
+                    dir="rtl"
+                  >
+                    {item.value}
+                  </Label>
+                </div>
+              );
+            } else {
+              // English: checkbox first, then label (checkbox on the left)
+              return (
+                <div
+                  key={itemKey}
+                  data-testid="field-row"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    flexDirection: 'row',
+                    direction: 'ltr',
+                    minWidth: 'max-content',
+                    maxWidth: '100%',
+                  }}
+                >
+                  <Checkbox
+                    id={itemKey}
+                    className="border-muted-foreground/40 h-4 w-4 flex-shrink-0 shrink-0 rounded-sm"
+                    checkClassName="fill-muted-foreground/40"
+                    checked={item.checked}
+                    disabled
+                  />
+                  <Label
+                    htmlFor={itemKey}
+                    className="text-muted-foreground"
+                    style={{
+                      textAlign: 'left',
+                      whiteSpace: 'nowrap',
+                      overflow: 'visible',
+                    }}
+                    dir="ltr"
+                  >
+                    {item.value}
+                  </Label>
+                </div>
+              );
+            }
           })}
         </div>
       )}

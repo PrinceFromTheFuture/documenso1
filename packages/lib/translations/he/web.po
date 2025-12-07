@@ -63,20 +63,20 @@ msgstr "{0, plural, one {(1 character over)} other {(# characters over)}}"
 #: apps/web/src/components/forms/public-profile-form.tsx:237
 #: apps/web/src/components/templates/manage-public-template-dialog.tsx:395
 msgid "{0, plural, one {# character over the limit} other {# characters over the limit}}"
-msgstr "{0, plural, one {# character over the limit} אחר {# characters over the limit}}"
+msgstr "{0, plural, one {# character over the limit} other {# characters over the limit}}"
 
 #: apps/web/src/app/(recipient)/d/[token]/page.tsx:84
 msgid "{0, plural, one {# recipient} other {# recipients}}"
-msgstr "{0, plural, one {# recipient} אחר {# recipients}}"
+msgstr "{0, plural, one {# recipient} other {# recipients}}"
 
 #: apps/web/src/components/(teams)/tables/team-billing-invoices-data-table.tsx:66
 msgid "{0, plural, one {# Seat} other {# Seats}}"
-msgstr "{0, plural, one {# Seat} אחר {# Seats}}"
+msgstr "{0, plural, one {# Seat} other {# Seats}}"
 
 #: apps/web/src/app/(dashboard)/settings/teams/team-invitations.tsx:37
 #: apps/web/src/app/(dashboard)/settings/teams/team-invitations.tsx:66
 msgid "{0, plural, one {<0>You have <1>1</1> pending team invitation</0>} other {<2>You have <3>#</3> pending team invitations</2>}}"
-msgstr "{0, רבים, אחד {<0>יש לך <1>1</1> ממתינה להזמנת הצוות</0> } אחר {<2>יש לך <3>#</3> הזמנות ממתינות לצוות</2> }}"
+msgstr "{0, plural, one {<0>יש לך <1>1</1> ממתינה להזמנת הצוות</0> } other {<2>יש לך <3>#</3> הזמנות ממתינות לצוות</2> }}"
 
 #: apps/web/src/app/(signing)/sign/[token]/auto-sign.tsx:196
 msgid "{0, plural, one {1 matching field} other {# matching fields}}"
@@ -92,7 +92,7 @@ msgstr "{0, plural, one {Waiting on 1 recipient} other {Waiting on # recipients}
 
 #: apps/web/src/components/(dashboard)/settings/webhooks/trigger-multiselect-combobox.tsx:64
 msgid "{0, plural, zero {Select values} other {# selected...}}"
-msgstr "{0, רבים, אפס {בחר ערכים} אחר {# נבחר...}}"
+msgstr "{0, plural, zero {בחר ערכים} other {# נבחר...}}"
 
 #: apps/web/src/app/(signing)/sign/[token]/auto-sign.tsx:193
 msgid "{0}"
@@ -126,7 +126,7 @@ msgstr "{formattedTeamMemberQuanity} • חודשי • מתחדש: {formattedDa
 
 #: apps/web/src/app/(teams)/t/[teamUrl]/settings/billing/page.tsx:48
 msgid "{numberOfSeats, plural, one {# member} other {# members}}"
-msgstr "{numberOfSeats, plural, one {# member} אחר {# חברים}}"
+msgstr "{numberOfSeats, plural, one {# member} other {# חברים}}"
 
 #: apps/web/src/app/(recipient)/d/[token]/direct-template.tsx:67
 msgid "{recipientActionVerb} document"
@@ -534,13 +534,13 @@ msgstr "אירעה שגיאה בעת העברת התבנית."
 msgid "An error occurred while removing the field."
 msgstr "אירעה שגיאה בעת הסרת השדה."
 
-#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:152
+#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:153
 #: apps/web/src/app/(signing)/sign/[token]/date-field.tsx:126
 #: apps/web/src/app/(signing)/sign/[token]/dropdown-field.tsx:137
 #: apps/web/src/app/(signing)/sign/[token]/email-field.tsx:110
 #: apps/web/src/app/(signing)/sign/[token]/name-field.tsx:148
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:195
-#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:129
+#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:130
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:190
 msgid "An error occurred while removing the signature."
 msgstr "אירעה שגיאה בעת הסרת החתימה."
@@ -557,14 +557,14 @@ msgstr "אירעה שגיאה בעת שליחת המסמך."
 msgid "An error occurred while sending your confirmation email"
 msgstr "אירעה שגיאה בעת שליחת דוא\"ל האישור שלך"
 
-#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:123
+#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:124
 #: apps/web/src/app/(signing)/sign/[token]/date-field.tsx:100
 #: apps/web/src/app/(signing)/sign/[token]/dropdown-field.tsx:106
 #: apps/web/src/app/(signing)/sign/[token]/email-field.tsx:84
 #: apps/web/src/app/(signing)/sign/[token]/initials-field.tsx:90
 #: apps/web/src/app/(signing)/sign/[token]/name-field.tsx:122
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:150
-#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:102
+#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:103
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:164
 #: apps/web/src/app/(signing)/sign/[token]/text-field.tsx:168
 msgid "An error occurred while signing the document."
@@ -582,7 +582,7 @@ msgstr "אירעה שגיאה בעת עדכון הגדרות המסמך."
 #~ msgid "An error occurred while updating the global team settings."
 #~ msgstr "An error occurred while updating the global team settings."
 
-#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:213
+#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:214
 msgid "An error occurred while updating the signature."
 msgstr "אירעה שגיאה בעת עדכון החתימה."
 
@@ -1823,9 +1823,9 @@ msgstr "הזן את הטקסט שלך כאן"
 #: apps/web/src/app/(dashboard)/templates/move-template-dialog.tsx:56
 #: apps/web/src/app/(dashboard)/templates/use-template-dialog.tsx:175
 #: apps/web/src/app/(signing)/sign/[token]/auto-sign.tsx:152
-#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:122
-#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:151
-#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:212
+#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:123
+#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:152
+#: apps/web/src/app/(signing)/sign/[token]/checkbox-field.tsx:213
 #: apps/web/src/app/(signing)/sign/[token]/date-field.tsx:99
 #: apps/web/src/app/(signing)/sign/[token]/date-field.tsx:125
 #: apps/web/src/app/(signing)/sign/[token]/dropdown-field.tsx:105
@@ -1838,8 +1838,8 @@ msgstr "הזן את הטקסט שלך כאן"
 #: apps/web/src/app/(signing)/sign/[token]/name-field.tsx:147
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:149
 #: apps/web/src/app/(signing)/sign/[token]/number-field.tsx:194
-#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:101
-#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:128
+#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:102
+#: apps/web/src/app/(signing)/sign/[token]/radio-field.tsx:129
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:129
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:163
 #: apps/web/src/app/(signing)/sign/[token]/signature-field.tsx:189
@@ -1959,15 +1959,15 @@ msgstr "לך לבעלים"
 msgid "Go to your <0>public profile settings</0> to add documents."
 msgstr "עבור אל <0>הגדרות הפרופיל הציבורי שלך</0> כדי להוסיף מסמכים."
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:106
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:115
 msgid "has invited you to approve this document"
 msgstr "הזמין אותך לאשר מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:97
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:106
 msgid "has invited you to sign this document"
 msgstr "הזמין אותך לחתום על מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:88
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:97
 msgid "has invited you to view this document"
 msgstr "הזמין אותך לצפות במסמך זה"
 
@@ -2510,15 +2510,15 @@ msgstr "אין שינויים לשמירה"
 msgid "Number"
 msgstr "מספר"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:102
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:111
 msgid "on behalf of \"{0}\" has invited you to approve this document"
 msgstr "מטעם \"{0}\" הזמין אותך לאשר מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:93
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:102
 msgid "on behalf of \"{0}\" has invited you to sign this document"
 msgstr "מטעם \"{0}\" הזמין אותך לחתום על מסמך זה"
 
-#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:84
+#: apps/web/src/app/(signing)/sign/[token]/signing-page-view.tsx:93
 msgid "on behalf of \"{0}\" has invited you to view this document"
 msgstr "מטעם \"{0}\" הזמין אותך לצפות במסמך זה"
 
@@ -5188,85 +5188,94 @@ msgid "Your tokens will be shown here once you create them."
 msgstr "האסימונים שלך יוצגו כאן לאחר שתיצור אותם."
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:120
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:120
 msgid "אימות דו-שלבי מחדש"
 msgstr "אימות דו-שלבי מחדש"
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:128
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:128
 msgid "אימות חשבון"
 msgstr "אימות חשבון"
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:119
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:119
 msgid "אימות חשבון מחדש"
 msgstr "אימות חשבון מחדש"
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:121
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:121
 msgid "אימות מפתח מחדש"
 msgstr "אימות מפתח מחדש"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:176
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:176
 msgid "אירועי חותם"
 msgstr "אירועי חותם"
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:168
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:168
 msgid "אישור חתימה דיגיטלית"
 msgstr "אישור חתימה דיגיטלית"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:310
+#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:174
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:310
 msgid "אישור חתימה מסופק על ידי"
 msgstr "אישור חתימה מסופק על ידי"
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:43
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:43
 msgid "אני הבעלים של המסמך הזה"
 msgstr "אני הבעלים של המסמך הזה"
 
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:122
 #: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:129
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:122
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:129
 msgid "דוא\"ל"
 msgstr "דוא\"ל"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:177
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:177
 msgid "חתימה"
 msgstr "חתימה"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:234
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:234
 msgid "כתובת IP"
 msgstr "כתובת IP"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:236
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:261
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:272
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:283
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:236
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:261
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:272
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:283
 msgid "לא ידוע"
 msgstr "לא ידוע"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:227
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:227
 msgid "מזהה חתימה"
 msgstr "מזהה חתימה"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:241
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:241
 msgid "מכשיר"
 msgstr "מכשיר"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:277
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:277
 msgid "נחתם"
 msgstr "נחתם"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:266
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:266
 msgid "נצפה"
 msgstr "נצפה"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:255
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:255
 msgid "נשלח"
 msgstr "נשלח"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:288
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:288
 msgid "סיבה"
 msgstr "סיבה"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:178
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:178
 msgid "פרטים"
 msgstr "פרטים"
 
-#: apps/web/src/app/(internal)/__htmltopdf/certificate/page.tsx:197
+#: apps/web/src/app/(internal)/%5F%5Fhtmltopdf/certificate/page.tsx:197
 msgid "רמת אימות"
 msgstr "רמת אימות"

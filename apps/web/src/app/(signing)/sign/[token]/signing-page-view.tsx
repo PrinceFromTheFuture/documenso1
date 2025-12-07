@@ -13,8 +13,9 @@ import {
   ZTextFieldMeta,
 } from '@documenso/lib/types/field-meta';
 import type { CompletedField } from '@documenso/lib/types/fields';
-import type { Field, Recipient } from '@documenso/prisma/client';
+import type { Recipient } from '@documenso/prisma/client';
 import { FieldType, RecipientRole } from '@documenso/prisma/client';
+import type { FieldWithSignature } from '@documenso/prisma/types/field-with-signature';
 import type { FieldWithSignatureAndFieldMeta } from '@documenso/prisma/types/field-with-signature-and-fieldmeta';
 import { Card, CardContent } from '@documenso/ui/primitives/card';
 import { ElementVisible } from '@documenso/ui/primitives/element-visible';
@@ -38,7 +39,7 @@ import { TextField } from './text-field';
 export type SigningPageViewProps = {
   document: DocumentAndSender;
   recipient: Recipient;
-  fields: Field[];
+  fields: FieldWithSignature[];
   completedFields: CompletedField[];
   isRecipientsTurn: boolean;
 };
@@ -56,11 +57,19 @@ export const SigningPageView = ({
     document.teamId && document.team?.teamGlobalSettings?.includeSenderDetails === false;
 
   let senderName = document.User.name ?? '';
-  let senderEmail = `(${document.User.email})`;
+  let senderEmail = '';
+
+  // Ensure consistent rendering between server and client
+  if (typeof window !== 'undefined') {
+    // Client-side rendering
+    senderEmail = document.User.email ? `(${document.User.email})` : '';
+  }
 
   if (shouldUseTeamDetails) {
     senderName = document.team?.name ?? '';
-    senderEmail = document.team?.teamEmail?.email ? `(${document.team.teamEmail.email})` : '';
+    if (typeof window !== 'undefined') {
+      senderEmail = document.team?.teamEmail?.email ? `(${document.team.teamEmail.email})` : '';
+    }
   }
 
   return (
@@ -109,7 +118,6 @@ export const SigningPageView = ({
               .otherwise(() => null)}
           </span>
         </div>
-
       </div>
 
       <div className="mt-8 grid grid-cols-12 gap-y-8 lg:gap-x-8 lg:gap-y-0">

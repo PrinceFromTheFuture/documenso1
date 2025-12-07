@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { getBoundingClientRect } from '@documenso/lib/client-only/get-bounding-client-rect';
 import { PDF_VIEWER_PAGE_SELECTOR } from '@documenso/lib/constants/pdf-viewer';
 import type { Field } from '@documenso/prisma/client';
 
@@ -21,7 +20,11 @@ export const useFieldPageCoords = (field: Field) => {
       return;
     }
 
-    const { top, left, height, width } = getBoundingClientRect($page);
+    const rect = $page.getBoundingClientRect();
+    const { height, width } = rect;
+
+    const top = rect.top + window.scrollY;
+    const left = rect.left + window.scrollX;
 
     // X and Y are percentages of the page's height and width
     const fieldX = (Number(field.positionX) / 100) * width + left;

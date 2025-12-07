@@ -1,9 +1,15 @@
 // https://github.com/Hopding/pdf-lib/issues/20#issuecomment-412852821
 import fontkit from '@pdf-lib/fontkit';
 import type { PDFDocument } from 'pdf-lib';
-import { RotationTypes, degrees, radiansToDegrees, rgb } from 'pdf-lib';
+import { RotationTypes, degrees, radiansToDegrees } from 'pdf-lib';
 import { P, match } from 'ts-pattern';
 
+import {
+  CHECKBOX_RADIO_BOX_SIZE,
+  CHECKBOX_RADIO_LABEL_FONT_SIZE,
+  CHECKBOX_RADIO_LABEL_GAP,
+  CHECKBOX_RADIO_VERTICAL_SPACING,
+} from '@documenso/lib/constants/field-rendering';
 import {
   DEFAULT_HANDWRITING_FONT_SIZE,
   DEFAULT_STANDARD_FONT_SIZE,
@@ -153,25 +159,16 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
           // Invert Y axis for PDF coordinate system
           startY = pageHeight - startY - lineHeight;
 
-          // DEBUG: Draw a marker to verify this code is running
-          page.drawText('DEBUG-ALIGNMENT', {
-            x: fieldX,
-            y: pageHeight - fieldY - 10, // top-left of the field
-            size: 10,
-            font,
-            color: undefined,
-          });
-
           lines.forEach((line, i) => {
             const lineWidth = font.widthOfTextAtSize(line, maxFontSize);
             const isHebrew = isHebrewText(line);
             // Align text according to natural direction and reverse Hebrew for RTL simulation
             const displayText = isHebrew ? line.split('').reverse().join('') : line;
-            const lineX = isHebrew 
-              ? fieldX + fieldWidth - lineWidth  // align right for Hebrew
-              : fieldX;                         // align left for English
+            const lineX = isHebrew
+              ? fieldX + fieldWidth - lineWidth // align right for Hebrew
+              : fieldX; // align left for English
             // Y position for this line
-            let lineY = startY - i * lineHeight;
+            const lineY = startY - i * lineHeight;
             if (pageRotationInDegrees !== 0) {
               const adjustedPosition = adjustPositionForRotation(
                 pageWidth,
@@ -211,43 +208,90 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
         value: item.value.length > 0 ? item.value : `empty-value-${item.id}`,
       }));
       const selected = field.customText.split(',');
-      const boxWidth = 12;
-      const gap = 8;
+
+      // Use shared constants for consistency
+      const boxWidth = CHECKBOX_RADIO_BOX_SIZE;
+      const gap = CHECKBOX_RADIO_LABEL_GAP;
+      const fontSize = CHECKBOX_RADIO_LABEL_FONT_SIZE;
+      const verticalSpacing = CHECKBOX_RADIO_VERTICAL_SPACING;
+
       for (const [index, item] of (values ?? []).entries()) {
-        const offsetY = index * 16;
+        const offsetY = index * verticalSpacing;
         const checkbox = pdf.getForm().createCheckBox(`checkbox.${field.secondaryId}.${index}`);
         if (selected.includes(item.value)) {
           checkbox.check();
         }
-        let labelText = item.value.includes('empty-value-') ? '' : item.value;
+        const labelText = item.value.includes('empty-value-') ? '' : item.value;
         const isHebrew = isHebrewText(labelText);
         const displayText = isHebrew ? labelText.split('').reverse().join('') : labelText;
-        const labelWidth = font.widthOfTextAtSize(labelText, 12);
+        const labelWidth = font.widthOfTextAtSize(labelText, fontSize);
+
         let boxX, labelX;
+
         if (isHebrew) {
-          // Hebrew (RTL) – box right, label left
+          // Hebrew (RTL) – box on right, label grows to the left
           boxX = fieldX + fieldWidth - boxWidth;
           labelX = boxX - gap - labelWidth;
         } else {
-          // English (LTR) – box left, label right
+          // English (LTR) – box on left, label grows to the right
           boxX = fieldX;
           labelX = boxX + boxWidth + gap;
         }
-        // Draw label
-        page.drawText(displayText, {
-          x: labelX,
-          y: pageHeight - (fieldY + offsetY),
-          size: 12,
-          font,
-          rotate: degrees(pageRotationInDegrees),
-        });
-        // Draw box
-        checkbox.addToPage(page, {
-          x: boxX,
-          y: pageHeight - (fieldY + offsetY),
-          height: boxWidth,
-          width: boxWidth,
-        });
+
+        // Y position (inverted for PDF coordinate system)
+        const boxY = pageHeight - (fieldY + offsetY);
+
+        // Apply rotation if needed
+        if (pageRotationInDegrees !== 0) {
+          const adjustedLabelPos = adjustPositionForRotation(
+            pageWidth,
+            pageHeight,
+            labelX,
+            boxY,
+            pageRotationInDegrees,
+          );
+          const adjustedBoxPos = adjustPositionForRotation(
+            pageWidth,
+            pageHeight,
+            boxX,
+            boxY,
+            pageRotationInDegrees,
+          );
+
+          // Draw label
+          page.drawText(displayText, {
+            x: adjustedLabelPos.xPos,
+            y: adjustedLabelPos.yPos,
+            size: fontSize,
+            font,
+            rotate: degrees(pageRotationInDegrees),
+          });
+
+          // Draw box
+          checkbox.addToPage(page, {
+            x: adjustedBoxPos.xPos,
+            y: adjustedBoxPos.yPos,
+            height: boxWidth,
+            width: boxWidth,
+            rotate: degrees(pageRotationInDegrees),
+          });
+        } else {
+          // Draw label
+          page.drawText(displayText, {
+            x: labelX,
+            y: boxY,
+            size: fontSize,
+            font,
+          });
+
+          // Draw box
+          checkbox.addToPage(page, {
+            x: boxX,
+            y: boxY,
+            height: boxWidth,
+            width: boxWidth,
+          });
+        }
       }
     })
     .with({ type: FieldType.RADIO }, (field) => {
@@ -261,40 +305,88 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
         value: item.value.length > 0 ? item.value : `empty-value-${item.id}`,
       }));
       const selected = field.customText.split(',');
-      const boxWidth = 12;
-      const gap = 8;
+
+      // Use shared constants for consistency
+      const boxWidth = CHECKBOX_RADIO_BOX_SIZE;
+      const gap = CHECKBOX_RADIO_LABEL_GAP;
+      const fontSize = CHECKBOX_RADIO_LABEL_FONT_SIZE;
+      const verticalSpacing = CHECKBOX_RADIO_VERTICAL_SPACING;
+
       for (const [index, item] of (values ?? []).entries()) {
-        const offsetY = index * 16;
+        const offsetY = index * verticalSpacing;
         const radio = pdf.getForm().createRadioGroup(`radio.${field.secondaryId}.${index}`);
-        let labelText = item.value.includes('empty-value-') ? '' : item.value;
+        const labelText = item.value.includes('empty-value-') ? '' : item.value;
         const isHebrew = isHebrewText(labelText);
         const displayText = isHebrew ? labelText.split('').reverse().join('') : labelText;
-        const labelWidth = font.widthOfTextAtSize(labelText, 12);
+        const labelWidth = font.widthOfTextAtSize(labelText, fontSize);
+
         let boxX, labelX;
+
         if (isHebrew) {
-          // Hebrew (RTL) – box right, label left
+          // Hebrew (RTL) – box on right, label grows to the left
           boxX = fieldX + fieldWidth - boxWidth;
           labelX = boxX - gap - labelWidth;
         } else {
-          // English (LTR) – box left, label right
+          // English (LTR) – box on left, label grows to the right
           boxX = fieldX;
           labelX = boxX + boxWidth + gap;
         }
-        // Draw label
-        page.drawText(displayText, {
-          x: labelX,
-          y: pageHeight - (fieldY + offsetY),
-          size: 12,
-          font,
-          rotate: degrees(pageRotationInDegrees),
-        });
-        // Draw box
-        radio.addOptionToPage(item.value, page, {
-          x: boxX,
-          y: pageHeight - (fieldY + offsetY),
-          height: boxWidth,
-          width: boxWidth,
-        });
+
+        // Y position (inverted for PDF coordinate system)
+        const boxY = pageHeight - (fieldY + offsetY);
+
+        // Apply rotation if needed
+        if (pageRotationInDegrees !== 0) {
+          const adjustedLabelPos = adjustPositionForRotation(
+            pageWidth,
+            pageHeight,
+            labelX,
+            boxY,
+            pageRotationInDegrees,
+          );
+          const adjustedBoxPos = adjustPositionForRotation(
+            pageWidth,
+            pageHeight,
+            boxX,
+            boxY,
+            pageRotationInDegrees,
+          );
+
+          // Draw label
+          page.drawText(displayText, {
+            x: adjustedLabelPos.xPos,
+            y: adjustedLabelPos.yPos,
+            size: fontSize,
+            font,
+            rotate: degrees(pageRotationInDegrees),
+          });
+
+          // Draw box
+          radio.addOptionToPage(item.value, page, {
+            x: adjustedBoxPos.xPos,
+            y: adjustedBoxPos.yPos,
+            height: boxWidth,
+            width: boxWidth,
+            rotate: degrees(pageRotationInDegrees),
+          });
+        } else {
+          // Draw label
+          page.drawText(displayText, {
+            x: labelX,
+            y: boxY,
+            size: fontSize,
+            font,
+          });
+
+          // Draw box
+          radio.addOptionToPage(item.value, page, {
+            x: boxX,
+            y: boxY,
+            height: boxWidth,
+            width: boxWidth,
+          });
+        }
+
         if (selected.includes(item.value)) {
           radio.select(item.value);
         }
@@ -343,8 +435,8 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
         const lineWidth = font.widthOfTextAtSize(line, fontSize);
         const lineX = isHebrew
           ? fieldX + fieldWidth - lineWidth // align right
-          : fieldX;                        // align left
-        let lineY = startY - i * lineHeight;
+          : fieldX; // align left
+        const lineY = startY - i * lineHeight;
         if (pageRotationInDegrees !== 0) {
           const adjustedPosition = adjustPositionForRotation(
             pageWidth,

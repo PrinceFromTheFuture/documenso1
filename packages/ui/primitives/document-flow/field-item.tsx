@@ -75,12 +75,12 @@ export const FieldItem = ({
     pageHeight: defaultHeight || 0,
     pageWidth: defaultWidth || 0,
   });
-  const [settingsActive, setSettingsActive] = useState(false);
+  const [_settingsActive, setSettingsActive] = useState(false);
   const $el = useRef(null);
 
   const signerStyles = useSignerColors(recipientIndex);
 
-  const advancedField = [
+  const _advancedField = [
     'NUMBER',
     'RADIO',
     'CHECKBOX',
@@ -193,8 +193,8 @@ export const FieldItem = ({
         'pointer-events-none cursor-not-allowed opacity-75': disabled,
         'z-10': !active || disabled,
       })}
-      minHeight={minHeight || 'auto'}
-      minWidth={minWidth || 'auto'}
+      minHeight={minHeight || (fixedSize ? 0 : 40)}
+      minWidth={minWidth || (fixedSize ? 0 : 40)}
       default={{
         x: coords.pageX,
         y: coords.pageY,
@@ -204,7 +204,16 @@ export const FieldItem = ({
       bounds={`${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${field.pageNumber}"]`}
       onDragStart={() => setActive(true)}
       onResizeStart={() => setActive(true)}
-      enableResizing={!disabled}
+      enableResizing={{
+        top: !fixedSize,
+        right: !fixedSize,
+        bottom: !fixedSize,
+        left: !fixedSize,
+        topRight: !fixedSize,
+        bottomRight: !fixedSize,
+        bottomLeft: !fixedSize,
+        topLeft: !fixedSize,
+      }}
       onResizeStop={(_e, _d, ref) => {
         setActive(false);
         onResize?.(ref);
@@ -216,7 +225,10 @@ export const FieldItem = ({
     >
       <div
         className={cn(
-          'relative flex h-full w-full items-center justify-center bg-white',
+          'relative flex bg-white',
+          fixedSize
+            ? 'h-fit min-h-fit w-fit min-w-fit items-start'
+            : 'h-full w-full items-center justify-center',
           !hasErrors && signerStyles.default.base,
           !hasErrors && signerStyles.default.fieldItem,
           {
@@ -225,6 +237,18 @@ export const FieldItem = ({
           },
           !fixedSize && '[container-type:size]',
         )}
+        style={
+          fixedSize
+            ? {
+                width: 'fit-content',
+                height: 'fit-content',
+                minWidth: 'fit-content',
+                minHeight: 'fit-content',
+                maxWidth: 'none',
+                maxHeight: 'none',
+              }
+            : {}
+        }
         data-error={hasErrors ? 'true' : undefined}
         onClick={() => {
           setSettingsActive((prev) => !prev);
@@ -234,8 +258,51 @@ export const FieldItem = ({
         data-field-id={field.nativeId}
       >
         {match(field.type)
-          .with('CHECKBOX', () => <CheckboxField field={field} />)
+          .with('CHECKBOX', () => (
+            <CheckboxField key={`field-item-${field.nativeId}`} field={field} />
+          ))
           .with('RADIO', () => <RadioField field={field} />)
+          .with('TEXT', () => {
+            let value = '';
+            let isDefault = false;
+            if (field.type === 'TEXT' && field.fieldMeta && typeof field.fieldMeta === 'object') {
+              if (
+                'text' in field.fieldMeta &&
+                typeof field.fieldMeta.text === 'string' &&
+                field.fieldMeta.text
+              ) {
+                value = field.fieldMeta.text;
+              } else if (
+                'label' in field.fieldMeta &&
+                typeof field.fieldMeta.label === 'string' &&
+                field.fieldMeta.label
+              ) {
+                value = field.fieldMeta.label;
+              } else {
+                value = 'טקסט';
+                isDefault = true;
+              }
+            }
+            const isHebrew = /^[\u0590-\u05FF]/.test(value.trim());
+            return (
+              <div
+                className={cn(
+                  'flex h-full w-full flex-col justify-start',
+                  isDefault
+                    ? 'items-end text-right'
+                    : isHebrew
+                      ? 'items-end text-right'
+                      : 'items-start text-left',
+                )}
+                dir={isDefault ? 'rtl' : isHebrew ? 'rtl' : 'ltr'}
+                style={{ height: '100%', width: '100%' }}
+              >
+                <span className="block w-full whitespace-pre-line break-words bg-red-500">
+                  {value}
+                </span>
+              </div>
+            );
+          })
           .otherwise(() => (
             <FieldIcon
               fieldMeta={field.fieldMeta}
@@ -263,7 +330,7 @@ export const FieldItem = ({
         )}
       </div>
 
-      {!disabled   && (
+      {!disabled && (
         <div className="mt-1 flex justify-center">
           <div className="dark:bg-background group flex items-center justify-evenly gap-x-1 rounded-md border bg-gray-900 p-0.5">
             {field.type !== 'SIGNATURE' && field.type !== 'FREE_SIGNATURE' && (

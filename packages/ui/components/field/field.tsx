@@ -11,6 +11,7 @@ import type { Field } from '@documenso/prisma/client';
 
 import { cn } from '../../lib/utils';
 import { Card, CardContent } from '../../primitives/card';
+
 // Utility function to detect if text contains Hebrew
 const containsHebrew = (text: string) => {
   const hebrewPattern = /[\u0590-\u05FF]/;
@@ -40,7 +41,7 @@ const getCardClassNames = (
   const insertedClasses =
     'bg-primary/20 border-primary ring-primary/20 ring-offset-primary/20 ring-2 ring-offset-2 dark:shadow-none';
   const nonRequiredClasses =
-    'border-yellow-300 shadow-none ring-2 ring-yellow-100 ring-offset-2 ring-offset-yellow-100 dark:border-2';
+    'border-yellow-200 shadow-none ring-1 ring-yellow-50 ring-offset-1 ring-offset-yellow-50 dark:border-1';
   const validatingClasses = 'border-orange-300 ring-1 ring-orange-300';
   const requiredClasses =
     'border-red-500 shadow-none ring-2 ring-red-200 ring-offset-2 ring-offset-red-200 hover:text-red-500';
@@ -50,7 +51,7 @@ const getCardClassNames = (
     return cn(
       {
         [insertedClasses]: field.inserted,
-        'ring-offset-yellow-200 border-dashed border-yellow-300 ring-2 ring-yellow-200 ring-offset-2 dark:shadow-none':
+        'ring-offset-yellow-100 border-dashed border-yellow-200 ring-1 ring-yellow-50 ring-offset-1 dark:shadow-none':
           !field.inserted && !parsedField?.required,
         'shadow-none': !field.inserted,
         [validatingClasses]: !field.inserted && isValidating,
@@ -81,7 +82,7 @@ export function FieldContainerPortal({
   const coords = useFieldPageCoords(field);
 
   const isCheckboxOrRadioField = field.type === 'CHECKBOX' || field.type === 'RADIO';
-  
+
   // Check if the field contains Hebrew text
   const isRTL = useMemo(() => {
     if (field.type === 'TEXT' && field.customText) {
@@ -93,18 +94,22 @@ export function FieldContainerPortal({
   const style = {
     top: `${coords.y}px`,
     left: `${coords.x}px`,
+    position: 'absolute' as const,
+    transform: 'none',
     ...(!isCheckboxOrRadioField && {
       height: `${coords.height}px`,
       width: `${coords.width}px`,
     }),
+    ...(isCheckboxOrRadioField && {
+      minHeight: `${coords.height}px`,
+      minWidth: `${coords.width}px`,
+      width: 'auto',
+      height: 'auto',
+    }),
   };
 
   return createPortal(
-    <div 
-      className={cn('absolute', className)} 
-      style={style}
-      dir={isRTL ? 'rtl' : 'ltr'}
-    >
+    <div className={cn('absolute z-20', className)} style={style} dir={isRTL ? 'rtl' : 'ltr'}>
       {children}
     </div>,
     document.body,
@@ -145,18 +150,14 @@ export function FieldRootContainer({ field, children, cardClassName }: FieldCont
   );
   const isReadOnlyTextField = useMemo(
     () => field.type === 'TEXT' && parsedField?.readOnly === true,
-    [field.type, parsedField]
+    [field.type, parsedField],
   );
   const cardClassNames = useMemo(
     () => getCardClassNames(field, parsedField, isValidating, isCheckboxOrRadio, cardClassName),
     [field, parsedField, isValidating, isCheckboxOrRadio, cardClassName],
   );
   if (isReadOnlyTextField) {
-    return (
-      <FieldContainerPortal field={field}>
-        {children}
-      </FieldContainerPortal>
-    );
+    return <FieldContainerPortal field={field}>{children}</FieldContainerPortal>;
   }
   return (
     <FieldContainerPortal field={field}>
@@ -165,8 +166,12 @@ export function FieldRootContainer({ field, children, cardClassName }: FieldCont
         ref={ref}
         data-inserted={field.inserted ? 'true' : 'false'}
         className={cardClassNames}
+        style={isCheckboxOrRadio ? { padding: '0' } : {}}
       >
-        <CardContent className="text-foreground hover:shadow-primary-foreground group flex h-full w-full flex-col items-center justify-center p-2">
+        <CardContent
+          className="text-foreground hover:shadow-primary-foreground group flex h-full w-full flex-col items-center justify-center"
+          style={{ padding: isCheckboxOrRadio ? '0' : '0.25rem' }}
+        >
           {children}
         </CardContent>
       </Card>

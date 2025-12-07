@@ -22,7 +22,6 @@ import {
   User,
 } from 'lucide-react';
 import { useFieldArray, useForm } from 'react-hook-form';
-import { useHotkeys } from 'react-hotkeys-hook';
 import { prop, sortBy } from 'remeda';
 
 import { getBoundingClientRect } from '@documenso/lib/client-only/get-bounding-client-rect';
@@ -79,8 +78,8 @@ const fontCaveat = Caveat({
 const MIN_HEIGHT_PX = 12;
 const MIN_WIDTH_PX = 36;
 
-const DEFAULT_HEIGHT_PX = MIN_HEIGHT_PX * 2.5;
-const DEFAULT_WIDTH_PX = MIN_WIDTH_PX * 2.5;
+const DEFAULT_HEIGHT_PX = 48;
+const DEFAULT_WIDTH_PX = 120;
 
 export type FieldFormType = {
   nativeId?: number;
@@ -149,9 +148,9 @@ export const AddFieldsFormPartial = ({
     },
   });
 
-  useHotkeys(['ctrl+c', 'meta+c'], (evt) => onFieldCopy(evt));
-  useHotkeys(['ctrl+v', 'meta+v'], (evt) => onFieldPaste(evt));
-  useHotkeys(['ctrl+d', 'meta+d'], (evt) => onFieldCopy(evt, { duplicate: true }));
+  //useHotkeys(['ctrl+c', 'meta+c'], (evt) => onFieldCopy(evt));
+  //useHotkeys(['ctrl+v', 'meta+v'], (evt) => onFieldPaste(evt));
+  //useHotkeys(['ctrl+d', 'meta+d'], (evt) => onFieldCopy(evt, { duplicate: true }));
 
   const onFormSubmit = form.handleSubmit(onSubmit);
 
@@ -172,6 +171,114 @@ export const AddFieldsFormPartial = ({
     });
 
     form.setValue('fields', updatedFields);
+
+    // Trigger stretching after saving field settings for checkbox/radio fields
+    if (currentField && (currentField.type === 'CHECKBOX' || currentField.type === 'RADIO')) {
+      setTimeout(() => {
+        // Remove fixed inline styles that prevent auto-sizing
+        const fieldEl = document.querySelector(`[data-field-id="${currentField.nativeId}"]`);
+        const rndEl = fieldEl?.closest('.react-draggable') as HTMLElement;
+
+        if (rndEl) {
+          // Force remove inline width/height styles that override CSS
+          rndEl.style.width = '';
+          rndEl.style.height = '';
+          rndEl.style.minWidth = 'fit-content';
+          rndEl.style.minHeight = 'fit-content';
+          rndEl.style.maxWidth = 'none';
+          rndEl.style.maxHeight = 'none';
+
+          // Also reset the green border div
+          const borderDiv = fieldEl?.parentElement as HTMLElement;
+          if (borderDiv && borderDiv.classList.contains('relative')) {
+            borderDiv.style.removeProperty('width');
+            borderDiv.style.removeProperty('height');
+            borderDiv.style.setProperty('min-width', 'fit-content');
+            borderDiv.style.setProperty('min-height', 'fit-content');
+            borderDiv.style.setProperty('max-width', 'none');
+            borderDiv.style.setProperty('max-height', 'none');
+
+            // Position the green box based on content direction
+            const hasRTL =
+              fieldEl &&
+              (fieldEl.querySelector('[style*="direction: rtl"]') ||
+                fieldEl.querySelector('[dir="rtl"]'));
+            const hasLTR =
+              fieldEl &&
+              (fieldEl.querySelector('[style*="direction: ltr"]') ||
+                fieldEl.querySelector('[dir="ltr"]'));
+
+            if (hasLTR && !hasRTL) {
+              // English - content starts from left, box grows to the right
+              borderDiv.style.justifyContent = 'flex-start';
+              borderDiv.style.alignItems = 'flex-start';
+              borderDiv.style.direction = 'ltr';
+
+              // Force LTR direction on the react-draggable container and field content only
+              rndEl.style.direction = 'ltr';
+              const fieldContent = rndEl.querySelectorAll(
+                '[data-testid="field-content"], [data-testid="field-row"], label, input, [role="checkbox"], [role="radio"]',
+              );
+              fieldContent.forEach((child) => {
+                (child as HTMLElement).style.direction = 'ltr';
+              });
+
+              (fieldEl as HTMLElement).style.alignSelf = 'flex-start';
+              (fieldEl as HTMLElement).style.justifySelf = 'flex-start';
+              (fieldEl as HTMLElement).style.direction = 'ltr';
+            } else if (hasRTL) {
+              // Hebrew - content starts from right, box grows to the left
+              borderDiv.style.justifyContent = 'flex-end';
+              borderDiv.style.alignItems = 'flex-end';
+              borderDiv.style.direction = 'rtl';
+
+              // Force RTL direction on the react-draggable container and field content only
+              rndEl.style.direction = 'rtl';
+              const fieldContent = rndEl.querySelectorAll(
+                '[data-testid="field-content"], [data-testid="field-row"], label, input, [role="checkbox"], [role="radio"]',
+              );
+              fieldContent.forEach((child) => {
+                (child as HTMLElement).style.direction = 'rtl';
+              });
+
+              (fieldEl as HTMLElement).style.alignSelf = 'flex-end';
+              (fieldEl as HTMLElement).style.justifySelf = 'flex-end';
+              (fieldEl as HTMLElement).style.direction = 'rtl';
+            }
+          }
+
+          console.log(
+            `🎯 ${currentField.type} field ${currentField.nativeId} inline styles reset after save`,
+          );
+        }
+
+        // Set data-language attribute based on field content after save
+        const labels = fieldEl?.querySelectorAll('label');
+        const hasHebrew = Array.from(labels || []).some((label) =>
+          /[\u0590-\u05FF]/.test(label.textContent || ''),
+        );
+
+        if (hasHebrew) {
+          fieldEl?.setAttribute('data-language', 'hebrew');
+          rndEl?.setAttribute('data-language', 'hebrew');
+          console.log(`🔤 Set Hebrew data-language for field ${currentField.nativeId}`);
+        } else {
+          fieldEl?.setAttribute('data-language', 'english');
+          rndEl?.setAttribute('data-language', 'english');
+          console.log(`🔤 Set English data-language for field ${currentField.nativeId}`);
+        }
+
+        if (typeof window !== 'undefined') {
+          const stretchFunction = (window as Window & Record<string, (() => void) | undefined>)[
+            `stretchField_${currentField.nativeId}`
+          ];
+          if (stretchFunction) {
+            console.log(`🎯 Stretching field ${currentField.nativeId} after save`);
+            stretchFunction();
+          }
+        }
+      }, 150);
+    }
   };
 
   const {
@@ -263,6 +370,9 @@ export const AddFieldsFormPartial = ({
     return mappedFields;
   }, [localFields]);
 
+  useEffect(() => {
+    console.log('mappedFields:', localFields);
+  }, [localFields]);
   const isFieldsDisabled = useMemo(() => {
     if (!selectedSigner) {
       return true;
@@ -352,6 +462,23 @@ export const AddFieldsFormPartial = ({
 
       append(field);
 
+      // For new checkbox/radio fields, set initial data-language attribute
+      if (selectedField === 'CHECKBOX' || selectedField === 'RADIO') {
+        setTimeout(() => {
+          // Find the most recently added field element (by checking all fields of this type)
+          const allFieldEls = document.querySelectorAll(`[data-field-id]`);
+          const lastFieldEl = allFieldEls[allFieldEls.length - 1] as HTMLElement;
+          const rndEl = lastFieldEl?.closest('.react-draggable') as HTMLElement;
+
+          if (lastFieldEl && rndEl) {
+            // For new fields, default to English until content is added
+            lastFieldEl.setAttribute('data-language', 'english');
+            rndEl.setAttribute('data-language', 'english');
+            console.log(`🆕 Set initial English data-language for new ${selectedField} field`);
+          }
+        }, 200);
+      }
+
       setIsFieldWithinBounds(false);
       setSelectedField(null);
     },
@@ -379,8 +506,8 @@ export const AddFieldsFormPartial = ({
 
       update(index, {
         ...field,
-        pageX,
-        pageY,
+        pageX: pageX,
+        pageY: pageY,
         pageWidth,
         pageHeight,
       });
@@ -412,38 +539,32 @@ export const AddFieldsFormPartial = ({
   );
 
   const onFieldCopy = useCallback(
-    (event?: KeyboardEvent | null, options?: { duplicate?: boolean }) => {
+    (field?: TAddFieldsFormSchema['fields'][0], options?: { duplicate?: boolean }) => {
       const { duplicate = false } = options ?? {};
-
-      if (lastActiveField) {
-        event?.preventDefault();
-
+      const fieldToCopy = field || lastActiveField;
+      if (fieldToCopy) {
         if (!duplicate) {
-          setFieldClipboard(lastActiveField);
-
+          setFieldClipboard(fieldToCopy);
           toast({
             title: 'Copied field',
             description: 'Copied field to clipboard',
           });
-
           return;
         }
-
         const newField: TAddFieldsFormSchema['fields'][0] = {
-          ...structuredClone(lastActiveField),
+          ...structuredClone(fieldToCopy),
           formId: nanoid(12),
-          signerEmail: selectedSigner?.email ?? lastActiveField.signerEmail,
-          pageX: lastActiveField.pageX + 3,
-          pageY: lastActiveField.pageY + 3,
+          signerEmail: selectedSigner?.email ?? fieldToCopy.signerEmail,
+          pageX: fieldToCopy.pageX + 3,
+          pageY: fieldToCopy.pageY + 3,
         };
-
         append(newField);
       }
     },
     [append, lastActiveField, selectedSigner?.email, toast],
   );
 
-  const onFieldPaste = useCallback(
+  const _onFieldPaste = useCallback(
     (event: KeyboardEvent) => {
       if (fieldClipboard) {
         event.preventDefault();
@@ -535,9 +656,9 @@ export const AddFieldsFormPartial = ({
       );
   }, [recipientsByRole]);
 
-  const isTypedSignatureEnabled = form.watch('typedSignatureEnabled');
+  const _isTypedSignatureEnabled = form.watch('typedSignatureEnabled');
 
-  const handleTypedSignatureChange = (value: boolean) => {
+  const _handleTypedSignatureChange = (value: boolean) => {
     form.setValue('typedSignatureEnabled', value, { shouldDirty: true });
   };
 
@@ -636,16 +757,24 @@ export const AddFieldsFormPartial = ({
                         !canRecipientBeModified(selectedSigner, fields)
                       }
                       minHeight={MIN_HEIGHT_PX}
-                      minWidth={MIN_WIDTH_PX}
+                      minWidth={
+                        field.type === 'CHECKBOX' || field.type === 'RADIO'
+                          ? undefined
+                          : MIN_WIDTH_PX
+                      }
                       defaultHeight={DEFAULT_HEIGHT_PX}
-                      defaultWidth={DEFAULT_WIDTH_PX}
+                      defaultWidth={
+                        field.type === 'CHECKBOX' || field.type === 'RADIO'
+                          ? undefined
+                          : DEFAULT_WIDTH_PX
+                      }
                       passive={isFieldWithinBounds && !!selectedField}
                       onFocus={() => setLastActiveField(field)}
                       onBlur={() => setLastActiveField(null)}
-                      onResize={(options) => onFieldResize(options, index)}
-                      onMove={(options) => onFieldMove(options, index)}
+                      onResize={(node: HTMLElement) => onFieldResize(node, index)}
+                      onMove={(node: HTMLElement) => onFieldMove(node, index)}
                       onRemove={() => remove(index)}
-                      onDuplicate={() => onFieldCopy(null, { duplicate: true })}
+                      onDuplicate={() => onFieldCopy(field, { duplicate: true })}
                       onAdvancedSettings={() => {
                         setCurrentField(field);
                         handleAdvancedSettings();
@@ -783,7 +912,7 @@ export const AddFieldsFormPartial = ({
                   control={form.control}
                   name="typedSignatureEnabled"
                   render={({ field: { value, ...field } }) => (
-                    <FormItem className="mb-6 flex flex-row items-center space-x-2 space-y-0">
+                    <FormItem className="mb-6 flex flex-row items-center gap-x-2 space-y-0 rtl:flex-row-reverse">
                       <FormControl>
                         <Checkbox
                           {...field}
@@ -1082,8 +1211,8 @@ export const AddFieldsFormPartial = ({
                     {emptyCheckboxFields.length > 0
                       ? 'Checkbox'
                       : emptyRadioFields.length > 0
-                      ? 'Radio'
-                      : 'Select'}{' '}
+                        ? 'Radio'
+                        : 'Select'}{' '}
                     field.
                   </Trans>
                 </li>

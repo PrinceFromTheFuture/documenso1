@@ -446,7 +446,7 @@ msgstr "מנהל"
 msgid "Advanced Options"
 msgstr "אפשרויות מתקדמות"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:576
+#: packages/ui/primitives/document-flow/add-fields.tsx:682
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:414
 msgid "Advanced settings"
 msgstr "הגדרות מתקדמות"
@@ -467,7 +467,7 @@ msgstr "אפשר לנמעני מסמכים להשיב ישירות לכתובת 
 msgid "An admin has deleted your document \"{documentName}\"."
 msgstr "מנהל מערכת מחק את המסמך שלך \"{documentName}\"."
 
-#: packages/ui/primitives/pdf-viewer.tsx:167
+#: packages/ui/primitives/pdf-viewer.tsx:165
 msgid "An error occurred while loading the document."
 msgstr "אירעה שגיאה בעת טעינת המסמך."
 
@@ -591,7 +591,7 @@ msgstr "מסמך הושלם"
 msgid "Configure Direct Recipient"
 msgstr "הגדר נמען ישיר"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:577
+#: packages/ui/primitives/document-flow/add-fields.tsx:683
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:415
 msgid "Configure the {0} field"
 msgstr "הגדר את השדה {0}"
@@ -652,7 +652,7 @@ msgstr "צור חשבון"
 msgid "Custom Text"
 msgstr "טקסט מותאם אישית"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:934
+#: packages/ui/primitives/document-flow/add-fields.tsx:1040
 #: packages/ui/primitives/document-flow/types.ts:53
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:729
 msgid "Date"
@@ -793,7 +793,7 @@ msgstr "טיוטה"
 msgid "Drag & drop your PDF here."
 msgstr "גרור ושחרר את ה-PDF שלך כאן."
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:1065
+#: packages/ui/primitives/document-flow/add-fields.tsx:1171
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:860
 msgid "Dropdown"
 msgstr "רשימה נפתחת"
@@ -803,7 +803,7 @@ msgid "Dropdown options"
 msgstr "אפשרויות תפריט נפתח"
 
 #: packages/lib/constants/document.ts:28
-#: packages/ui/primitives/document-flow/add-fields.tsx:882
+#: packages/ui/primitives/document-flow/add-fields.tsx:988
 #: packages/ui/primitives/document-flow/add-signature.tsx:272
 #: packages/ui/primitives/document-flow/add-signers.tsx:512
 #: packages/ui/primitives/document-flow/add-signers.tsx:519
@@ -830,7 +830,7 @@ msgstr "האימייל נשלח שוב"
 msgid "Email sent"
 msgstr "האימייל נשלח"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:1130
+#: packages/ui/primitives/document-flow/add-fields.tsx:1236
 msgid "Empty field"
 msgstr "שדה ריק"
 
@@ -843,7 +843,7 @@ msgstr "אפשר חתימה ישירה על קישור"
 msgid "Enable signing order"
 msgstr "אפשר הזמנת חתימה"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:802
+#: packages/ui/primitives/document-flow/add-fields.tsx:908
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:597
 msgid "Enable Typed Signatures"
 msgstr "אפשר חתימות מוקלדות"
@@ -853,7 +853,7 @@ msgid "Enter password"
 msgstr "הכנס סיסמה"
 
 #: packages/ui/primitives/document-flow/field-item-advanced-settings.tsx:259
-#: packages/ui/primitives/pdf-viewer.tsx:166
+#: packages/ui/primitives/pdf-viewer.tsx:164
 msgid "Error"
 msgstr "שגיאה"
 
@@ -997,7 +997,7 @@ msgid "Link expires in 1 hour."
 msgstr "הקישור יפוג בעוד שעה."
 
 #: packages/ui/primitives/lazy-pdf-viewer.tsx:15
-#: packages/ui/primitives/pdf-viewer.tsx:44
+#: packages/ui/primitives/pdf-viewer.tsx:42
 msgid "Loading document..."
 msgstr "טוען מסמך..."
 
@@ -1022,7 +1022,7 @@ msgstr "הודעה <0>(אופציונלי)</0>"
 msgid "Min"
 msgstr "מינימום"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:908
+#: packages/ui/primitives/document-flow/add-fields.tsx:1014
 #: packages/ui/primitives/document-flow/add-signature.tsx:298
 #: packages/ui/primitives/document-flow/add-signers.tsx:550
 #: packages/ui/primitives/document-flow/add-signers.tsx:556
@@ -1045,7 +1045,7 @@ msgstr "צריך לחתום"
 msgid "Needs to view"
 msgstr "צריך לראות"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:693
+#: packages/ui/primitives/document-flow/add-fields.tsx:799
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:516
 msgid "No recipient matching this description was found."
 msgstr "לא נמצא נמען התואם לתיאור זה."
@@ -1054,7 +1054,7 @@ msgstr "לא נמצא נמען התואם לתיאור זה."
 msgid "No recipients"
 msgstr "אין נמענים"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:708
+#: packages/ui/primitives/document-flow/add-fields.tsx:814
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:531
 msgid "No recipients with this role"
 msgstr "אין נמענים עם תפקיד זה"
@@ -1083,7 +1083,7 @@ msgstr "לא נמצא ערך."
 msgid "None"
 msgstr "ללא"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:986
+#: packages/ui/primitives/document-flow/add-fields.tsx:1092
 #: packages/ui/primitives/document-flow/types.ts:56
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:781
 msgid "Number"
@@ -1105,7 +1105,7 @@ msgstr "לאחר הגדרת התבנית שלך, שתף את הקישור בכל
 msgid "Page {0} of {1}"
 msgstr "עמוד {0} מתוך {1}"
 
-#: packages/ui/primitives/pdf-viewer.tsx:259
+#: packages/ui/primitives/pdf-viewer.tsx:257
 msgid "Page {0} of {numPages}"
 msgstr "עמוד {0} מתוך {numPages}"
 
@@ -1171,8 +1171,8 @@ msgstr "נא לוודא את האימייל שלך"
 msgid "Please confirm your email address"
 msgstr "אנא אשר את כתובת הדוא\"ל שלך"
 
-#: packages/ui/primitives/pdf-viewer.tsx:223
-#: packages/ui/primitives/pdf-viewer.tsx:238
+#: packages/ui/primitives/pdf-viewer.tsx:221
+#: packages/ui/primitives/pdf-viewer.tsx:236
 msgid "Please try again or contact our support."
 msgstr "אנא נסה שוב או צור קשר עם התמיכה שלנו."
 
@@ -1256,7 +1256,7 @@ msgstr "תזכורת: אנא {recipientActionVerb} מסמך זה"
 msgid "Reminder: Please {recipientActionVerb} your document"
 msgstr "תזכורת: אנא {recipientActionVerb} את המסמך שלך"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:1117
+#: packages/ui/primitives/document-flow/add-fields.tsx:1223
 msgid "Remove"
 msgstr "הסר"
 
@@ -1377,7 +1377,7 @@ msgstr "חתום על מסמך"
 msgid "Sign In"
 msgstr "התחבר"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:830
+#: packages/ui/primitives/document-flow/add-fields.tsx:936
 #: packages/ui/primitives/document-flow/add-signature.tsx:323
 #: packages/ui/primitives/document-flow/field-icon.tsx:52
 #: packages/ui/primitives/document-flow/types.ts:49
@@ -1421,8 +1421,8 @@ msgstr "לחלק מהחותמים לא הוקצה שדה חתימה. אנא הק
 msgid "Something went wrong"
 msgstr "משהו השתבש"
 
-#: packages/ui/primitives/pdf-viewer.tsx:220
-#: packages/ui/primitives/pdf-viewer.tsx:235
+#: packages/ui/primitives/pdf-viewer.tsx:218
+#: packages/ui/primitives/pdf-viewer.tsx:233
 msgid "Something went wrong while loading the document."
 msgstr "משהו השתבש בעת טעינת המסמך."
 
@@ -1463,7 +1463,7 @@ msgstr "דוא\"ל צוות הוסר עבור {teamName} ב-Tofes-Mekovan"
 msgid "Template title"
 msgstr "כותרת התבנית"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:960
+#: packages/ui/primitives/document-flow/add-fields.tsx:1066
 #: packages/ui/primitives/document-flow/types.ts:52
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:755
 msgid "Text"
@@ -1560,7 +1560,7 @@ msgstr "ניתן לעקוף זאת על ידי הגדרת דרישות האימ�
 msgid "This document can not be recovered, if you would like to dispute the reason for future documents please contact support."
 msgstr "לא ניתן לשחזר מסמך זה, אם תרצה לערער על הסיבה למסמכים עתידיים אנא צור קשר עם התמיכה."
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:764
+#: packages/ui/primitives/document-flow/add-fields.tsx:870
 msgid "This document has already been sent to this recipient. You can no longer edit this recipient."
 msgstr "מסמך זה כבר נשלח לנמען זה. אינך יכול עוד לערוך את הנמען הזה."
 
@@ -1599,7 +1599,7 @@ msgstr "לא ניתן לשנות או למחוק שדה זה. כאשר אתה מ
 msgid "This is how the document will reach the recipients once the document is ready for signing."
 msgstr "כך המסמך יגיע אל הנמענים ברגע שהמסמך יהיה מוכן לחתימה."
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:1097
+#: packages/ui/primitives/document-flow/add-fields.tsx:1203
 msgid "This recipient can no longer be modified as they have signed a field, or completed the document."
 msgstr "לא ניתן עוד לשנות את הנמען הזה מכיוון שהוא חתם על שדה או השלים את המסמך."
 
@@ -1628,7 +1628,7 @@ msgstr "אזור זמן"
 msgid "Title"
 msgstr "כותרת"
 
-#: packages/ui/primitives/document-flow/add-fields.tsx:1080
+#: packages/ui/primitives/document-flow/add-fields.tsx:1186
 #: packages/ui/primitives/template-flow/add-template-fields.tsx:873
 msgid "To proceed further, please set at least one value for the {0} field."
 msgstr "כדי להמשיך הלאה, הגדר לפחות ערך אחד עבור השדה {0}."

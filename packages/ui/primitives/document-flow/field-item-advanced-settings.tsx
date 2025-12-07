@@ -108,7 +108,7 @@ const getDefaultState = (fieldType: FieldType): FieldMeta | undefined => {
         label: '',
         placeholder: '',
         numberFormat: '',
-        value: '0',
+        value: '',
         minValue: 0,
         maxValue: 0,
         required: false,
@@ -187,7 +187,7 @@ export const FieldAdvancedSettings = forwardRef<HTMLDivElement, FieldAdvancedSet
       },
     );
 
-    const doesFieldExist = (!!document || !!template) && field.nativeId !== undefined;
+    const _doesFieldExist = (!!document || !!template) && field.nativeId !== undefined;
 
     const fieldMeta = field?.fieldMeta;
 
@@ -195,9 +195,8 @@ export const FieldAdvancedSettings = forwardRef<HTMLDivElement, FieldAdvancedSet
 
     const defaultState: FieldMeta | undefined = getDefaultState(field.type);
 
-    if (!defaultState) return null;
-
-    const [fieldState, setFieldState] = useState(() => {
+    const [fieldState, setFieldState] = useState<FieldMeta | undefined>(() => {
+      if (!defaultState) return undefined;
       const savedState = localStorage.getItem(localStorageKey);
       return savedState ? { ...defaultState, ...JSON.parse(savedState) } : defaultState;
     });
@@ -213,6 +212,8 @@ export const FieldAdvancedSettings = forwardRef<HTMLDivElement, FieldAdvancedSet
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [fieldMeta]);
+
+    if (!defaultState || !fieldState) return null;
 
     const handleFieldChange = (
       key: FieldMetaKeys,

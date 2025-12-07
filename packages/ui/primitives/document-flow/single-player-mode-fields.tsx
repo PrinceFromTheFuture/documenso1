@@ -49,7 +49,7 @@ export function SinglePlayerModeFieldCardContainer({
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={field.inserted ? 'inserted' : 'not-inserted'}
-          className="flex items-center justify-center p-2"
+          className="flex items-center justify-center p-0.5"
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
@@ -126,7 +126,7 @@ export function SinglePlayerModeSignatureField({
             fontCaveat.className,
           )}
         >
-          <span className="text-muted-foreground truncate text-3xl font-medium ">Signature</span>
+          <span className="text-muted-foreground truncate text-3xl font-medium">Signature</span>
         </button>
       )}
     </SinglePlayerModeFieldCardContainer>

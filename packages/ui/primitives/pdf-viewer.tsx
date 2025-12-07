@@ -7,8 +7,6 @@ import { useLingui } from '@lingui/react';
 import { Loader } from 'lucide-react';
 import { type PDFDocumentProxy, PasswordResponses } from 'pdfjs-dist';
 import { Document as PDFDocument, Page as PDFPage, pdfjs } from 'react-pdf';
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-import 'react-pdf/dist/esm/Page/TextLayer.css';
 import { match } from 'ts-pattern';
 
 import { PDF_VIEWER_PAGE_SELECTOR } from '@documenso/lib/constants/pdf-viewer';

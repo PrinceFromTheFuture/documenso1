@@ -32,6 +32,11 @@ const config = {
       bodySizeLimit: '50mb',
     },
     swcPlugins: [['@lingui/swc-plugin', {}]],
+    turbo: {
+      loaders: {
+        '.po': ['@lingui/loader'],
+      },
+    },
   },
   reactStrictMode: true,
   transpilePackages: [
@@ -55,9 +60,17 @@ const config = {
     },
   },
   webpack: (config, { isServer }) => {
-    // fixes: Module not found: Can’t resolve ‘../build/Release/canvas.node’
+    // fixes: Module not found: Can't resolve '../build/Release/canvas.node'
     if (isServer) {
       config.resolve.alias.canvas = false;
+
+      // Allow direct imports from @lingui/react/dist for email rendering
+      // This is needed because we need to bypass the react-server condition
+      // when rendering emails with renderToString (not RSC)
+      config.resolve.alias['@lingui/react/dist/index.mjs'] = path.join(
+        __dirname,
+        '../../node_modules/@lingui/react/dist/index.mjs',
+      );
     }
 
     config.module.rules.push({

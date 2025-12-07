@@ -1,5 +1,3 @@
-import { I18nProvider } from '@lingui/react';
-
 import type { RenderOptions } from '@documenso/email/render';
 import { render } from '@documenso/email/render';
 
@@ -9,6 +7,7 @@ import {
   type SupportedLanguageCodes,
   isValidLanguageCode,
 } from '../constants/i18n';
+import { I18nProvider } from './lingui-email-provider';
 
 export const renderEmailWithI18N = async (
   component: React.ReactElement,
