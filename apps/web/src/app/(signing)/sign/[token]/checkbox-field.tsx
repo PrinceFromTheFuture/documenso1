@@ -8,7 +8,6 @@ import { msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Loader } from 'lucide-react';
 
-import { CHECKBOX_RADIO_CLASSES } from '@documenso/lib/constants/field-rendering';
 import { DO_NOT_INVALIDATE_QUERY_ON_MUTATION } from '@documenso/lib/constants/trpc';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import type { TRecipientActionAuth } from '@documenso/lib/types/document-auth';
@@ -230,7 +229,13 @@ export const CheckboxField = ({
   }, [checkedValues, isLengthConditionMet, field.inserted]);
 
   return (
-    <SigningFieldContainer field={field} onSign={onSign} onRemove={onRemove} type="Checkbox">
+    <SigningFieldContainer
+      field={field}
+      onSign={onSign}
+      onRemove={onRemove}
+      type="Checkbox"
+      cardClassName="w-full scale-[101%] border-none bg-transparent p-0  shadow-none backdrop-blur-none"
+    >
       {isLoading && (
         <div className="bg-background absolute inset-0 z-20 flex items-center justify-center rounded-md">
           <Loader className="text-primary h-5 w-5 animate-spin md:h-8 md:w-8" />
@@ -244,18 +249,19 @@ export const CheckboxField = ({
               {validationSign?.label} {checkboxValidationLength}
             </FieldToolTip>
           )}
-          <div className={`z-50 flex flex-col ${CHECKBOX_RADIO_CLASSES.verticalGap}`}>
+          <div className="relative m-0 flex h-fit min-h-fit w-full flex-col gap-2 rounded-lg border-2 bg-white/80 p-2.5 py-3 ">
             {values?.map((item: { id: number; value: string; checked: boolean }, index: number) => {
               const itemValue = item.value || `empty-value-${item.id}`;
               const labelText = item.value.includes('empty-value-') ? '' : item.value;
-              const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
+              const hasHebrew =
+                values?.some((i) => /[\u0590-\u05FF\u200f\u200e]/.test(i.value || '')) ?? false;
 
-              if (isHebrew) {
+              if (hasHebrew) {
                 // Hebrew: checkbox on the right, label on the left, container stretched to the left
                 return (
                   <div
                     key={index}
-                    className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                    className="flex items-center gap-2"
                     style={{
                       flexDirection: 'row',
                       direction: 'rtl',
@@ -264,15 +270,15 @@ export const CheckboxField = ({
                     }}
                   >
                     <Checkbox
-                      className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
-                      checkClassName="text-white"
+                      className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-sm"
+                      checkClassName="fill-muted-foreground/40"
                       id={`checkbox-${index}`}
                       checked={checkedValues.includes(itemValue)}
                       onCheckedChange={() => handleCheckboxChange(item.value, item.id)}
                     />
                     <Label
                       htmlFor={`checkbox-${index}`}
-                      className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                      className="text-black"
                       style={{
                         textAlign: 'right',
                         flex: 1,
@@ -288,7 +294,7 @@ export const CheckboxField = ({
                 return (
                   <div
                     key={index}
-                    className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                    className="flex items-center gap-2"
                     style={{
                       flexDirection: 'row',
                       direction: 'ltr',
@@ -297,15 +303,15 @@ export const CheckboxField = ({
                     }}
                   >
                     <Checkbox
-                      className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
-                      checkClassName="text-white"
+                      className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-sm"
+                      checkClassName="fill-muted-foreground/40"
                       id={`checkbox-${index}`}
                       checked={checkedValues.includes(itemValue)}
                       onCheckedChange={() => handleCheckboxChange(item.value, item.id)}
                     />
                     <Label
                       htmlFor={`checkbox-${index}`}
-                      className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                      className="text-black"
                       style={{
                         textAlign: 'left',
                         flex: 1,
@@ -323,18 +329,19 @@ export const CheckboxField = ({
       )}
 
       {field.inserted && (
-        <div className={`flex flex-col ${CHECKBOX_RADIO_CLASSES.verticalGap}`}>
+        <div className="relative m-0 flex h-fit min-h-fit w-full flex-col gap-2 rounded-lg border-2 bg-white/80 p-2">
           {values?.map((item: { id: number; value: string; checked: boolean }, index: number) => {
             const itemValue = item.value || `empty-value-${item.id}`;
             const labelText = item.value.includes('empty-value-') ? '' : item.value;
-            const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
+            const hasHebrew =
+              values?.some((i) => /[\u0590-\u05FF\u200f\u200e]/.test(i.value || '')) ?? false;
 
-            if (isHebrew) {
+            if (hasHebrew) {
               // Hebrew: checkbox on the right, label on the left, container stretched to the left
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  className="flex items-center gap-2"
                   style={{
                     flexDirection: 'row',
                     direction: 'rtl',
@@ -343,8 +350,8 @@ export const CheckboxField = ({
                   }}
                 >
                   <Checkbox
-                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
-                    checkClassName="text-white"
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-sm"
+                    checkClassName="fill-muted-foreground/40"
                     id={`checkbox-${index}`}
                     checked={field.customText
                       .split(',')
@@ -354,7 +361,7 @@ export const CheckboxField = ({
                   />
                   <Label
                     htmlFor={`checkbox-${index}`}
-                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    className="text-black"
                     style={{
                       textAlign: 'right',
                       flex: 1,
@@ -370,7 +377,7 @@ export const CheckboxField = ({
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  className="flex items-center gap-2"
                   style={{
                     flexDirection: 'row',
                     direction: 'ltr',
@@ -379,8 +386,8 @@ export const CheckboxField = ({
                   }}
                 >
                   <Checkbox
-                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
-                    checkClassName="text-white"
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-sm"
+                    checkClassName="fill-muted-foreground/40"
                     id={`checkbox-${index}`}
                     checked={field.customText
                       .split(',')
@@ -390,7 +397,7 @@ export const CheckboxField = ({
                   />
                   <Label
                     htmlFor={`checkbox-${index}`}
-                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    className="text-black"
                     style={{
                       textAlign: 'left',
                       flex: 1,

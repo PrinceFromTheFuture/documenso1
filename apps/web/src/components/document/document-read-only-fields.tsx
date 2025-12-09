@@ -91,7 +91,6 @@ export const DocumentReadOnlyFields = ({
                       )}
                     </Badge>
                   )}
-
                   <p className="text-center font-semibold">
                     <span>{parseMessageDescriptor(_, FRIENDLY_FIELD_TYPE[field.type])} field</span>
                   </p>

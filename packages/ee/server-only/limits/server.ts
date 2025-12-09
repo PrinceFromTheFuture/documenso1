@@ -9,6 +9,13 @@ import { FREE_PLAN_LIMITS, SELFHOSTED_PLAN_LIMITS, TEAM_PLAN_LIMITS } from './co
 import { ERROR_CODES } from './errors';
 import type { TLimitsResponseSchema } from './schema';
 import { ZLimitsSchema } from './schema';
+import type { TLimitsSchema } from './schema';
+
+const CUSTOM_FREE_PLAN_LIMITS: TLimitsSchema = {
+  documents: 10, // Increased limits for paying users
+  recipients: Infinity,
+  directTemplates: Infinity,
+};
 
 export type GetServerLimitsOptions = {
   email?: string | null;
@@ -38,6 +45,30 @@ type HandleUserLimitsOptions = {
 };
 
 const handleUserLimits = async ({ email }: HandleUserLimitsOptions) => {
+  // Check WooCommerce Membership
+  try {
+    const membershipCheckUrl = new URL(
+      `/wp-json/memberships/v1/check?email=${email}`,
+      'https://tofes-mekovan.co.il',
+    );
+
+    const membershipResponse = await fetch(membershipCheckUrl.toString(), {
+      next: { revalidate: 300 }, // Cache for 5 minutes
+    });
+    
+    if (membershipResponse.ok) {
+        const membershipResult = await membershipResponse.json();
+        if (membershipResult.is_active) {
+          return {
+            quota: CUSTOM_FREE_PLAN_LIMITS,
+            remaining: CUSTOM_FREE_PLAN_LIMITS,
+          };
+        }
+    }
+  } catch (error) {
+    console.error('Error checking membership:', error);
+  }
+
   const user = await prisma.user.findFirst({
     where: {
       email,

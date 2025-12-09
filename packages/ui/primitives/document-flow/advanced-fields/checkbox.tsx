@@ -43,20 +43,21 @@ export const CheckboxField = ({ field }: CheckboxFieldProps) => {
       {hasValues && (
         <div
           data-testid="field-content"
+          className=""
           style={{
             display: 'flex',
             flexDirection: 'column',
             gap: '0.5rem',
+
             width: '100%',
             minWidth: 'max-content',
-            alignItems: hasHebrew ? 'flex-end' : 'flex-start',
+            alignItems: hasHebrew ? 'flex-start' : 'flex-start',
           }}
         >
           {values.map((item, index) => {
             const itemKey = `${field.nativeId}-checkbox-${index}`;
-            const itemHasHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(item.value || '');
 
-            if (itemHasHebrew) {
+            if (hasHebrew) {
               // Hebrew: checkbox on the right, label on the left
               return (
                 <div
@@ -74,14 +75,14 @@ export const CheckboxField = ({ field }: CheckboxFieldProps) => {
                 >
                   <Checkbox
                     id={itemKey}
-                    className="border-muted-foreground/40 h-4 w-4 flex-shrink-0 shrink-0 rounded-sm"
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-sm"
                     checkClassName="fill-muted-foreground/40"
                     checked={item.checked}
                     disabled
                   />
                   <Label
                     htmlFor={itemKey}
-                    className="text-muted-foreground"
+                    className="text-black"
                     style={{
                       textAlign: 'right',
                       whiteSpace: 'nowrap',
@@ -111,14 +112,14 @@ export const CheckboxField = ({ field }: CheckboxFieldProps) => {
                 >
                   <Checkbox
                     id={itemKey}
-                    className="border-muted-foreground/40 h-4 w-4 flex-shrink-0 shrink-0 rounded-sm"
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-sm"
                     checkClassName="fill-muted-foreground/40"
                     checked={item.checked}
                     disabled
                   />
                   <Label
                     htmlFor={itemKey}
-                    className="text-muted-foreground"
+                    className="text-black"
                     style={{
                       textAlign: 'left',
                       whiteSpace: 'nowrap',

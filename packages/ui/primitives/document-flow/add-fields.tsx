@@ -155,9 +155,45 @@ export const AddFieldsFormPartial = ({
   const onFormSubmit = form.handleSubmit(onSubmit);
 
   const handleSavedFieldSettings = (fieldState: FieldMeta) => {
+    // Capture CURRENT width BEFORE updating content
+    let originalWidthPx = 0;
+    let hasHebrewContent = false;
+
+    if (currentField && (currentField.type === 'CHECKBOX' || currentField.type === 'RADIO')) {
+      // Check if it's Hebrew content in the NEW fieldState
+      hasHebrewContent =
+        fieldState &&
+        'values' in fieldState &&
+        Array.isArray(fieldState.values) &&
+        fieldState.values.some((item: { value?: string }) =>
+          /[\u0590-\u05FF]/.test(item.value || ''),
+        )
+          ? true
+          : false;
+
+      if (hasHebrewContent) {
+        // Capture current width BEFORE form update
+        const fieldEl = document.querySelector(`[data-field-id="${currentField.nativeId}"]`);
+        const rndEl = fieldEl?.closest('.react-draggable') as HTMLElement;
+
+        if (rndEl) {
+          originalWidthPx = rndEl.getBoundingClientRect().width;
+          console.log(
+            `📸 Hebrew field - captured CURRENT width: ${originalWidthPx.toFixed(2)}px BEFORE content update`,
+          );
+        }
+      } else {
+        // Not Hebrew anymore - clear any stored anchor
+        const anchorKey = `hebrew_anchor_${currentField.formId}`;
+        localStorage.removeItem(anchorKey);
+        console.log(`🗑️ Removed Hebrew anchor - field is now English`);
+      }
+    }
+
     const initialValues = form.getValues();
 
-    const updatedFields = initialValues.fields.map((field) => {
+    // First pass: update fieldMeta only
+    let updatedFields = initialValues.fields.map((field) => {
       if (field.formId === currentField?.formId) {
         const parsedFieldMeta = ZFieldMetaSchema.parse(fieldState);
 
@@ -170,16 +206,48 @@ export const AddFieldsFormPartial = ({
       return field;
     });
 
+    // Store data for Hebrew adjustment (will happen after render)
+    const hebrewAdjustmentData =
+      hasHebrewContent && originalWidthPx > 0 && currentField
+        ? {
+            fieldIndex: updatedFields.findIndex((f) => f.formId === currentField.formId),
+            formId: currentField.formId,
+            nativeId: currentField.nativeId,
+            pageNumber: currentField.pageNumber,
+            originalWidthPx,
+          }
+        : null;
+
+    if (hebrewAdjustmentData) {
+      console.log(
+        `🔧 Will adjust Hebrew field position after render (originalWidth: ${originalWidthPx.toFixed(2)}px)`,
+      );
+    }
+
     form.setValue('fields', updatedFields);
 
     // Trigger stretching after saving field settings for checkbox/radio fields
     if (currentField && (currentField.type === 'CHECKBOX' || currentField.type === 'RADIO')) {
+      console.log(
+        `🔧 Starting field adjustment for ${currentField.type} field ${currentField.nativeId}`,
+      );
+
       setTimeout(() => {
         // Remove fixed inline styles that prevent auto-sizing
         const fieldEl = document.querySelector(`[data-field-id="${currentField.nativeId}"]`);
         const rndEl = fieldEl?.closest('.react-draggable') as HTMLElement;
 
+        console.log(`🔍 Found elements:`, { fieldEl: !!fieldEl, rndEl: !!rndEl });
+
         if (rndEl) {
+          // Get the page element to calculate percentage changes
+          const $page = document.querySelector<HTMLElement>(
+            `${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${currentField.pageNumber}"]`,
+          );
+          const pageWidth = $page?.getBoundingClientRect().width || 1;
+
+          console.log(`📏 Page width: ${pageWidth}px`);
+
           // Force remove inline width/height styles that override CSS
           rndEl.style.width = '';
           rndEl.style.height = '';
@@ -188,9 +256,20 @@ export const AddFieldsFormPartial = ({
           rndEl.style.maxWidth = 'none';
           rndEl.style.maxHeight = 'none';
 
-          // Also reset the green border div
-          const borderDiv = fieldEl?.parentElement as HTMLElement;
-          if (borderDiv && borderDiv.classList.contains('relative')) {
+          // Find the div with 'relative' class (the border container)
+          const borderDiv = (fieldEl?.closest('.relative') ||
+            rndEl?.querySelector('.relative')) as HTMLElement;
+
+          console.log(`🔍 BorderDiv check:`, {
+            hasBorderDiv: !!borderDiv,
+            classList: borderDiv?.classList.toString(),
+            method: fieldEl?.closest('.relative') ? 'closest' : 'querySelector',
+          });
+
+          if (borderDiv) {
+            console.log(
+              `✅ Found borderDiv with relative class - proceeding with direction detection`,
+            );
             borderDiv.style.removeProperty('width');
             borderDiv.style.removeProperty('height');
             borderDiv.style.setProperty('min-width', 'fit-content');
@@ -199,17 +278,26 @@ export const AddFieldsFormPartial = ({
             borderDiv.style.setProperty('max-height', 'none');
 
             // Position the green box based on content direction
-            const hasRTL =
-              fieldEl &&
-              (fieldEl.querySelector('[style*="direction: rtl"]') ||
-                fieldEl.querySelector('[dir="rtl"]'));
-            const hasLTR =
-              fieldEl &&
-              (fieldEl.querySelector('[style*="direction: ltr"]') ||
-                fieldEl.querySelector('[dir="ltr"]'));
+            // Check for Hebrew by looking at the actual text content (more reliable than checking attributes)
+            const labels = fieldEl?.querySelectorAll('label');
+            const hasHebrew = Array.from(labels || []).some((label) =>
+              /[\u0590-\u05FF]/.test(label.textContent || ''),
+            );
+            const hasEnglish = Array.from(labels || []).some((label) =>
+              /^[a-zA-Z\s]+$/.test(label.textContent?.trim() || ''),
+            );
 
-            if (hasLTR && !hasRTL) {
+            console.log(`🔎 Content detection:`, {
+              hasHebrew,
+              hasEnglish,
+              labelCount: labels?.length,
+              labelTexts: Array.from(labels || []).map((l) => l.textContent),
+            });
+
+            if (hasEnglish && !hasHebrew) {
               // English - content starts from left, box grows to the right
+              console.log(`🇬🇧 Detected English field - applying LTR styles`);
+
               borderDiv.style.justifyContent = 'flex-start';
               borderDiv.style.alignItems = 'flex-start';
               borderDiv.style.direction = 'ltr';
@@ -226,8 +314,10 @@ export const AddFieldsFormPartial = ({
               (fieldEl as HTMLElement).style.alignSelf = 'flex-start';
               (fieldEl as HTMLElement).style.justifySelf = 'flex-start';
               (fieldEl as HTMLElement).style.direction = 'ltr';
-            } else if (hasRTL) {
+            } else if (hasHebrew) {
               // Hebrew - content starts from right, box grows to the left
+              console.log(`🇮🇱 Detected Hebrew field - applying RTL styles`);
+
               borderDiv.style.justifyContent = 'flex-end';
               borderDiv.style.alignItems = 'flex-end';
               borderDiv.style.direction = 'rtl';
@@ -244,7 +334,77 @@ export const AddFieldsFormPartial = ({
               (fieldEl as HTMLElement).style.alignSelf = 'flex-end';
               (fieldEl as HTMLElement).style.justifySelf = 'flex-end';
               (fieldEl as HTMLElement).style.direction = 'rtl';
+
+              // After a short delay, adjust position based on width delta
+              setTimeout(() => {
+                console.log(`⏱️ Hebrew field adjustment timeout triggered`);
+
+                if (hebrewAdjustmentData && $page) {
+                  const pageWidth = $page.getBoundingClientRect().width;
+
+                  // Force a reflow to ensure content is rendered
+                  void rndEl.offsetHeight;
+
+                  const newWidthPx = rndEl.getBoundingClientRect().width;
+                  const widthDeltaPx = newWidthPx - hebrewAdjustmentData.originalWidthPx;
+                  const widthDeltaPercent = (widthDeltaPx / pageWidth) * 100;
+
+                  console.log(
+                    `📏 Width change: ${hebrewAdjustmentData.originalWidthPx.toFixed(2)}px → ${newWidthPx.toFixed(2)}px (delta: ${widthDeltaPx >= 0 ? '+' : ''}${widthDeltaPx.toFixed(2)}px or ${widthDeltaPercent >= 0 ? '+' : ''}${widthDeltaPercent.toFixed(2)}%)`,
+                  );
+
+                  // Get current position
+                  const currentFormValues = form.getValues();
+                  const currentFieldIndex = currentFormValues.fields.findIndex(
+                    (f) => f.formId === hebrewAdjustmentData.formId,
+                  );
+
+                  if (currentFieldIndex !== -1) {
+                    const field = currentFormValues.fields[currentFieldIndex];
+                    const currentPageX = field.pageX;
+
+                    // Calculate new left position: move LEFT by the width increase (to keep right edge fixed)
+                    // If field grew by 10%, we move left by 10%. If it shrunk by 10%, we move right by 10%.
+                    let newPageX = currentPageX - widthDeltaPercent;
+
+                    // Boundary check
+                    const newWidthPercent = (newWidthPx / pageWidth) * 100;
+                    const minPageX = 0;
+                    const maxPageX = 100 - newWidthPercent;
+
+                    let clamped = false;
+                    if (newPageX < minPageX) {
+                      console.log(
+                        `⚠️ Would go off left edge (${newPageX.toFixed(2)}%), clamping to 0%`,
+                      );
+                      newPageX = minPageX;
+                      clamped = true;
+                    } else if (newPageX > maxPageX) {
+                      console.log(
+                        `⚠️ Would go off right edge (${newPageX.toFixed(2)}%), clamping to ${maxPageX.toFixed(2)}%`,
+                      );
+                      newPageX = maxPageX;
+                      clamped = true;
+                    }
+
+                    if (Math.abs(newPageX - currentPageX) > 0.1) {
+                      console.log(
+                        `📐 Adjusting position to keep RIGHT edge fixed: pageX ${currentPageX.toFixed(2)}% → ${newPageX.toFixed(2)}% (moved ${widthDeltaPercent >= 0 ? 'left' : 'right'} by ${Math.abs(widthDeltaPercent).toFixed(2)}%)${clamped ? ' [CLAMPED]' : ''}`,
+                      );
+
+                      update(currentFieldIndex, { ...field, pageX: newPageX });
+                      console.log(`💾 Position updated successfully`);
+                    } else {
+                      console.log(`✅ No position change needed (delta < 0.1%)`);
+                    }
+                  }
+                }
+              }, 10); // Increased timeout to allow full render
             }
+          } else {
+            console.warn(
+              `⚠️ BorderDiv condition failed - cannot apply direction-specific positioning`,
+            );
           }
 
           console.log(
@@ -269,7 +429,7 @@ export const AddFieldsFormPartial = ({
         }
 
         if (typeof window !== 'undefined') {
-          const stretchFunction = (window as Window & Record<string, (() => void) | undefined>)[
+          const stretchFunction = (window as unknown as Record<string, (() => void) | undefined>)[
             `stretchField_${currentField.nativeId}`
           ];
           if (stretchFunction) {
@@ -277,7 +437,7 @@ export const AddFieldsFormPartial = ({
             stretchFunction();
           }
         }
-      }, 150);
+      }, 10);
     }
   };
 
@@ -488,7 +648,7 @@ export const AddFieldsFormPartial = ({
   const onFieldResize = useCallback(
     (node: HTMLElement, index: number) => {
       const field = localFields[index];
-
+      console.log('field:', field);
       const $page = window.document.querySelector<HTMLElement>(
         `${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${field.pageNumber}"]`,
       );
@@ -528,11 +688,11 @@ export const AddFieldsFormPartial = ({
       }
 
       const { x: pageX, y: pageY } = getFieldPosition($page, node);
-
+      console.log('pageX:', pageX);
       update(index, {
         ...field,
-        pageX,
-        pageY,
+        pageX: pageX,
+        pageY: pageY,
       });
     },
     [getFieldPosition, localFields, update],

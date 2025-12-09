@@ -8,7 +8,6 @@ import { msg } from '@lingui/macro';
 import { useLingui } from '@lingui/react';
 import { Loader } from 'lucide-react';
 
-import { CHECKBOX_RADIO_CLASSES } from '@documenso/lib/constants/field-rendering';
 import { DO_NOT_INVALIDATE_QUERY_ON_MUTATION } from '@documenso/lib/constants/trpc';
 import { AppError, AppErrorCode } from '@documenso/lib/errors/app-error';
 import type { TRecipientActionAuth } from '@documenso/lib/types/document-auth';
@@ -147,7 +146,13 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
   }, [selectedOption, field]);
 
   return (
-    <SigningFieldContainer field={field} onSign={onSign} onRemove={onRemove} type="Radio">
+    <SigningFieldContainer
+      field={field}
+      onSign={onSign}
+      onRemove={onRemove}
+      type="Radio"
+      cardClassName="w-full border-none bg-transparent p-0 shadow-none backdrop-blur-none"
+    >
       {isLoading && (
         <div className="bg-background absolute inset-0 z-20 flex items-center justify-center rounded-md">
           <Loader className="text-primary h-5 w-5 animate-spin md:h-8 md:w-8" />
@@ -157,18 +162,19 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
       {!field.inserted && (
         <RadioGroup
           onValueChange={(value) => handleSelectItem(value)}
-          className={`z-10 ${CHECKBOX_RADIO_CLASSES.verticalGap}`}
+          className="relative m-0 flex h-fit min-h-fit w-full flex-col gap-2 rounded-lg border-2 bg-white/80 p-2"
         >
           {values?.map((item, index) => {
             const labelText = item.value.includes('empty-value-') ? '' : item.value;
-            const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
+            const hasHebrew =
+              values?.some((i) => /[\u0590-\u05FF\u200f\u200e]/.test(i.value || '')) ?? false;
 
-            if (isHebrew) {
+            if (hasHebrew) {
               // Hebrew: radio on the right, label on the left, container stretched to the left
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  className="flex items-center gap-2"
                   style={{
                     flexDirection: 'row',
                     direction: 'rtl',
@@ -177,14 +183,14 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
                   }}
                 >
                   <RadioGroupItem
-                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-full"
                     value={item.value}
                     id={`option-${index}`}
                     checked={item.checked}
                   />
                   <Label
                     htmlFor={`option-${index}`}
-                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    className="text-muted-foreground cursor-pointer"
                     style={{
                       textAlign: 'right',
                       flex: 1,
@@ -200,7 +206,7 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  className="flex items-center gap-2"
                   style={{
                     flexDirection: 'row',
                     direction: 'ltr',
@@ -209,14 +215,14 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
                   }}
                 >
                   <RadioGroupItem
-                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-full"
                     value={item.value}
                     id={`option-${index}`}
                     checked={item.checked}
                   />
                   <Label
                     htmlFor={`option-${index}`}
-                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    className="text-muted-foreground cursor-pointer"
                     style={{
                       textAlign: 'left',
                       flex: 1,
@@ -233,17 +239,18 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
       )}
 
       {field.inserted && (
-        <RadioGroup className={CHECKBOX_RADIO_CLASSES.verticalGap}>
+        <RadioGroup className="relative m-0 flex h-fit min-h-fit w-full flex-col gap-2 rounded-lg border-2 bg-white/80 p-2">
           {values?.map((item, index) => {
             const labelText = item.value.includes('empty-value-') ? '' : item.value;
-            const isHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(labelText);
+            const hasHebrew =
+              values?.some((i) => /[\u0590-\u05FF\u200f\u200e]/.test(i.value || '')) ?? false;
 
-            if (isHebrew) {
+            if (hasHebrew) {
               // Hebrew: radio on the right, label on the left, container stretched to the left
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  className="flex items-center gap-2"
                   style={{
                     flexDirection: 'row',
                     direction: 'rtl',
@@ -252,14 +259,14 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
                   }}
                 >
                   <RadioGroupItem
-                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-full"
                     value={item.value}
                     id={`option-${index}`}
                     checked={item.value === field.customText}
                   />
                   <Label
                     htmlFor={`option-${index}`}
-                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    className="text-muted-foreground cursor-pointer"
                     style={{
                       textAlign: 'right',
                       flex: 1,
@@ -275,7 +282,7 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
               return (
                 <div
                   key={index}
-                  className={`flex items-center ${CHECKBOX_RADIO_CLASSES.horizontalGap}`}
+                  className="flex items-center gap-2"
                   style={{
                     flexDirection: 'row',
                     direction: 'ltr',
@@ -284,14 +291,14 @@ export const RadioField = ({ field, recipient, onSignField, onUnsignField }: Rad
                   }}
                 >
                   <RadioGroupItem
-                    className={`${CHECKBOX_RADIO_CLASSES.boxSize} shrink-0 border border-black`}
+                    className="border-muted-foreground/40 h-4 w-4 shrink-0 rounded-full"
                     value={item.value}
                     id={`option-${index}`}
                     checked={item.value === field.customText}
                   />
                   <Label
                     htmlFor={`option-${index}`}
-                    className={CHECKBOX_RADIO_CLASSES.labelFontSize}
+                    className="text-muted-foreground cursor-pointer"
                     style={{
                       textAlign: 'left',
                       flex: 1,

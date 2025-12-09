@@ -73,7 +73,7 @@ export const SigningPageView = ({
   }
 
   return (
-    <div className="mx-auto w-full max-w-screen-xl">
+    <div className="mx-auto -mt-4 w-full max-w-screen-xl px-4 md:px-8">
       <h1
         className="mt-4 block max-w-[20rem] truncate text-2xl font-semibold md:max-w-[30rem] md:text-3xl"
         title={document.title}
@@ -122,7 +122,7 @@ export const SigningPageView = ({
 
       <div className="mt-8 grid grid-cols-12 gap-y-8 lg:gap-x-8 lg:gap-y-0">
         <Card
-          className="col-span-12 rounded-xl before:rounded-xl lg:col-span-7 xl:col-span-8"
+          className="col-span-12 lg:col-span-6 xl:col-span-7 rounded-xl before:rounded-xl "
           gradient
         >
           <CardContent className="p-2">
@@ -135,7 +135,7 @@ export const SigningPageView = ({
           </CardContent>
         </Card>
 
-        <div className="col-span-12 lg:col-span-5 xl:col-span-4">
+        <div className="col-span-12 lg:col-span-6 xl:col-span-5">
           <SigningForm
             document={document}
             recipient={recipient}

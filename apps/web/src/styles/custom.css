@@ -2,29 +2,31 @@
   height: auto;
   margin-top: 46px;
 }
-.hidden-class{
-  display:none;
+.hidden-class {
+  display: none;
 }
 header.supports-backdrop-blur\:bg-background\/60.bg-background\/95.sticky.top-0.z-\[60\].flex.h-16.w-full.items-center.border-b.backdrop-blur.duration-200.border-b-border
   .topLogo {
-    height: 37px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+  height: 37px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* Only fix the right side frame overflow issue */
 @media screen and (max-width: 768px) {
-  body, html {
+  body,
+  html {
     overflow-x: auto;
   }
-  
+
   /* Ensure containers don't overflow */
-  .container, .mx-auto {
+  .container,
+  .mx-auto {
     max-width: 100% !important;
-    padding-left: 0.0rem !important;
-    padding-right: 0.0rem !important;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
   }
-  
+
   /* Add 5px padding on left and right */
   body {
     padding-left: 5px !important;
@@ -32,14 +34,17 @@ header.supports-backdrop-blur\:bg-background\/60.bg-background\/95.sticky.top-0.
   }
 }
 
-body,html{overflow-x:hidden}
- 
+body,
+html {
+  overflow-x: hidden;
+}
+
 body {
-  DIRECTION: RTL;
+  direction: RTL;
 }
 
 /* Override RTL for English content in fields */
-body :has(> .react-draggable[data-field-id]:has([dir="ltr"])) {
+body :has(> .react-draggable[data-field-id]:has([dir='ltr'])) {
   direction: ltr !important;
 }
 
@@ -89,7 +94,10 @@ div {
   direction: rtl;
 }
 
-button, [type='button'], [type='reset'], [type='submit'] {
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
   background-image: none;
   direction: rtl;
 }
@@ -97,26 +105,26 @@ button, [type='button'], [type='reset'], [type='submit'] {
 /* === CANVAS NATURAL DIRECTION (removed LTR override) === */
 
 /* Field direction control for checkbox and radio only */
-.react-draggable[data-language="hebrew"] {
+.react-draggable[data-language='hebrew'] {
   direction: rtl !important;
 }
 
-.react-draggable[data-language="english"] {
+.react-draggable[data-language='english'] {
   direction: ltr !important;
 }
 
 /* Ensure English content is left-aligned */
-.react-draggable[data-language="english"] * {
+.react-draggable[data-language='english'] * {
   text-align: left !important;
   direction: ltr !important;
 }
 
-.react-draggable[data-language="english"] [data-testid="field-content"] {
+.react-draggable[data-language='english'] [data-testid='field-content'] {
   justify-content: flex-start !important;
   align-items: flex-start !important;
 }
 
-.react-draggable[data-language="english"] [data-testid="field-row"] {
+.react-draggable[data-language='english'] [data-testid='field-row'] {
   flex-direction: row !important;
   text-align: left !important;
 }
@@ -133,17 +141,17 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Hebrew widgets: Make everything RTL for natural rightward expansion */
-.react-draggable[data-field-id][data-language="hebrew"],
-.react-draggable[data-field-id][data-language="hebrew"] *,
-.react-draggable[data-field-id][data-language="hebrew"] > *,
-.react-draggable[data-field-id][data-language="hebrew"] [data-testid="field-content"],
-.react-draggable[data-field-id][data-language="hebrew"] [data-testid="field-row"] {
+.react-draggable[data-field-id][data-language='hebrew'],
+.react-draggable[data-field-id][data-language='hebrew'] *,
+.react-draggable[data-field-id][data-language='hebrew'] > *,
+.react-draggable[data-field-id][data-language='hebrew'] [data-testid='field-content'],
+.react-draggable[data-field-id][data-language='hebrew'] [data-testid='field-row'] {
   direction: rtl !important;
   text-align: right !important;
 }
 
-/* English widgets: align to left and expand rightward */  
-.react-draggable[data-field-id][data-language="english"] {
+/* English widgets: align to left and expand rightward */
+.react-draggable[data-field-id][data-language='english'] {
   margin: 0 !important;
   transform-origin: left center !important;
 }
@@ -163,19 +171,19 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Hebrew widget inner containers: RTL behavior */
-.react-draggable[data-field-id][data-language="hebrew"] > .relative.flex {
+.react-draggable[data-field-id][data-language='hebrew'] > .relative.flex {
   direction: rtl !important;
   text-align: right !important;
 }
 
 /* English widget inner containers: align content to left */
-.react-draggable[data-field-id][data-language="english"] > .relative.flex {
+.react-draggable[data-field-id][data-language='english'] > .relative.flex {
   justify-content: flex-start !important;
   margin: 0 !important;
 }
 
 /* Checkbox and Radio field content should auto-size */
-.react-draggable[data-field-id] [data-testid="field-content"] {
+.react-draggable[data-field-id] [data-testid='field-content'] {
   width: fit-content !important;
   height: fit-content !important;
   min-width: fit-content !important;
@@ -186,7 +194,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Individual checkbox/radio rows should not wrap */
-.react-draggable[data-field-id] [data-testid="field-row"] {
+.react-draggable[data-field-id] [data-testid='field-row'] {
   width: 100% !important;
   min-width: fit-content !important;
   max-width: none !important;
@@ -199,7 +207,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
 
 /* Prevent text wrapping in all label elements */
 .react-draggable[data-field-id] label,
-.react-draggable[data-field-id] [data-testid="field-label"] {
+.react-draggable[data-field-id] [data-testid='field-label'] {
   text-overflow: visible !important;
   overflow: visible !important;
   max-width: none !important;
@@ -208,7 +216,7 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Override for Hebrew checkbox labels - allow truncation */
-.react-draggable[data-field-id] [data-testid="field-row"] label[dir="rtl"] {
+.react-draggable[data-field-id] [data-testid='field-row'] label[dir='rtl'] {
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
@@ -220,8 +228,9 @@ button, [type='button'], [type='reset'], [type='submit'] {
 /* === LANGUAGE-SPECIFIC ALIGNMENT === */
 
 /* English (LTR) - field container alignment - FORCE LEFT ALIGNMENT - ONLY for English */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex,
-.react-draggable[data-field-id]:has([style*="direction: ltr"]):not(:has([dir="rtl"])) > .relative.flex {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) > .relative.flex,
+.react-draggable[data-field-id]:has([style*='direction: ltr']):not(:has([dir='rtl']))
+  > .relative.flex {
   justify-content: flex-start !important;
   align-items: flex-start !important;
   text-align: left !important;
@@ -231,16 +240,19 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Force English content to stick to left edge - ONLY for English */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"],
-.react-draggable[data-field-id]:has([style*="direction: ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"] {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl']))
+  [data-testid='field-content'],
+.react-draggable[data-field-id]:has([style*='direction: ltr']):not(:has([dir='rtl']))
+  [data-testid='field-content'] {
   margin: 0 !important;
   align-self: flex-start !important;
   justify-self: flex-start !important;
 }
 
 /* Hebrew (RTL) - field container alignment - ONLY for Hebrew */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) > .relative.flex,
-.react-draggable[data-field-id]:has([style*="direction: rtl"]):not(:has([dir="ltr"])) > .relative.flex {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) > .relative.flex,
+.react-draggable[data-field-id]:has([style*='direction: rtl']):not(:has([dir='ltr']))
+  > .relative.flex {
   justify-content: flex-end !important;
   align-items: flex-end !important;
   text-align: right !important;
@@ -250,8 +262,10 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Force Hebrew content to stick to right edge - ONLY for Hebrew */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-content"],
-.react-draggable[data-field-id]:has([style*="direction: rtl"]):not(:has([dir="ltr"])) [data-testid="field-content"] {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr']))
+  [data-testid='field-content'],
+.react-draggable[data-field-id]:has([style*='direction: rtl']):not(:has([dir='ltr']))
+  [data-testid='field-content'] {
   margin-left: auto !important;
   margin-right: 0 !important;
   align-self: flex-end !important;
@@ -259,58 +273,58 @@ button, [type='button'], [type='reset'], [type='submit'] {
 }
 
 /* Maintain Hebrew positioning in all document states */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) {
   position: relative !important;
 }
 
 /* English field rows - checkbox first, text second */
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) {
   justify-content: flex-start !important;
   text-align: left !important;
   direction: ltr !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) label {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) label {
   order: 2 !important;
   text-align: left !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) input,
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) button,
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) [role="checkbox"],
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) [role="radio"] {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) input,
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) button,
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) [role='checkbox'],
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) [role='radio'] {
   order: 1 !important;
 }
 
 /* Hebrew field rows - checkbox on left, text on right */
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) {
   justify-content: flex-start !important;
   text-align: right !important;
   direction: rtl !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) label {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) label {
   order: 2 !important;
   text-align: right !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) input,
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) button,
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) [role="checkbox"],
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) [role="radio"] {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) input,
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) button,
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) [role='checkbox'],
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) [role='radio'] {
   order: 1 !important;
 }
 
 /* Override global div RTL for English fields */
-.react-draggable[data-field-id]:has([dir="ltr"]) div,
-.react-draggable[data-field-id]:has([style*="direction: ltr"]) div {
+.react-draggable[data-field-id]:has([dir='ltr']) div,
+.react-draggable[data-field-id]:has([style*='direction: ltr']) div {
   direction: ltr !important;
   text-align: left !important;
 }
 
 /* Ensure flex containers with English content align properly */
-.react-draggable[data-field-id]:has([dir="ltr"]) .flex,
-.react-draggable[data-field-id]:has([style*="direction: ltr"]) .flex {
+.react-draggable[data-field-id]:has([dir='ltr']) .flex,
+.react-draggable[data-field-id]:has([style*='direction: ltr']) .flex {
   justify-content: flex-start !important;
   align-items: flex-start !important;
   direction: ltr !important;
@@ -319,12 +333,12 @@ button, [type='button'], [type='reset'], [type='submit'] {
 /* === DYNAMIC EXPANSION BEHAVIOR === */
 
 /* Hebrew (RTL) - expand to the left, right border stays fixed - ONLY for Hebrew */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) {
   transform-origin: right center !important;
 }
 
 /* English (LTR) - expand to the right, left border stays fixed */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) {
   transform-origin: left center !important;
 }
 
@@ -333,15 +347,15 @@ button, [type='button'], [type='reset'], [type='submit'] {
 .radio-field-hebrew,
 .react-draggable[data-field-id]:has(.checkbox-field-hebrew),
 .react-draggable[data-field-id]:has(.radio-field-hebrew),
-.react-draggable[data-field-id]:has([data-language="hebrew"][data-field-id]) {
-  transform-origin: right center !important;
+.react-draggable[data-field-id]:has([data-language='hebrew'][data-field-id]) {
+  transform-origin: left center !important;
 }
 
 .checkbox-field-english,
 .radio-field-english,
 .react-draggable[data-field-id]:has(.checkbox-field-english),
 .react-draggable[data-field-id]:has(.radio-field-english),
-.react-draggable[data-field-id]:has([data-language="english"][data-field-id]) {
+.react-draggable[data-field-id]:has([data-language='english'][data-field-id]) {
   transform-origin: left center !important;
 }
 
@@ -395,21 +409,21 @@ button, [type='button'], [type='reset'], [type='submit'] {
 /* Clean: English uses .items-end naturally, Hebrew uses .items-start naturally */
 
 /* Force override any inline styles set by JavaScript */
-.react-draggable[data-field-id][style*="width"],
-.react-draggable[data-field-id][style*="height"] {
+.react-draggable[data-field-id][style*='width'],
+.react-draggable[data-field-id][style*='height'] {
   width: fit-content !important;
   height: fit-content !important;
 }
 
 /* High specificity rule to ensure English text is left-aligned */
-html body .react-draggable[data-field-id] [data-testid="field-row"][style*="direction: ltr"] {
+html body .react-draggable[data-field-id] [data-testid='field-row'][style*='direction: ltr'] {
   justify-content: flex-start !important;
   text-align: left !important;
   direction: ltr !important;
 }
 
 /* Clean and simple English field alignment - ONLY for English, NOT for Hebrew */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) > .relative.flex {
   justify-content: flex-start !important;
   align-items: flex-start !important;
   text-align: left !important;
@@ -418,7 +432,8 @@ html body .react-draggable[data-field-id] [data-testid="field-row"][style*="dire
   padding: 8px !important;
 }
 
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"] {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl']))
+  [data-testid='field-content'] {
   align-self: flex-start !important;
   justify-self: flex-start !important;
   margin-left: 0 !important;
@@ -426,12 +441,12 @@ html body .react-draggable[data-field-id] [data-testid="field-row"][style*="dire
 }
 
 /* Ensure English fields expand rightward - ONLY for English, NOT for Hebrew */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) {
   transform-origin: left center !important;
 }
 
 /* High specificity rule to ensure Hebrew text is right-aligned */
-html body .react-draggable[data-field-id] [data-testid="field-row"][style*="direction: rtl"] {
+html body .react-draggable[data-field-id] [data-testid='field-row'][style*='direction: rtl'] {
   justify-content: flex-end !important;
   text-align: right !important;
   direction: rtl !important;
@@ -477,8 +492,8 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Override any positioning that might interfere */
-.react-draggable[data-field-id]:has(.english-field)[style*="left"],
-.react-draggable[data-field-id]:has(.english-field)[style*="right"] {
+.react-draggable[data-field-id]:has(.english-field)[style*='left'],
+.react-draggable[data-field-id]:has(.english-field)[style*='right'] {
   left: auto !important;
   right: auto !important;
 }
@@ -496,7 +511,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 
 /* Force English field parent containers with expansion control */
 .react-draggable[data-field-id]:has(.english-field) > .relative.flex,
-.react-draggable[data-field-id]:has([data-language="english"]) > .relative.flex {
+.react-draggable[data-field-id]:has([data-language='english']) > .relative.flex {
   justify-content: flex-start !important;
   align-items: flex-end !important;
   text-align: left !important;
@@ -508,7 +523,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 
 /* Force English container to expand rightward */
 .react-draggable[data-field-id]:has(.english-field),
-.react-draggable[data-field-id]:has([data-language="english"]) {
+.react-draggable[data-field-id]:has([data-language='english']) {
   transform-origin: left center !important;
   direction: ltr !important;
 }
@@ -557,19 +572,19 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Force field containers based on data-language attribute */
-.react-draggable[data-field-id] [data-language="english"] {
+.react-draggable[data-field-id] [data-language='english'] {
   text-align: left !important;
   direction: ltr !important;
 }
 
-.react-draggable[data-field-id] [data-language="hebrew"] {
+.react-draggable[data-field-id] [data-language='hebrew'] {
   text-align: right !important;
   direction: rtl !important;
 }
 
 /* NUCLEAR OVERRIDE - Force English fields to behave correctly */
 .react-draggable[data-field-id]:has(.english-field) > .relative.flex,
-.react-draggable[data-field-id]:has([data-language="english"]) > .relative.flex {
+.react-draggable[data-field-id]:has([data-language='english']) > .relative.flex {
   justify-content: flex-start !important;
   align-items: flex-end !important;
   text-align: left !important;
@@ -579,14 +594,14 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 .react-draggable[data-field-id]:has(.english-field),
-.react-draggable[data-field-id]:has([data-language="english"]) {
+.react-draggable[data-field-id]:has([data-language='english']) {
   transform-origin: left center !important;
   direction: ltr !important;
 }
 
 /* Hebrew fields should behave normally */
 .react-draggable[data-field-id]:has(.hebrew-field) > .relative.flex,
-.react-draggable[data-field-id]:has([data-language="hebrew"]) > .relative.flex {
+.react-draggable[data-field-id]:has([data-language='hebrew']) > .relative.flex {
   justify-content: flex-end !important;
   align-items: flex-start !important;
   text-align: right !important;
@@ -596,7 +611,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 .react-draggable[data-field-id]:has(.hebrew-field),
-.react-draggable[data-field-id]:has([data-language="hebrew"]) {
+.react-draggable[data-field-id]:has([data-language='hebrew']) {
   transform-origin: right center !important;
   direction: rtl !important;
 }
@@ -604,7 +619,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 /* === FORCE ENGLISH FIELDS TO LEFT ALIGNMENT - WITHOUT TOUCHING HEBREW === */
 
 /* Strong override for English fields only - left alignment and left expansion */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) > .relative.flex {
   justify-content: flex-start !important;
   align-items: flex-start !important;
   text-align: left !important;
@@ -614,7 +629,8 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Force English content to left edge */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-content"] {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl']))
+  [data-testid='field-content'] {
   align-self: flex-start !important;
   justify-self: flex-start !important;
   margin-left: 0 !important;
@@ -623,26 +639,26 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Force English container expansion from left to right */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) {
   transform-origin: left center !important;
   direction: ltr !important;
 }
 
 /* Force English field rows to be left-aligned */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-row"] {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) [data-testid='field-row'] {
   justify-content: flex-start !important;
   text-align: left !important;
   direction: ltr !important;
 }
 
 /* Ensure English labels are left-aligned */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) label {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) label {
   text-align: left !important;
   direction: ltr !important;
 }
 
 /* Override any global RTL for English fields */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) * {
   direction: ltr !important;
 }
 
@@ -695,16 +711,16 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* וידוא שהאלמנטים הפנימיים לא דוחפים את המיקום */
-.checkbox-field-english [data-testid="field-content"],
-.checkbox-field-hebrew [data-testid="field-content"],
-.checkbox-field-mixed [data-testid="field-content"] {
+.checkbox-field-english [data-testid='field-content'],
+.checkbox-field-hebrew [data-testid='field-content'],
+.checkbox-field-mixed [data-testid='field-content'] {
   position: relative !important;
   margin: 0 !important;
 }
 
-.checkbox-field-english [data-testid="field-row"],
-.checkbox-field-hebrew [data-testid="field-row"],
-.checkbox-field-mixed [data-testid="field-row"] {
+.checkbox-field-english [data-testid='field-row'],
+.checkbox-field-hebrew [data-testid='field-row'],
+.checkbox-field-mixed [data-testid='field-row'] {
   position: relative !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -747,14 +763,14 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Maintain consistent English field positioning across all document states */
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])),
-.react-draggable[data-field-id][data-language="english"] {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])),
+.react-draggable[data-field-id][data-language='english'] {
   transform-origin: left center !important;
   direction: ltr !important;
 }
 
-.react-draggable[data-field-id]:has([dir="ltr"]):not(:has([dir="rtl"])) > .relative.flex,
-.react-draggable[data-field-id][data-language="english"] > .relative.flex {
+.react-draggable[data-field-id]:has([dir='ltr']):not(:has([dir='rtl'])) > .relative.flex,
+.react-draggable[data-field-id][data-language='english'] > .relative.flex {
   justify-content: flex-start !important;
   align-items: flex-start !important;
   text-align: left !important;
@@ -762,25 +778,25 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Maintain consistent Hebrew field positioning across all document states */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])),
-.react-draggable[data-field-id][data-language="hebrew"] {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])),
+.react-draggable[data-field-id][data-language='hebrew'] {
   transform-origin: right center !important;
   direction: rtl !important;
 }
 
 /* Special handling for checkbox fields to prevent movement */
-.react-draggable[data-field-id]:has([role="checkbox"][data-hebrew="false"]) {
+.react-draggable[data-field-id]:has([role='checkbox'][data-hebrew='false']) {
   transform-origin: left center !important;
   direction: ltr !important;
 }
 
-.react-draggable[data-field-id]:has([role="checkbox"][data-hebrew="true"]) {
+.react-draggable[data-field-id]:has([role='checkbox'][data-hebrew='true']) {
   transform-origin: right center !important;
   direction: rtl !important;
 }
 
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) > .relative.flex,
-.react-draggable[data-field-id][data-language="hebrew"] > .relative.flex {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) > .relative.flex,
+.react-draggable[data-field-id][data-language='hebrew'] > .relative.flex {
   justify-content: flex-end !important;
   align-items: flex-end !important;
   text-align: right !important;
@@ -790,12 +806,12 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 /* === CHECKBOX FIELD POSITIONING FIXES === */
 
 /* Ensure checkbox fields maintain position in all document states */
-.react-draggable[data-field-id] [data-testid="field-content"] .flex.flex-col.space-y-2 > div {
+.react-draggable[data-field-id] [data-testid='field-content'] .flex.flex-col.space-y-2 > div {
   position: relative !important;
 }
 
 /* English checkbox - checkbox on left, text on right */
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] {
+.react-draggable[data-field-id] [data-testid='field-content'] div[data-hebrew='false'] {
   flex-direction: row !important;
   justify-content: flex-start !important;
   text-align: left !important;
@@ -807,13 +823,16 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
   column-gap: 0.5rem !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] input[type="checkbox"] {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  div[data-hebrew='false']
+  input[type='checkbox'] {
   order: 1 !important;
   margin-right: 0 !important;
   margin-left: 0 !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] label {
+.react-draggable[data-field-id] [data-testid='field-content'] div[data-hebrew='false'] label {
   order: 2 !important;
   direction: ltr !important;
   text-align: left !important;
@@ -824,7 +843,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Hebrew checkbox - checkbox on left, text on right */
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] {
+.react-draggable[data-field-id] [data-testid='field-content'] div[data-hebrew='true'] {
   flex-direction: row !important;
   justify-content: flex-start !important;
   text-align: right !important;
@@ -836,13 +855,16 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
   column-gap: 0.5rem !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] input[type="checkbox"] {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  div[data-hebrew='true']
+  input[type='checkbox'] {
   order: 1 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] label {
+.react-draggable[data-field-id] [data-testid='field-content'] div[data-hebrew='true'] label {
   order: 2 !important;
   direction: rtl !important;
   text-align: right !important;
@@ -853,49 +875,49 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Prevent position changes during document flow transitions for checkboxes */
-.react-draggable[data-field-id]:has([role="checkbox"]) {
+.react-draggable[data-field-id]:has([role='checkbox']) {
   position: relative !important;
 }
 
-.react-draggable[data-field-id]:has([role="checkbox"]) > .relative.flex {
+.react-draggable[data-field-id]:has([role='checkbox']) > .relative.flex {
   min-height: fit-content !important;
 }
 
 /* Force checkbox containers to maintain their layout */
-.react-draggable[data-field-id] [data-testid="field-content"]:has(input[type="checkbox"]) {
+.react-draggable[data-field-id] [data-testid='field-content']:has(input[type='checkbox']) {
   width: 100% !important;
   display: flex !important;
   flex-direction: column !important;
 }
 
 /* Override any global RTL/LTR that might affect checkbox positioning */
-.react-draggable[data-field-id] div[data-hebrew="false"] {
+.react-draggable[data-field-id] div[data-hebrew='false'] {
   direction: ltr !important;
   text-align: left !important;
   justify-content: flex-start !important;
 }
 
-.react-draggable[data-field-id] div[data-hebrew="true"] {
+.react-draggable[data-field-id] div[data-hebrew='true'] {
   direction: rtl !important;
   text-align: right !important;
   justify-content: flex-start !important;
 }
 
 /* Specific checkbox element positioning */
-.react-draggable[data-field-id] div[data-hebrew="false"] [role="checkbox"] {
+.react-draggable[data-field-id] div[data-hebrew='false'] [role='checkbox'] {
   margin-right: 0 !important;
   margin-left: 0 !important;
   flex-shrink: 0 !important;
 }
 
-.react-draggable[data-field-id] div[data-hebrew="true"] [role="checkbox"] {
+.react-draggable[data-field-id] div[data-hebrew='true'] [role='checkbox'] {
   margin-left: 0 !important;
   margin-right: 0 !important;
   flex-shrink: 0 !important;
 }
 
 /* Fix checkbox alignment and checkmark positioning */
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] {
+.react-draggable[data-field-id] [data-testid='field-content'] button[role='checkbox'] {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -907,7 +929,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Fix the checkmark icon positioning */
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] svg {
+.react-draggable[data-field-id] [data-testid='field-content'] button[role='checkbox'] svg {
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
@@ -917,40 +939,57 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Ensure checkbox container alignment */
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"] button[role="checkbox"] {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  div[data-hebrew='false']
+  button[role='checkbox'] {
   align-self: flex-start !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] button[role="checkbox"] {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  div[data-hebrew='true']
+  button[role='checkbox'] {
   align-self: flex-start !important;
 }
 
 /* Fix checkmark visibility and positioning in all states */
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="checked"] svg {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  button[role='checkbox'][data-state='checked']
+  svg {
   opacity: 1 !important;
   visibility: visible !important;
   display: block !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="unchecked"] svg {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  button[role='checkbox'][data-state='unchecked']
+  svg {
   opacity: 0 !important;
   visibility: hidden !important;
   display: none !important;
 }
 
 /* Ensure proper checkbox border and background */
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] {
+.react-draggable[data-field-id] [data-testid='field-content'] button[role='checkbox'] {
   border: 1px solid #d1d5db !important;
   background-color: white !important;
   border-radius: 2px !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="checked"] {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  button[role='checkbox'][data-state='checked'] {
   background-color: #3b82f6 !important;
   border-color: #3b82f6 !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"][data-state="checked"] svg {
+.react-draggable[data-field-id]
+  [data-testid='field-content']
+  button[role='checkbox'][data-state='checked']
+  svg {
   color: white !important;
   fill: white !important;
   stroke: white !important;
@@ -961,7 +1000,7 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 /* === FORCE HEBREW FIELDS TO RIGHT ALIGNMENT === */
 
 /* Strong override for Hebrew fields only - right alignment */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) > .relative.flex {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) > .relative.flex {
   justify-content: flex-end !important;
   align-items: flex-end !important;
   text-align: right !important;
@@ -971,33 +1010,34 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 }
 
 /* Ensure Hebrew fields maintain right positioning throughout document flow */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) {
   transform-origin: right center !important;
   direction: rtl !important;
 }
 
 /* Force Hebrew content to right edge */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-content"] {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr']))
+  [data-testid='field-content'] {
   align-self: flex-end !important;
   justify-self: flex-end !important;
   margin-left: auto !important;
   margin-right: 0 !important;
   align-items: flex-end !important;
-  
+
   /* Maintain position after signing */
   text-align: right !important;
   direction: rtl !important;
 }
 
 /* Force Hebrew field rows to be right-aligned */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-row"] {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) [data-testid='field-row'] {
   justify-content: flex-start !important;
   text-align: right !important;
   direction: rtl !important;
 }
 
 /* Ensure Hebrew labels are right-aligned */
-.react-draggable[data-field-id]:has([dir="rtl"]):not(:has([dir="ltr"])) label {
+.react-draggable[data-field-id]:has([dir='rtl']):not(:has([dir='ltr'])) label {
   text-align: right !important;
   direction: rtl !important;
 }
@@ -1023,137 +1063,139 @@ html body .react-draggable[data-field-id]:has(.english-field) > .relative.flex {
 /* === SPECIFIC RULE FOR CHECKBOX/RADIO WITH GROUP REACT-DRAGGABLE === */
 
 /* If checkbox/radio widget content is in English, force LTR direction for group react-draggable containers */
-.group.react-draggable[data-language="english"],
-.group.react-draggable:has([data-language="english"]),
-.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) {
+.group.react-draggable[data-language='english'],
+.group.react-draggable:has([data-language='english']),
+.group.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) {
   direction: ltr !important;
 }
 
 /* Force LTR direction for all internal divs and elements when content is English */
-.group.react-draggable[data-language="english"] *,
-.group.react-draggable:has([data-language="english"]) *,
-.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+.group.react-draggable[data-language='english'] *,
+.group.react-draggable:has([data-language='english']) *,
+.group.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) * {
   direction: ltr !important;
 }
 
 /* Exception for Hebrew - allow text wrapping and container stretching */
-.group.react-draggable[data-language="hebrew"] *,
-.group.react-draggable:has([data-language="hebrew"]) *,
+.group.react-draggable[data-language='hebrew'] *,
+.group.react-draggable:has([data-language='hebrew']) *,
 .checkbox-field-hebrew *,
-.checkbox-field-hebrew [data-testid="field-row"] *,
+.checkbox-field-hebrew [data-testid='field-row'] *,
 .checkbox-field-hebrew label {
   white-space: normal !important;
 }
 
 /* Force LTR direction specifically for internal divs */
-.group.react-draggable[data-language="english"] div,
-.group.react-draggable:has([data-language="english"]) div,
-.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+.group.react-draggable[data-language='english'] div,
+.group.react-draggable:has([data-language='english']) div,
+.group.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) div {
   direction: ltr !important;
 }
 
 /* Broadest rule for all react-draggable containers */
-.react-draggable[data-language="english"] div,
-.react-draggable:has([data-language="english"]) div,
-.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+.react-draggable[data-language='english'] div,
+.react-draggable:has([data-language='english']) div,
+.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) div {
   direction: ltr !important;
 }
 
 /* Most comprehensive rule for all group containers */
-.group[data-language="english"] div,
-.group:has([data-language="english"]) div,
-.group:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+.group[data-language='english'] div,
+.group:has([data-language='english']) div,
+.group:has([dir='ltr']):not(:has([dir='rtl'])) div {
   direction: ltr !important;
 }
 
 /* NUCLEAR OPTION: Override all JavaScript changes immediately */
-html body .group[data-language="english"] *,
-html body .group:has([data-language="english"]) *,
-html body .group:has([dir="ltr"]):not(:has([dir="rtl"])) *,
-html body .react-draggable[data-language="english"] *,
-html body .react-draggable:has([data-language="english"]) *,
-html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+html body .group[data-language='english'] *,
+html body .group:has([data-language='english']) *,
+html body .group:has([dir='ltr']):not(:has([dir='rtl'])) *,
+html body .react-draggable[data-language='english'] *,
+html body .react-draggable:has([data-language='english']) *,
+html body .react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) * {
   direction: ltr !important;
   transition: none !important;
 }
 
 /* Override during click events and active states */
-html body .group[data-language="english"]:active *,
-html body .group:has([data-language="english"]):active *,
-html body .group:has([dir="ltr"]):not(:has([dir="rtl"])):active *,
-html body .react-draggable[data-language="english"]:active *,
-html body .react-draggable:has([data-language="english"]):active *,
-html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])):active *,
-html body .group[data-language="english"]:hover *,
-html body .group:has([data-language="english"]):hover *,
-html body .group:has([dir="ltr"]):not(:has([dir="rtl"])):hover *,
-html body .react-draggable[data-language="english"]:hover *,
-html body .react-draggable:has([data-language="english"]):hover *,
-html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])):hover * {
+html body .group[data-language='english']:active *,
+html body .group:has([data-language='english']):active *,
+html body .group:has([dir='ltr']):not(:has([dir='rtl'])):active *,
+html body .react-draggable[data-language='english']:active *,
+html body .react-draggable:has([data-language='english']):active *,
+html body .react-draggable:has([dir='ltr']):not(:has([dir='rtl'])):active *,
+html body .group[data-language='english']:hover *,
+html body .group:has([data-language='english']):hover *,
+html body .group:has([dir='ltr']):not(:has([dir='rtl'])):hover *,
+html body .react-draggable[data-language='english']:hover *,
+html body .react-draggable:has([data-language='english']):hover *,
+html body .react-draggable:has([dir='ltr']):not(:has([dir='rtl'])):hover * {
   direction: ltr !important;
   transition: none !important;
 }
 
 /* Ultimate override - even during click events on any children */
-html body .group[data-language="english"] *:active,
-html body .group:has([data-language="english"]) *:active,
-html body .group:has([dir="ltr"]):not(:has([dir="rtl"])) *:active,
-html body .react-draggable[data-language="english"] *:active,
-html body .react-draggable:has([data-language="english"]) *:active,
-html body .react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) *:active {
+html body .group[data-language='english'] *:active,
+html body .group:has([data-language='english']) *:active,
+html body .group:has([dir='ltr']):not(:has([dir='rtl'])) *:active,
+html body .react-draggable[data-language='english'] *:active,
+html body .react-draggable:has([data-language='english']) *:active,
+html body .react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) *:active {
   direction: ltr !important;
   transition: none !important;
 }
 
 /* Absolute final override - maximum specificity for click events */
-html body div.group[data-language="english"] div,
-html body div.group:has([data-language="english"]) div,
-html body div.group:has([dir="ltr"]):not(:has([dir="rtl"])) div,
-html body div.react-draggable[data-language="english"] div,
-html body div.react-draggable:has([data-language="english"]) div,
-html body div.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) div {
+html body div.group[data-language='english'] div,
+html body div.group:has([data-language='english']) div,
+html body div.group:has([dir='ltr']):not(:has([dir='rtl'])) div,
+html body div.react-draggable[data-language='english'] div,
+html body div.react-draggable:has([data-language='english']) div,
+html body div.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) div {
   direction: ltr !important;
   transition: none !important;
 }
 
 /* Force during any user interaction */
-html body div.group[data-language="english"]:active div,
-html body div.group:has([data-language="english"]):active div,
-html body div.react-draggable[data-language="english"]:active div,
-html body div.react-draggable:has([data-language="english"]):active div {
+html body div.group[data-language='english']:active div,
+html body div.group:has([data-language='english']):active div,
+html body div.react-draggable[data-language='english']:active div,
+html body div.react-draggable:has([data-language='english']):active div {
   direction: ltr !important;
   transition: none !important;
 }
 
 /* CSS Animation technique to force direction continuously */
 @keyframes force-ltr {
-  0%, 50%, 100% { 
-    direction: ltr !important; 
+  0%,
+  50%,
+  100% {
+    direction: ltr !important;
     text-align: left !important;
   }
 }
 
 /* Force LTR continuously on English content - removes z-10 references */
-.group[data-language="english"] *,
-.group:has([data-language="english"]) *,
-.group:has([dir="ltr"]):not(:has([dir="rtl"])) *,
-.react-draggable[data-language="english"] *,
-.react-draggable:has([data-language="english"]) *,
-.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) * {
+.group[data-language='english'] *,
+.group:has([data-language='english']) *,
+.group:has([dir='ltr']):not(:has([dir='rtl'])) *,
+.react-draggable[data-language='english'] *,
+.react-draggable:has([data-language='english']) *,
+.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) * {
   animation: force-ltr 0.001s infinite !important;
   direction: ltr !important;
   transition: none !important;
 }
 
 /* Prevent direction changes during click states */
-.group[data-language="english"]:active *,
-.group:has([data-language="english"]):active *,
-.react-draggable[data-language="english"]:active *,
-.react-draggable:has([data-language="english"]):active *,
-.group[data-language="english"] *:active,
-.group:has([data-language="english"]) *:active,
-.react-draggable[data-language="english"] *:active,
-.react-draggable:has([data-language="english"]) *:active {
+.group[data-language='english']:active *,
+.group:has([data-language='english']):active *,
+.react-draggable[data-language='english']:active *,
+.react-draggable:has([data-language='english']):active *,
+.group[data-language='english'] *:active,
+.group:has([data-language='english']) *:active,
+.react-draggable[data-language='english'] *:active,
+.react-draggable:has([data-language='english']) *:active {
   direction: ltr !important;
   transition: none !important;
   animation: force-ltr 0.001s infinite !important;
@@ -1166,26 +1208,26 @@ html body div.react-draggable:has([data-language="english"]):active div {
 /* Removed ultimate override rules */
 
 /* Override during ALL interaction states */
-html body div[data-language="english"]:active,
-html body div:has([data-language="english"]):active,
-html body div.group[data-language="english"]:active,
-html body div.react-draggable[data-language="english"]:active,
-html body div[data-language="english"]:hover,
-html body div:has([data-language="english"]):hover,
-html body div.group[data-language="english"]:hover,
-html body div.react-draggable[data-language="english"]:hover,
-html body div[data-language="english"]:focus,
-html body div:has([data-language="english"]):focus,
-html body div.group[data-language="english"]:focus,
-html body div.react-draggable[data-language="english"]:focus,
-html body div[data-language="english"]:active div,
-html body div:has([data-language="english"]):active div,
-html body div.group[data-language="english"]:active div,
-html body div.react-draggable[data-language="english"]:active div,
-html body div[data-language="english"]:hover div,
-html body div:has([data-language="english"]):hover div,
-html body div.group[data-language="english"]:hover div,
-html body div.react-draggable[data-language="english"]:hover div {
+html body div[data-language='english']:active,
+html body div:has([data-language='english']):active,
+html body div.group[data-language='english']:active,
+html body div.react-draggable[data-language='english']:active,
+html body div[data-language='english']:hover,
+html body div:has([data-language='english']):hover,
+html body div.group[data-language='english']:hover,
+html body div.react-draggable[data-language='english']:hover,
+html body div[data-language='english']:focus,
+html body div:has([data-language='english']):focus,
+html body div.group[data-language='english']:focus,
+html body div.react-draggable[data-language='english']:focus,
+html body div[data-language='english']:active div,
+html body div:has([data-language='english']):active div,
+html body div.group[data-language='english']:active div,
+html body div.react-draggable[data-language='english']:active div,
+html body div[data-language='english']:hover div,
+html body div:has([data-language='english']):hover div,
+html body div.group[data-language='english']:hover div,
+html body div.react-draggable[data-language='english']:hover div {
   direction: ltr !important;
   transition: none !important;
   animation: none !important;
@@ -1193,14 +1235,15 @@ html body div.react-draggable[data-language="english"]:hover div {
 
 /* CSS Animation to continuously enforce LTR */
 @keyframes enforce-ltr {
-  0%, 100% { 
+  0%,
+  100% {
     direction: ltr;
   }
 }
 
 /* ULTRA MINIMAL: Only English labels and spans - nothing else */
-label[data-language="english"],
-span[data-language="english"] {
+label[data-language='english'],
+span[data-language='english'] {
   direction: ltr !important;
   text-align: left !important;
 }
@@ -1208,11 +1251,11 @@ span[data-language="english"] {
 /* === SIMPLE & EFFECTIVE RULES === */
 
 /* HEBREW: Checkbox visually on right, expand visually leftward (CSS flipped due to global RTL) */
-.react-draggable[data-field-id]:has([data-language="hebrew"]) {
+.react-draggable[data-field-id]:has([data-language='hebrew']) {
   transform-origin: left center !important;
 }
 
-.react-draggable[data-field-id]:has([data-language="hebrew"]) > .relative.flex {
+.react-draggable[data-field-id]:has([data-language='hebrew']) > .relative.flex {
   justify-content: flex-start !important;
   text-align: right !important;
   direction: rtl !important;
@@ -1221,12 +1264,12 @@ span[data-language="english"] {
 }
 
 /* ENGLISH: Checkbox visually on left, expand visually rightward (CSS flipped due to global RTL) */
-.react-draggable[data-field-id]:has([data-language="english"]) {
-  transform-origin: right center !important;
+.react-draggable[data-field-id]:has([data-language='english']) {
+  transform-origin: left center !important;
 }
 
-.react-draggable[data-field-id]:has([data-language="english"]) > .relative.flex {
-  justify-content: flex-end !important;
+.react-draggable[data-field-id]:has([data-language='english']) > .relative.flex {
+  justify-content: flex-start !important;
   text-align: left !important;
   direction: ltr !important;
   padding-left: 8px !important;
@@ -1251,16 +1294,14 @@ span[data-language="english"] {
 }
 
 /* אפשר אינטראקציה עם האלמנטים הפנימיים של הצ'קבוקס בלבד */
-.checkbox-field-english [role="checkbox"],
+.checkbox-field-english [role='checkbox'],
 .checkbox-field-english label,
-.checkbox-field-hebrew [role="checkbox"],
+.checkbox-field-hebrew [role='checkbox'],
 .checkbox-field-hebrew label,
-.checkbox-field-mixed [role="checkbox"],
+.checkbox-field-mixed [role='checkbox'],
 .checkbox-field-mixed label {
   pointer-events: auto !important;
 }
-
-
 
 /* FIX: Allow mixed checkbox to grow to the right but not to the left */
 .checkbox-field-mixed {
@@ -1269,7 +1310,7 @@ span[data-language="english"] {
   right: auto !important;
 }
 
-.checkbox-field-mixed [data-testid="field-content"] {
+.checkbox-field-mixed [data-testid='field-content'] {
   position: relative !important;
   left: 0 !important;
   right: auto !important;
@@ -1277,7 +1318,7 @@ span[data-language="english"] {
   min-width: 100% !important;
 }
 
-.checkbox-field-mixed [data-testid="field-row"] {
+.checkbox-field-mixed [data-testid='field-row'] {
   position: relative !important;
   left: 0 !important;
   right: auto !important;
@@ -1302,7 +1343,7 @@ span[data-language="english"] {
   align-items: center !important;
 }
 
-.checkbox-field-mixed [role="checkbox"] {
+.checkbox-field-mixed [role='checkbox'] {
   position: relative !important;
   left: 0 !important;
   right: auto !important;
@@ -1320,7 +1361,7 @@ span[data-language="english"] {
 }
 
 /* Hide default HTML checkboxes to prevent conflicts with Radix UI checkboxes */
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none !important;
 }
 
@@ -1341,12 +1382,12 @@ input[type="checkbox"] {
 }
 
 /* הגדרת רווח אחיד בין צ'קבוקס לטקסט */
-.react-draggable[data-field-id] [data-testid="field-row"] {
+.react-draggable[data-field-id] [data-testid='field-row'] {
   gap: 0.5rem !important;
 }
 
 /* יישור הלייבל לאמצע בגובה */
-.react-draggable[data-field-id] [data-testid="field-row"] label {
+.react-draggable[data-field-id] [data-testid='field-row'] label {
   display: flex !important;
   align-items: center !important;
   margin-left: 0 !important;
@@ -1356,33 +1397,33 @@ input[type="checkbox"] {
 }
 
 /* עבור שדות אנגלית - רווח מטופל על ידי gap */
-.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="false"] label,
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) label {
+.react-draggable[data-field-id] [data-testid='field-row'][data-hebrew='false'] label,
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) label {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 /* עבור שדות עברית - רווח מטופל על ידי gap */
-.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="true"] label,
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) label {
+.react-draggable[data-field-id] [data-testid='field-row'][data-hebrew='true'] label,
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) label {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
 /* תיקון קריטי: שינוי align-items: flex-end ל-align-items: center עבור שדות אנגלית */
-.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="false"],
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) {
+.react-draggable[data-field-id] [data-testid='field-row'][data-hebrew='false'],
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) {
   align-items: center !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-row"][data-hebrew="true"],
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="rtl"]) {
+.react-draggable[data-field-id] [data-testid='field-row'][data-hebrew='true'],
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='rtl']) {
   align-items: center !important;
 }
 
 /* תיקון נוסף לטקסט באנגלית - מונע ירידה למטה */
-.react-draggable[data-field-id] label[dir="ltr"],
-.react-draggable[data-field-id] [data-hebrew="false"] label {
+.react-draggable[data-field-id] label[dir='ltr'],
+.react-draggable[data-field-id] [data-hebrew='false'] label {
   font-size: 14px !important;
   line-height: 1 !important;
   vertical-align: baseline !important;
@@ -1393,56 +1434,58 @@ input[type="checkbox"] {
 }
 
 /* וידוא שהטקסט באנגלית לא יורד למטה */
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) {
   align-items: center !important;
 }
 
-.react-draggable[data-field-id] [data-testid="field-row"]:has(label[dir="ltr"]) label {
+.react-draggable[data-field-id] [data-testid='field-row']:has(label[dir='ltr']) label {
   align-self: center !important;
 }
 
 /* הגדרת רווח עבור כל קונטיינרים רלוונטיים */
-.group.react-draggable[data-language="english"] [data-testid="field-row"],
-.group.react-draggable:has([data-language="english"]) [data-testid="field-row"],
-.group.react-draggable:has([dir="ltr"]):not(:has([dir="rtl"])) [data-testid="field-row"] {
+.group.react-draggable[data-language='english'] [data-testid='field-row'],
+.group.react-draggable:has([data-language='english']) [data-testid='field-row'],
+.group.react-draggable:has([dir='ltr']):not(:has([dir='rtl'])) [data-testid='field-row'] {
   gap: 0.5rem !important;
 }
 
-.group.react-draggable[data-language="hebrew"] [data-testid="field-row"],
-.group.react-draggable:has([data-language="hebrew"]) [data-testid="field-row"],
-.group.react-draggable:has([dir="rtl"]):not(:has([dir="ltr"])) [data-testid="field-row"] {
+.group.react-draggable[data-language='hebrew'] [data-testid='field-row'],
+.group.react-draggable:has([data-language='hebrew']) [data-testid='field-row'],
+.group.react-draggable:has([dir='rtl']):not(:has([dir='ltr'])) [data-testid='field-row'] {
   gap: 0.5rem !important;
 }
 
 /* וידוא שהצ'קבוקס והלייבל מיושרים יחד לאמצע */
-.react-draggable[data-field-id] [data-testid="field-row"] button[role="checkbox"],
-.react-draggable[data-field-id] [data-testid="field-content"] button[role="checkbox"] {
+.react-draggable[data-field-id] [data-testid='field-row'] button[role='checkbox'],
+.react-draggable[data-field-id] [data-testid='field-content'] button[role='checkbox'] {
   align-self: center !important;
 }
 
 /* הסרת margin ו-padding נוספים שעלולים להפריע */
-.react-draggable[data-field-id] [data-testid="field-row"] {
+.react-draggable[data-field-id] [data-testid='field-row'] {
   padding: 0 !important;
 }
 
 /* וידוא align-items: center בכל מקרה */
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="false"],
-.react-draggable[data-field-id] [data-testid="field-content"] div[data-hebrew="true"] {
+.react-draggable[data-field-id] [data-testid='field-content'] div[data-hebrew='false'],
+.react-draggable[data-field-id] [data-testid='field-content'] div[data-hebrew='true'] {
   align-items: center !important;
 }
 
 /* תיקון ספציפי עבור הקלאסים checkbox-field-english ו-checkbox-field-hebrew */
-.checkbox-field-english [data-testid="field-row"],
-.checkbox-field-hebrew [data-testid="field-row"],
-.checkbox-field-mixed [data-testid="field-row"] {
+.checkbox-field-english [data-testid='field-row'],
+.checkbox-field-hebrew [data-testid='field-row'],
+.checkbox-field-mixed [data-testid='field-row'] {
   align-items: center !important;
 }
 
 /* Fix: Align all English checkboxes to the left, one below the other */
-.checkbox-field-english [data-testid="field-row"],
-.checkbox-field-english [data-testid="field-row"][data-hebrew="false"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"][data-hebrew="false"] {
+.checkbox-field-english [data-testid='field-row'],
+.checkbox-field-english [data-testid='field-row'][data-hebrew='false'],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-row'],
+.react-draggable[data-field-id]
+  .checkbox-field-english
+  [data-testid='field-row'][data-hebrew='false'] {
   margin-left: 0 !important;
   padding-left: 0 !important;
   justify-content: flex-start !important;
@@ -1453,12 +1496,18 @@ input[type="checkbox"] {
   gap: 0.5rem !important; /* Same as Hebrew - gap-2 = 8px */
 }
 
-.checkbox-field-english [data-testid="field-row"] [role="checkbox"],
-.checkbox-field-english [data-testid="field-row"] input[type="checkbox"],
-.checkbox-field-english [data-testid="field-row"] button[role="checkbox"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] [role="checkbox"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] input[type="checkbox"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] button[role="checkbox"] {
+.checkbox-field-english [data-testid='field-row'] [role='checkbox'],
+.checkbox-field-english [data-testid='field-row'] input[type='checkbox'],
+.checkbox-field-english [data-testid='field-row'] button[role='checkbox'],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-row'] [role='checkbox'],
+.react-draggable[data-field-id]
+  .checkbox-field-english
+  [data-testid='field-row']
+  input[type='checkbox'],
+.react-draggable[data-field-id]
+  .checkbox-field-english
+  [data-testid='field-row']
+  button[role='checkbox'] {
   margin-left: 0 !important;
   padding-left: 0 !important;
   left: 0 !important;
@@ -1467,9 +1516,9 @@ input[type="checkbox"] {
 }
 
 /* Ensure spacing between checkbox and text is identical - remove inline margins */
-.checkbox-field-english [data-testid="field-row"] label,
-.checkbox-field-english [data-testid="field-row"][data-hebrew="false"] label,
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] label {
+.checkbox-field-english [data-testid='field-row'] label,
+.checkbox-field-english [data-testid='field-row'][data-hebrew='false'] label,
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-row'] label {
   margin-left: 0 !important;
   padding-left: 0 !important;
   margin-right: 0 !important;
@@ -1477,9 +1526,9 @@ input[type="checkbox"] {
   box-sizing: border-box !important;
 }
 
-.checkbox-field-hebrew [data-testid="field-row"] label,
-.checkbox-field-hebrew [data-testid="field-row"][data-hebrew="true"] label,
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] label {
+.checkbox-field-hebrew [data-testid='field-row'] label,
+.checkbox-field-hebrew [data-testid='field-row'][data-hebrew='true'] label,
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-row'] label {
   margin-left: 0 !important;
   padding-left: 0 !important;
   margin-right: 0 !important;
@@ -1488,17 +1537,17 @@ input[type="checkbox"] {
   text-align: right !important;
 }
 
-.checkbox-field-mixed [data-testid="field-row"] label,
-.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-row"] label {
+.checkbox-field-mixed [data-testid='field-row'] label,
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid='field-row'] label {
   margin-left: 0 !important;
   padding-left: 0 !important;
   margin-right: 0 !important;
   padding-right: 0 !important;
 }
 
-.checkbox-field-english [data-testid="field-row"] label,
-.checkbox-field-hebrew [data-testid="field-row"] label,
-.checkbox-field-mixed [data-testid="field-row"] label {
+.checkbox-field-english [data-testid='field-row'] label,
+.checkbox-field-hebrew [data-testid='field-row'] label,
+.checkbox-field-mixed [data-testid='field-row'] label {
   align-self: center !important;
   vertical-align: middle !important;
   line-height: 1 !important;
@@ -1507,13 +1556,13 @@ input[type="checkbox"] {
 }
 
 /* תיקון נוסף עבור הקלאסים הספציפיים */
-.english-field [data-testid="field-row"],
-.hebrew-field [data-testid="field-row"] {
+.english-field [data-testid='field-row'],
+.hebrew-field [data-testid='field-row'] {
   align-items: center !important;
 }
 
-.english-field [data-testid="field-row"] label,
-.hebrew-field [data-testid="field-row"] label {
+.english-field [data-testid='field-row'] label,
+.hebrew-field [data-testid='field-row'] label {
   align-self: center !important;
   vertical-align: middle !important;
   line-height: 1 !important;
@@ -1528,15 +1577,15 @@ input[type="checkbox"] {
   align-items: center !important;
 }
 
-.checkbox-field-english [data-testid="field-content"],
-.checkbox-field-hebrew [data-testid="field-content"],
-.checkbox-field-mixed [data-testid="field-content"] {
+.checkbox-field-english [data-testid='field-content'],
+.checkbox-field-hebrew [data-testid='field-content'],
+.checkbox-field-mixed [data-testid='field-content'] {
   align-items: center !important;
 }
 
 /* Fix: Ensure English checkbox field-content has no left margin/padding */
-.checkbox-field-english [data-testid="field-content"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-content"] {
+.checkbox-field-english [data-testid='field-content'],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-content'] {
   margin: 0 !important;
   align-items: flex-start !important;
   justify-content: flex-start !important;
@@ -1547,8 +1596,8 @@ input[type="checkbox"] {
 /* padding עקבי בכל השלבים */
 
 /* Ensure Hebrew field has same vertical spacing */
-.checkbox-field-hebrew [data-testid="field-content"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-content"] {
+.checkbox-field-hebrew [data-testid='field-content'],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-content'] {
   gap: 0.5rem !important; /* Vertical spacing between rows - space-y-2 = 8px */
 }
 
@@ -1568,16 +1617,16 @@ input[type="checkbox"] {
 /* ללא override - padding זהה בכל השלבים */
 
 /* English field content should expand */
-.checkbox-field-english [data-testid="field-content"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-content"] {
+.checkbox-field-english [data-testid='field-content'],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-content'] {
   width: fit-content !important; /* Expand to fit content */
   min-width: fit-content !important;
   box-sizing: border-box !important;
 }
 
 /* English field rows should expand */
-.checkbox-field-english [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"] {
+.checkbox-field-english [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-row'] {
   width: fit-content !important; /* Expand to fit content */
   min-width: fit-content !important;
   box-sizing: border-box !important;
@@ -1599,8 +1648,8 @@ input[type="checkbox"] {
 /* ללא override - padding זהה בכל השלבים */
 
 /* Hebrew field content should expand */
-.checkbox-field-hebrew [data-testid="field-content"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-content"] {
+.checkbox-field-hebrew [data-testid='field-content'],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-content'] {
   width: fit-content !important; /* Expand to fit content */
   min-width: fit-content !important;
   box-sizing: border-box !important;
@@ -1610,8 +1659,8 @@ input[type="checkbox"] {
 }
 
 /* Hebrew field rows should expand */
-.checkbox-field-hebrew [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] {
+.checkbox-field-hebrew [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-row'] {
   width: fit-content !important; /* Expand to fit content */
   min-width: fit-content !important;
   box-sizing: border-box !important;
@@ -1623,28 +1672,29 @@ input[type="checkbox"] {
 }
 
 /* Hebrew labels should not be constrained */
-.checkbox-field-hebrew [data-testid="field-row"] label,
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] label {
+.checkbox-field-hebrew [data-testid='field-row'] label,
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-row'] label {
   box-sizing: border-box !important;
-  order: 1 !important;
   width: auto !important;
   min-width: 0 !important;
   flex: 1 !important;
 }
 
 /* Hebrew field-row should stretch to 100% */
-.checkbox-field-hebrew [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] {
+.checkbox-field-hebrew [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-row'] {
   width: 100% !important;
   min-width: 100% !important;
 }
 
 /* Hebrew checkbox should be on the right */
-.checkbox-field-hebrew [data-testid="field-row"] [role="checkbox"],
-.checkbox-field-hebrew [data-testid="field-row"] button[role="checkbox"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] [role="checkbox"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"] button[role="checkbox"] {
-  order: 2 !important;
+.checkbox-field-hebrew [data-testid='field-row'] [role='checkbox'],
+.checkbox-field-hebrew [data-testid='field-row'] button[role='checkbox'],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-row'] [role='checkbox'],
+.react-draggable[data-field-id]
+  .checkbox-field-hebrew
+  [data-testid='field-row']
+  button[role='checkbox'] {
 }
 
 /* Ensure mixed field expands with content */
@@ -1662,34 +1712,34 @@ input[type="checkbox"] {
 
 /* ללא override - padding זהה בכל השלבים */
 
-.checkbox-field-mixed [data-testid="field-content"],
-.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-content"] {
+.checkbox-field-mixed [data-testid='field-content'],
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid='field-content'] {
   gap: 0.5rem !important; /* Vertical spacing between rows - same as English and Hebrew */
   width: fit-content !important; /* Expand to fit content */
   min-width: fit-content !important;
   box-sizing: border-box !important;
 }
 
-.checkbox-field-mixed [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-row"] {
+.checkbox-field-mixed [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid='field-row'] {
   width: fit-content !important; /* Expand to fit content */
   min-width: fit-content !important;
   box-sizing: border-box !important;
 }
 
 /* Ensure all checkbox and radio rows have same horizontal spacing (gap between box/button and text) */
-.checkbox-field-english [data-testid="field-row"],
-.checkbox-field-hebrew [data-testid="field-row"],
-.checkbox-field-mixed [data-testid="field-row"],
-.radio-field-english [data-testid="field-row"],
-.radio-field-hebrew [data-testid="field-row"],
-.radio-field-mixed [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-english [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid="field-row"],
-.react-draggable[data-field-id] .checkbox-field-mixed [data-testid="field-row"],
-.react-draggable[data-field-id] .radio-field-english [data-testid="field-row"],
-.react-draggable[data-field-id] .radio-field-hebrew [data-testid="field-row"],
-.react-draggable[data-field-id] .radio-field-mixed [data-testid="field-row"] {
+.checkbox-field-english [data-testid='field-row'],
+.checkbox-field-hebrew [data-testid='field-row'],
+.checkbox-field-mixed [data-testid='field-row'],
+.radio-field-english [data-testid='field-row'],
+.radio-field-hebrew [data-testid='field-row'],
+.radio-field-mixed [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-english [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-hebrew [data-testid='field-row'],
+.react-draggable[data-field-id] .checkbox-field-mixed [data-testid='field-row'],
+.react-draggable[data-field-id] .radio-field-english [data-testid='field-row'],
+.react-draggable[data-field-id] .radio-field-hebrew [data-testid='field-row'],
+.react-draggable[data-field-id] .radio-field-mixed [data-testid='field-row'] {
   gap: 0.5rem !important; /* Horizontal spacing between checkbox/radio and text - 8px */
 }
 
@@ -1699,8 +1749,7 @@ input[type="checkbox"] {
   align-items: center !important;
 }
 
-.english-field [data-testid="field-content"],
-.hebrew-field [data-testid="field-content"] {
+.english-field [data-testid='field-content'],
+.hebrew-field [data-testid='field-content'] {
   align-items: center !important;
 }
-

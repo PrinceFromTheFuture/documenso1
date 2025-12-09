@@ -5,8 +5,11 @@ const path = require('path');
 module.exports = {
   ...baseConfig,
   content: [
-    ...baseConfig.content,
-    `${path.join(require.resolve('@documenso/ui'), '..')}/**/*.{ts,tsx}`,
-    `${path.join(require.resolve('@documenso/email'), '..')}/**/*.{ts,tsx}`,
+    './src/**/*.{ts,tsx}',
+    '../../packages/ui/primitives/**/*.{ts,tsx}',
+    '../../packages/ui/components/**/*.{ts,tsx}',
+    '../../packages/ui/lib/**/*.{ts,tsx}',
+    '../../packages/email/components/**/*.{ts,tsx}',
+    '../../packages/email/template/**/*.{ts,tsx}',
   ],
 };

@@ -22,6 +22,7 @@ export const RadioField = ({ field }: RadioFieldProps) => {
   const values = parsedFieldMeta?.values || [{ checked: false, value: '' }];
   const defaultValue = values.find((v) => v.checked)?.value || '';
   const hasValues = values.some((item) => item.value && item.value.trim() !== '');
+  const hasHebrew = values.some((item) => /[\u0590-\u05FF\u200f\u200e]/.test(item.value || ''));
 
   return (
     <div
@@ -48,9 +49,8 @@ export const RadioField = ({ field }: RadioFieldProps) => {
         >
           {values.map((item, index) => {
             const itemKey = `${field.nativeId}-radio-${index}`;
-            const itemHasHebrew = /[\u0590-\u05FF\u200f\u200e]/.test(item.value || '');
 
-            if (itemHasHebrew) {
+            if (hasHebrew) {
               // Hebrew: radio on the right, label on the left, container stretched to the left
               return (
                 <div

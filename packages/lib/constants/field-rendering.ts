@@ -44,7 +44,7 @@ export const CHECKBOX_RADIO_CLASSES = {
   /** Horizontal spacing: 6px (gap-x-1.5) */
   horizontalGap: 'gap-x-1.5',
   /** Label font size: 12px (text-xs) */
-  labelFontSize: 'text-xs',
+  labelFontSize: 'text-sm',
 } as const;
 
 /**

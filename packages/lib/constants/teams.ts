@@ -1,7 +1,14 @@
 import type { MessageDescriptor } from '@lingui/core';
 import { msg } from '@lingui/macro';
 
-import { TeamMemberRole } from '@documenso/prisma/client';
+// Define TeamMemberRole constants to avoid importing Prisma client in edge runtime
+export const TeamMemberRole = {
+  ADMIN: 'ADMIN',
+  MANAGER: 'MANAGER',
+  MEMBER: 'MEMBER',
+} as const;
+
+export type TeamMemberRole = (typeof TeamMemberRole)[keyof typeof TeamMemberRole];
 
 export const TEAM_URL_ROOT_REGEX = new RegExp('^/t/[^/]+$');
 export const TEAM_URL_REGEX = new RegExp('^/t/[^/]+');

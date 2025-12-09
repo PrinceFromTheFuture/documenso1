@@ -76,7 +76,11 @@ export const FieldItem = ({
     pageWidth: defaultWidth || 0,
   });
   const [_settingsActive, setSettingsActive] = useState(false);
-  const $el = useRef(null);
+  const [elementDimensions, setElementDimensions] = useState<{
+    width: number;
+    height: number;
+  } | null>(null);
+  const $el = useRef<HTMLDivElement | null>(null);
 
   const signerStyles = useSignerColors(recipientIndex);
 
@@ -185,6 +189,20 @@ export const FieldItem = ({
 
   const fixedSize = checkBoxHasValues || radioHasValues;
 
+  useEffect(() => {
+    if ((field.type === 'CHECKBOX' || field.type === 'RADIO') && $el.current) {
+      const rect = $el.current.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        setElementDimensions({
+          width: rect.width,
+          height: rect.height,
+        });
+      }
+    } else {
+      setElementDimensions(null);
+    }
+  }, [field.type, field.fieldMeta]);
+
   return createPortal(
     <Rnd
       key={coords.pageX + coords.pageY + coords.pageHeight + coords.pageWidth}
@@ -194,12 +212,18 @@ export const FieldItem = ({
         'z-10': !active || disabled,
       })}
       minHeight={minHeight || (fixedSize ? 0 : 40)}
-      minWidth={minWidth || (fixedSize ? 0 : 40)}
+      minWidth={minWidth || (fixedSize ? 0 : 118)}
       default={{
         x: coords.pageX,
         y: coords.pageY,
-        height: coords.pageHeight,
-        width: coords.pageWidth,
+        height:
+          (field.type === 'CHECKBOX' || field.type === 'RADIO') && elementDimensions
+            ? elementDimensions.height
+            : coords.pageHeight,
+        width:
+          (field.type === 'CHECKBOX' || field.type === 'RADIO') && elementDimensions
+            ? elementDimensions.width
+            : coords.pageWidth,
       }}
       bounds={`${PDF_VIEWER_PAGE_SELECTOR}[data-page-number="${field.pageNumber}"]`}
       onDragStart={() => setActive(true)}

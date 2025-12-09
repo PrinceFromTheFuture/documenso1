@@ -13,7 +13,7 @@ const config: LinguiConfig = {
     },
     {
       path: '<rootDir>/../../packages/lib/translations/{locale}/common',
-      include: ['<rootDir>/packages/ui', '<rootDir>/packages/lib'],
+      include: ['<rootDir>/../../packages/ui', '<rootDir>/../../packages/lib'],
     },
   ],
   catalogsMergePath: '<rootDir>/../../packages/lib/translations/{locale}/web',

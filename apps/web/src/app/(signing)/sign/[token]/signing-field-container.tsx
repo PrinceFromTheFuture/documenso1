@@ -51,6 +51,7 @@ export type SignatureFieldProps = {
     | 'Number'
     | 'Checkbox';
   tooltipText?: string | null;
+  cardClassName?: string;
 };
 
 export const SigningFieldContainer = ({
@@ -62,6 +63,7 @@ export const SigningFieldContainer = ({
   children,
   type,
   tooltipText,
+  cardClassName,
 }: SignatureFieldProps) => {
   const { executeActionAuthProcedure, isAuthRedirectRequired } = useRequiredDocumentAuthContext();
 
@@ -128,8 +130,10 @@ export const SigningFieldContainer = ({
   };
 
   return (
-    <div className={cn('[container-type:size]', { group: type === 'Checkbox' })}>
-      <FieldRootContainer field={field}>
+    <div
+      className={cn('[container-type:size]', { group: type === 'Checkbox' || type === 'Radio' })}
+    >
+      <FieldRootContainer field={field} cardClassName={cardClassName}>
         {!field.inserted && !loading && !readOnlyField && (
           <button
             type="submit"

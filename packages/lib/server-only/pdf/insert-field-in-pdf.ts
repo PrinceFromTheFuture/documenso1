@@ -215,6 +215,8 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
       const fontSize = CHECKBOX_RADIO_LABEL_FONT_SIZE;
       const verticalSpacing = CHECKBOX_RADIO_VERTICAL_SPACING;
 
+      const isGroupHebrew = (values ?? []).some((item) => isHebrewText(item.value));
+
       for (const [index, item] of (values ?? []).entries()) {
         const offsetY = index * verticalSpacing;
         const checkbox = pdf.getForm().createCheckBox(`checkbox.${field.secondaryId}.${index}`);
@@ -222,8 +224,10 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
           checkbox.check();
         }
         const labelText = item.value.includes('empty-value-') ? '' : item.value;
-        const isHebrew = isHebrewText(labelText);
-        const displayText = isHebrew ? labelText.split('').reverse().join('') : labelText;
+        const isHebrew = isGroupHebrew;
+        const displayText = isHebrewText(labelText)
+          ? labelText.split('').reverse().join('')
+          : labelText;
         const labelWidth = font.widthOfTextAtSize(labelText, fontSize);
 
         let boxX, labelX;
@@ -312,12 +316,16 @@ export const insertFieldInPDF = async (pdf: PDFDocument, field: FieldWithSignatu
       const fontSize = CHECKBOX_RADIO_LABEL_FONT_SIZE;
       const verticalSpacing = CHECKBOX_RADIO_VERTICAL_SPACING;
 
+      const isGroupHebrew = (values ?? []).some((item) => isHebrewText(item.value));
+
       for (const [index, item] of (values ?? []).entries()) {
         const offsetY = index * verticalSpacing;
         const radio = pdf.getForm().createRadioGroup(`radio.${field.secondaryId}.${index}`);
         const labelText = item.value.includes('empty-value-') ? '' : item.value;
-        const isHebrew = isHebrewText(labelText);
-        const displayText = isHebrew ? labelText.split('').reverse().join('') : labelText;
+        const isHebrew = isGroupHebrew;
+        const displayText = isHebrewText(labelText)
+          ? labelText.split('').reverse().join('')
+          : labelText;
         const labelWidth = font.widthOfTextAtSize(labelText, fontSize);
 
         let boxX, labelX;

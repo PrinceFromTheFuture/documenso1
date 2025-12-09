@@ -235,6 +235,7 @@ export const SignatureField = ({
       onSign={onSign}
       onRemove={onRemove}
       type="Signature"
+      cardClassName="bg-background w-full"
     >
       {isLoading && (
         <div className="bg-background absolute inset-0 flex items-center justify-center rounded-md">

@@ -35,6 +35,7 @@ export const useFieldPageCoords = (field: Field) => {
 
     setCoords({
       x: fieldX,
+      pageX: $page.getBoundingClientRect().left,
       y: fieldY,
       height: fieldHeight,
       width: fieldWidth,

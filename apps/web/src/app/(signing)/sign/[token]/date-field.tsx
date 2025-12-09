@@ -136,6 +136,7 @@ export const DateField = ({
       onRemove={onRemove}
       type="Date"
       tooltipText={isDifferentTime ? tooltipText : undefined}
+      cardClassName="bg-background w-full"
     >
       {isLoading && (
         <div className="bg-background absolute inset-0 flex items-center justify-center rounded-md">
